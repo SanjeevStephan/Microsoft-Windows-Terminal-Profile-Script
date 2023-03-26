@@ -1,9 +1,5 @@
 [
-    {
-        "Name" : "profile_path",
-        "File" : "profile_path.ps1",
-        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_path.ps1"
-    },  
+
     {
         "Name" : "profile_config",
         "File" : "profile_config.ps1",
@@ -15,7 +11,7 @@
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_function.ps1"
     },
     {
-        "Name" : "profile_get_path",
+        "Name" : "profile_path",
         "File" : "profile_get_path.ps1",
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_get_path.ps1"
     }       
