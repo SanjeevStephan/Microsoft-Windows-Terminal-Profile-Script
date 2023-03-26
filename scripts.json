@@ -1,0 +1,8 @@
+[
+    {
+        "Name": "profile_exec_script",
+        "File": "profile_exec_script.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_exec_script.ps1",
+        "Desc": "Execute Script"
+    }
+]
