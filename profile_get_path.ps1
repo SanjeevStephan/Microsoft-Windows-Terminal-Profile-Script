@@ -28,7 +28,7 @@
 $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
 
 # get_path the configuration file to load any additional dependencies
-#  . $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
+  . $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
 
  # Debug profile_get_path.ps1  
 if($DEBUG["debug_path"] -eq "enable"){ Write-Output "--------------------------{profile_get_path.ps1}-------------------------"} 
