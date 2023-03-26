@@ -7,3 +7,35 @@
             |_|                                  
 
 #>
+<#-------------------- Directory Structure ----------------
+.AUTHOR
+    ->Sanjeev_Stephan_Murmu
+
+.FILES
+    -> Microsoft.PowerShell_profile.ps1
+    -> profile_config.ps1
+    -> profile_func.ps1
+    -> profile_include.ps1
+    -> profile_path.ps1
+
+.CONTAINS
+    -> configuration
+    -> dictionary
+    -> paths
+    -> variables
+    -> functions
+    -> includedFiles
+
+#>
+#-------------------- Include Below File ----------------
+. "$HOME\Documents\PowerShell\profile_include.ps1"
+#-------------------- Functions {One-Liner}--------------
+
+
+function initialize() {
+
+
+}
+
+#-------------------- Script Execution Begins from here-----
+initialize  #calling the initialize() function 
