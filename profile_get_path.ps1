@@ -28,10 +28,10 @@
 $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
 
 # get_path the configuration file to load any additional dependencies
-  . $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
+ # . $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
 
  # Debug profile_get_path.ps1  
-if($DEBUG["debug_path"] -eq "enable"){ Write-Output "--------------------------{profile_get_path.ps1}-------------------------"} 
+if($DEBUG["debug_path"] -eq "enable"){ Write-Output "[ OK ] Profile Script => { profile_get_path.ps1 } Loaded Successfully"} 
    
 # Define a JSON string that contains the names and paths of the dependencies to be get_pathd
 # Read the JSON data from the file
@@ -47,15 +47,15 @@ function get_path($directory_name)
     # Get the path to the directory based on its name
     $directory_path_data = $profile_path_array | Where-Object { $_.Name -eq $directory_name }
     $directory_path = $($directory_path_data.Path)
-    # Write-Output "Directory Name : $directory_name | Path $directory_path"
+
+    if(($DEBUG["debug_path"]) -eq "enable") { Write-Output "Directory Name : $directory_name | Path $directory_path" }
+
     # Check if the file exists before including it
     if (Test-Path $directory_path){
         # get_path the dependency file
         #. $directory_path
 
-            if(($DEBUG["debug_path"]) -eq "enable") 
-            { Write-Output "Directory Name : $directory_name | Path $directory_path" } 
-            else { <# Write-Output "[] 'Enable' the 'display_get_path_confirmation' in the $config_file" #> }
+            if(($DEBUG["debug_path"]) -eq "enable") { Write-Output "Directory Name : $directory_name | Path $directory_path Exists" } 
     }
     else{
         Write-Error "Error: $directory_name not found at path $directory_path"
@@ -81,5 +81,5 @@ function list_all_path(){
 }
 
 # get_path_Dependencies # get_path necessary dependencies for the Microsoft.PowerShell_Profile.ps1
- get_path("powershell") # <-------------- NOTE-2 : TO RUN THIS SCRIPT | UNCOMMENT 
- list_all_path          # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 
+ # get_path("powershell") # <-------------- NOTE-2 : TO RUN THIS SCRIPT | UNCOMMENT 
+ # list_all_path          # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 

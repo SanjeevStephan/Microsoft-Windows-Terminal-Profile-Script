@@ -1,8 +1,20 @@
 [
     {
+        "Name": "test",
+        "File": "test.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\test.ps1",
+        "Desc": "Test Script"
+    },
+    {
+        "Name": "test2",
+        "File": "test2.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\test2.ps1",
+        "Desc": "Test Script 2"
+    },
+    {
         "Name": "profile_exec_script",
         "File": "profile_exec_script.ps1",
         "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_exec_script.ps1",
         "Desc": "Execute Script"
-    }
+    }    
 ]

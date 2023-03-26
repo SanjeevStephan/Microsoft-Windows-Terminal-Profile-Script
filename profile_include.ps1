@@ -29,8 +29,8 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
 # Include the configuration file to load any additional dependencies
  . $profile_config_path # <-------------- NOTE-2 : TO RUN THIS SCRIPT | UNCOMMENT 
 
- # Debug profile_include.ps1
- if($DEBUG["debug_include"] -eq "enable"){ Write-Output "--------------------------{profile_include.ps1}-------------------------"} 
+ # Debug profile_include.ps1 
+ if($DEBUG["debug_include"] -eq "enable"){ Write-Output "[ OK ] Profile Script => { profile_include.ps1 } Loaded Successfully"} 
 
 # Function to include all dependencies using traditional hashtable
 $profile_dependencies = @{
@@ -38,14 +38,14 @@ $profile_dependencies = @{
     "profile_console"    = "$profile_source\profile_console.ps1"
     "profile_func"       = "$profile_source\profile_function.ps1"
     "profile_path"       = "$profile_source\profile_get_path.ps1"
-    "profile_script_path"= "$profile_source\profile_get_script_path.ps1"
+#    "profile_script_path"= "$profile_source\profile_get_script_path.ps1"
     "profile_alias"      = "$profile_source\profile_set_alias.ps1"    
     
 }
 
 . $profile_dependencies["profile_path"]
 . $profile_dependencies["profile_func"]
-. $profile_dependencies["profile_script_path"]
+#. $profile_dependencies["profile_script_path"]
 
 
 
