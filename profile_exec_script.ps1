@@ -155,4 +155,4 @@ function execute_script() {
 }
 
 
-execute_script #initilize the .\profile_script.ps1
+# execute_script #initilize the .\profile_script.ps1
