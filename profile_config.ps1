@@ -21,22 +21,22 @@ $profile_source = "$Home\Documents\PowerShell"
     DEBUG -> enable | disable
 #>
 $DEBUG = @{
-    "debug_config"   = "enable"
-    "debug_exec_script"   = "enable"
-    "debug_includes" = "enable"
-    "debug_path"     = "enable"  
-    "debug_function" = "enable"  
+    "debug_config"        = "disable"
+    "debug_exec_script"   = "disable"
+    "debug_includes"      = "disable"
+    "debug_path"          = "disable"  
+    "debug_function"      = "disable"  
 }
 <#
     FEATURE -> enable | disable
 #>
 $TABLE = @{
-    "show_all_paths" = "enable"
+    "show_all_paths"   = "enable"
     "show_all_scripts" = "enable"
 }
 $FEATURE = @{
-        "figlet" = "disable"
-        "ascii"  = "enable"
+        "figlet"       = "disable"
+        "ascii"        = "enable"
         "dependencies" = "enable"
     
 
@@ -50,9 +50,9 @@ $FEATURE = @{
 #>
 $ExecutableScript = @{
     "test" = "allow"
-    "test2" = "refuse"
+    "test2" = "allow"
 }
 
-# Debug profile_get_path
-if($DEBUG["debug_config"] -eq "enable"){ Write-Output "--------------------------{profile_config.ps1}-------------------------"} 
+# Debug profile_get_path  
+if($DEBUG["debug_config"] -eq "enable"){ Write-Output "[ OK ] Profile Script => { profile_config.ps1 } Loaded Successfully"} 
     
