@@ -15,7 +15,8 @@
  #>
 
 
-$config_file = "profile_config.ps1"
+$config_file    = "profile_config.ps1"
+$profile_source = "$Home\Documents\PowerShell"
 <#
     DEBUG -> enable | disable
 #>
@@ -38,11 +39,12 @@ $FEATURE = @{
         "ascii"  = "enable"
         "dependencies" = "enable"
     
-    
+
+
+
+
+        
     }
-
-
-
 <#
     ExecutableScript => 'allow' | 'refuse'
 #>
