@@ -87,10 +87,9 @@ function readJson($jsons_filename) {
 function tablejsons(){
 
     if(($TABLE["show_all_jsons"]) -eq "enable") 
-    {   #Write-Output "jsons Name : $jsons_name | Path $jsons_path" 
+    {   
         $jsons_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$jsons_array_data.IndexOf($_) + 1}}, 
         @{label="Name"; expression={$_.Name}}, 
- #      @{label="File"; expression={$_.File}},
         @{label="File"; expression={$_.File}},
         @{label="Path"; expression={$_.Path}} -AutoSize
     } 

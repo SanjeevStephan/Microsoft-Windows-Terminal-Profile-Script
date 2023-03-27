@@ -65,15 +65,14 @@ function checkDependencies(){
 function tableDependencies(){
 
     if(($TABLE["show_all_dependencies"]) -eq "enable") 
-    {   #Write-Output "Script Name : $dependencies_name | Path $dependencies_path" 
+    {  
         $dependencies_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$dependencies_array_data.IndexOf($_) + 1}}, 
         @{label="Name"; expression={$_.Name}}, 
- #      @{label="File"; expression={$_.File}},
         @{label="File"; expression={$_.File}},
         @{label="Path"; expression={$_.Path}} -AutoSize
     } 
     else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
 }
 
- # getDependencies("profile_func")    # <-------------- NOTE-2 : TO RUN THIS SCRIPT | UNCOMMENT 
+ # getDependencies("profile_function")    # <-------------- NOTE-2 : TO RUN THIS SCRIPT | UNCOMMENT 
  # tableDependencies          # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 

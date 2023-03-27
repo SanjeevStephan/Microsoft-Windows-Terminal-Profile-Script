@@ -67,29 +67,49 @@ function Test-Json($type,$file_or_directory) {
 }
 
 
-function Read-Json($type,$file_or_directory) {
+function Show-Table($type) {
 # Update the value of the 'show_all_paths' property
 $TABLE.show_all_paths = "enable"
-
 
     if($type)
     {
         switch($type)
         {
-            "script" 
+            "dependencies" { tableDependencies}
+            "script"       { tableScript }
+            "json"         { tablejsons }
+            "path"         { tablePath } 
+            "all" 
             {
-               
-                getScript("readJson")
-            }
-            "path"
-            {
-                $test_path = getPath($file_or_directory)
-                Write-Output "Directory : $($test_path.Name) at path $(($test_path.Path))"
-                Write-Output "WHich is a : $($test_path.Desc)"
+                tableDependencies
+                tableScript
+                tablejsons
+                tablePath
             }
             Default { Write-Error "Invalid Argument Passed | Require -> test_json type file_or_dir"}
-    
         }
-
     }
 }
+
+function Check-Profile($type){
+
+    if($type)
+    {
+        switch($type)
+        {
+            "dependencies" { checkDependencies}
+            "json"       { checkJsons }
+            "path"         { checkPaths }
+            "script"         { checkScripts } 
+            "all" 
+            {
+                checkDependencies
+                checkJsons
+                checkPaths
+                checkScripts
+            }
+            Default { Write-Error "Invalid Argument Passed | Require -> test_json type file_or_dir"}
+        }
+    }    
+}
+

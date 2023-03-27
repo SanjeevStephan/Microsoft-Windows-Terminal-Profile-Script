@@ -67,10 +67,9 @@ function checkScripts(){
 function tableScript(){
 
     if(($TABLE["show_all_scripts"]) -eq "enable") 
-    {   #Write-Output "Script Name : $script_name | Path $script_path" 
+    {  
         $script_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$script_array_data.IndexOf($_) + 1}}, 
         @{label="Name"; expression={$_.Name}}, 
- #      @{label="File"; expression={$_.File}},
         @{label="Path"; expression={$_.Path}},
         @{label="Description"; expression={$_.Desc}} -AutoSize
     } 
