@@ -6,14 +6,45 @@
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_config.ps1"
     },
     {
-        "Name" : "profile_func",
+        "Name" : "profile_execScript",
+        "File" : "profile_execScript.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_execScript.ps1"
+    },
+    {
+        "Name" : "profile_function",
         "File" : "profile_function.ps1",
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_function.ps1"
     },
     {
-        "Name" : "profile_path",
-        "File" : "profile_get_path.ps1",
-        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_get_path.ps1"
-    }       
+        "Name" : "profile_getDependencies",
+        "File" : "profile_getDependencies.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_getDependencies.ps1"
+    },
+    {
+        "Name" : "profile_getPath",
+        "File" : "profile_getPath.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_getPath.ps1"
+    },
+    {
+        "Name" : "profile_getScript",
+        "File" : "profile_getScript.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_getScript.ps1"
+    },
+    {
+        "Name" : "profile_readJson",
+        "File" : "profile_readJson.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_readJson.ps1"
+    },
+    {
+        "Name" : "profile_setAlias",
+        "File" : "profile_setAlias.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_setAlias.ps1"
+    },
+    {
+        "Name" : "profile_include",
+        "File" : "profile_include.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_include.ps1"
+    }  
+
 ]
 

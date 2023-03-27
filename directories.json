@@ -1,0 +1,17 @@
+[
+    
+    {
+        "Name" : "powershell",
+        "Directory" : "PowerShell",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\",
+        "Desc" : "Microsoft PowerShell Profile Directory"
+    },
+    {
+        "Name" : "terminal",
+        "Directory" : "terminal",
+        "Path" : "D:\\terminalf",
+        "Desc" : "The Terminal Directory"
+    }
+
+
+]
