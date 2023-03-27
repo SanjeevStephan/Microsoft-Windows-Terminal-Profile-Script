@@ -1,4 +1,5 @@
-# PowerShell's $uperUser
+# Welcome PowerShell's $uperUser
+    To The Windows Terminal, Console and Command-Line repository
 ```
  ____                        _   _               
 / ___| _   _ _ __   ___ _ __| | | |___  ___ _ __ 
@@ -44,34 +45,35 @@
 
 ## DIRECTORY STRUCTURE
 
-* PROFILE_MAIN 
+* Main 
     * Microsoft.PowerShell_profile.ps1
     * include.ps1
+    * config.ps1
     * README.md
 
-### SCRIPT
-        -> profile_config.ps1
-        -> profile_include.ps1
-        -> profile_exec_script.ps1
-        -> profile_function.ps1
-        -> profile_getDependencies.ps1
-        -> profile_getFunction.ps1
-        -> profile_getJson.ps1
-        -> profile_getPath.ps1
-        -> profile_getScript.ps1
+* Dependencies
+    * profile_config.ps1
+    * profile_include.ps1
+    * profile_exec_script.ps1
+    * profile_function.ps1
+    * profile_getDependencies.ps1
+    * profile_getFunction.ps1
+    * profile_getJson.ps1
+    * profile_getPath.ps1
+    * profile_getScript.ps1
 
-### JSON
-        -> dependencies.json
-        -> directories.json
-        -> functions.json
-        -> include.json
-        -> jsons.json
-        -> scripts.json
+* JSON
+    * dependencies.json
+    * directories.json
+    * functions.json
+    * include.json
+    * jsons.json
+    * scripts.json
         
-### DIRECTORY
-        -> myfunctions
-        -> myscripts
-        -> mytest       
+* Sub-Directories
+    * myfunctions
+    * myscripts
+    * mytest       
 
 ### CONTAINS
         -> configuration
