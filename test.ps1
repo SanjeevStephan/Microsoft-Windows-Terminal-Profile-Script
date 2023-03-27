@@ -68,7 +68,7 @@ function get_position_by_name() {
 }
 
 function initialize() {
-    clear 
+    # clear 
     intro
     Write-Output "--------------------------- {READING JSON DATA}-----------------------------------"
     reading_json
