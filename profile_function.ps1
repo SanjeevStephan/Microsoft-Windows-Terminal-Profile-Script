@@ -23,44 +23,73 @@
 if($DEBUG["debug_function"] -eq "enable"){ Write-Output "[ OK ] Profile Script => { profile_function.ps1 } Loaded Successfully"} 
  
 
-function exec($script_name,$argument) {
-    $exec_script = getScript("profile_execScript") #"$Home\Documents\PowerShell\profile_execScript.ps1"
+function EXEC($script_name,$argument) {
+    $exec_script = getScript("execScript") # returns this path -> $Home\Documents\PowerShell\profile_execScript.ps1"
 
     if($script_name) # if script_name is not-empty | execute if-block 
     {
         if($argument) { & $exec_script.Path $script_name $argument} else { & $exec_script.Path $script_name }
 
     } else { Write-Output "Script Name is Empty | Try -> exec test"}  
-
-    
  }
 
-function display_script() {
+function Test-Json($type,$file_or_directory) {
 
-    $script = getScript("test")
-    Write-Output "SHOWING SCRIPT PATH $($script.Path) for the Script $($script.Name)"
+    if($type)
+    {
+        switch($type)
+        {
+            "script" 
+            {
+                $test_script = getScript($file_or_directory)
+                #Write-Output "SHOWING SCRIPT PATH $($test_script.Path) for the Script $($test_script.Name)"
+                Write-Output "Script Name :  $($test_script.Name) "
+                Write-Output "Script File :  $($test_script.File)"
+                Write-Output "Script Argument : $($test_script.Argument)"
+                Write-Output "Script Parameter : $($test_script.Parameter)"
+                Write-Output "Script Desc : $($test_script.Desc)"
+                Write-Output "Script Path :  $($test_script.Path)"
+            }
+            "path"
+            {
+                $test_path = getPath($file_or_directory)
+                Write-Output "Name : $($test_path.Name) "
+                Write-Output "Directory: $($test_path.Directory)"
+                Write-Output "Path :  $($test_script.Path)"
+                Write-Output "Description : $($test_script.Desc)"
+
+            }
+            Default { Write-Error "Invalid Argument Passed | Require -> test_json type file_or_dir"}
+    
+        }
+
+    }
 }
 
-function SHOW_TABLE() {
 
-    switch ($json_table_name) {
-        "script" { 
-                    # Read the JSON data from the file
-                    $script_json_data = Get-Content -Path "$Home\Documents\PowerShell\scripts.json" -Raw
-
-                    # Convert the JSON data to a PowerShell object
-                    $script_db = ConvertFrom-Json -InputObject $script_json_data 
-
-
-         }
-        Default {}
-    }
-
-
-
+function Read-Json($type,$file_or_directory) {
 # Update the value of the 'show_all_paths' property
 $TABLE.show_all_paths = "enable"
 
-list_all_path
-}
 
+    if($type)
+    {
+        switch($type)
+        {
+            "script" 
+            {
+               
+                getScript("readJson")
+            }
+            "path"
+            {
+                $test_path = getPath($file_or_directory)
+                Write-Output "Directory : $($test_path.Name) at path $(($test_path.Path))"
+                Write-Output "WHich is a : $($test_path.Desc)"
+            }
+            Default { Write-Error "Invalid Argument Passed | Require -> test_json type file_or_dir"}
+    
+        }
+
+    }
+}

@@ -19,9 +19,6 @@
     VERSION
         -v1.0    
         
-        
-
-
 #-------------------- Include Below File --------------------------------------#>
 # Define the path to the configuration file that contains additional dependencies
 $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
@@ -32,59 +29,24 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
  # Debug profile_include.ps1 
  if($DEBUG["debug_include"] -eq "enable"){ Write-Output "[ OK ] Profile Script => { profile_include.ps1 } Loaded Successfully"} 
 
-# Function to include all dependencies using traditional hashtable
+ 
+<# Function to include all dependencies using traditional hashtable#>
 $profile_dependencies = @{
     "powerShell_profile" = "$profile_source\Microsoft.PowerShell_profile.ps1"
     "profile_console"    = "$profile_source\profile_console.ps1"
     "profile_func"       = "$profile_source\profile_function.ps1"
-    "profile_path"       = "$profile_source\profile_getPath.ps1"
-    "profile_getScript"= "$profile_source\profile_getScript.ps1"
+    "profile_getPath"    = "$profile_source\profile_getPath.ps1"
+    "profile_getScript"  = "$profile_source\profile_getScript.ps1"
+    "profile_getDependencies"  = "$profile_source\profile_getDependencies.ps1"    
+    "profile_getJson"    = "$profile_source\profile_getJson.ps1"      
     "profile_alias"      = "$profile_source\profile_setAlias.ps1"    
     
 }
 
-. $profile_dependencies["profile_path"]
+. $profile_dependencies["profile_getPath"]
 . $profile_dependencies["profile_getScript"]
+. $profile_dependencies["profile_getDependencies"]
+. $profile_dependencies["profile_getJson"]
 . $profile_dependencies["profile_func"]
 
 
-
-
-<# -------------------- Functions {Read-Only | Below Function wasn't able to include the dependecies}--------------
-# Function to include a specific dependency by name
-function include($profile_file_name)
-{
-    # Define a JSON string that contains the names and paths of the dependencies to be included
-    # Read the JSON data from the file
-    $profile_dependencies_json_data = Get-Content -Path "$Home\Documents\PowerShell\dependencies.json" -Raw
-
-    # Convert the JSON data to a PowerShell object
-    $dependencies_db = ConvertFrom-Json -InputObject $profile_dependencies_json_data 
-
-
-    # Get the path to the dependency file based on its name
-    $dependencies_data = $dependencies_db | Where-Object { $_.Name -eq $profile_file_name }
-    $dependencies_file = $($dependencies_data.Path)
-    Write-Output "Path : $dependencies_file"
-    # Check if the file exists before including it
-    . $dependencies_file
-
-    if (Test-Path $dependencies_file){
-        # Include the dependency file
-            #. $dependencies_file
-
-            if(($DEBUG["debug_includes"]) -eq "enable") 
-            { Write-Output "Included $profile_file_name successfully" } 
-            else {  Write-Output "[] 'Enable' the 'display_include_confirmation' in the $config_file"  }
-
-            
-    }
-    else{
-        Write-Error "Error: $profile_file_name not found at path $dependencies_file"
-    }
-}
-
-# Function to include all dependencies specified in the JSON string
-# include("profile_func")
-
-#>
