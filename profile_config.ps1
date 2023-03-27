@@ -22,7 +22,7 @@ $profile_source = "$Home\Documents\PowerShell"
 #>
 $DEBUG = @{
     "debug_config"        = "disable"
-    "debug_exec_script"   = "disable"
+    "debug_exec_script"   = "enable"
     "debug_includes"      = "disable"
     "debug_path"          = "disable"  
     "debug_function"      = "disable"  
