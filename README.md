@@ -26,15 +26,19 @@
 * My Github Repository                  (https://github.com/SanjeevStephan/superuser)
 * Microsoft Windows Terminal Repository (https://github.com/microsoft/terminal)
 * PowerShell v7+                        (https://github.com/PowerShell/PowerShell/releases/latest)
-* PowerShell-7.3.3-win-x64.zip          (https://github.com/PowerShell/PowerShell/releases/download/v7.3.3/PowerShell-7.3.3-win-x64.zip)
+* Download [PowerShell-7.3.3-win-x64.zip](https://github.com/PowerShell/PowerShell/releases/download/v7.3.3/PowerShell-7.3.3-win-x64.zip)
 
 ## NOTES
 
 ### AUTHOR
-        -> Sanjeev_Stephan_Murmu
+        -> Sanjeev_Stephan_Murmus
 
 ### VERSION 
-        -> 1.0 | 26th March 2023
+| Version | Release Date |
+|:---------:|:-----------|
+| 1.0 | 26th March 2023 |
+|     |                 |
+
 
 ### PROFILE_MAIN 
         -> Microsoft.PowerShell_profile.ps1
