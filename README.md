@@ -13,8 +13,18 @@
 ### SYNOPSIS
 > Microsoft.Profile_profile
 
-## DESCRIPTION
+## Description
 > This PowerShell Repository comprises the index of all the usefull functions and scripts for the window terminal
+
+### Author
+> Sanjeev_Stephan_Murmu
+
+### Version 
+| Version | Release Date |
+|:---------:|:-----------|
+| v1.0 | 26th March 2023 |
+|      |                 |
+
 
 ## Installing and running Windows Terminal
 
@@ -28,7 +38,7 @@ This repository contains :
 * variables
 * functions
 * file-Types
-    | Version | Release Date |
+    | File | Extension |
     |:---------:|:-----------|
     | Powershell-script| ps1 |
     | JSON-file    |   json  |
@@ -37,10 +47,13 @@ This repository contains :
 ### Directory Structure
 
 * Main 
-    * Microsoft.PowerShell_profile.ps1
-    * include.ps1
-    * config.ps1
-    * README.md
+    | File | Description |
+    |:---------:|:-----------|
+    | Microsoft.PowerShell_profile.ps1| Main Profile File |
+    | include.ps1 |  Read dependencies from JSON and Include it  |
+    | config.ps1  |  Controls how the Scripts Behaves   |    
+    | README.md   |  This Readme file   |
+
 
 * Dependencies
     * profile_config.ps1
@@ -84,22 +97,11 @@ This repository contains :
 
 ## NOTES
 
-### AUTHOR
-> Sanjeev_Stephan_Murmu
-
-### VERSION 
-| Version | Release Date |
-|:---------:|:-----------|
-| 1.0 | 26th March 2023 |
-|     |                 |
+x
 
 
 
-
-
-#-------------------- Must Include Below File --------------------------------------#>
+> Must Include Below File 
 ```
 . "$HOME\Documents\PowerShell\include.ps1"
 ```
-#-------------------- Functions {Read-Only}-------------------------------------
-
