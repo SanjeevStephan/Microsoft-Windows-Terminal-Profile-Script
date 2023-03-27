@@ -1,0 +1,34 @@
+[
+    {
+        "Name" : "profile_getPath",
+        "File" : "profile_getPath.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_getPath.ps1"
+    },
+    {
+        "Name" : "profile_getScript",
+        "File" : "profile_getScript.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_getScript.ps1"
+    },
+    {
+        "Name" : "profile_getJson",
+        "File" : "profile_getJson.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_getJson.ps1"
+    },
+    {
+        "Name" : "profile_getDependencies",
+        "File" : "profile_getDependencies.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_getDependencies.ps1"
+    },
+    {
+        "Name" : "profile_getFunction",
+        "File" : "profile_getFunction.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_getFunction.ps1"
+    },
+    {
+        "Name" : "profile_function",
+        "File" : "profile_function.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_function.ps1"
+    }  
+
+]
+

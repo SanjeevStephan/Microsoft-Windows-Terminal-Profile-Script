@@ -1,0 +1,18 @@
+[
+    {
+        "Name": "iamonline",
+        "File": "iamonline.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\iamonline.ps1",
+        "Argument":"No",
+        "Parameter" : ["",""],
+        "Desc": "Show if i am Online or Not"
+    },
+    {
+        "Name": "showip",
+        "File": "showip.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\showip.ps1",
+        "Argument":"No",
+        "Parameter" : [""],
+        "Desc": "Show IP and Internet Status"
+    }    
+]

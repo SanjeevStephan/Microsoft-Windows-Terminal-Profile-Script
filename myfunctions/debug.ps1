@@ -1,0 +1,1 @@
+function debug($msg) { Write-Output "[DEBUG] $msg "}

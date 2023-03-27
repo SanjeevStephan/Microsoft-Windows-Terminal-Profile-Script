@@ -1,0 +1,1 @@
+function openprocess() { get-process | out-gridview }
