@@ -21,12 +21,15 @@ $profile_source = "$Home\Documents\PowerShell"
     DEBUG -> enable | disable
 #>
 $DEBUG = @{
-    "debug_config"        = "disable"
+    "debug_config"        = "enable"
+    "debug_script"        = "enable"
     "debug_exec_script"   = "enable"
-    "debug_includes"      = "enable"
-    "debug_path"          = "disable"  
-    "debug_function"      = "disable" 
-
+    "debug_include"      = "disable"
+    "debug_path"          = "enable"  
+    "debug_function"      = "enable" 
+    "debug_json"          = "enable"
+    "debug_dependencies"  = "enable"  
+    "debug_test"          = "enable" 
 }
 <#
     FEATURE -> enable | disable
@@ -36,6 +39,7 @@ $TABLE = @{
     "show_all_scripts" = "enable"
     "show_all_dependencies" = "enable"
     "show_all_jsons" = "enable"
+    "show_all_functions"= "enable"
 }
 $FEATURE = @{
         "figlet"       = "disable"

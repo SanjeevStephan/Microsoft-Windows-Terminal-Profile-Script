@@ -28,7 +28,7 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
  # . $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
 
  # Debug profile_getScript.ps1  
-if($DEBUG["debug_path"] -eq "enable"){ Write-Output "[ OK ] Profile Script => { profile_getScript.ps1 } Loaded Successfully"} 
+if($DEBUG["debug_script"] -eq "enable"){ Write-Output "[ OK ] Profile getScript => { profile_getScript.ps1 } Loaded Successfully"} 
    
 # Read the JSON data from the file
 $script_json_raw_data = Get-Content -Path "$Home\Documents\PowerShell\scripts.json" -Raw
@@ -51,7 +51,7 @@ function getScript($script_name)
     else{ Write-Output "Error: $script_name not found in JSON List 'scripts.json"  }   
 }
 
-function checkScripts(){
+function Check-Script(){
     
     foreach ($scripts in $script_array_data) {
         if (Test-Path $scripts.Path) {
@@ -63,18 +63,71 @@ function checkScripts(){
 
 }
 
-# Function to display all script specified in the JSON File 'scripts.json'
-function tableScript(){
 
-    if(($TABLE["show_all_scripts"]) -eq "enable") 
-    {  
-        $script_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$script_array_data.IndexOf($_) + 1}}, 
-        @{label="Name"; expression={$_.Name}}, 
-        @{label="Path"; expression={$_.Path}},
-        @{label="Description"; expression={$_.Desc}} -AutoSize
-    } 
-    else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
-}
+# Function to filter data from the JSON File 'functions.json' based on the specified '$column_name
+function Table-Script($column_name){
+    <#
+       Function to display only specified '$column_name' 
+    #>
+    
+        switch($column_name)
+        {
+    
+            "file"
+            {
+                if(($TABLE["show_all_scripts"]) -eq "enable") 
+                {  
+                    $script_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$script_array_data.IndexOf($_) + 1}}, 
+                    @{label="Script File"; expression={$_.File}} -AutoSize
+                } 
+                else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }  
+            }
+            "desc"
+            {
+                if(($TABLE["show_all_scripts"]) -eq "enable") 
+                {  
+                    $script_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$script_array_data.IndexOf($_) + 1}}, 
+                    @{label="Script File"; expression={$_.File}}, 
+                    @{label="Description"; expression={$_.Desc}} -AutoSize
+                } 
+                else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }           
+            }
+    
+            "path"
+            {
+                if(($TABLE["show_all_scripts"]) -eq "enable") 
+                {  
+                    $script_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$script_array_data.IndexOf($_) + 1}}, 
+                    @{label="Script File"; expression={$_.File}}, 
+                    @{label="Path"; expression={$_.Path}} -AutoSize
+                } 
+                else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
+            }
+            "basic"
+            {
+                if(($TABLE["show_all_scripts"]) -eq "enable") 
+                {  
+                    $script_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$script_array_data.IndexOf($_) + 1}}, 
+                    @{label="Script File"; expression={$_.Path}},
+                    @{label="Description"; expression={$_.Desc}} -AutoSize
+                } 
+                else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
+            }
+            "all"
+            {
+                if(($TABLE["show_all_scripts"]) -eq "enable") 
+                {  
+                    $script_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$script_array_data.IndexOf($_) + 1}}, 
+                    @{label="Script File"; expression={$_.File}}, 
+                    @{label="Path"; expression={$_.Path}},
+                    @{label="Description"; expression={$_.Desc}} -AutoSize
+                } 
+                else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
+            }
+            Default {}
+        }
+        return $true
+ }
 
  # getScript("test")    # <-------------- NOTE-2 : TO RUN THIS SCRIPT | UNCOMMENT 
- # tableScript          # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 
+ # Table-Script          # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 

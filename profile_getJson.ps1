@@ -25,10 +25,10 @@
 $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
 
 # getjsons the configuration file to load any additional dependencies
- # . $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS jsons | UNCOMMENT 
+  #. $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS jsons | UNCOMMENT 
 
  # Debug profile_getjsons.ps1  
-if($DEBUG["debug_path"] -eq "enable"){ Write-Output "[ OK ] Profile jsons => { profile_getjsons.ps1 } Loaded Successfully"} 
+if($DEBUG["debug_json"] -eq "enable"){ Write-Output "[ OK ] Profile getJson => { profile_getJson.ps1 } Loaded Successfully"} 
    
 # Read the JSON data from the file
 $jsons_json_raw_data = Get-Content -Path "$Home\Documents\PowerShell\jsons.json" -Raw
@@ -51,7 +51,7 @@ function getjsons($jsons_name)
     else{ Write-Output "Error: $jsons_name not found in JSON List 'jsons.json"  }   
 }
 
-function checkJsons(){
+function Check-Json(){
     
     foreach ($jsons in $jsons_array_data) {
         if (Test-Path $jsons.Path) {
@@ -84,20 +84,20 @@ function readJson($jsons_filename) {
 
 }
 # Function to display all jsons specified in the JSON File 'jsons.json'
-function tablejsons(){
+function Table-Json(){
 
     if(($TABLE["show_all_jsons"]) -eq "enable") 
     {   
         $jsons_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$jsons_array_data.IndexOf($_) + 1}}, 
         @{label="Name"; expression={$_.Name}}, 
-        @{label="File"; expression={$_.File}},
+        @{label="JSON File"; expression={$_.File}},
         @{label="Path"; expression={$_.Path}} -AutoSize
     } 
     else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
 }
 
  # getjsons("test")    # <-------------- NOTE-2 : TO RUN THIS jsons | UNCOMMENT 
- # tablejsons          # <-------------- NOTE-3 : TO RUN THIS jsons | UNCOMMENT 
+ # Table-Json          # <-------------- NOTE-3 : TO RUN THIS jsons | UNCOMMENT 
 
 
 

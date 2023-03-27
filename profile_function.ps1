@@ -20,7 +20,7 @@
         -26 March 2023   
 
 #>
-if($DEBUG["debug_function"] -eq "enable"){ Write-Output "[ OK ] Profile Script => { profile_function.ps1 } Loaded Successfully"} 
+if($DEBUG["debug_function"] -eq "enable"){ Write-Output "[ OK ] Profile Function => { profile_function.ps1 } Loaded Successfully"} 
  
 
 function EXEC($script_name,$argument) {
@@ -31,6 +31,8 @@ function EXEC($script_name,$argument) {
         if($argument) { & $exec_script.Path $script_name $argument} else { & $exec_script.Path $script_name }
 
     } else { Write-Output "Script Name is Empty | Try -> exec test"}  
+
+    return $true
  }
 
 function Test-Json($type,$file_or_directory) {
@@ -64,6 +66,7 @@ function Test-Json($type,$file_or_directory) {
         }
 
     }
+    return $true
 }
 
 
@@ -75,41 +78,128 @@ $TABLE.show_all_paths = "enable"
     {
         switch($type)
         {
-            "dependencies" { tableDependencies}
-            "script"       { tableScript }
-            "json"         { tablejsons }
-            "path"         { tablePath } 
+            "dependencies" { Table-Profile}
+            "function"     { Table-Function("param") }
+            "script"       { Table-Script("basic") }
+            "json"         { Table-Json }
+            "path"         { Table-Path("all") } 
             "all" 
             {
-                tableDependencies
-                tableScript
-                tablejsons
-                tablePath
+                Table-Profile
+                Table-Function("all")
+                Table-Script("all")
+                Table-Json
+                Table-Path("all")
             }
             Default { Write-Error "Invalid Argument Passed | Require -> test_json type file_or_dir"}
         }
     }
+    return $true
 }
 
-function Check-Profile($type){
+function Check-File($type){
 
     if($type)
     {
         switch($type)
         {
-            "dependencies" { checkDependencies}
-            "json"       { checkJsons }
-            "path"         { checkPaths }
-            "script"         { checkScripts } 
+            "profile"      { Check-Profile}
+            "json"         { Check-Json }
+            "path"         { Check-Path }
+            "script"       { Check-Script } 
             "all" 
             {
-                checkDependencies
-                checkJsons
-                checkPaths
-                checkScripts
+                Check-Profile
+                Check-Json
+                Check-Path
+                Check-Script
             }
             Default { Write-Error "Invalid Argument Passed | Require -> test_json type file_or_dir"}
         }
     }    
+    return $true
 }
+#--------------------------------------{ Alphabet-A }--------------------------------------------------
 
+#--------------------------------------{ Alphabet-B }--------------------------------------------------
+
+
+
+
+#--------------------------------------{ Alphabet-C }--------------------------------------------------
+
+
+
+#--------------------------------------{ Alphabet-D }--------------------------------------------------
+
+
+#--------------------------------------{ Alphabet-E }--------------------------------------------------
+
+
+#--------------------------------------{ Alphabet-F }--------------------------------------------------
+
+
+#--------------------------------------{ Alphabet-G }--------------------------------------------------
+
+
+#--------------------------------------{ Alphabet-H }--------------------------------------------------
+
+#--------------------------------------{ Alphabet-I }--------------------------------------------------
+
+
+
+
+#--------------------------------------{ Alphabet-J }--------------------------------------------------
+#--------------------------------------{ Alphabet-K }--------------------------------------------------
+
+#--------------------------------------{ Alphabet-L }--------------------------------------------------
+
+
+
+
+#--------------------------------------{ Alphabet-M }--------------------------------------------------
+
+
+#--------------------------------------{ Alphabet-N }--------------------------------------------------
+
+#--------------------------------------{ Alphabet-O }--------------------------------------------------
+
+
+
+
+#--------------------------------------{ Alphabet-P }--------------------------------------------------
+
+
+
+#--------------------------------------{ Alphabet-Q }--------------------------------------------------
+
+
+#--------------------------------------{ Alphabet-R }--------------------------------------------------
+
+
+#--------------------------------------{ Alphabet-S }--------------------------------------------------
+
+
+#--------------------------------------{ Alphabet-T }--------------------------------------------------
+
+
+
+#--------------------------------------{ Alphabet-U }--------------------------------------------------
+
+
+#--------------------------------------{ Alphabet-V }--------------------------------------------------
+
+
+#--------------------------------------{ Alphabet-W }--------------------------------------------------
+
+
+#--------------------------------------{ Alphabet-X }--------------------------------------------------
+
+
+
+
+
+#--------------------------------------{ Alphabet-Y }--------------------------------------------------
+
+
+#--------------------------------------{ Alphabet-Z }--------------------------------------------------

@@ -25,10 +25,10 @@
 $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
 
 # getPath the configuration file to load any additional Paths
- # . $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
+ #. $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
 
  # Debug profile_getPath.ps1  
-if($DEBUG["debug_path"] -eq "enable"){ Write-Output "[ OK ] Profile Script => { profile_getPath.ps1 } Loaded Successfully"} 
+if($DEBUG["debug_path"] -eq "enable"){ Write-Output "[ OK ] Profile getPath => { profile_getPath.ps1 } Loaded Successfully"} 
    
 # Read the JSON data from the file
 $paths_json_raw_data = Get-Content -Path "$Home\Documents\PowerShell\directories.json" -Raw
@@ -50,7 +50,7 @@ function getPath($directory_name)
     if (Test-Path $directory_path){ return $directory_path_data }
     else{ Write-Error "Error: $directory_name not found in the path : $directory_path" }
 }
-function checkPaths(){
+function Check-Path(){
     
     foreach ($paths in $paths_array_data) {
         if (Test-Path $paths.Path) {
@@ -61,19 +61,64 @@ function checkPaths(){
     }
 
 }
-# Function to getPath all Paths specified in the JSON string
-function tablePath(){
 
-    if(($TABLE["show_all_paths"]) -eq "enable") 
-    {   
-        $paths_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$paths_array_data.IndexOf($_) + 1}}, 
-        @{label="Title"; expression={$_.Name}}, 
-        @{label="Directory"; expression={$_.Directory}},
-        @{label="Path"; expression={$_.Path}},
-        @{label="Description"; expression={$_.Desc}} -AutoSize
-    } 
-    else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
-}
+# Function to filter data from the JSON File 'functions.json' based on the specified '$column_name
+function Table-Path($column_name){
+    <#
+       Function to display only specified '$column_name' 
+    #>
+    
+        switch($column_name)
+        {
+    
+            "name"
+            {
+                if(($TABLE["show_all_paths"]) -eq "enable") 
+                {   
+                    $paths_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$paths_array_data.IndexOf($_) + 1}}, 
+                    @{label="Name"; expression={$_.Name}}, 
+                    @{label="Path"; expression={$_.Path}},
+                    @{label="Description"; expression={$_.Desc}} -AutoSize
+                } 
+                else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
+            }
+            "desc"
+            {
+                if(($TABLE["show_all_paths"]) -eq "enable") 
+                {   
+                    $paths_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$paths_array_data.IndexOf($_) + 1}}, 
+                    @{label="Directory"; expression={$_.Directory}},
+                    @{label="Description"; expression={$_.Desc}} -AutoSize
+                } 
+                else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }        
+            }
+    
+            "path"
+            {
+                if(($TABLE["show_all_paths"]) -eq "enable") 
+                {   
+                    $paths_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$paths_array_data.IndexOf($_) + 1}}, 
+                    @{label="Directory"; expression={$_.Directory}},
+                    @{label="Path"; expression={$_.Path}} -AutoSize
+                } 
+                else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
+            }
+            "all"
+            {
+                if(($TABLE["show_all_paths"]) -eq "enable") 
+                {   
+                    $paths_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$paths_array_data.IndexOf($_) + 1}}, 
+                    @{label="Name"; expression={$_.Name}}, 
+                    @{label="Directory"; expression={$_.Directory}},
+                    @{label="Path"; expression={$_.Path}},
+                    @{label="Description"; expression={$_.Desc}} -AutoSize
+                } 
+                else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
+            }
+            Default {}
+        }
+ }
+
 
  # getPath("powershell") # <-------------- NOTE-2 : TO RUN THIS SCRIPT | UNCOMMENT 
- # tablePath             # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 
+ # Table-Path             # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 

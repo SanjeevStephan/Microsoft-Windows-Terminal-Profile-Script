@@ -28,15 +28,37 @@
     .AUTHOR
         -> Sanjeev_Stephan_Murmu
 
-    .FILES
+    .VERSION 
+        -> 1.0 | 26th March 2023
+
+    .PROFILE_MAIN 
         -> Microsoft.PowerShell_profile.ps1
+        -> include.ps1
+        -> README.md
+
+    .SCRIPT
         -> profile_config.ps1
+        -> profile_include.ps1
         -> profile_exec_script.ps1
         -> profile_function.ps1
-        -> profile_get_path.ps1
-        -> profile_get_script_path.ps1
-        -> profile_include.ps1
+        -> profile_getDependencies.ps1
+        -> profile_getFunction.ps1
+        -> profile_getJson.ps1
+        -> profile_getPath.ps1
+        -> profile_getScript.ps1
 
+    .JSON
+        -> dependencies.json
+        -> directories.json
+        -> functions.json
+        -> include.json
+        -> jsons.json
+        -> scripts.json
+        
+     .DIRECTORY
+        -> myfunctions
+        -> myscripts
+        -> mytest       
 
     .CONTAINS
         -> configuration
@@ -45,12 +67,18 @@
         -> paths
         -> variables
         -> functions
+
+    .FILE_TYPE
+        -> powershell.ps1
+        -> json_file.json
+        -> markdown.md
+
+
 #-------------------- Must Include Below File --------------------------------------#>
-. "$HOME\Documents\PowerShell\profile_include.ps1"
+. "$HOME\Documents\PowerShell\include.ps1"
 #-------------------- Functions {Read-Only}-------------------------------------
 
 function initialize() { }
-function debug($msg){ Write-Output "[DEBUG] $msg"}
 
 #-------------------- Script Execution Begins from here-----
 initialize  #calling the initialize() function 

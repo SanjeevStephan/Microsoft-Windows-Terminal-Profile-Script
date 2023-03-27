@@ -24,9 +24,9 @@
         "Desc": "Execute Script from this JSON List"
     },
     {
-        "Name": "readJson",
-        "File": "profile_readJson.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_readJson.ps1",
+        "Name": "getJson",
+        "File": "profile_getJson.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_getJson.ps1",
         "Argument":"Yes",
         "Parameter" : ["JSON File"],
         "Desc": "Read JSON File and Display It"
