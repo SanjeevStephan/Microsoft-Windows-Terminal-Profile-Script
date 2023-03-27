@@ -31,9 +31,9 @@
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_getScript.ps1"
     },
     {
-        "Name" : "profile_readJson",
-        "File" : "profile_readJson.ps1",
-        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_readJson.ps1"
+        "Name" : "profile_getJson",
+        "File" : "profile_getJson.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_getJson.ps1"
     },
     {
         "Name" : "profile_setAlias",
