@@ -42,7 +42,7 @@ This repository contains :
     | Markdown     |    md   |
 
 ## Directory Structure
-### Main 
+* Main 
     | File | Description |
     |:---------:|:-----------|
     | Microsoft.PowerShell_profile.ps1| Main Profile File |
@@ -51,7 +51,7 @@ This repository contains :
     | README.md   |  This Readme file   |
 
 
-### Dependencies
+* Dependencies
     * profile_config.ps1
     * profile_include.ps1
     * profile_exec_script.ps1
@@ -95,10 +95,6 @@ This repository contains :
 * Download [PowerShell-7.3.3-win-x64.zip](https://github.com/PowerShell/PowerShell/releases/download/v7.3.3/PowerShell-7.3.3-win-x64.zip)
 
 ## NOTES
-
-x
-
-
 
 > Must Include Below File 
 ```
