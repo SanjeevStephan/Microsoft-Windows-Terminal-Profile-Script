@@ -22,26 +22,41 @@
 #>
 if($DEBUG["debug_function"] -eq "enable"){ Write-Output "[ OK ] Profile Script => { profile_function.ps1 } Loaded Successfully"} 
  
-function check_test($argument) { 
-     $profile_exec_script = get_script_path("profile_exec_script")
-    .$profile_exec_script $argument
 
-}
-function get_script() { get_script_path("test") }
+function exec($script_name,$argument) {
+    $exec_script = getScript("profile_execScript") #"$Home\Documents\PowerShell\profile_execScript.ps1"
 
-function Launch_Script($executable_title) {  .$script["script_launcher"] $executable_title }
+    if($script_name) # if script_name is not-empty | execute if-block 
+    {
+        if($argument) { & $exec_script.Path $script_name $argument} else { & $exec_script.Path $script_name }
 
-function display_script_list()
-{
-    $script_json_data | Sort-Object | Format-Table @{label="Script"; expression={$jsonArray.IndexOf($_) + 1}}, 
-                            @{label="Script Name"; expression={$_.Name}}, 
-                            @{label="Script File"; expression={$_.File}},
-                            @{label="Location"; expression={$_.Path}},
-                            @{label="Description"; expression={$_.Desc}} -AutoSize
+    } else { Write-Output "Script Name is Empty | Try -> exec test"}  
 
+    
+ }
+
+function display_script() {
+
+    $script = getScript("test")
+    Write-Output "SHOWING SCRIPT PATH $($script.Path) for the Script $($script.Name)"
 }
 
 function SHOW_TABLE() {
+
+    switch ($json_table_name) {
+        "script" { 
+                    # Read the JSON data from the file
+                    $script_json_data = Get-Content -Path "$Home\Documents\PowerShell\scripts.json" -Raw
+
+                    # Convert the JSON data to a PowerShell object
+                    $script_db = ConvertFrom-Json -InputObject $script_json_data 
+
+
+         }
+        Default {}
+    }
+
+
 
 # Update the value of the 'show_all_paths' property
 $TABLE.show_all_paths = "enable"
@@ -49,4 +64,3 @@ $TABLE.show_all_paths = "enable"
 list_all_path
 }
 
-# SHOW_TABLE
