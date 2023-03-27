@@ -1,6 +1,6 @@
 # Welcome PowerShell's $uperUser
-    To The Windows Terminal, Console and Command-Line repository
-```
+> To The Windows Terminal, Console and Command-Line repository
+<code>
  ____                        _   _               
 / ___| _   _ _ __   ___ _ __| | | |___  ___ _ __ 
 \___ \| | | | '_ \ / _ \ '__| | | / __|/ _ \ '__| Microsoft.Profile_profile.ps1
@@ -8,42 +8,33 @@
 |____/ \__,_| .__/ \___|_|   \___/|___/\___|_|   
             |_|                                  
 ---------------------------------------------------------
-```
+</code>
 
 ### SYNOPSIS
 > Microsoft.Profile_profile
 
 ## DESCRIPTION
-    This PowerShell Script comprises the index of all the functions and alias for the window terminal
+> This PowerShell Repository comprises the index of all the usefull functions and scripts for the window terminal
 
 ## Installing and running Windows Terminal
 
 > Note: Windows Terminal requires Windows 10 2004 (build 19041) or later
 
-## PREREQUISITES
-* You must be running Windows 10 2004 (build >= 10.0.19041.0) or later to run Windows Terminal
-* You must [enable Developer Mode in the Windows Settings app](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development) to locally install and run Windows Terminal 
-* You must have [PowerShell 7 or later](https://github.com/PowerShell/PowerShell/releases/latest) installed
-* You must have at least [VS 2022](https://visualstudio.microsoft.com/downloads/) installed
-* You must install the [.NET Framework Targeting Pack](https://docs.microsoft.com/dotnet/framework/install/guide-for-developers#to-install-the-net-framework-developer-pack-or-targeting-pack) to build test projects
-## LINK
-* This Github Repository                  (https://github.com/SanjeevStephan/superuser)
-* Microsoft Windows Terminal Repository (https://github.com/microsoft/terminal)
-* PowerShell v7+                        (https://github.com/PowerShell/PowerShell/releases/latest)
-* Download [PowerShell-7.3.3-win-x64.zip](https://github.com/PowerShell/PowerShell/releases/download/v7.3.3/PowerShell-7.3.3-win-x64.zip)
+This repository contains :
+* configuration
+* dictionary
+* dependencies        
+* paths
+* variables
+* functions
+* file-Types
+    | Version | Release Date |
+    |:---------:|:-----------|
+    | Powershell-script| ps1 |
+    | JSON-file    |   json  |
+    | Markdown     |    md   |
 
-## NOTES
-
-### AUTHOR
-        -> Sanjeev_Stephan_Murmu
-
-### VERSION 
-| Version | Release Date |
-|:---------:|:-----------|
-| 1.0 | 26th March 2023 |
-|     |                 |
-
-## DIRECTORY STRUCTURE
+### Directory Structure
 
 * Main 
     * Microsoft.PowerShell_profile.ps1
@@ -75,18 +66,33 @@
     * myscripts
     * mytest       
 
-### CONTAINS
-        -> configuration
-        -> dictionary
-        -> dependencies        
-        -> paths
-        -> variables
-        -> functions
 
-### FILE_TYPE
-        -> powershell.ps1
-        -> json_file.json
-        -> markdown.md
+
+
+
+## PREREQUISITES
+* You must be running Windows 10 2004 (build >= 10.0.19041.0) or later to run Windows Terminal
+* You must [enable Developer Mode in the Windows Settings app](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development) to locally install and run Windows Terminal 
+* You must have [PowerShell 7 or later](https://github.com/PowerShell/PowerShell/releases/latest) installed
+* You must have at least [VS 2022](https://visualstudio.microsoft.com/downloads/) installed
+* You must install the [.NET Framework Targeting Pack](https://docs.microsoft.com/dotnet/framework/install/guide-for-developers#to-install-the-net-framework-developer-pack-or-targeting-pack) to build test projects
+## LINK
+* This Github Repository                  (https://github.com/SanjeevStephan/superuser)
+* Microsoft Windows Terminal Repository (https://github.com/microsoft/terminal)
+* PowerShell v7+                        (https://github.com/PowerShell/PowerShell/releases/latest)
+* Download [PowerShell-7.3.3-win-x64.zip](https://github.com/PowerShell/PowerShell/releases/download/v7.3.3/PowerShell-7.3.3-win-x64.zip)
+
+## NOTES
+
+### AUTHOR
+> Sanjeev_Stephan_Murmu
+
+### VERSION 
+| Version | Release Date |
+|:---------:|:-----------|
+| 1.0 | 26th March 2023 |
+|     |                 |
+
 
 
 
