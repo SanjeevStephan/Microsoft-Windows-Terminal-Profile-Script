@@ -16,11 +16,19 @@
         "Desc": "Test Script to display greetings"
     },
     {
-        "Name": "profile_execScript",
+        "Name": "execScript",
         "File": "profile_exec_script.ps1",
         "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_execScript.ps1",
         "Argument":"Yes",
         "Parameter" : ["Script Name"],
         "Desc": "Execute Script from this JSON List"
-    }    
+    },
+    {
+        "Name": "readJson",
+        "File": "profile_readJson.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_readJson.ps1",
+        "Argument":"Yes",
+        "Parameter" : ["JSON File"],
+        "Desc": "Read JSON File and Display It"
+    }     
 ]
