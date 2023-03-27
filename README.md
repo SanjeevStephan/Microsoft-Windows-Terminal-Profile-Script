@@ -1,6 +1,6 @@
 # Welcome PowerShell's $uperUser
 > To The Windows Terminal, Console and Command-Line repository
-<code>
+```
  ____                        _   _               
 / ___| _   _ _ __   ___ _ __| | | |___  ___ _ __ 
 \___ \| | | | '_ \ / _ \ '__| | | / __|/ _ \ '__| Microsoft.Profile_profile.ps1
@@ -8,7 +8,7 @@
 |____/ \__,_| .__/ \___|_|   \___/|___/\___|_|   
             |_|                                  
 ---------------------------------------------------------
-</code>
+```
 
 ### SYNOPSIS
 > Microsoft.Profile_profile
