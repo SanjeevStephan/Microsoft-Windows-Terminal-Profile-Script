@@ -37,15 +37,16 @@ $profile_dependencies = @{
     "powerShell_profile" = "$profile_source\Microsoft.PowerShell_profile.ps1"
     "profile_console"    = "$profile_source\profile_console.ps1"
     "profile_func"       = "$profile_source\profile_function.ps1"
-    "profile_path"       = "$profile_source\profile_get_path.ps1"
-#    "profile_script_path"= "$profile_source\profile_get_script_path.ps1"
-    "profile_alias"      = "$profile_source\profile_set_alias.ps1"    
+    "profile_path"       = "$profile_source\profile_getPath.ps1"
+    "profile_getScript"= "$profile_source\profile_getScript.ps1"
+    "profile_alias"      = "$profile_source\profile_setAlias.ps1"    
     
 }
 
 . $profile_dependencies["profile_path"]
+. $profile_dependencies["profile_getScript"]
 . $profile_dependencies["profile_func"]
-#. $profile_dependencies["profile_script_path"]
+
 
 
 
