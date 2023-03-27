@@ -11,7 +11,7 @@
 ```
 
 ### SYNOPSIS
-    Microsoft.Profile_profile
+> Microsoft.Profile_profile
 
 ## DESCRIPTION
     This PowerShell Script comprises the index of all the functions and alias for the window terminal
@@ -35,7 +35,7 @@
 ## NOTES
 
 ### AUTHOR
-        -> Sanjeev_Stephan_Murmus
+        -> Sanjeev_Stephan_Murmu
 
 ### VERSION 
 | Version | Release Date |
