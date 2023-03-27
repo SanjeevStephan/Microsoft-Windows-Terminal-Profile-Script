@@ -42,11 +42,12 @@
 | 1.0 | 26th March 2023 |
 |     |                 |
 
+## DIRECTORY STRUCTURE
 
-### PROFILE_MAIN 
-        -> Microsoft.PowerShell_profile.ps1
-        -> include.ps1
-        -> README.md
+* PROFILE_MAIN 
+    * Microsoft.PowerShell_profile.ps1
+    * include.ps1
+    * README.md
 
 ### SCRIPT
         -> profile_config.ps1
