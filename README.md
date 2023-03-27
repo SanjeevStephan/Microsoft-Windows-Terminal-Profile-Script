@@ -26,10 +26,7 @@
 |      |                 |
 
 
-## Installing and running Windows Terminal
-
-> Note: Windows Terminal requires Windows 10 2004 (build 19041) or later
-
+#
 This repository contains :
 * configuration
 * dictionary
@@ -44,9 +41,8 @@ This repository contains :
     | JSON-file    |   json  |
     | Markdown     |    md   |
 
-### Directory Structure
-
-* Main 
+## Directory Structure
+### Main 
     | File | Description |
     |:---------:|:-----------|
     | Microsoft.PowerShell_profile.ps1| Main Profile File |
@@ -55,7 +51,7 @@ This repository contains :
     | README.md   |  This Readme file   |
 
 
-* Dependencies
+### Dependencies
     * profile_config.ps1
     * profile_include.ps1
     * profile_exec_script.ps1
@@ -81,9 +77,12 @@ This repository contains :
 
 
 
+# Installing and running Windows Terminal
+
+> Note: Windows Terminal requires Windows 10 2004 (build 19041) or later
 
 
-## PREREQUISITES
+## Prerequisites
 * You must be running Windows 10 2004 (build >= 10.0.19041.0) or later to run Windows Terminal
 * You must [enable Developer Mode in the Windows Settings app](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development) to locally install and run Windows Terminal 
 * You must have [PowerShell 7 or later](https://github.com/PowerShell/PowerShell/releases/latest) installed
