@@ -46,7 +46,7 @@ This repository contains :
     | File | Description |
     |:---------:|:-----------|
     | Microsoft.PowerShell_profile.ps1| Main Profile File |
-    | include.ps1 |  Read dependencies from JSON and Include it  |
+    | [include.ps1](https://github.com/SanjeevStephan/superuser/blob/main/include.ps1) |  Read dependencies from JSON and Include it  |
     | config.ps1  |  Controls how the Scripts Behaves   |    
     | README.md   |  This Readme file   |
 
