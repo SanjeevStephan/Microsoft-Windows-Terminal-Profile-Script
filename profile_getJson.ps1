@@ -31,14 +31,14 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
 if($DEBUG["debug_json"] -eq "enable"){ Write-Output "[ OK ] Profile getJson => { profile_getJson.ps1 } Loaded Successfully"} 
    
 # Read the JSON data from the file
-$jsons_json_raw_data = Get-Content -Path "$Home\Documents\PowerShell\jsons.json" -Raw
+$jsons_json_raw_data = Get-Content -Path "$Home\Documents\PowerShell\All_JSON_List.json" -Raw
 
 # Convert the JSON data to a PowerShell object
 $jsons_array_data = ConvertFrom-Json -InputObject $jsons_json_raw_data 
 
 #-------------------- Functions {Read-Only | Don't Modify unless u know what u are doing}--------------
 # Function to getjsons by specifying jsons name
-function getjsons($jsons_name)
+function getJsons($jsons_name)
 {
     # Filter 'jsons-Name' in the array and store as $jsons_array_data
     $jsons_array_data = $jsons_array_data | Where-Object { $_.Name -eq $jsons_name }
@@ -48,6 +48,18 @@ function getjsons($jsons_name)
 
     # Check if the file exists before including it
     if (Test-Path $jsons_path){ return $jsons_array_data }
+    else{ Write-Output "Error: $jsons_name not found in JSON List 'jsons.json"  }   
+}
+function getJsonPath($jsons_name)
+{
+    # Filter 'jsons-Name' in the array and store as $jsons_array_data
+    $jsons_array_data = $jsons_array_data | Where-Object { $_.Name -eq $jsons_name }
+    
+    # Get the path to the jsons based on its name
+    $jsons_path = $($jsons_array_data.Path)
+
+    # Check if the file exists before including it
+    if (Test-Path $jsons_path){ return $jsons_path }
     else{ Write-Output "Error: $jsons_name not found in JSON List 'jsons.json"  }   
 }
 
