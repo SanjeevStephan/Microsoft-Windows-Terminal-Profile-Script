@@ -11,7 +11,7 @@
 ```
 
 ### SYNOPSIS
-> Microsoft.Profile_profile
+> Microsoft Window Terminal Profile 
 
 ## Description
 > This PowerShell Repository comprises the index of all the usefull functions and scripts for the window terminal
