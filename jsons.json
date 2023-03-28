@@ -28,7 +28,7 @@
     {
         "Name" : "test",
         "File" : "test.json",
-        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\test.json"
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\mytest\\test.json"
     }
 
 ]
