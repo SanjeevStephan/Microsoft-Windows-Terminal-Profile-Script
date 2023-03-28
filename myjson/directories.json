@@ -1,0 +1,24 @@
+[
+    
+    {
+        "Name" : "PowerShell",
+        "Directory" : "PowerShell",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\",
+        "Desc" : "Microsoft PowerShell Profile Directory"
+    },
+    {
+        "Name" : "terminal",
+        "Directory" : "terminal",
+        "Path" : "D:\\terminal",
+        "Desc" : "The Terminal Directory"
+    },
+    {
+        "Name" : "codes",
+        "Directory" : "code-snippets",
+        "Path" : "D:\\terminal\\code-snippets",
+        "Desc" : "The Code-Snippets Directory"
+    }
+
+
+
+]
