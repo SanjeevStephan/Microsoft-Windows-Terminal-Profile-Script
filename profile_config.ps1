@@ -11,56 +11,103 @@
     Control how the Microsoft.Profile_profile's script behaves
 
  .DESCRIPTION
-    This PowerShell Script defines the rule for the profile's scripts that will be run on the 'PowerShell Terminal v.7.2.2 & above'                                                 
+    This PowerShell Script defines the rule for the profile's scripts that will be run on the 'PowerShell Terminal v.7.2.2 & above'      
+
+.NOTES
+    .TAGS
+        ->  INFO
+        ->  FILE
+        ->  PATH
+        ->  DEBUG
+        ->  FEATURE
+        ->  EXECUTABLE
+        ->  ASSOCIATED
+    .FUNCTIONS
+        ->  See-Config()
+        ->  Debug-Table()
  #>
 
+ $INFO =  @{
+    1 =  @{Title = "profile";              Desc = "SuperUser"}
+    2 =  @{Title = "author";               Desc = "Sanjeev Stephan Murmu"}
+    3 =  @{Title = "version";              Desc = "v1.0.0"}    
+    4 =  @{Title = "github";               Desc = "https://github.com/SanjeevStephan/superuser"}        
+}   
 
-$config_file    = "profile_config.ps1"
-$profile_source = "$Home\Documents\PowerShell"
+$FILE =  @{
+    1 =  @{File = "config_file";          Desc = "profile_config.ps1"}
+    2 =  @{File = "profile_file";         Desc = "Microsoft.PowerShell_profile.ps1"}
+}  
+
+$PATH =  @{
+    1 =  @{Title = "profile_source";     Path = "$Home\Documents\PowerShell"}   
+    2 =  @{Title = "myfunctions";        Path = "$Home\Documents\PowerShell\myfunctions"}
+    3 =  @{Title = "myjson";             Path = "$Home\Documents\PowerShell\myjson"}
+    4 =  @{Title = "mypython";           Path = "$Home\Documents\PowerShell\mypython"}
+    5 =  @{Title = "myscripts";          Path = "$Home\Documents\PowerShell\myscripts"}
+    6 =  @{Title = "mytest";             Path = "$Home\Documents\PowerShell\mytest"}
+}    
 <#
     DEBUG -> enable | disable
 #>
 $DEBUG = @{
-    "debug_config"        = "enable"
-    "debug_script"        = "enable"
-    "debug_exec_script"   = "enable"
-    "debug_include"      = "disable"
-    "debug_path"          = "enable"  
-    "debug_function"      = "enable" 
-    "debug_json"          = "enable"
-    "debug_dependencies"  = "enable"  
-    "debug_test"          = "enable" 
-    "debug_myfunction" = "enable"
+    1 =  @{Title = "debug_test";         Status = "disable"}
+    2 =  @{Title = "debug_config";       Status = "enable"}
+    3 =  @{Title = "debug_exec_script";  Status = "enable"}
+    4 =  @{Title = "debug_include";      Status = "enable"}
+    5 =  @{Title = "debug_path";         Status = "enable"}
+    6 =  @{Title = "debug_function";     Status = "enable"}
+    7 =  @{Title = "debug_json";         Status = "enable"}
+    8 =  @{Title = "debug_dependencies"; Status = "enable"}
+    9 =  @{Title = "debug_myfunction";   Status = "enable"}
+    10 = @{Title = "debug_function";     Status = "enable"}    
 }
-<#
+<#  
     FEATURE -> enable | disable
 #>
-$TABLE = @{
-    "show_all_paths"   = "enable"
-    "show_all_scripts" = "enable"
-    "show_all_dependencies" = "enable"
-    "show_all_jsons" = "enable"
-    "show_all_functions"= "enable"
-}
 $FEATURE = @{
-        "figlet"       = "disable"
-        "ascii"        = "enable"
-        "dependencies" = "enable"
-    
-
-
-
-
-        
-    }
+    1 =  @{Title = "ascii";         Status = "disable"}
+    2 =  @{Title = "figlet";        Status = "enable"}
+    3 =  @{Title = "dependencies";  Status = "enable"}
+}
 <#
     ExecutableScript => 'allow' | 'refuse'
 #>
-$ExecutableScript = @{
-    "test" = "allow"
-    "test2" = "allow"
+$EXECUTABLE = @{
+    1 =  @{Title = "test";         Status = "allow"}
+    2 =  @{Title = "test2";        Status = "allow"}
+    3 =  @{Title = "exeScript";    Status = "allow"}
 }
 
-# Debug profile_get_path  
-if($DEBUG["debug_config"] -eq "enable"){ Write-Output "[ OK ] Profile Script => { profile_config.ps1 } Loaded Successfully"} 
-    
+$ASSOCIATED = @{
+    1 = @{Script = "include.ps1";         Json = "dependencies.json"}
+    2 = @{Script = "getDependencies.ps1"; Json = "dependencies.json"}
+    3 = @{Script = "getfunction.ps1";     Json = "profileFunctions.json"}
+    4 = @{Script = "getPath.ps1";         Json = "directories.json"}
+    5 = @{Script = "getScript.ps1";       Json = "myJsonList.json"}
+    6 = @{Script = "execScript.ps1";      Json = "myScripts.json"}
+}
+
+function See-Config() 
+{ 
+    $INFO.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Profile"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.DESC}} -AutoSize
+    $FILE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.File}}, @{label="Description"; expression={$_.Value.Desc}} -AutoSize  
+    $PATH.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.Path}} -AutoSize    
+    $DEBUG.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.Status}} -AutoSize
+    $FEATURE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.Status}} -AutoSize  
+    $EXECUTABLE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.Status}} -AutoSize    
+    $ASSOCIATED.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Script}}, @{label="JSON In-Use"; expression={$_.Value.Json}} -AutoSize    
+}
+#>
+function Debug-Table() {
+    if($DEBUG[2]["Status"] -eq "enable"){ Write-Output "[ OK ] Profile Script => { profile_config.ps1 } Loaded Successfully"} else { <# Do Nothing #>}
+    if($DEBUG[2]["Status"] -eq "enable"){ Write-Output "Accessing Item at HashTable [1] Title : $($DEBUG[1]["Title"]) | Status : $($DEBUG[1]["Status"])" }  else { <# Do Nothing #>}
+}
+
+# debug_config 
+if($DEBUG[2]["Status"] -eq "enable") 
+    { 
+        See-Config
+        Debug-Table
+    }
+  
