@@ -1,0 +1,35 @@
+[
+
+    {
+        "Name" : "dependencies",
+        "File" : "dependencies.json",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\dependencies.json"
+    },
+    {
+        "Name" : "directories",
+        "File" : "directories.json",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\directories.json"
+    },
+    {
+        "Name" : "functions",
+        "File" : "functions.json",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\functions.json"
+    },
+    {
+        "Name" : "All_JSON_List",
+        "File" : "All_JSON_List.json",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\All_JSON_List.json"
+    },
+    {
+        "Name" : "scripts",
+        "File" : "scripts.json",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\scripts.json"
+    },
+    {
+        "Name" : "test",
+        "File" : "test.json",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\mytest\\test.json"
+    }
+
+]
+
