@@ -7,10 +7,8 @@
                                                                   
 .SYNOPSIS
     Script to include other PowerShell scripts as dependencies
-
 .DESCRIPTION
     Execute the script_files that are 'included' in this 'profile_include.ps1' script
-
 .NOTES
     AUTHOR
         -Sanjeev Stephan Murmu
@@ -27,13 +25,13 @@
 # Debug profile_getfunction.ps1  
 if($DEBUG["debug_include"] -eq "enable"){ Write-Output "[ OK ] Profile include => { include.ps1 } Loaded Successfully"} 
  
+#$json_file = $args[0]
+
 # Define the path to the functions.json file
-$jsonFilePath = "$Home\Documents\PowerShell\include.json"
+$jsonFilePath = "$Home\Documents\PowerShell\myjson\dependencies.json"
 
 # Read the contents of the JSON file into a PowerShell object
 $jsonContent = Get-Content $jsonFilePath | ConvertFrom-Json
-
-
 
 # Create a hashtable to store the dependencies
 $profileDependencies = @{}
@@ -56,4 +54,3 @@ foreach ($dependency in $profileDependencies.Values) {
 }
 
 
- 
