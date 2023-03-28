@@ -10,11 +10,8 @@
 ---------------------------------------------------------
 ```
 
-### SYNOPSIS
+## SYNOPSIS
 > Microsoft Window Terminal Profile : SuperUser
-
-## Description
-> This PowerShell Repository comprises the index of all the usefull functions and scripts for the window terminal
 
 ### Author
 > Sanjeev_Stephan_Murmu
@@ -25,9 +22,10 @@
 | v1.0 | 26th March 2023 |
 |      |                 |
 
+## Description
+> This PowerShell Repository comprises the index of all the usefull functions and scripts for the window terminal
 
-#
-This repository contains :
+_This repository contains_ :
 * configuration
 * dictionary
 * dependencies        
@@ -41,7 +39,7 @@ This repository contains :
     | JSON-file    |   json  |
     | Markdown     |    md   |
 
-## Directory Structure
+### Directory Structure
 * Main 
     | File | Description |
     |:---------:|:-----------|
@@ -100,7 +98,7 @@ This repository contains :
 
 ## NOTES
 
-> Must Include Below File 
+> Must Include Below File in Microsoft.Profile_profile.ps1
 ```
 . "$HOME\Documents\PowerShell\include.ps1"
 ```
