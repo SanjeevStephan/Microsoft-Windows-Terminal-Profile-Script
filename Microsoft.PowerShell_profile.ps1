@@ -80,5 +80,4 @@
 
 function initialize() { }
 
-#-------------------- Script Execution Begins from here-----
 initialize  #calling the initialize() function 
