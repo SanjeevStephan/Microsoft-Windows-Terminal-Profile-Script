@@ -11,12 +11,12 @@ Write-Output "
   |_|\___||___/\__| |____/ \__,_|\___\___\___||___/___/_|  \__,_|_|
 "
 Write-Output "--------------------------- {JSON FILE : test.json}-----------------------------------"
-cat "$HOME\Documents\PowerShell\test.json"
+cat "$HOME\Documents\PowerShell\mytest\test.json"
 Write-Output "--------------------------- {SCRIPT FILE : test.ps1}-----------------------------------"
 }
 
 # Read the JSON data from the file
-$test_json_data = Get-Content -Path "$Home\Documents\PowerShell\test.json" -Raw
+$test_json_data = Get-Content -Path "$Home\Documents\PowerShell\mytest\test.json" -Raw
 
 # Convert the JSON data to a PowerShell object
 $test_people_array = ConvertFrom-Json -InputObject $test_json_data 
