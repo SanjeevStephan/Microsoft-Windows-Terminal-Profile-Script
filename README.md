@@ -98,7 +98,7 @@ _This repository contains_ :
 
 ## NOTES
 
-> Must Include Below File in [Microsoft.Profile_profile.ps1](https://github.com/SanjeevStephan/superuser/blob/main/Microsoft.PowerShell_profile.ps1)
+> Must [Include Below File](https://github.com/SanjeevStephan/superuser/blob/main/include.ps1) in [Microsoft.Profile_profile.ps1](https://github.com/SanjeevStephan/superuser/blob/main/Microsoft.PowerShell_profile.ps1)
 ```
 . "$HOME\Documents\PowerShell\include.ps1"
 ```
