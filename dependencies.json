@@ -41,9 +41,9 @@
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_setAlias.ps1"
     },
     {
-        "Name" : "profile_include",
-        "File" : "profile_include.ps1",
-        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_include.ps1"
+        "Name" : "include",
+        "File" : "include.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\include.ps1"
     }  
 
 ]
