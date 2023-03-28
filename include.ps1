@@ -33,15 +33,15 @@ $jsonFilePath = "$Home\Documents\PowerShell\include.json"
 # Read the contents of the JSON file into a PowerShell object
 $jsonContent = Get-Content $jsonFilePath | ConvertFrom-Json
 
-# Define the path to the PowerShell profile directory
-$profileSource = "$HOME\Documents\PowerShell"
+
 
 # Create a hashtable to store the dependencies
 $profileDependencies = @{}
 
 # Loop through each function in the JSON object and add it to the dependencies hashtable
 foreach ($function in $jsonContent) {
-    $profileDependencies[$function.Name] = "$profileSource\$($function.File)"
+   #  $profileDependencies[$function.Name] = "$profileSource\$($function.File)"
+    $profileDependencies[$function.Name] = "$($function.Path)"
     #Write-Output "Added : $profileDependencies[$function.Name] = $profileSource\$($function.File) `n"
 }
 
