@@ -11,7 +11,7 @@
 ```
 
 ### SYNOPSIS
-> Microsoft Window Terminal Profile 
+> Microsoft Window Terminal Profile : SuperUser
 
 ## Description
 > This PowerShell Repository comprises the index of all the usefull functions and scripts for the window terminal
