@@ -50,15 +50,17 @@ _This repository contains_ :
 
 
 * Dependencies
-    * profile_config.ps1
-    * profile_include.ps1
-    * profile_exec_script.ps1
-    * profile_function.ps1
-    * profile_getDependencies.ps1
-    * profile_getFunction.ps1
-    * profile_getJson.ps1
-    * profile_getPath.ps1
-    * profile_getScript.ps1
+    | Profile-File | Description |
+    |:---------:|:-------:|
+    | profile_config.ps1 | | 
+    | profile_include.ps1 | | 
+    | profile_exec_script.ps1 | | 
+    | profile_function.ps1 | | 
+    | profile_getDependencies.ps1|  | 
+    | profile_getFunction.ps1 |  | 
+    | profile_getJson.ps1 | | 
+    | profile_getPath.ps1 | fetch directory path from 'directories.json' by directory name | 
+    | profile_getScript.ps1 | | 
 
 * JSON
     | JSON-File | Description |
