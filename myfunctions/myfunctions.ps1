@@ -28,10 +28,12 @@
 if($DEBUG["debug_myfunction"] -eq "enable"){ Write-Output "[ OK ] myfunction => { myfunctions.ps1 } Loaded Successfully"} 
  
 # Define the path to the functions.json file
-$myFunction_JsonFilePath = "$Home\Documents\PowerShell\myfunctions\myfunctions.json"
+$jsonSource = $env:myjson
 
 # Read the contents of the JSON file into a PowerShell object
-$jsonContent = Get-Content $myFunction_JsonFilePath | ConvertFrom-Json
+#$jsonContent = Get-Content "$jsonSource\myfunctions.json" | ConvertFrom-Json
+
+getJson("myFunctions")
 
 # Define the path to the PowerShell profile directory
 $myFunctionSource = "$HOME\Documents\PowerShell\myfunctions"
@@ -41,7 +43,7 @@ $myfunction_hashtable = @{}
 
 # Loop through each function in the JSON object and add it to the dependencies hashtable
 foreach ($function in $jsonContent) {
-    $myfunction_hashtable[$function.Name] = "$myFunctionSource\$($function.File)"
+    $myfunction_hashtable[$function.Name] = "$($function.Path)"
     #Write-Output "Added : $myfunction_hashtable[$function.Name] = $myFunctionSource\$($function.File) `n"
 }
 

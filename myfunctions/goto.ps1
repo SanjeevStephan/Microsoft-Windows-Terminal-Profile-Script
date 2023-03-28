@@ -7,16 +7,17 @@ function goto($dir_name) {
             {
                 "codes"
                 {
-                    figlet("{code} Snippet")
-                    cd $goto_path["codes"]
+                    #figlet("{code} Snippet")
+                    cd getPath("codes")
                     dir
                 }
                 "profile"
                 {
-                    figlet("PowerShell")
-                    cd $path["powershell"]
+                    # figlet("PowerShell")
+                    cd getPath("PowerShell")
                     dir
                 }
+<#                
                 "py" 
                 {
                     figlet("PyScript")
@@ -24,12 +25,14 @@ function goto($dir_name) {
                     dir
                   
                 }
+#> 
                 "terminal" 
                 {
-                    figlet("Terminal")
-                    cd $path[$dir_name]
+                    #figlet("Terminal")
+                    cd getPath("terminal")
                     dir
                 }
+<#                
                 "matrix"
                 {
                     figlet "The Matrix"
@@ -82,6 +85,7 @@ function goto($dir_name) {
                     dir
                   
                 }
+#>                
                 Default 
                 {
                     
