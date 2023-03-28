@@ -78,6 +78,12 @@
 . "$HOME\Documents\PowerShell\include.ps1"
 #-------------------- Functions {Read-Only}-------------------------------------
 
-function initialize() { }
+function initialize() {
+
+
+    Home # Change Directory 'cd' to $Home\Documents\PowerShell
+
+    Check-File all # Test-Path Of all the dependencies
+ }
 
 initialize  #calling the initialize() function 
