@@ -30,6 +30,7 @@ $DEBUG = @{
     "debug_json"          = "enable"
     "debug_dependencies"  = "enable"  
     "debug_test"          = "enable" 
+    "debug_myfunction" = "enable"
 }
 <#
     FEATURE -> enable | disable
