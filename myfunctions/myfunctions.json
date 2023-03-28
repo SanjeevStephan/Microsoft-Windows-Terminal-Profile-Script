@@ -1,8 +1,8 @@
 [
     {
-        "Name": "iamonline",
-        "File": "iamonline.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\iamonline.ps1",
+        "Name": "goto",
+        "File": "goto.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\goto.ps1",
         "Argument":"No",
         "Parameter" : ["",""],
         "Desc": "Show if i am Online or Not"
