@@ -24,13 +24,16 @@ if($DEBUG["debug_function"] -eq "enable"){ Write-Output "[ OK ] Profile Function
  
 
 function EXEC($script_name,$argument) {
-    $exec_script = getScript("execScript") # returns this path -> $Home\Documents\PowerShell\profile_execScript.ps1"
+    $exec_script = GET-SCRIPT("execScript") # returns this path -> $Home\Documents\PowerShell\profile_execScript.ps1"
 
     if($script_name) # if script_name is not-empty | execute if-block 
     {
         if($argument) { & $exec_script.Path $script_name $argument} else { & $exec_script.Path $script_name }
 
-    } else { Write-Output "Script Name is Empty | Try -> exec test"}  
+    } else { 
+            Write-Output "Script Name is Empty | Try -> exec test"
+            Table-Script name
+            }  
 
     return $true
  }
@@ -43,7 +46,7 @@ function Test-Json($type,$file_or_directory) {
         {
             "script" 
             {
-                $test_script = getScript($file_or_directory)
+                $test_script = GET-SCRIPT($file_or_directory)
                 #Write-Output "SHOWING SCRIPT PATH $($test_script.Path) for the Script $($test_script.Name)"
                 Write-Output "Script Name :  $($test_script.Name) "
                 Write-Output "Script File :  $($test_script.File)"
@@ -54,7 +57,7 @@ function Test-Json($type,$file_or_directory) {
             }
             "path"
             {
-                $test_path = getPath($file_or_directory)
+                $test_path = GET-PATH($file_or_directory)
                 Write-Output "Name : $($test_path.Name) "
                 Write-Output "Directory: $($test_path.Directory)"
                 Write-Output "Path :  $($test_script.Path)"
@@ -143,7 +146,10 @@ function Check-File($type){
 
 
 #--------------------------------------{ Alphabet-H }--------------------------------------------------
-
+function Home() {
+    $pshellSource = GET-PATH("powershell")
+    cd $pshellSource.Path
+}
 #--------------------------------------{ Alphabet-I }--------------------------------------------------
 
 
@@ -175,8 +181,7 @@ function Check-File($type){
 
 
 #--------------------------------------{ Alphabet-R }--------------------------------------------------
-
-
+function REFRESH () {.$PROFILE}
 #--------------------------------------{ Alphabet-S }--------------------------------------------------
 
 
@@ -203,3 +208,4 @@ function Check-File($type){
 
 
 #--------------------------------------{ Alphabet-Z }--------------------------------------------------
+
