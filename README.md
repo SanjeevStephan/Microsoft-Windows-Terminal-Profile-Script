@@ -69,13 +69,15 @@ This repository contains :
     | directories.json | index of all directories in-use |
     | functions.json | list of useful functions |
     | include.json | index of must-include dependencies |
-    | jsons.json | | index of all json-file used
+    | jsons.json | | index of all json-file used |
     | scripts.json | index of all the scripts in-use| 
         
 * Sub-Directories
-    * myfunctions
-    * myscripts
-    * mytest       
+    | Directory | Description |
+    |:-----:|:------:|
+    | myfunctions | contains all the function in-use |
+    | myscripts | contains all the executable complex scripts |
+    | mytest | contains files used for testing purpose |       
 
 
 
