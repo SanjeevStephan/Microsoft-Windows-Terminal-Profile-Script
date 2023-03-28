@@ -28,7 +28,12 @@
         "Name" : "profile_function",
         "File" : "profile_function.ps1",
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profile_function.ps1"
-    }  
+    },
+    {
+        "Name" : "myfunctions",
+        "File" : "myfunctions.ps1",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\myfunctions.ps1"
+    }    
 
 ]
 
