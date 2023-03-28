@@ -10,11 +10,8 @@
 ---------------------------------------------------------
 ```
 
-### SYNOPSIS
-> Microsoft.Profile_profile
-
-## Description
-> This PowerShell Repository comprises the index of all the usefull functions and scripts for the window terminal
+## SYNOPSIS
+> Microsoft Window Terminal Profile : SuperUser
 
 ### Author
 > Sanjeev_Stephan_Murmu
@@ -25,9 +22,10 @@
 | v1.0 | 26th March 2023 |
 |      |                 |
 
+## Description
+> This PowerShell Repository comprises the index of all the usefull functions and scripts for the window terminal
 
-#
-This repository contains :
+_This repository contains_ :
 * configuration
 * dictionary
 * dependencies        
@@ -41,39 +39,45 @@ This repository contains :
     | JSON-file    |   json  |
     | Markdown     |    md   |
 
-## Directory Structure
+### Directory Structure
 * Main 
     | File | Description |
     |:---------:|:-----------|
-    | Microsoft.PowerShell_profile.ps1| Main Profile File |
-    | include.ps1 |  Read dependencies from JSON and Include it  |
+    | [Microsoft.Profile_profile.ps1](https://github.com/SanjeevStephan/superuser/blob/main/Microsoft.PowerShell_profile.ps1)| Main Profile File |
+    | [include.ps1](https://github.com/SanjeevStephan/superuser/blob/main/include.ps1) |  Read dependencies from JSON and Include it  |
     | config.ps1  |  Controls how the Scripts Behaves   |    
     | README.md   |  This Readme file   |
 
 
 * Dependencies
-    * profile_config.ps1
-    * profile_include.ps1
-    * profile_exec_script.ps1
-    * profile_function.ps1
-    * profile_getDependencies.ps1
-    * profile_getFunction.ps1
-    * profile_getJson.ps1
-    * profile_getPath.ps1
-    * profile_getScript.ps1
+    | Profile-File | Description |
+    |:---------:|:-------:|
+    | profile_config.ps1 | | 
+    | profile_include.ps1 | | 
+    | profile_exec_script.ps1 | | 
+    | profile_function.ps1 | | 
+    | profile_getDependencies.ps1|  | 
+    | profile_getFunction.ps1 |  | 
+    | profile_getJson.ps1 | | 
+    | profile_getPath.ps1 | fetch directory path from 'directories.json' by directory name | 
+    | profile_getScript.ps1 | | 
 
 * JSON
-    * dependencies.json
-    * directories.json
-    * functions.json
-    * include.json
-    * jsons.json
-    * scripts.json
+    | JSON-File | Description |
+    |:---------:|:-------:|
+    | dependencies.json | list of all the files that makes up the profile  |
+    | directories.json | index of all directories in-use |
+    | functions.json | list of useful functions |
+    | include.json | index of must-include dependencies |
+    | jsons.json  | index of all json-file used |
+    | scripts.json | index of all the scripts in-use| 
         
 * Sub-Directories
-    * myfunctions
-    * myscripts
-    * mytest       
+    | Directory | Description |
+    |:-----:|:------:|
+    | myfunctions | contains all the function in-use |
+    | myscripts | contains all the executable complex scripts |
+    | mytest | contains files used for testing purpose |       
 
 
 
@@ -96,7 +100,7 @@ This repository contains :
 
 ## NOTES
 
-> Must Include Below File 
+> Must [Include Below File](https://github.com/SanjeevStephan/superuser/blob/main/include.ps1) in [Microsoft.Profile_profile.ps1](https://github.com/SanjeevStephan/superuser/blob/main/Microsoft.PowerShell_profile.ps1)
 ```
 . "$HOME\Documents\PowerShell\include.ps1"
 ```
