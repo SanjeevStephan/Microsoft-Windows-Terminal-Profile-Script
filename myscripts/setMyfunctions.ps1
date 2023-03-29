@@ -25,7 +25,7 @@
 #----------------------------------------------------------------------------------
 
 # Debug profile_getfunction.ps1  
-if($DEBUG[10]["Status"] -eq "enable"){ Write-Output "[ OK ] myfunction => { myfunctions.ps1 } Loaded Successfully"} 
+if($DEBUG[10]["Status"] -eq "enable"){ Write-Output "[ OK ] setMyFunction     => { setMyFunction.ps1 } Loaded Successfully"} 
  
 # Define the path to the functions.json file
 # $jsonSource = $env:myjson
@@ -51,6 +51,8 @@ $myfunction_hashtable = @{}
 # Loop through each function in the JSON object and add it to the dependencies hashtable
 foreach ($function in $myFunctionJsonContent) {
     $myfunction_hashtable[$function.Name] = "$($function.Path)"
+
+    Write-Output "[ OK ] Included : MyFunction => { $($function.Name) }  Successfully" 
     #Write-Output "Added : $myfunction_hashtable[$function.Name] = $myFunctionSource\$($function.File) `n"
 }
 
@@ -58,10 +60,9 @@ foreach ($function in $myFunctionJsonContent) {
 foreach ($myfunction in $myfunction_hashtable.Values) {
     . $myfunction
 
-    Write-Output "[ Included ] MyFunction : $myfunction" 
+
 # Debug profile_myfunctions.ps1 
 #if($DEBUG["debug_myfunction"] -eq "enable"){ "[ Included ] Dependencies : $myfunction" } else { <# Does nothing #>}
-
 
 }
 
