@@ -24,7 +24,7 @@
         ->  ASSOCIATED
     .FUNCTIONS
         ->  See-Config()
-        ->  Debug-Table()
+        ->  Debug-Config()
  #>
 
  $INFO =  @{
@@ -53,7 +53,7 @@ $TAG =  @{
   
 } 
 $DIRECTORY =  @{
-    1 =  @{Title = "profile_source";     Path = "$Home\Documents\PowerShell"}   
+    1 =  @{Title = "root_directory";     Path = "$Home\Documents\PowerShell"}   
     2 =  @{Title = "myfunctions";        Path = "$Home\Documents\PowerShell\myfunctions"}
     3 =  @{Title = "myjson";             Path = "$Home\Documents\PowerShell\myjson"}
     4 =  @{Title = "mypython";           Path = "$Home\Documents\PowerShell\mypython"}
@@ -135,21 +135,33 @@ $JSON = @{
     7 = @{Title = "profileFunction";      File = "profileFunction.json"; Path = "$($DIRECTORY[3]["Path"])\profileFunctions.json"}
     8 = @{Title = "myPython";             File = "myPythonScript.json";  Path = "$($DIRECTORY[3]["Path"])\myPythonScript.json"}
 }
-function Show-Config() 
+function Show-Config($tag_name) 
 { 
-    $INFO.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Profile INFO"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.DESC}} -AutoSize
-    $FILE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Main File"; expression={$_.Value.File}}, @{label="Description"; expression={$_.Value.Desc}} -AutoSize  
-    $DIRECTORY.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="PATH Title"; expression={$_.Value.Title}}, @{label="Directory"; expression={$_.Value.Path}} -AutoSize    
-    $DEBUG.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="DEBUG Title"; expression={$_.Value.Title}}, @{label="Debug Status"; expression={$_.Value.Status}} -AutoSize
-    $TAG.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="TAG Title"; expression={$_.Value.Title}}, @{label="Debug Status"; expression={$_.Value.Desc}} -AutoSize
-    $JSON.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="JSON Title"; expression={$_.Value.Title}}, @{label="JSON File"; expression={$_.Value.File}} , @{label="File Path"; expression={$_.Value.Path}}-AutoSize
-    $TABLE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="TABLE List Title"; expression={$_.Value.Title}}, @{label="List Status"; expression={$_.Value.Status}} -AutoSize
-    $FEATURE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Feature Title"; expression={$_.Value.Title}}, @{label="Feature Status"; expression={$_.Value.Status}} -AutoSize  
-    $EXECUTABLE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="EXECUTABLE Title"; expression={$_.Value.Title}}, @{label="Executable Status"; expression={$_.Value.Status}} -AutoSize    
-    $ASSOCIATED.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="JSON Associated File"; expression={$_.Value.Script}}, @{label="JSON In-Use"; expression={$_.Value.Json}} -AutoSize    
-}
+
+    switch($tag_name)
+    {
+        "info" { $INFO.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Profile INFO"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.DESC}} -AutoSize }
+        "file" { $FILE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Main File"; expression={$_.Value.File}}, @{label="Description"; expression={$_.Value.Desc}} -AutoSize  }
+        "dir"  { $DIRECTORY.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="PATH Title"; expression={$_.Value.Title}}, @{label="Directory"; expression={$_.Value.Path}} -AutoSize  }
+        Default 
+        {
+            $INFO.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Profile INFO"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.DESC}} -AutoSize
+            $FILE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Main File"; expression={$_.Value.File}}, @{label="Description"; expression={$_.Value.Desc}} -AutoSize  
+            $DIRECTORY.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="PATH Title"; expression={$_.Value.Title}}, @{label="Directory"; expression={$_.Value.Path}} -AutoSize    
+            $DEBUG.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="DEBUG Title"; expression={$_.Value.Title}}, @{label="Debug Status"; expression={$_.Value.Status}} -AutoSize
+            $TAG.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="TAG Title"; expression={$_.Value.Title}}, @{label="Debug Status"; expression={$_.Value.Desc}} -AutoSize
+            $JSON.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="JSON Title"; expression={$_.Value.Title}}, @{label="JSON File"; expression={$_.Value.File}} , @{label="File Path"; expression={$_.Value.Path}}-AutoSize
+            $TABLE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="TABLE List Title"; expression={$_.Value.Title}}, @{label="List Status"; expression={$_.Value.Status}} -AutoSize
+            $FEATURE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Feature Title"; expression={$_.Value.Title}}, @{label="Feature Status"; expression={$_.Value.Status}} -AutoSize  
+            $EXECUTABLE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="EXECUTABLE Title"; expression={$_.Value.Title}}, @{label="Executable Status"; expression={$_.Value.Status}} -AutoSize    
+            $ASSOCIATED.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="JSON Associated File"; expression={$_.Value.Script}}, @{label="JSON In-Use"; expression={$_.Value.Json}} -AutoSize    
+        
+        }
+    }
+
+ }
 #>
-function Debug-Table() {
+function Debug-Config() {
 
     if($DEBUG[2]["Status"] -eq "enable")     # debug_config 
     { 
@@ -159,5 +171,5 @@ function Debug-Table() {
   # if($DEBUG[2]["Status"] -eq "disable"){ 
 }
 
-Debug-Table
+Debug-Config
 
