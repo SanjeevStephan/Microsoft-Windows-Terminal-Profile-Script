@@ -80,6 +80,7 @@
 
 function initialize() {
 
+    & python "D:\terminal\py\figlet.py" --message 'SuperUser'
     # initial_debug 
     if($DEBUG[1]["Status"] -eq "enable") 
     { 
