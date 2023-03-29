@@ -28,7 +28,7 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
  # . $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
 
  # Debug profile_getScript.ps1  
-if($DEBUG[4]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Script() => { getScript.ps1 } Loaded Successfully"} 
+if($DEBUG[4]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Script()    => { getScript.ps1 } Loaded Successfully"} 
    
 # Read the JSON data from the file
 $jsonSource = $env:myjson

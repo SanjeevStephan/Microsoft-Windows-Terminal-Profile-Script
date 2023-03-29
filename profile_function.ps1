@@ -20,7 +20,7 @@
         -26 March 2023   
 
 #>
-if($DEBUG[11]["Status"] -eq "enable"){ Write-Output "[ OK ] Profile Function => { profile_function.ps1 } Loaded Successfully"} 
+if($DEBUG[11]["Status"] -eq "enable"){ Write-Output "[ OK ] Profile Function  => { profile_function.ps1 } Loaded Successfully"} 
  
 
 function EXEC($script_name,$argument) {

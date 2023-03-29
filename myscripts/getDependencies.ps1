@@ -28,7 +28,7 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
  # . $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
 
  # Debug profile_getDependencies.ps1  
-if($DEBUG[9]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Profile() => { getDependencies.ps1 } Loaded Successfully"} 
+if($DEBUG[9]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Profile()   => { getDependencies.ps1 } Loaded Successfully"} 
    
 # Read the JSON data from the file
 $jsonSource = $env:myjson
