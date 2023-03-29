@@ -21,36 +21,32 @@
 # Defined the path and Load the configuration file that contains additional dependencies settings
 . "$Home\Documents\PowerShell\profile_config.ps1"
 #----------------------------------------------------------------------------------
+$profile_source = "$Home\Documents\PowerShell\"
+$myscript_source = "$profile_source\myscripts"
+
+<# Function to include all dependencies using traditional hashtable#>
+$profile_dependencies = @{
+    "powerShell_profile" = "$profile_source\Microsoft.PowerShell_profile.ps1"
+    "profile_config"     = "$profile_source\profile_config.ps1"
+    "profile_function"   = "$profile_source\profile_function.ps1"
+    "profile_console"    = "$myscript_source\profile_console.ps1"
+    "getDependencies"    = "$myscript_source\getDependencies.ps1"    
+    "getFunction"        = "$myscript_source\getFunction.ps1"
+    "getJson"            = "$myscript_source\getJson.ps1"    
+    "getPath"            = "$myscript_source\getPath.ps1"
+    "getPython"          = "$myscript_source\getPython.ps1"
+    "getScript"          = "$myscript_source\getScript.ps1"
+    "setMyFunctions"     = "$myscript_source\\setMyFunctions.ps1"   
+}
+
+. $profile_dependencies["getPath"]
+. $profile_dependencies["getJson"]
+. $profile_dependencies["getScript"]
+. $profile_dependencies["getDependencies"]
+. $profile_dependencies["getFunction"]
+. $profile_dependencies["profile_function"]
+. $profile_dependencies["setMyFunctions"]
 
 # Debug profile_getfunction.ps1  
 if($DEBUG["debug_include"] -eq "enable"){ Write-Output "[ OK ] Profile include => { include.ps1 } Loaded Successfully"} 
- 
-#$json_file = $args[0]
-
-# Define the path to the functions.json file
-$jsonFilePath = "$Home\Documents\PowerShell\myjson\dependencies.json"
-
-# Read the contents of the JSON file into a PowerShell object
-$jsonContent = Get-Content $jsonFilePath | ConvertFrom-Json
-
-# Create a hashtable to store the dependencies
-$profileDependencies = @{}
-
-# Loop through each function in the JSON object and add it to the dependencies hashtable
-foreach ($function in $jsonContent) {
-   #  $profileDependencies[$function.Name] = "$profileSource\$($function.File)"
-    $profileDependencies[$function.Name] = "$($function.Path)"
-    #Write-Output "Added : $profileDependencies[$function.Name] = $profileSource\$($function.File) `n"
-}
-
-# Loop through each dependency and include it in the profile
-foreach ($dependency in $profileDependencies.Values) {
-    . $dependency
-
-# Debug profile_include.ps1 
-#if($DEBUG["debug_include"] -eq "enable"){ "[ Included ] Dependencies : $dependency" } else { <# Does nothing #>}
-
-
-}
-
 
