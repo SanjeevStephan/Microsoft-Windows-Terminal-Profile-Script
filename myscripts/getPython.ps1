@@ -50,7 +50,7 @@ function Get-Python($python_script_name)
     if (Test-Path $python_script_path){ return $python_array_data }
     else{ Write-Output "Error: $python_script_name not found in JSON List 'myJsonList.json"  }   
 }
-function Get-JsonPath($python_script_name)
+function Get-PythonPath($python_script_name)
 {
     # Filter 'jsons-Name' in the array and store as $python_array_data
     $python_array_data = $python_array_data | Where-Object { $_.Name -eq $python_script_name }
