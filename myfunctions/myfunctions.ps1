@@ -28,7 +28,7 @@
 if($DEBUG["debug_myfunction"] -eq "enable"){ Write-Output "[ OK ] myfunction => { myfunctions.ps1 } Loaded Successfully"} 
  
 # Define the path to the functions.json file
-$jsonSource = $env:myjson
+# $jsonSource = $env:myjson
 
 # Read the contents of the JSON file into a PowerShell object
 #$jsonContent = Get-Content "$jsonSource\myfunctions.json" | ConvertFrom-Json
