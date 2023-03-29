@@ -8,13 +8,13 @@ function goto($dir_name) {
                 "codes"
                 {
                     #figlet("{code} Snippet")
-                    cd getPath("codes")
+                    cd Get-Path("codes")
                     dir
                 }
                 "profile"
                 {
                     # figlet("PowerShell")
-                    cd getPath("PowerShell")
+                    cd Get-Path("PowerShell")
                     dir
                 }
 <#                
@@ -29,7 +29,7 @@ function goto($dir_name) {
                 "terminal" 
                 {
                     #figlet("Terminal")
-                    cd getPath("terminal")
+                    cd Get-Path("terminal")
                     dir
                 }
 <#                

@@ -76,7 +76,7 @@ $DEPENDENCY =  @{
     DEBUG -> enable | disable
 #>
 $DEBUG = @{
-    1 =  @{Title = "initial_debug";      Status = "enable"}        
+    1 =  @{Title = "initial_debug";      Status = "disable"}        
     2 =  @{Title = "debug_test";         Status = "enable"}
     3 =  @{Title = "debug_config";       Status = "enable"}
     4 =  @{Title = "debug_exec_script";  Status = "enable"}
@@ -118,6 +118,7 @@ $TABLE = @{
     4 =  @{Title = "show_all_dependencies";    Status = "enable"}
     5 =  @{Title = "show_all_jsons";           Status = "enable"}   
     6 =  @{Title = "show_all_python_script";   Status = "enable"}
+    7 =  @{Title = "show_all_functions";       Status = "enable"}
 }
 <#
     ExecutableScript => 'allow' | 'refuse'

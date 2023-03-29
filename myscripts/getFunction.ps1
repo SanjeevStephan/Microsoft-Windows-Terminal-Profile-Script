@@ -31,7 +31,12 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
 if($DEBUG[7]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Function()  => { getfunction.ps1 } Loaded Successfully"} 
    
 # Read the JSON data from the file
-$function_json_raw_data = Get-Content -Path $JSON[7]["Path"] -Raw
+# 3 -> myFunctions.json
+# 7 -> profileFunctions.json
+
+$functionJsonFilePath = "$Home\Documents\PowerShell\myjson\profileFunctions.json"
+
+$function_json_raw_data = Get-Content -Path $functionJsonFilePath -Raw
 
 # Convert the JSON data to a PowerShell object
 $function_array_data = ConvertFrom-Json -InputObject $function_json_raw_data 
@@ -88,12 +93,14 @@ function List-Function($column_name){
    Function to display only specified '$column_name' 
 #>
 
+
+
     switch($column_name)
     {
 
         "name"
         {
-            if(($TABLE["show_all_functions"]) -eq "enable") 
+            if($($TABLE[7]["Status"]) -eq "enable") 
             {  
                 $function_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$function_array_data.IndexOf($_) + 1}}, 
                 @{label="Function Name"; expression={$_.Name}} -AutoSize
@@ -102,7 +109,7 @@ function List-Function($column_name){
         }
         "desc"
         {
-            if(($TABLE["show_all_functions"]) -eq "enable") 
+            if($($TABLE[7]["Status"]) -eq "enable") 
             {  
                 $function_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$function_array_data.IndexOf($_) + 1}}, 
                 @{label="Function Name"; expression={$_.Name}}, 
@@ -113,7 +120,7 @@ function List-Function($column_name){
 
         "path"
         {
-            if(($TABLE["show_all_functions"]) -eq "enable") 
+            if($($TABLE[7]["Status"]) -eq "enable") 
             {  
                 $function_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$function_array_data.IndexOf($_) + 1}}, 
                 @{label="Function Name"; expression={$_.Name}}, 
@@ -123,7 +130,7 @@ function List-Function($column_name){
         }
         "param"
         {
-            if(($TABLE["show_all_functions"]) -eq "enable") 
+            if($($TABLE[7]["Status"]) -eq "enable") 
             {  
                 $function_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$function_array_data.IndexOf($_) + 1}}, 
                 @{label="Function Name"; expression={$_.Name}}, 
@@ -133,18 +140,32 @@ function List-Function($column_name){
             } 
             else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
         }        
-        "all"
+        Default 
         {
-            if(($TABLE["show_all_functions"]) -eq "enable") 
+            Write-Output "1. Show MyFunctions"
+            Write-Output "2. Show Profile-Functions"
+            $chooce = Read-Host "Please Choose Your Option (1-2) : "
+            switch($chooce)
+            {
+                "1" { $functionJsonFilePath = $JSON[3]["Path"] }
+                "2" { $functionJsonFilePath = $JSON[7]["Path"] }
+                Default { Write-Output "You have Entered '$choose' which is invalid | Try (1 or 2)"}
+            }
+
+            $function_json_raw_data = Get-Content -Path $functionJsonFilePath -Raw
+
+            # Convert the JSON data to a PowerShell object
+            $function_array_data = ConvertFrom-Json -InputObject $function_json_raw_data 
+
+            if($($TABLE[7]["Status"]) -eq "enable") 
             {  
                 $function_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$function_array_data.IndexOf($_) + 1}}, 
                 @{label="Function Name"; expression={$_.Name}}, 
                 @{label="Path"; expression={$_.Path}},
                 @{label="Description"; expression={$_.Desc}} -AutoSize
-            } 
-            else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
+            } else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
+
         }
-        Default {}
     }
 
 

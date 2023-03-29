@@ -36,7 +36,7 @@ if($DEBUG[10]["Status"] -eq "enable"){ Write-Output "[ OK ] setMyFunction     =>
 #$myFunctionJsonContent = Get-Json("myFunctions")
 
 # Define the path to the functions.json file
-# $myFunctionFilePath = "$Home\Documents\PowerShell\myjson\myFunctions.json"
+#$myFunctionFilePath = "$Home\Documents\PowerShell\myjson\myFunctions.json"
 $myFunctionFilePath = Get-JsonPath("myFunctions")
 
 # Read the contents of the JSON file into a PowerShell object

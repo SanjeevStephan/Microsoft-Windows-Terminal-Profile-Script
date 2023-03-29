@@ -79,17 +79,15 @@
 
 function initialize() {
 
-    Check-File all
-    
-    & python "$HOME\Documents\PowerShell\mypython\figlet.py" --message 'SuperUser'
-    # initial_debug 
-    if($DEBUG[1]["Status"] -eq "enable") 
-    { 
-        Show-Config
-         # Test-Path Of all the dependencies
-    }
-    Home # Change Directory 'cd' to $Home\Documents\PowerShell
+    if($CHECKS[1]["Status"] -eq "enable") { Check-File all } # Test-Path Of all the dependencies
 
+    & python "$HOME\Documents\PowerShell\mypython\figlet.py" --message 'SuperUser'
+
+    if($DEBUG[1]["Status"] -eq "enable") { Show-Config }     # initial_debug 
+
+    #Home # Change Directory 'cd' to $Home\Documents\PowerShell
+    $myscripts = Get-Path("myfunctions")
+    cd $myscripts.Path
  }
 
 initialize  #calling the initialize() function 

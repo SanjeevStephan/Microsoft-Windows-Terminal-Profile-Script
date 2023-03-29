@@ -17,7 +17,20 @@
         "Directory" : "code-snippets",
         "Path" : "D:\\terminal\\code-snippets",
         "Desc" : "The Code-Snippets Directory"
+    },
+    {
+        "Name" : "myscripts",
+        "Directory" : "myscripts",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myscripts",
+        "Desc" : "The Code-Snippets Directory"
+    },
+    {
+        "Name" : "myfunctions",
+        "Directory" : "myfunctions",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions",
+        "Desc" : "My Custom Function Directory"
     }
+
 
 
 
