@@ -31,8 +31,8 @@
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myjson\\myPythonScript.json"
     },
     {
-        "Name" : "scripts",
-        "File" : "scripts.json",
+        "Name" : "myScripts",
+        "File" : "myScripts.json",
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myjson\\myScripts.json"
     },
     {
