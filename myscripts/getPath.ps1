@@ -28,7 +28,7 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
  #. $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
 
  # Debug profile_getPath.ps1  
-if($DEBUG["debug_path"] -eq "enable"){ Write-Output "[ OK ] Profile getPath => { getPath.ps1 } Loaded Successfully"} 
+if($DEBUG[6]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Path() => { getPath.ps1 } Loaded Successfully"} 
    
 # Read the JSON data from the file
 $jsonSource = $env:myjson
@@ -64,7 +64,7 @@ function Check-Path(){
 }
 
 # Function to filter data from the JSON File 'functions.json' based on the specified '$column_name
-function Table-Path($column_name){
+function List-Path($column_name){
     <#
        Function to display only specified '$column_name' 
     #>

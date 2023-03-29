@@ -28,7 +28,7 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
  # . $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
 
  # Debug profile_getDependencies.ps1  
-if($DEBUG["debug_dependencies"] -eq "enable"){ Write-Output "[ OK ] Profile getDependencies => { profile_getDependencies.ps1 } Loaded Successfully"} 
+if($DEBUG[9]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Profile() => { getDependencies.ps1 } Loaded Successfully"} 
    
 # Read the JSON data from the file
 $jsonSource = $env:myjson
@@ -51,7 +51,7 @@ function Get-Profile($dependencies_name)
     if (Test-Path $dependencies_path){ return $dependencies_array_data }
     else{ 
         Write-Output "Error: $dependencies_name not found in JSON List 'dependencies.json"  
-        Table-Profile
+        List-Profile
         }   
 }
 function Check-Profile(){
@@ -66,7 +66,7 @@ function Check-Profile(){
 
 }
 # Function to display all script specified in the JSON File 'dependencies.json'
-function Table-Profile(){
+function List-Profile(){
 
     if(($TABLE["show_all_dependencies"]) -eq "enable") 
     {  
@@ -79,4 +79,4 @@ function Table-Profile(){
 }
 
  # getDependencies("profile_function")    # <-------------- NOTE-2 : TO RUN THIS SCRIPT | UNCOMMENT 
- # Table-Profile          # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 
+ # List-Profile          # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 

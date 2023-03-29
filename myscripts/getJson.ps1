@@ -28,7 +28,7 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
   #. $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS jsons | UNCOMMENT 
 
  # Debug profile_getjsons.ps1  
-if($DEBUG["debug_json"] -eq "enable"){ Write-Output "[ OK ] Profile getJson => { getJson.ps1 } Loaded Successfully"} 
+if($DEBUG[8]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Json() => { getJson.ps1 } Loaded Successfully"} 
    
 # Read the JSON data from the file
 $jsonSource = $env:myjson
@@ -98,7 +98,7 @@ function Read-Json($jsons_filename) {
     Table-Json
 }
 # Function to display all jsons specified in the JSON File 'jsons.json'
-function Table-Json(){
+function List-Json(){
 
     if(($TABLE["show_all_jsons"]) -eq "enable") 
     {   

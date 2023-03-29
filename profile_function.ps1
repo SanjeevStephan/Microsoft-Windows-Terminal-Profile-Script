@@ -20,7 +20,7 @@
         -26 March 2023   
 
 #>
-if($DEBUG["debug_function"] -eq "enable"){ Write-Output "[ OK ] Profile Function => { profile_function.ps1 } Loaded Successfully"} 
+if($DEBUG[11]["Status"] -eq "enable"){ Write-Output "[ OK ] Profile Function => { profile_function.ps1 } Loaded Successfully"} 
  
 
 function EXEC($script_name,$argument) {
@@ -81,18 +81,18 @@ $TABLE.show_all_paths = "enable"
     {
         switch($type)
         {
-            "dependencies" { Table-Profile}
-            "function"     { Table-Function("param") }
-            "script"       { Table-Script("basic") }
-            "json"         { Table-Json }
-            "path"         { Table-Path("all") } 
+            "dependencies" { List-Profile}
+            "function"     { List-Function("param") }
+            "script"       { List-Script("basic") }
+            "json"         { List-Json }
+            "path"         { List-Path("all") } 
             "all" 
             {
-                Table-Profile
-                Table-Function("all")
-                Table-Script("all")
-                Table-Json
-                Table-Path("all")
+                List-Profile
+                List-Function("all")
+                List-Script("all")
+                List-Json
+                List-Path("all")
             }
             Default { Write-Error "Invalid Argument Passed | Require -> test_json type file_or_dir"}
         }
@@ -184,7 +184,17 @@ function Home() {
 function REFRESH () {.$PROFILE}
 #--------------------------------------{ Alphabet-S }--------------------------------------------------
 
-
+function Show-Config() 
+{ 
+    $INFO.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Profile"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.DESC}} -AutoSize
+    $FILE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.File}}, @{label="Description"; expression={$_.Value.Desc}} -AutoSize  
+    $PATH.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.Path}} -AutoSize    
+    $DEBUG.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.Status}} -AutoSize
+    $TABLE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.Status}} -AutoSize
+    $FEATURE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.Status}} -AutoSize  
+    $EXECUTABLE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.Status}} -AutoSize    
+    $ASSOCIATED.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Script}}, @{label="JSON In-Use"; expression={$_.Value.Json}} -AutoSize    
+}
 #--------------------------------------{ Alphabet-T }--------------------------------------------------
 
 

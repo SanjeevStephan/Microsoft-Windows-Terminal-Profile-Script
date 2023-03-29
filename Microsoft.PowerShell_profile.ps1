@@ -80,10 +80,14 @@
 
 function initialize() {
 
-
+    # initial_debug 
+    if($DEBUG[1]["Status"] -eq "enable") 
+    { 
+        Show-Config
+        Check-File all # Test-Path Of all the dependencies
+    }
     Home # Change Directory 'cd' to $Home\Documents\PowerShell
 
-    Check-File all # Test-Path Of all the dependencies
  }
 
 initialize  #calling the initialize() function 

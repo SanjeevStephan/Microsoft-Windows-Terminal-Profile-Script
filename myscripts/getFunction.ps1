@@ -28,7 +28,7 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
 #. $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS function | UNCOMMENT 
 
  # Debug profile_getfunction.ps1  
-if($DEBUG["debug_function"] -eq "enable"){ Write-Output "[ OK ] Profile getFunction => { getfunction.ps1 } Loaded Successfully"} 
+if($DEBUG[7]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Function() => { getfunction.ps1 } Loaded Successfully"} 
    
 # Read the JSON data from the file
 $jsonSource = $env:myjson
@@ -60,7 +60,7 @@ function Check-Function(){
 
 # Read the 'functions.json' file
 $jsonSource = ${env:myjson}
-$functions = Get-FunctionFromJSON "$jsonSource\functions.json"
+$functions = Get-FunctionFromJSON "$jsonSource\profileFunctions.json"
 
 # Loop through each function in the file
 foreach ($function in $functions) {
@@ -84,7 +84,7 @@ foreach ($function in $functions) {
 }
 
 # Function to filter data from the JSON File 'functions.json' based on the specified '$column_name
-function Table-Function($column_name){
+function List-Function($column_name){
 <#
    Function to display only specified '$column_name' 
 #>

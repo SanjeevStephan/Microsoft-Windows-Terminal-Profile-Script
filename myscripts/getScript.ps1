@@ -28,7 +28,7 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
  # . $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
 
  # Debug profile_getScript.ps1  
-if($DEBUG["debug_script"] -eq "enable"){ Write-Output "[ OK ] Profile getScript => { getScript.ps1 } Loaded Successfully"} 
+if($DEBUG[4]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Script() => { getScript.ps1 } Loaded Successfully"} 
    
 # Read the JSON data from the file
 $jsonSource = $env:myjson
@@ -66,7 +66,7 @@ function Check-Script(){
 
 
 # Function to filter data from the JSON File 'functions.json' based on the specified '$column_name
-function Table-Script($column_name){
+function List-Script($column_name){
     <#
        Function to display only specified '$column_name' 
     #>
@@ -140,4 +140,4 @@ function Table-Script($column_name){
  }
 
  # getScript("test")    # <-------------- NOTE-2 : TO RUN THIS SCRIPT | UNCOMMENT 
- # Table-Script          # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 
+ # List-Script          # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 
