@@ -76,48 +76,48 @@ $DEPENDENCY =  @{
     DEBUG -> enable | disable
 #>
 $DEBUG = @{
-    1 =  @{Title = "initial_debug";      Status = "disable"}        
-    2 =  @{Title = "debug_test";         Status = "disable"}
-    3 =  @{Title = "debug_config";       Status = "disable"}
-    4 =  @{Title = "debug_exec_script";  Status = "disable"}
-    5 =  @{Title = "debug_include";      Status = "disable"}
-    6 =  @{Title = "debug_path";         Status = "disable"}
-    7 =  @{Title = "debug_function";     Status = "disable"}
-    8 =  @{Title = "debug_json";         Status = "disable"}
-    9 =  @{Title = "debug_dependencies"; Status = "disable"}
-    10 =  @{Title = "debug_myfunction";  Status = "disable"}
-    11 = @{Title = "debug_function";     Status = "disable"}   
-    12 = @{Title = "debug_python";       Status = "disable"}   
+    1 =  @{Title = "initial_debug";      Status = "enable"}        
+    2 =  @{Title = "debug_test";         Status = "enable"}
+    3 =  @{Title = "debug_config";       Status = "enable"}
+    4 =  @{Title = "debug_exec_script";  Status = "enable"}
+    5 =  @{Title = "debug_include";      Status = "enable"}
+    6 =  @{Title = "debug_path";         Status = "enable"}
+    7 =  @{Title = "debug_function";     Status = "enable"}
+    8 =  @{Title = "debug_json";         Status = "enable"}
+    9 =  @{Title = "debug_dependencies"; Status = "enable"}
+    10 =  @{Title = "debug_myfunction";  Status = "enable"}
+    11 = @{Title = "debug_function";     Status = "enable"}   
+    12 = @{Title = "debug_python";       Status = "enable"}   
 }
 $CHECKS = @{
-    1 =  @{Title = "initial_check";      Status = "disable"}        
-    2 =  @{Title = "check_everything";   Status = "disable"}
-    3 =  @{Title = "check_config";       Status = "disable"}
-    4 =  @{Title = "check_env";          Status = "disable"}
-    5 =  @{Title = "check_include";      Status = "disable"}
-    6 =  @{Title = "check_path";         Status = "disable"}
-    7 =  @{Title = "check_function";     Status = "disable"}
-    8 =  @{Title = "check_json";         Status = "disable"}
-    9 =  @{Title = "check_dependencies"; Status = "disable"}
-    10 =  @{Title = "check_myfunction";  Status = "disable"}
-    11 = @{Title = "check_python";       Status = "disable"}   
+    1 =  @{Title = "initial_check";      Status = "enable"}        
+    2 =  @{Title = "check_everything";   Status = "enable"}
+    3 =  @{Title = "check_config";       Status = "enable"}
+    4 =  @{Title = "check_env";          Status = "enable"}
+    5 =  @{Title = "check_include";      Status = "enable"}
+    6 =  @{Title = "check_path";         Status = "enable"}
+    7 =  @{Title = "check_function";     Status = "enable"}
+    8 =  @{Title = "check_json";         Status = "enable"}
+    9 =  @{Title = "check_dependencies"; Status = "enable"}
+    10 =  @{Title = "check_myfunction";  Status = "enable"}
+    11 = @{Title = "check_python";       Status = "enable"}   
 
 }
 <#  
     FEATURE -> enable | disable
 #>
 $FEATURE = @{
-    1 =  @{Title = "ascii";         Status = "disable"}
-    2 =  @{Title = "figlet";        Status = "disable"}
-    3 =  @{Title = "dependencies";  Status = "disable"}
+    1 =  @{Title = "ascii";         Status = "enable"}
+    2 =  @{Title = "figlet";        Status = "enable"}
+    3 =  @{Title = "dependencies";  Status = "enable"}
 }
 $TABLE = @{
-    1 =  @{Title = "show_overview";            Status = "disable"}
-    2 =  @{Title = "show_all_paths";           Status = "disable"}    
-    3 =  @{Title = "show_all_scripts";         Status = "disable"}
-    4 =  @{Title = "show_all_dependencies";    Status = "disable"}
-    5 =  @{Title = "show_all_jsons";           Status = "disable"}   
-    6 =  @{Title = "show_all_python_script";   Status = "disable"}
+    1 =  @{Title = "show_overview";            Status = "enable"}
+    2 =  @{Title = "show_all_paths";           Status = "enable"}    
+    3 =  @{Title = "show_all_scripts";         Status = "enable"}
+    4 =  @{Title = "show_all_dependencies";    Status = "enable"}
+    5 =  @{Title = "show_all_jsons";           Status = "enable"}   
+    6 =  @{Title = "show_all_python_script";   Status = "enable"}
 }
 <#
     ExecutableScript => 'allow' | 'refuse'
@@ -220,10 +220,10 @@ function Debug-Config() {
 
     if($DEBUG[2]["Status"] -eq "enable")     # debug_config 
     { 
-        Write-Output "[ OK ] Profile Config => { profile_config.ps1 } Loaded Successfully"} else { <# Do Nothing #>
+        Write-Output "[ OK ] Profile Config    => { profile_config.ps1 } Loaded Successfully"} else { <# Do Nothing #>
         # Write-Output "Accessing Item at HashTable [1] Title : $($DEBUG[1]["Title"]) | Status : $($DEBUG[1]["Status"])" 
     }
-  # if($DEBUG[2]["Status"] -eq "disable"){ 
+  # if($DEBUG[2]["Status"] -eq "enable"){ 
 }
 
 Debug-Config
