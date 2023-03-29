@@ -24,6 +24,7 @@
 # Define the path to the configuration file that contains additional dependencies
 $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
 
+
 # getjsons the configuration file to load any additional dependencies
   #. $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS jsons | UNCOMMENT 
 
@@ -40,27 +41,44 @@ $jsons_array_data = ConvertFrom-Json -InputObject $jsons_json_raw_data
 # Function to getjsons by specifying jsons name
 function Get-Json($jsons_name)
 {
-    # Filter 'jsons-Name' in the array and store as $jsons_array_data
-    $jsons_array_data = $jsons_array_data | Where-Object { $_.Name -eq $jsons_name }
-    
-    # Get the path to the jsons based on its name
-    $jsons_path = $($jsons_array_data.Path)
 
-    # Check if the file exists before including it
-    if (Test-Path $jsons_path){ return $jsons_array_data }
-    else{ Write-Output "Error: $jsons_name not found in JSON List 'myJsonList.json"  }   
+    if($jsons_name)
+    {
+        # Filter 'jsons-Name' in the array and store as $jsons_array_data
+        $jsons_array_data = $jsons_array_data | Where-Object { $_.Name -eq $jsons_name }
+        
+        # Get the path to the jsons based on its name
+        $jsons_path = $($jsons_array_data.Path)
+
+        # Check if the file exists before including it
+        if (Test-Path $jsons_path){ return $jsons_array_data }
+        else{ Write-Output "Error: $jsons_name not found in JSON List 'myJsonList.json"  }   
+  }
+    else
+    {
+        $TABLE[5]["status"] = "enable"
+        List-Json
+    }
 }
 function Get-JsonPath($jsons_name)
 {
-    # Filter 'jsons-Name' in the array and store as $jsons_array_data
-    $jsons_array_data = $jsons_array_data | Where-Object { $_.Name -eq $jsons_name }
-    
-    # Get the path to the jsons based on its name
-    $jsons_path = $($jsons_array_data.Path)
+    if($jsons_name)
+    {
+        # Filter 'jsons-Name' in the array and store as $jsons_array_data
+        $jsons_array_data = $jsons_array_data | Where-Object { $_.Name -eq $jsons_name }
+        
+        # Get the path to the jsons based on its name
+        $jsons_path = $($jsons_array_data.Path)
 
-    # Check if the file exists before including it
-    if (Test-Path $jsons_path){ return $jsons_path }
-    else{ Write-Output "Error: $jsons_name not found in JSON List 'jsons.json"  }   
+        # Check if the file exists before including it
+        if (Test-Path $jsons_path){ return $jsons_path }
+        else{ Write-Output "Error: $jsons_name not found in JSON List 'jsons.json"  }   
+    }
+    else
+    {
+        $TABLE[5]["status"] = "enable"
+        List-Json
+    }
 }
 
 function Check-Json(){
@@ -76,30 +94,39 @@ function Check-Json(){
 }
 function Read-Json($jsons_filename) {
 
-    # Filter 'jsons-Name' in the array and store as $jsons_array_data
-    $jsons_array_data = $jsons_array_data | Where-Object { $_.Name -eq $jsons_filename }
-    
-    # Get the path to the jsons based on its name
-    $pathToJsonFile = $($jsons_array_data.Path)    
 
-    # Get the path to the JSON file as an argument
-    #$pathToJsonFile = $args[0]
 
-    # Read the contents of the JSON file
-    $jsonContent = Get-Content $pathToJsonFile | Out-String
+    if($jsons_name)
+    {
+        # Filter 'jsons-Name' in the array and store as $jsons_array_data
+        $jsons_array_data = $jsons_array_data | Where-Object { $_.Name -eq $jsons_filename }
+        
+        # Get the path to the jsons based on its name
+        $pathToJsonFile = $($jsons_array_data.Path)    
 
-    # Convert the JSON string to a PowerShell object
-    $jsonObject = ConvertFrom-Json $jsonContent
+        # Get the path to the JSON file as an argument
+        #$pathToJsonFile = $args[0]
 
-    # Output the object to the console
-    Write-Output $jsonObject
+        # Read the contents of the JSON file
+        $jsonContent = Get-Content $pathToJsonFile | Out-String
 
-    Table-Json
+        # Convert the JSON string to a PowerShell object
+        $jsonObject = ConvertFrom-Json $jsonContent
+
+        # Output the object to the console
+        Write-Output $jsonObject
+    }
+    else
+    {
+        $TABLE[5]["status"] = "enable"
+        List-Json
+    }
 }
 # Function to display all jsons specified in the JSON File 'jsons.json'
 function List-Json(){
 
-    if(($TABLE["show_all_jsons"]) -eq "enable") 
+    # config-show_all_jsons
+    if(($TABLE[5]["Status"]) -eq "enable") 
     {   
         $jsons_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$jsons_array_data.IndexOf($_) + 1}}, 
         @{label="Name"; expression={$_.Name}}, 
