@@ -40,6 +40,8 @@ $FILE =  @{
     3 =  @{File = "function-file";       Desc = "profile_function.ps1"}
 
 }  
+
+
 $TAG =  @{
     1 =  @{Title = "INFO";              Desc = "Display Profile Information"}
     2 =  @{Title = "FILE";              Desc = "List of Profile's Main File"}
@@ -59,7 +61,17 @@ $DIRECTORY =  @{
     4 =  @{Title = "mypython";           Path = "$Home\Documents\PowerShell\mypython"}
     5 =  @{Title = "myscripts";          Path = "$Home\Documents\PowerShell\myscripts"}
     6 =  @{Title = "mytest";             Path = "$Home\Documents\PowerShell\mytest"}
-}    
+}   
+
+
+$DEPENDENCY =  @{
+    1 =  @{Title = "root_directory";     Path = "$($DIRECTORY[5]["Path"])\PowerShell.ps1"}   
+    2 =  @{Title = "getPath";            Path = "$($DIRECTORY[5]["Path"])\getPath.ps1"}   
+    3 =  @{Title = "getScript";          Path = "$($DIRECTORY[5]["Path"])\getScript.ps1"}   
+    4 =  @{Title = "getDependencies";    Path = "$($DIRECTORY[5]["Path"])\getDependencies.ps1"}   
+    5 =  @{Title = "getJson";            Path = "$($DIRECTORY[5]["Path"])\getJson.ps1"}   
+    6 =  @{Title = "getFunction";        Path = "$($DIRECTORY[5]["Path"])\getFunction.ps1"}   
+}  
 <#
     DEBUG -> enable | disable
 #>
@@ -140,9 +152,11 @@ function Show-Config($tag_name)
 
     switch($tag_name)
     {
-        "info" { $INFO.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Profile INFO"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.DESC}} -AutoSize }
-        "file" { $FILE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Main File"; expression={$_.Value.File}}, @{label="Description"; expression={$_.Value.Desc}} -AutoSize  }
-        "dir"  { $DIRECTORY.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="PATH Title"; expression={$_.Value.Title}}, @{label="Directory"; expression={$_.Value.Path}} -AutoSize  }
+        "info"  { $INFO.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Profile INFO"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.DESC}} -AutoSize }
+        "file"  { $FILE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Main File"; expression={$_.Value.File}}, @{label="Description"; expression={$_.Value.Desc}} -AutoSize  }
+        "dir"   { $DIRECTORY.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="PATH Title"; expression={$_.Value.Title}}, @{label="Directory"; expression={$_.Value.Path}} -AutoSize  }
+        "debug" { $DEBUG.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="DEBUG Title"; expression={$_.Value.Title}}, @{label="Debug Status"; expression={$_.Value.Status}} -AutoSize }
+ 
         Default 
         {
             $INFO.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Profile INFO"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.DESC}} -AutoSize
@@ -160,6 +174,47 @@ function Show-Config($tag_name)
     }
 
  }
+
+ function Get-Config($tag,$index,$key,$msg){
+       # if($tag) { return $($tag[$index]['$key']) } else { Show-Config all}
+        
+       Write-Output "TAG : $tag"
+       Write-Output "Index : $index"
+       Write-Output "Key : $key"
+       Write-Output "Msg : $msg"
+
+        switch ($tag) 
+        {
+            "debug" { return $DEBUG[$index]["$key"] }
+            "JSON"  { return $JSON[$index]["$key"] }
+            Default { 
+                Write-Output "Empty TAG | Try -> Get-Config <tag> <index> <key>"
+                Show-Config all
+                Write-Output "Returning Config value for : `$$tag[$index]['$key']"
+                Write-Output "Value : $DEBUG[$index]['$key'] "
+                }
+        }
+
+ }
+<#
+ function Include-Dependecy($dependency_name)
+ { 
+    switch ($dependency_name) 
+    {
+        "getPath"         { return $DEPENDENCY[2]["Path"] }
+        "getScript"       { return $DEPENDENCY[3]["Path"]  }
+        "getDependencies" { return $DEPENDENCY[4]["Path"]  }
+        "getJson"         { return $DEPENDENCY[5]["Path"]  }
+        "getFunction"     { return $DEPENDENCY[6]["Path"]  }
+        Default { Write-Output "Invalid Dependecy Name : $dependency_name"}
+    }
+    #Write-Output "Path : $($DEPENDENCY[$index]["Path"])" 
+    Write-Output "[ OK  ] Include '$dependency_name' to the Terminal Profile"
+}
+
+#>
+
+
 #>
 function Debug-Config() {
 
@@ -172,4 +227,5 @@ function Debug-Config() {
 }
 
 Debug-Config
+
 
