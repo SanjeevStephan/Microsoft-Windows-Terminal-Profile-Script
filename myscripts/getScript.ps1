@@ -74,7 +74,7 @@ function List-Script($column_name){
         {
             "name"
             {
-                if(($TABLE["show_all_scripts"]) -eq "enable") 
+                if($($TABLE[3]["Status"]) -eq "enable") 
                 {  
                     $script_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$script_array_data.IndexOf($_) + 1}}, 
                     @{label="Script Name"; expression={$_.Name}}, 
@@ -84,7 +84,7 @@ function List-Script($column_name){
             }    
             "file"
             {
-                if(($TABLE["show_all_scripts"]) -eq "enable") 
+                if($($TABLE[3]["Status"]) -eq "enable") 
                 {  
                     $script_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$script_array_data.IndexOf($_) + 1}}, 
                     @{label="Script File"; expression={$_.File}} -AutoSize
@@ -93,7 +93,7 @@ function List-Script($column_name){
             }
             "desc"
             {
-                if(($TABLE["show_all_scripts"]) -eq "enable") 
+                if($($TABLE[3]["Status"]) -eq "enable") 
                 {  
                     $script_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$script_array_data.IndexOf($_) + 1}}, 
                     @{label="Script File"; expression={$_.File}}, 
@@ -104,7 +104,7 @@ function List-Script($column_name){
     
             "path"
             {
-                if(($TABLE["show_all_scripts"]) -eq "enable") 
+                if($($TABLE[3]["Status"]) -eq "enable") 
                 {  
                     $script_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$script_array_data.IndexOf($_) + 1}}, 
                     @{label="Script File"; expression={$_.File}}, 
@@ -114,7 +114,7 @@ function List-Script($column_name){
             }
             "basic"
             {
-                if(($TABLE["show_all_scripts"]) -eq "enable") 
+                if($($TABLE[3]["Status"]) -eq "enable") 
                 {  
                     $script_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$script_array_data.IndexOf($_) + 1}}, 
                     @{label="Script File"; expression={$_.Path}},
@@ -124,7 +124,7 @@ function List-Script($column_name){
             }
             "all"
             {
-                if(($TABLE["show_all_scripts"]) -eq "enable") 
+                if($($TABLE[3]["Status"]) -eq "enable") 
                 {  
                     $script_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$script_array_data.IndexOf($_) + 1}}, 
                     @{label="Script File"; expression={$_.File}}, 
