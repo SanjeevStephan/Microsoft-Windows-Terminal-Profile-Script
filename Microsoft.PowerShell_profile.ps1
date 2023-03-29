@@ -75,7 +75,7 @@
 
 
 #-------------------- Must Include Below File --------------------------------------#>
-. "$HOME\Documents\PowerShell\include.ps1"
+. "$HOME\Documents\PowerShell\include_dependecies.ps1"
 #-------------------- Functions {Read-Only}-------------------------------------
 
 function initialize() {
