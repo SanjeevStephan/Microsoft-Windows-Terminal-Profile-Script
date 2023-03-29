@@ -38,6 +38,14 @@ function EXEC($script_name,$argument) {
     return $true
  }
 
+ function Figlet($msg){
+    $exec_py_json = Get-Python("figlet")
+    $py_script_path =  $($exec_py_json.Path)
+    Write-Output "Python Script Path : $($exec_py_json.Path)"
+
+    & python $py_script_path --message $msg
+ }
+
 function Test-Json($type,$file_or_directory) {
 
     if($type)
