@@ -74,7 +74,22 @@ $DEBUG = @{
     8 =  @{Title = "debug_json";         Status = "enable"}
     9 =  @{Title = "debug_dependencies"; Status = "enable"}
     10 =  @{Title = "debug_myfunction";  Status = "enable"}
-    11 = @{Title = "debug_function";     Status = "enable"}    
+    11 = @{Title = "debug_function";     Status = "enable"}   
+    12 = @{Title = "debug_python";       Status = "enable"}   
+}
+$CHECKS = @{
+    1 =  @{Title = "initial_check";      Status = "enable"}        
+    2 =  @{Title = "check_everything";   Status = "disable"}
+    3 =  @{Title = "check_config";       Status = "enable"}
+    4 =  @{Title = "check_env";          Status = "enable"}
+    5 =  @{Title = "check_include";      Status = "enable"}
+    6 =  @{Title = "check_path";         Status = "enable"}
+    7 =  @{Title = "check_function";     Status = "enable"}
+    8 =  @{Title = "check_json";         Status = "enable"}
+    9 =  @{Title = "check_dependencies"; Status = "enable"}
+    10 =  @{Title = "check_myfunction";  Status = "enable"}
+    11 = @{Title = "check_python";       Status = "enable"}   
+
 }
 <#  
     FEATURE -> enable | disable
@@ -90,6 +105,7 @@ $TABLE = @{
     3 =  @{Title = "show_all_scripts";         Status = "enable"}
     4 =  @{Title = "show_all_dependencies";    Status = "enable"}
     5 =  @{Title = "show_all_jsons";           Status = "enable"}   
+    6 =  @{Title = "show_all_python_script";   Status = "enable"}
 }
 <#
     ExecutableScript => 'allow' | 'refuse'
@@ -117,6 +133,7 @@ $JSON = @{
     5 = @{Title = "myJsonList";           File = "myJsonList.json";      Path = "$($DIRECTORY[3]["Path"])\myJsonList.json"}
     6 = @{Title = "myScripts";            File = "myScripts.json";       Path = "$($DIRECTORY[3]["Path"])\myScripts.json"}
     7 = @{Title = "profileFunction";      File = "profileFunction.json"; Path = "$($DIRECTORY[3]["Path"])\profileFunctions.json"}
+    8 = @{Title = "myPython";             File = "myPythonScript.json";  Path = "$($DIRECTORY[3]["Path"])\myPythonScript.json"}
 }
 function Show-Config() 
 { 
