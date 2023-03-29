@@ -59,7 +59,7 @@ $DEBUG = @{
     7 =  @{Title = "debug_function";     Status = "enable"}
     8 =  @{Title = "debug_json";         Status = "enable"}
     9 =  @{Title = "debug_dependencies"; Status = "enable"}
-    10 =  @{Title = "debug_myfunction";   Status = "enable"}
+    10 =  @{Title = "debug_myfunction";  Status = "enable"}
     11 = @{Title = "debug_function";     Status = "enable"}    
 }
 <#  
@@ -95,15 +95,37 @@ $ASSOCIATED = @{
     6 = @{Script = "execScript.ps1";      Json = "myScripts.json"}
 }
 
+$JSON = @{
+    1 = @{Title = "dependencies";         Json = "dependencies.json"}
+    2 = @{Title = "directories";          Json = "directories.json"}
+    3 = @{Title = "myFunctions";          Json = "myFunctions.json"}
+    4 = @{Title = "myIncludes";           Json = "myIncludes.json"}
+    5 = @{Title = "myJsonList";           Json = "myJsonList.json"}
+    6 = @{Title = "myScripts";            Json = "myScripts.json"}
+    7 = @{Title = "profileFunction";      Json = "profileFunction.json"}
+}
+function Show-Config() 
+{ 
+    $INFO.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Profile"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.DESC}} -AutoSize
+    $FILE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.File}}, @{label="Description"; expression={$_.Value.Desc}} -AutoSize  
+    $PATH.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.Path}} -AutoSize    
+    $DEBUG.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.Status}} -AutoSize
+    $JSON.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.Json}} -AutoSize
+    $TABLE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.Status}} -AutoSize
+    $FEATURE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.Status}} -AutoSize  
+    $EXECUTABLE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.Status}} -AutoSize    
+    $ASSOCIATED.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Script Name"; expression={$_.Value.Script}}, @{label="JSON In-Use"; expression={$_.Value.Json}} -AutoSize    
+}
 #>
 function Debug-Table() {
-    if($DEBUG[2]["Status"] -eq "enable"){ Write-Output "[ OK ] Profile Config => { profile_config.ps1 } Loaded Successfully"} else { <# Do Nothing #>}
-  # if($DEBUG[2]["Status"] -eq "enable"){ Write-Output "Accessing Item at HashTable [1] Title : $($DEBUG[1]["Title"]) | Status : $($DEBUG[1]["Status"])" }  else { <# Do Nothing #>}
+
+    if($DEBUG[2]["Status"] -eq "enable")     # debug_config 
+    { 
+        Write-Output "[ OK ] Profile Config => { profile_config.ps1 } Loaded Successfully"} else { <# Do Nothing #>
+        # Write-Output "Accessing Item at HashTable [1] Title : $($DEBUG[1]["Title"]) | Status : $($DEBUG[1]["Status"])" 
+    }
+  # if($DEBUG[2]["Status"] -eq "enable"){ 
 }
 
-# debug_config 
-if($DEBUG[3]["Status"] -eq "enable") 
-    { 
-        Debug-Table
-    }
-  
+Debug-Table
+
