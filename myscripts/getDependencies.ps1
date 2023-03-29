@@ -30,9 +30,8 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
  # Debug profile_getDependencies.ps1  
 if($DEBUG[9]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Profile()   => { getDependencies.ps1 } Loaded Successfully"} 
    
-# Read the JSON data from the file
-$jsonSource = $env:myjson
-$dependencies_json_raw_data = Get-Content -Path "$jsonSource\dependencies.json" -Raw
+# Read the JSON data from the file $PATH[3]["Path"]
+$dependencies_json_raw_data = Get-Content -Path $JSON[1]["Path"] -Raw
 
 # Convert the JSON data to a PowerShell object
 $dependencies_array_data = ConvertFrom-Json -InputObject $dependencies_json_raw_data 

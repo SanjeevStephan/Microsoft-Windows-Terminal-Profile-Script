@@ -31,8 +31,7 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
 if($DEBUG[6]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Path()      => { getPath.ps1 } Loaded Successfully"} 
    
 # Read the JSON data from the file
-$jsonSource = $env:myjson
-$paths_json_raw_data = Get-Content -Path "$jsonSource\directories.json" -Raw
+$paths_json_raw_data = Get-Content -Path $JSON[2]["Path"] -Raw
 
 # Convert the JSON data to a PowerShell object
 $paths_array_data = ConvertFrom-Json -InputObject $paths_json_raw_data 

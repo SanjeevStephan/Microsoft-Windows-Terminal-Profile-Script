@@ -31,8 +31,7 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
 if($DEBUG[4]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Script()    => { getScript.ps1 } Loaded Successfully"} 
    
 # Read the JSON data from the file
-$jsonSource = $env:myjson
-$script_json_raw_data = Get-Content -Path "$jsonSource\myScripts.json"  -Raw
+$script_json_raw_data = Get-Content -Path $JSON[6]["Path"]  -Raw
 
 # Convert the JSON data to a PowerShell object
 $script_array_data = ConvertFrom-Json -InputObject $script_json_raw_data 

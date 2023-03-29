@@ -31,8 +31,7 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
 if($DEBUG[7]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Function()  => { getfunction.ps1 } Loaded Successfully"} 
    
 # Read the JSON data from the file
-$jsonSource = $env:myjson
-$function_json_raw_data = Get-Content -Path "$jsonSource\profileFunctions.json" -Raw
+$function_json_raw_data = Get-Content -Path $JSON[7]["Path"] -Raw
 
 # Convert the JSON data to a PowerShell object
 $function_array_data = ConvertFrom-Json -InputObject $function_json_raw_data 
