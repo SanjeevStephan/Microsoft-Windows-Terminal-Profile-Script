@@ -26,6 +26,11 @@
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myjson\\myFunctions.json"
     },
     {
+        "Name" : "myPythonScript",
+        "File" : "myPythonScript.json",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myjson\\myPythonScript.json"
+    },
+    {
         "Name" : "scripts",
         "File" : "scripts.json",
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myjson\\myScripts.json"
