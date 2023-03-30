@@ -86,7 +86,14 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1" # <------
 . $profile_config_path # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
 
 # Debug debug_exec_script.ps1
-if($DEBUG["debug_exec_script"] -eq "enable"){ Write-Output "[ OK ] Profile execScript => { profile_execScript.ps1 } Loaded Successfully"} 
+if(InitialCheckStatus(1) -eq "enable")
+{ 
+    #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
+    Write-Output "[ OK ] Dependency : execScript.ps1 => Included { 3 } Functions Successfully"
+    Write-Output "[ OK ] Included : Function => { display_script_info() } Successfully"
+    Write-Output "[ OK ] Included : Function => { display_all_available_scripts() } Successfully"
+    Write-Output "[ OK ] Included : Function => { execute_script() } Successfully"
+} 
  
 # Look in 'Name' Property whose Value '$scriptName_args'
 $script = $script_db | Where-Object { $_.Name -eq $scriptName_args }
