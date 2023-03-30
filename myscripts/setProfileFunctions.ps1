@@ -19,40 +19,43 @@
     VERSION
         -v1.0    
         
-#----------------------------------------------------------------------------------#>
+#-------------------- Include Below File --------------------------------------#>
 # Define the path to the functions.json file
 # $jsonSource = $env:myjson
 
 # Define the path to the functions.json file
-#$myFunctionFilePath = "$Home\Documents\PowerShell\myjson\myFunctions.json"
-$myFunctionFilePath = Get-JsonPath("myFunctions")
+#$profileFunctionFilePath = "$Home\Documents\PowerShell\myjson\myFunctions.json"
+$profileFunctionFilePath = Get-JsonPath("profileFunctions")
 
 # Read the contents of the JSON file into a PowerShell object
-$myFunctionJsonContent = Get-Content $myFunctionFilePath | ConvertFrom-Json
+$myFunctionJsonContent = Get-Content $profileFunctionFilePath | ConvertFrom-Json
+
+# Define the path to the PowerShell profile directory
+$myFunctionSource = "$HOME\Documents\PowerShell\myfunctions"
 
 # Create a hashtable to store the dependencies
-$myfunction_hashtable = @{}
+$profileFunction_hashtable = @{}
 
 # Loop through each function in the JSON object and add it to the dependencies hashtable
 foreach ($function in $myFunctionJsonContent) {
-    $myfunction_hashtable[$function.Name] = "$($function.Path)"
+    $profileFunction_hashtable[$function.Name] = "$($function.Path)"
 
-    if($CHECKS[1]["Status"] -eq "enable") { Write-Host "[ OK ] Included : MyFunction => { $($function.Name) }  Successfully"  -ForegroundColor Green } else {}
-    #Write-Output "Added : $myfunction_hashtable[$function.Name] = $myFunctionSource\$($function.File) `n"
+    if($CHECKS[1]["Status"] -eq "enable") { Write-Host "[ OK ] Included : Profile-Function => { $($function.Name) }  Successfully"  -ForegroundColor Green } else {}
+    #Write-Output "Added : $profileFunction_hashtable[$function.Name] = $myFunctionSource\$($function.File) `n"
 }
 Write-Output "[ OK ] setMyFunction     => { setMyFunction.ps1 } Loaded Successfully"
 # Loop through each myfunction and include it in the profile
-foreach ($myfunction in $myfunction_hashtable.Values | Sort-Object -Property Key ) {
+foreach ($profilefunction in $profileFunction_hashtable.Values | Sort-Object -Property Key ) {
 
-    if(Test-Path $myfunction)
+    if(Test-Path $profilefunction)
     {
 
-    . $myfunction
+    . $profilefunction
 
     } else 
     { 
-        $filename = [System.IO.Path]::GetFileNameWithoutExtension($myfunction)
-        Write-Host "[    ] Missing  : MyFunction => { $filename } at $myfunction" -ForegroundColor Red
+        $filename = [System.IO.Path]::GetFileNameWithoutExtension($profilefunction)
+        Write-Host "[    ] Missing  : Profile-Function => { $filename } at $profilefunction" -ForegroundColor Red
     }
 }
 

@@ -131,12 +131,15 @@ $EXECUTABLE = @{
 }
 
 $ASSOCIATED = @{
-    1 = @{Script = "include.ps1";         Json = "dependencies.json"}
-    2 = @{Script = "getDependencies.ps1"; Json = "dependencies.json"}
-    3 = @{Script = "getfunction.ps1";     Json = "profileFunctions.json"}
-    4 = @{Script = "getPath.ps1";         Json = "directories.json"}
-    5 = @{Script = "getScript.ps1";       Json = "myJsonList.json"}
-    6 = @{Script = "execScript.ps1";      Json = "myScripts.json"}
+    1 = @{Script = "include.ps1";            Json = "dependencies.json";     CheckFunc = ""}
+    2 = @{Script = "getDependencies.ps1";    Json = "dependencies.json";     CheckFunc = "Check-Profile";       ListFunc="List-Profile"}
+    3 = @{Script = "getfunction.ps1";        Json = "profileFunctions.json"; CheckFunc = "Check-Function";      ListFunc="List-Function"}
+    4 = @{Script = "getPath.ps1";            Json = "directories.json";      CheckFunc = "Check-Path";          ListFunc="List-Path"}
+    5 = @{Script = "getScript.ps1";          Json = "myScripts.json";        CheckFunc = "Check-Script";        ListFunc="List-Script"}
+    6 = @{Script = "getJson.ps1";            Json = "myJsonList.json";       CheckFunc = "Check-Json";          ListFunc="List-Json"}
+    7 = @{Script = "getPython.ps1";          Json = "myPythonScript.json";   CheckFunc = "Check-Python";        ListFunc="List-Python"}
+    8 = @{Script = "setProfileFunction.ps1"; Json = "myFunctions.json";      CheckFunc = "Set-ProfileFunction"; ListFunc=""}
+    9 = @{Script = "setMyFunction.ps1";      Json = "myScripts.json";        CheckFunc = "Set-MyFunction";      ListFunc=""}
 }
 
 $JSON = @{

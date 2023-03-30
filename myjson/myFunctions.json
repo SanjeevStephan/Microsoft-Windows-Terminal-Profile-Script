@@ -18,6 +18,33 @@
         "Desc": "Copy the current working directory path to clipboard"
     },
     {
+        "Name": "check-link",
+        "File": "check_link.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\check_link.ps1",
+        "Argument":"Yes",
+        "Parameter" : ["$url"],
+        "Syntax" : "download-file '<url>'",
+        "Desc": "Check the Link from the Clipboard Before Downloading"
+    },
+    {
+        "Name": "download",
+        "File": "download.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\download.ps1",
+        "Argument":"Yes",
+        "Parameter" : ["$url"],
+        "Syntax" : "download-file '<url>'",
+        "Desc": "Check the clipboad for URL and then download the file"
+    },
+    {
+        "Name": "download-file",
+        "File": "download_file.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\download_file.ps1",
+        "Argument":"Yes",
+        "Parameter" : ["$url"],
+        "Syntax" : "download-file '<url>'",
+        "Desc": "Download the file using the URL passed as an argument"
+    },
+    {
         "Name": "goto",
         "File": "goto.ps1",
         "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\goto.ps1",
@@ -31,9 +58,18 @@
         "File": "openinbrave.ps1",
         "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\openinbrave.ps1",
         "Argument":"Yes",
-        "Parameter" : ["$htmlfile",""],
+        "Parameter" : ["$htmlfile"],
         "Syntax" : "",
         "Desc": "Open local file in Browser"
+    },
+    {
+        "Name": "localhost",
+        "File": "localhost.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\localhost.ps1",
+        "Argument":"Yes",
+        "Parameter" : ["",""],
+        "Syntax" : "",
+        "Desc": "Open Localhost Site from console "
     },
     {
         "Name": "removetest",
@@ -88,6 +124,6 @@
         "Parameter" : [""],
         "Syntax" : "",
         "Desc": "open file explorer of the current working directory"
-    },
+    }
     
 ]

@@ -20,25 +20,11 @@
     VERSION
         -v1.0    
 
-#-------------------- Include Below File --------------------------------------#>
-# Define the path to the configuration file that contains additional dependencies
-$profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
-
-# getDependencies the configuration file to load any additional dependencies
- # . $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
-
- # Debug profile_getDependencies.ps1  
- if(InitialCheckStatus(1) -eq "enable")
- { 
-     #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
-     Write-Output "[ OK ] Dependency : getDependencies.ps1 => Included { 3 } Functions Successfully"
-     Write-Output "[ OK ] Included : Function => { Get-Profile() } Successfully"
-     Write-Output "[ OK ] Included : Function => { Check-Profile() } Successfully"
-     Write-Output "[ OK ] Included : Function => { List-Profile() } Successfully"
- } 
-   
+#-------------------- getDependencies.ps1 --------------------------------------#>
 # Read the JSON data from the file $PATH[3]["Path"]
-$dependencies_json_raw_data = Get-Content -Path $JSON[1]["Path"] -Raw
+$dependencies_json_source = "$Home\Documents\PowerShell\myjson\dependencies.json"
+
+$dependencies_json_raw_data = Get-Content -Path $dependencies_json_source -Raw
 
 # Convert the JSON data to a PowerShell object
 $dependencies_array_data = ConvertFrom-Json -InputObject $dependencies_json_raw_data 
@@ -61,12 +47,12 @@ function Get-Profile($dependencies_name)
         }   
 }
 function Check-Profile(){
-    
+    Write-Output "[ OK ] Dependency : getDependencies.ps1 => Included { 3 } Functions Successfully"
     foreach ($dependency in $dependencies_array_data) {
         if (Test-Path $dependency.Path) {
             Write-Output "[ OK ] Confirmed: $($dependency.File) at $($dependency.Path)"
         } else {
-            Write-Output "[    ] Not found: $($dependency.File) at $($dependency.Path)"
+            Write-Host "[    ] Not found: $($dependency.File) at $($dependency.Path)" -ForegroundColor Red
         }
     }
 
@@ -83,6 +69,3 @@ function List-Profile(){
     } 
     else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
 }
-
- # getDependencies("profile_function")    # <-------------- NOTE-2 : TO RUN THIS SCRIPT | UNCOMMENT 
- # List-Profile          # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 

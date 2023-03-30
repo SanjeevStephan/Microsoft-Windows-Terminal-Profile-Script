@@ -5,19 +5,19 @@ function goto($dir_name) {
     # example:- goto py 
             switch ($dir_name) 
             {
-                "codes"    { Goto-Directory("codes")}
-                "profile"  { Goto-Directory("powershell") }
-                "py"       { Goto-Directory("mypython")}
-                "terminal" { Goto-Directory("terminal") }
-                "matrix"   { Goto-Directory("matrix") }
-                "mrrobot"  { Goto-Directory("mrrobot") }
-                "oracle"   { Goto-Directory("oracle") }
-#               "pymath"   { Goto-Directory("terminal") }
-#               "project"  { Goto-Directory("terminal") }
-                "pico"     { Goto-Directory("pico") }
-                "payload"  { Goto-Directory("payload") }
-                "study"    { Goto-Directory("study") }
-                "scripts"  { Goto-Directory("myscripts") }
+                "codes"      { Goto-Directory("codes")}
+                "profile"    { Goto-Directory("powershell") }
+                "py"         { Goto-Directory("mypython")}
+                "terminal"   { Goto-Directory("terminal") }
+                "matrix"     { Goto-Directory("matrix") }
+                "mrrobot"    { Goto-Directory("mrrobot") }
+                "myfunctions"{ Goto-Directory("myfunctions") }
+                "mypython"   { Goto-Directory("mypython") }
+                "oracle"     { Goto-Directory("oracle") }
+                "pico"       { Goto-Directory("pico") }
+                "payload"    { Goto-Directory("payload") }
+                "study"      { Goto-Directory("study") }
+                "myscripts"    { Goto-Directory("myscripts") }
                 Default 
                 {
                     

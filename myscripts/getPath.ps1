@@ -21,29 +21,10 @@
         -v1.0    
 
 #-------------------- getPath Below File --------------------------------------#>
-# Define the path to the configuration file that contains additional Paths
-$profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
-
-# getPath the configuration file to load any additional Paths
- #. $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
-
- # Debug profile_getPath.ps1  
- if(InitialCheckStatus(1) -eq "enable")
- { 
-     #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
-     Write-Output "[ OK ] Dependency : getPath.ps1 => Included { 5 } Functions  Successfully"
-     Write-Output "[ OK ] Included : Function => { Get-PathJson() } Successfully"
-     Write-Output "[ OK ] Included : Function => { Get-Path() } Successfully"
-     Write-Output "[ OK ] Included : Function => { Check-Path() } Successfully"
-     Write-Output "[ OK ] Included : Function => { Check-ThisPath() } Successfully"
-     Write-Output "[ OK ] Included : Function => { Get-FileName() } Successfully"
-     Write-Output "[ OK ] Included : Function => { Is-Available() } Successfully"
-     Write-Output "[ OK ] Included : Function => { List-Path() } Successfully"
- }
-   
 # Read the JSON data from the file 
 # $directoryJsonPathSource = "$Home\Documents\PowerShell\myjson\directories.json"
-$directoryJsonPathSource = $JSON[2]["Path"]
+$directoryJsonPathSource = "$Home\Documents\PowerShell\myjson\directories.json"
+
 $paths_json_raw_data = Get-Content -Path $directoryJsonPathSource  -Raw
 
 # Convert the JSON data to a PowerShell object
@@ -84,17 +65,17 @@ function Get-Path($directory_name)
 
 }
 function Check-Path(){
-    
+    Write-Output "[ OK ] Dependency : getPath.ps1 => Included { 5 } Functions  Successfully"
     foreach ($paths in $paths_array_data) {
         if (Test-Path $paths.Path) {
-            Write-Output "[ OK ] Confirmed: $($paths.Directory) at $($paths.Path)"
+            Write-Host "[ OK ] Confirmed: $($paths.Directory) at $($paths.Path)"
         } else {
-            Write-Output "[    ] Not found: $($paths.Directory) at $($paths.Path)"
+            Write-Warning "[    ] Not found: $($paths.Directory) at $($paths.Path)"
         }
     }
 
 }
-function Check-ThisPath($directory_path) { if(Test-Path $directory_path) { Write-Output "Yes! This path exists at : $directory_path"} else { Write-Output "Sorry! This Path Doesn't exists"}}
+function Check-ThisPath($directory_path) { if(Test-Path $directory_path) { Write-Output "Yes! This path exists at : $directory_path"} else { Write-Warning "Sorry! This Path Doesn't exists"}}
 function Get-Path($directory_name)
 {
     if($directory_name)

@@ -20,27 +20,12 @@
     VERSION
         -v1.0    
 
-#-------------------- Include Below File --------------------------------------#>
-# Define the path to the configuration file that contains additional dependencies
-$profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
-
-# getjsons the configuration file to load any additional dependencies
-  #. $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS jsons | UNCOMMENT 
-
- # Debug profile_getjsons.ps1 
- if(InitialCheckStatus(1) -eq "enable")
- { 
-     #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
-     Write-Output "[ OK ] Dependency : getPython.ps1 => Included { 5 } Functions Successfully"
-     Write-Output "[ OK ] Included : Function => { Get-Python() } Successfully"
-     Write-Output "[ OK ] Included : Function => { Get-PythonPath() } Successfully"
-     Write-Output "[ OK ] Included : Function => { Check-Python() } Successfully"
-     Write-Output "[ OK ] Included : Function => { Read-Python() } Successfully"
-     Write-Output "[ OK ] Included : Function => { List-Python() } Successfully"
- } 
-
+#--------------------{ getPython.ps1 }--------------------------------------#>
 # Read the JSON data from the file
-$python_json_raw_data = Get-Content -Path $JSON[8]["Path"] -Raw
+$python_json_source_file = Get-JsonPath("myJsonList")
+
+$python_json_raw_data = Get-Content -Path $python_json_source_file -Raw
+#$python_json_raw_data = Get-JsonPath("myPython")
 
 # Convert the JSON data to a PowerShell object
 $python_array_data = ConvertFrom-Json -InputObject $python_json_raw_data 
@@ -59,7 +44,7 @@ function Get-Python($python_script_name)
 
         # Check if the file exists before including it
         if (Test-Path $python_script_path){ return $python_array_data }
-        else{ Write-Output "Error: $python_script_name not found in JSON List 'myJsonList.json"  }   
+        else{ Write-Warning "Error: $python_script_name not found in JSON List 'myJsonList.json"  }   
     } else { $python_array_data }
 }
 function Get-PythonPath($python_script_name)
@@ -74,12 +59,13 @@ function Get-PythonPath($python_script_name)
 
         # Check if the file exists before including it
         if (Test-Path $python_script_path){ return $python_script_path }
-        else{ Write-Output "Error: $python_script_name not found in JSON List 'jsons.json"  }  
+        else{ Write-Warning "Error: $python_script_name not found in JSON List 'jsons.json"  }  
     } else { $python_array_data }
 }
 
 function Check-Python(){
-    
+     #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
+    Write-Output "[ OK ] Dependency : getPython.ps1 => Included { 5 } Functions Successfully"
     foreach ($python_script_file in $python_array_data) {
         if (Test-Path $python_script_file.Path) {
             Write-Output "[ OK ] Confirmed: $($python_script_file.File) at $($python_script_file.Path)"
@@ -114,19 +100,11 @@ function Read-Python($python_script_filename) {
 # Function to display all jsons specified in the JSON File 'jsons.json'
 function List-Python(){
 
-    if($($TABLE[6]["Status"]) -eq "enable") 
-    {   
         $python_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$python_array_data.IndexOf($_) + 1}}, 
         @{label="Name"; expression={$_.Name}}, 
         @{label="JSON File"; expression={$_.File}},
         @{label="Path"; expression={$_.Path}} -AutoSize
-    } 
-    else { $python_array_data<# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
 }
-
- # getjsons("test")    # <-------------- NOTE-2 : TO RUN THIS jsons | UNCOMMENT 
- # Table-Json          # <-------------- NOTE-3 : TO RUN THIS jsons | UNCOMMENT 
-
 
 
 

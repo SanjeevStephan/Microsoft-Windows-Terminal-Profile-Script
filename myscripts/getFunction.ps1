@@ -20,28 +20,8 @@
     VERSION
         -v1.0    
 
-#-------------------- Include Below File --------------------------------------#>
-# Define the path to the configuration file that contains additional dependencies
-$profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
-
-# getfunction the configuration file to load any additional dependencies
-#. $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS function | UNCOMMENT 
-
- # Debug profile_getfunction.ps1  
- if(InitialCheckStatus(1) -eq "enable")
- { 
-     #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
-     Write-Output "[ OK ] Dependency : getfunction.ps1 => Included { 4 } Functions Successfully"
-     Write-Output "[ OK ] Included : Function => { Get-Function() } Successfully"
-     Write-Output "[ OK ] Included : Function => { Check-Function() } Successfully"
-     Write-Output "[ OK ] Included : Function => { List-Function() } Successfully"
-     Write-Output "[ OK ] Included : Function => { Run-Function() } Successfully"
- }  
-   
+#-------------------- getFunction.ps1 --------------------------------------#>
 # Read the JSON data from the file
-# 3 -> myFunctions.json
-# 7 -> profileFunctions.json
-
 $functionJsonFilePath = "$Home\Documents\PowerShell\myjson\profileFunctions.json"
 
 $function_json_raw_data = Get-Content -Path $functionJsonFilePath -Raw
@@ -69,7 +49,7 @@ function Get-FunctionFromJSON($filename) {
     return $content
 }
 function Check-Function(){
-
+Write-Output "[ OK ] Dependency : getfunction.ps1 => Included { 4 } Functions Successfully"
 # Read the 'functions.json' file
 $jsonSource = "$Home\Documents\PowerShell\myjson\profileFunctions.json"
 $functions = Get-FunctionFromJSON $jsonSource
@@ -96,7 +76,7 @@ $functions = Get-FunctionFromJSON $jsonSource
             Write-Output "Function Name : $($function.Name) [$status]"
         }
 
-    }  else { Write-Output "Invalid Path $jsonSource"}
+    }  else { Write-Warning "Invalid Path $jsonSource"}
 
 }
 

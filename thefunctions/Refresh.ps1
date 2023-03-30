@@ -1,0 +1,3 @@
+function REFRESH () {
+    clear
+    .$PROFILE}

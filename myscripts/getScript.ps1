@@ -21,12 +21,6 @@
         -v1.0    
 
 #-------------------- Include Below File --------------------------------------#>
-# Define the path to the configuration file that contains additional dependencies
-$profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
-
-# getScript the configuration file to load any additional dependencies
- # . $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
-
 # $myScriptJsonSource = "$Home\Documents\PowerShell\myjson\myScript.json"
 $myScriptJsonSource = Get-JsonPath("myScripts")
 
@@ -60,9 +54,9 @@ function Check-Script(){
 
     foreach ($scripts in $script_array_data) {
         if (Test-Path $scripts.Path) {
-            Write-Output "[ OK ] Confirmed: '$($scripts.Name)' at $($scripts.Path)"
+            Write-Host "[ OK ] Confirmed: '$($scripts.Name)' at $($scripts.Path)" -ForegroundColor Green
         } else {
-            Write-Output "[    ] Not found: $($scripts.File) at $($scripts.Path)"
+            Write-Host "[    ] Not found: $($scripts.File) at $($scripts.Path)" -ForegroundColor Red
         }
     }
 }
@@ -162,16 +156,16 @@ if(InitialCheckStatus(1) -eq "enable")
     $scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
 
     Write-Output "<-------------------{  $scriptName }-------------------------->"
-    Write-Output "[ OK ] Dependency : $scriptName => Included { $num_of_function } Functions Successfully"
+    Write-Host "[ OK ] Dependency : $scriptName => Included { $num_of_function } Functions Successfully" -ForegroundColor Blue
     Write-Output "[....] The Script Name : $scriptName"
     Write-Output "[....] The Script Path : $scriptFullPath"
     Write-Output "[....] Invoked By : $scriptExecutedBy"
     Write-Output "$($StoredConfigStatus["Status"]) Configuration-File { $configName } is $($StoredConfigStatus["IsAvailable"]) at $profile_config_path"
     Write-Output "$($storedJsonFileStatus["Status"]) JSON-File { $jsonFileName } is $($storedJsonFileStatus["IsAvailable"])"
 
-    Write-Output "[ OK ] Included : Function => { Get-Script() } Successfully"
-    Write-Output "[ OK ] Included : Function => { Check-Script() } Successfully"
-    Write-Output "[ OK ] Included : Function => { List-Script() } Successfully"
+ #   Write-Host "[ OK ] Included : Function => { Get-Script() } Successfully"  
+  #  Write-Host "[ OK ] Included : Function => { Check-Script() } Successfully"  
+ #   Write-Host "[ OK ] Included : Function => { List-Script() } Successfully" 
 }
  # getScript("test")    # <-------------- NOTE-2 : TO RUN THIS SCRIPT | UNCOMMENT 
  # List-Script          # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 
