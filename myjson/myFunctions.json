@@ -9,6 +9,15 @@
         "Desc": "paste to clipboard or copy from clipboard into or from the file"
     }, 
     {
+        "Name": "copypath",
+        "File": "copypath.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\copypath.ps1",
+        "Argument":"No",
+        "Parameter" : ["",""],
+        "Syntax" : " clip {in|out} simple-test.txt ",
+        "Desc": "Copy the current working directory path to clipboard"
+    },
+    {
         "Name": "goto",
         "File": "goto.ps1",
         "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\goto.ps1",
@@ -52,6 +61,15 @@
         "Parameter" : [""],
         "Syntax" : "",
         "Desc": "Keep Displaying Time : Internet Status with 2 seconds delay"
+    },
+    {
+        "Name": "goodbye",
+        "File": "goodbye.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\goodbye.ps1",
+        "Argument":"No",
+        "Parameter" : [""],
+        "Syntax" : "",
+        "Desc": "Shutdown PC Immediately"
     },
     {
         "Name": "window",
