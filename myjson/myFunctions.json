@@ -63,6 +63,15 @@
         "Desc": "Keep Displaying Time : Internet Status with 2 seconds delay"
     },
     {
+        "Name": "sleep",
+        "File": "sleep.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\sleep.ps1",
+        "Argument":"No",
+        "Parameter" : [""],
+        "Syntax" : "",
+        "Desc": "Make the computer go to Sleep"
+    },
+    {
         "Name": "goodbye",
         "File": "goodbye.ps1",
         "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\goodbye.ps1",
