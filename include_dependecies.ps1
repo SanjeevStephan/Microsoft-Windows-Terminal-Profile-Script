@@ -24,6 +24,14 @@
 $profile_source = "$Home\Documents\PowerShell\"
 $myscript_source = "$profile_source\myscripts"
 
+# Debug profile_getfunction.ps1  
+if(InitialCheckStatus(1) -eq "enable")
+{ 
+    Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
+    Write-Output "[ OK ] Profile include => { include.ps1 } Loaded Successfully"
+} 
+
+
 <# Function to include all dependencies using traditional hashtable#>
 $profile_dependencies = @{
     "powerShell_profile" = "$profile_source\Microsoft.PowerShell_profile.ps1"
@@ -43,10 +51,8 @@ $profile_dependencies = @{
 . $profile_dependencies["getJson"]
 . $profile_dependencies["getScript"]
 . $profile_dependencies["getDependencies"]
+. $profile_dependencies["getPython"]
 . $profile_dependencies["getFunction"]
 . $profile_dependencies["profile_function"]
 . $profile_dependencies["setMyFunctions"]
-
-# Debug profile_getfunction.ps1  
-if($DEBUG["debug_include"] -eq "enable"){ Write-Output "[ OK ] Profile include => { include.ps1 } Loaded Successfully"} 
 
