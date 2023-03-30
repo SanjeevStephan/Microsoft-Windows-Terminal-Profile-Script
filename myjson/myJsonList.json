@@ -36,6 +36,11 @@
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myjson\\myScripts.json"
     },
     {
+        "Name" : "profileFunctions",
+        "File" : "profileFunctions.json",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myjson\\profileFunctions.json"
+    },
+    {
         "Name" : "test",
         "File" : "test.json",
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\mytest\\test.json"
