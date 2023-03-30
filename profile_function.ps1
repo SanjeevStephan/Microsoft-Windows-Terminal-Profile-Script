@@ -20,7 +20,11 @@
         -26 March 2023   
 
 #>
-if($DEBUG[11]["Status"] -eq "enable"){ Write-Output "[ OK ] Profile Function  => { profile_function.ps1 } Loaded Successfully"} 
+if(InitialCheckStatus(1) -eq "enable")
+{ 
+    #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
+    Write-Output "[ OK ] Profile Function  => { profile_function.ps1 } Loaded Successfully"
+} 
  
 #--------------------------------------{ Alphabet-A }--------------------------------------------------
 
@@ -80,10 +84,33 @@ function Figlet($msg){
     if($DEBUG[11]["Status"] -eq "enable"){ Write-Output "Python Script Path : $($exec_py_json.Path)" } else { <# Do nothing #>}
     # Execute python by supplying the --parameter and $argumnet 
     & python $py_script_path --message $msg 
+
+
+    #Get-Member -InputObject $MyInvocation
+    
+    $callingFunction = $MyInvocation.MyCommand.Name
+    Write-Host "Function 'Goto-Directory()' was called by $callingFunction"
+
+    Write-Host "InvocationName: $($MyInvocation.InvocationName)"
+    Write-Host "Line: $($MyInvocation.Line)"
+    Write-Host "MyCommand: $($MyInvocation.MyCommand)"
+
+
+    Write-Host "ScriptName: $($MyInvocation.ScriptName)"
+
+    $scriptFileName = Split-Path -Path $MyInvocation.ScriptName -Leaf
+    Write-Host "The caller's script file name is: $scriptFileName"
+
  }
 
 #--------------------------------------{ Alphabet-G }--------------------------------------------------
+function Goto-Directory($directory_name) {
 
+     #Get-Member -InputObject $MyInvocation
+    $directory_path =  Get-Path($directory_name)
+    cd $directory_path
+    dir
+}
 #--------------------------------------{ Alphabet-H }--------------------------------------------------
 function Home() {
     $pshellSource = GET-PATH("powershell")
@@ -138,20 +165,44 @@ function Show-Table($type) {
                 "script"       { List-Script("basic") }
                 "json"         { List-Json }
                 "path"         { List-Path("all") } 
-                "all" 
-                {
-                    List-Profile
-                    List-Function("all")
-                    List-Script("all")
-                    List-Json
-                    List-Path("all")
-                }
                 Default { Write-Error "Invalid Argument Passed | Require -> test_json type file_or_dir"}
             }
+        } else 
+        {
+            List-Profile
+            List-Function("all")
+            List-Script("all")
+            List-Json
+            List-Path("all")
         }
         return $true
     }
+function Show-List($type) {
+    # Update the value of the 'show_all_paths' property
+    $TABLE.show_all_paths = "enable"
     
+        if($type)
+        {
+            switch($type)
+            {
+                "dependencies" { $python_array_data }
+                "function"     { $function_array_data }
+                "script"       { $script_array_data }
+                "json"         { $jsons_array_data }
+                "path"         { $paths_array_data } 
+                "python"       { $python_array_data }
+                Default { Write-Error "Invalid Argument Passed | Require -> test_json type file_or_dir"}
+            }
+        } else 
+        {
+            $python_array_data
+            $function_array_data
+            $script_array_data
+            $jsons_array_data
+            $paths_array_data
+        }
+        return $true
+    }    
 #--------------------------------------{ Alphabet-T }--------------------------------------------------
 
 
