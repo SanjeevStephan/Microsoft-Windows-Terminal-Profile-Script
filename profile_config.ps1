@@ -27,7 +27,7 @@
         ->  Debug-Config()
  #>
 
- $INFO =  @{
+$INFO =  @{
     1 =  @{Title = "profile";              Desc = "SuperUser"}
     2 =  @{Title = "author";               Desc = "Sanjeev Stephan Murmu"}
     3 =  @{Title = "version";              Desc = "v1.0.0"}    
@@ -38,8 +38,21 @@ $FILE =  @{
     1 =  @{File = "profile";             Desc = "Microsoft.PowerShell_profile.ps1"}
     2 =  @{File = "configuration-file";  Desc = "profile_config.ps1"}
     3 =  @{File = "function-file";       Desc = "profile_function.ps1"}
-
 }  
+<#  
+    FEATURE -> enable | disable
+#>
+$FEATURE = @{
+    1 =  @{Title = "figlet";         Status = "enable"}
+    2 =  @{Title = "ascii";          Status = "enable"}
+    3 =  @{Title = "dependencies";  Status = "enable"}
+}
+
+$SETTINGS = @{
+    1 =  @{Task = "Welcome Figlet Text";         Value = "Superuser"}
+    2 =  @{Task = "Navigate to this Directory";   Value = "myfunctions"}
+    3 =  @{Task = "dependencies";  Value = "enable"}
+}
 
 
 $TAG =  @{
@@ -76,7 +89,7 @@ $DEPENDENCY =  @{
     DEBUG -> enable | disable
 #>
 $DEBUG = @{
-    1 =  @{Title = "initial_debug";      Status = "disable"}        
+    1 =  @{Title = "initial_debug";      Status = "disable"}     <# <------------ Main Initial Debug #>
     2 =  @{Title = "debug_test";         Status = "enable"}
     3 =  @{Title = "debug_config";       Status = "enable"}
     4 =  @{Title = "debug_exec_script";  Status = "enable"}
@@ -86,39 +99,27 @@ $DEBUG = @{
     8 =  @{Title = "debug_json";         Status = "enable"}
     9 =  @{Title = "debug_dependencies"; Status = "enable"}
     10 =  @{Title = "debug_myfunction";  Status = "enable"}
-    11 = @{Title = "debug_function";     Status = "enable"}   
-    12 = @{Title = "debug_python";       Status = "enable"}   
+    11 =  @{Title = "debug_function";     Status = "enable"}   
+    12 =  @{Title = "debug_python";       Status = "enable"}   
+    13 =  @{Title = "debug_main_profile"; Status = "enable"} 
 }
 $CHECKS = @{
-    1 =  @{Title = "initial_check";      Status = "enable"}        
+    1 =  @{Title = "initial_check";      Status = "enable"}      <# <------------ Main Initial Check #>     
     2 =  @{Title = "check_everything";   Status = "enable"}
     3 =  @{Title = "check_config";       Status = "enable"}
     4 =  @{Title = "check_env";          Status = "enable"}
     5 =  @{Title = "check_include";      Status = "enable"}
-    6 =  @{Title = "check_path";         Status = "enable"}
-    7 =  @{Title = "check_function";     Status = "enable"}
-    8 =  @{Title = "check_json";         Status = "enable"}
-    9 =  @{Title = "check_dependencies"; Status = "enable"}
-    10 =  @{Title = "check_myfunction";  Status = "enable"}
-    11 = @{Title = "check_python";       Status = "enable"}   
 
 }
-<#  
-    FEATURE -> enable | disable
-#>
-$FEATURE = @{
-    1 =  @{Title = "ascii";         Status = "enable"}
-    2 =  @{Title = "figlet";        Status = "enable"}
-    3 =  @{Title = "dependencies";  Status = "enable"}
-}
+
 $TABLE = @{
-    1 =  @{Title = "show_overview";            Status = "enable"}
-    2 =  @{Title = "show_all_paths";           Status = "enable"}    
-    3 =  @{Title = "show_all_scripts";         Status = "enable"}
-    4 =  @{Title = "show_all_dependencies";    Status = "enable"}
-    5 =  @{Title = "show_all_jsons";           Status = "enable"}   
-    6 =  @{Title = "show_all_python_script";   Status = "enable"}
-    7 =  @{Title = "show_all_functions";       Status = "enable"}
+    1 =  @{Title = "show_overview";            Status = "disable"}
+    2 =  @{Title = "show_all_paths";           Status = "disable"}    
+    3 =  @{Title = "show_all_scripts";         Status = "disable"}
+    4 =  @{Title = "show_all_dependencies";    Status = "disable"}
+    5 =  @{Title = "show_all_jsons";           Status = "disable"}   
+    6 =  @{Title = "show_all_python_script";   Status = "disable"}
+    7 =  @{Title = "show_all_functions";       Status = "disable"}
 }
 <#
     ExecutableScript => 'allow' | 'refuse'
@@ -197,36 +198,13 @@ function Show-Config($tag_name)
         }
 
  }
-<#
- function Include-Dependecy($dependency_name)
- { 
-    switch ($dependency_name) 
-    {
-        "getPath"         { return $DEPENDENCY[2]["Path"] }
-        "getScript"       { return $DEPENDENCY[3]["Path"]  }
-        "getDependencies" { return $DEPENDENCY[4]["Path"]  }
-        "getJson"         { return $DEPENDENCY[5]["Path"]  }
-        "getFunction"     { return $DEPENDENCY[6]["Path"]  }
-        Default { Write-Output "Invalid Dependecy Name : $dependency_name"}
-    }
-    #Write-Output "Path : $($DEPENDENCY[$index]["Path"])" 
-    Write-Output "[ OK  ] Include '$dependency_name' to the Terminal Profile"
-}
 
-#>
+ function DebugStatus($index){ return $DEBUG[$index]["Status"]}
+ function InitialCheckStatus($index){ return $CHECKS[$index]["Status"]}
 
+# debug_config 
+if($DEBUG[1]["Status"] -eq "enable") { Write-Output "Accessing Item at HashTable [1] Title : $($DEBUG[1]["Title"]) | Status : $($DEBUG[1]["Status"])" }
+if($DEBUG[1]["Status"] -eq "enable") { Write-Output "[ OK ] Profile Config    => { profile_config.ps1 } Loaded Successfully"} else { <# Do Nothing #> }
 
-#>
-function Debug-Config() {
-
-    if($DEBUG[2]["Status"] -eq "enable")     # debug_config 
-    { 
-        Write-Output "[ OK ] Profile Config    => { profile_config.ps1 } Loaded Successfully"} else { <# Do Nothing #>
-        # Write-Output "Accessing Item at HashTable [1] Title : $($DEBUG[1]["Title"]) | Status : $($DEBUG[1]["Status"])" 
-    }
-  # if($DEBUG[2]["Status"] -eq "enable"){ 
-}
-
-Debug-Config
 
 
