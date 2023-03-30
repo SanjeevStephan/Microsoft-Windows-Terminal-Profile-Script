@@ -1,7 +1,7 @@
 [
     
     {
-        "Name" : "PowerShell",
+        "Name" : "powershell",
         "Directory" : "PowerShell",
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\",
         "Desc" : "Microsoft PowerShell Profile Directory"
@@ -22,14 +22,57 @@
         "Name" : "myscripts",
         "Directory" : "myscripts",
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myscripts",
-        "Desc" : "The Code-Snippets Directory"
+        "Desc" : "PowerShell's Profile -> 'myscripts' Directory"
     },
     {
         "Name" : "myfunctions",
         "Directory" : "myfunctions",
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions",
-        "Desc" : "My Custom Function Directory"
+        "Desc" : "PowerShell's Profile -> 'myfunctions' Directory"
+    },
+    {
+        "Name" : "mypython",
+        "Directory" : "mypython",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\mypython",
+        "Desc" : "PowerShell's Profile -> 'mypython' Directory"
+    },
+    {
+        "Name" : "matrix",
+        "Directory" : "matrix",
+        "Path" : "D:\\terminal\\matrix",
+        "Desc" : "Terminal Matrix Directory"
+    },
+    {
+        "Name" : "mrrobot",
+        "Directory" : "mrrobot",
+        "Path" : "D:\\mr_robot",
+        "Desc" : "Mr Robot Directory"
+    },
+    {
+        "Name" : "oracle",
+        "Directory" : "oracle",
+        "Path" : "D:\\terminal\\matrix\\oracle",
+        "Desc" : "Matrix Oracle Directory"
+    },
+    {
+        "Name" : "pico",
+        "Directory" : "pico",
+        "Path" : "D:\\mr_robot\\pico_ducky",
+        "Desc" : "Raspberry Pico Directory"
+    },
+    {
+        "Name" : "payload",
+        "Directory" : "payload",
+        "Path" : "D:\\mr_robot\\pico_ducky\\payloads",
+        "Desc" : "Raspberry Pico's BadUSB Rubber Ducky's Payload"
+    },
+    {
+        "Name" : "study",
+        "Directory" : "study",
+        "Path" : "D:\\study",
+        "Desc" : "Study Directory"
     }
+
 
 
 
