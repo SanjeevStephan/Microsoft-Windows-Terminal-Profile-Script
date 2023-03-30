@@ -28,9 +28,20 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
  #. $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
 
  # Debug profile_getPath.ps1  
-if($DEBUG[6]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Path()      => { getPath.ps1 } Loaded Successfully"} 
+ if(InitialCheckStatus(1) -eq "enable")
+ { 
+     #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
+     Write-Output "[ OK ] Dependency : getPath.ps1 => Included { 5 } Functions  Successfully"
+     Write-Output "[ OK ] Included : Function => { Get-PathJson() } Successfully"
+     Write-Output "[ OK ] Included : Function => { Get-Path() } Successfully"
+     Write-Output "[ OK ] Included : Function => { Check-Path() } Successfully"
+     Write-Output "[ OK ] Included : Function => { Check-ThisPath() } Successfully"
+     Write-Output "[ OK ] Included : Function => { Get-FileName() } Successfully"
+     Write-Output "[ OK ] Included : Function => { Is-Available() } Successfully"
+     Write-Output "[ OK ] Included : Function => { List-Path() } Successfully"
+ }
    
-# Read the JSON data from the file
+# Read the JSON data from the file 
 # $directoryJsonPathSource = "$Home\Documents\PowerShell\myjson\directories.json"
 $directoryJsonPathSource = $JSON[2]["Path"]
 $paths_json_raw_data = Get-Content -Path $directoryJsonPathSource  -Raw
@@ -53,7 +64,23 @@ function Get-PathJson($directory_name)
         # Check if the file exists before including it
         if (Test-Path $directory_path){ return $directory_path_data }
         else{ Write-Error "Error: $directory_name not found in the path : $directory_path" }
-    } else { List-Path }
+    } else { $paths_array_data }
+
+}
+function Get-Path($directory_name)
+{
+    if($directory_name)
+    {
+        # Get the path to the directory based on its name
+        $directory_path_data = $paths_array_data | Where-Object { $_.Name -eq $directory_name }
+        $directory_path = $($directory_path_data.Path)
+
+        if(($DEBUG["debug_path"]) -eq "enable") { Write-Output "Directory Name : $directory_name | Path $directory_path" }
+
+        # Check if the file exists before including it
+        if (Test-Path $directory_path){ return $directory_path }
+        else{ Write-Error "Error: $directory_name not found in the path : $directory_path" }
+    } else { $paths_array_data }
 
 }
 function Check-Path(){
@@ -82,20 +109,35 @@ function Get-Path($directory_name)
         if (Test-Path $directory_path){ return $directory_path }
         else{ Write-Error "Error: $directory_name not found in the path : $directory_path" }
     }
-    else { List-Path } 
+    else { $paths_array_data } 
 
     
 }
-function Check-Path(){
-    
-    foreach ($paths in $paths_array_data) {
-        if (Test-Path $paths.Path) {
-            Write-Output "[ OK ] Confirmed: $($paths.Directory) at $($paths.Path)"
-        } else {
-            Write-Output "[    ] Not found: $($paths.Directory) at $($paths.Path)"
-        }
+
+function Get-FileName($file_fullpath) {
+    # $getfileName = Split-Path -Path $MyInvocation.ScriptName -Leaf
+    $getfileName = Split-Path -Path $file_fullpath -Leaf
+    #Write-Host "The caller's script file name is: $getfileName"
+    return $getfileName
+}
+function Is-Available($full_path)
+{
+    $storeStatus = @{
+        "Status" =  "[ No Status Changed ]"
+        "IsAvailable" = "No Changes Made"
     }
 
+    if(Test-Path $full_path) 
+    {
+        $storeStatus["Status"] = "[ OK ]"
+        $storeStatus["IsAvailable"] = "Available"
+    } 
+    else 
+    {
+        $storeStatus["Status"] = "[    ]"
+        $storeStatus["IsAvailable"] = "Not Available"
+    }
+    return $storeStatus
 }
 # Function to filter data from the JSON File 'functions.json' based on the specified '$column_name
 function List-Path($column_name){
@@ -138,18 +180,19 @@ function List-Path($column_name){
                 } 
                 else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
             }
-            Default
+            "all"
             {
                 if($($TABLE[2]["Status"]) -eq "enable") 
                 {   
                     $paths_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$paths_array_data.IndexOf($_) + 1}}, 
-                    @{label="Name"; expression={$_.Name}}, 
-                    @{label="Directory"; expression={$_.Directory}},
+                    @{label="Directory Name"; expression={$_.Name}}, 
+                    #@{label="Directory"; expression={$_.Directory}},
                     @{label="Path"; expression={$_.Path}},
                     @{label="Description"; expression={$_.Desc}} -AutoSize
                 } 
                 else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
             }
+            Default { $paths_array_data }
         }
  }
 

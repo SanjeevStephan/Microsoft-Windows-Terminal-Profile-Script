@@ -28,7 +28,14 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
  # . $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS SCRIPT | UNCOMMENT 
 
  # Debug profile_getDependencies.ps1  
-if($DEBUG[9]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Profile()   => { getDependencies.ps1 } Loaded Successfully"} 
+ if(InitialCheckStatus(1) -eq "enable")
+ { 
+     #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
+     Write-Output "[ OK ] Dependency : getDependencies.ps1 => Included { 3 } Functions Successfully"
+     Write-Output "[ OK ] Included : Function => { Get-Profile() } Successfully"
+     Write-Output "[ OK ] Included : Function => { Check-Profile() } Successfully"
+     Write-Output "[ OK ] Included : Function => { List-Profile() } Successfully"
+ } 
    
 # Read the JSON data from the file $PATH[3]["Path"]
 $dependencies_json_raw_data = Get-Content -Path $JSON[1]["Path"] -Raw

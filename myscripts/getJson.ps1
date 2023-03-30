@@ -29,8 +29,16 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
   #. $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS jsons | UNCOMMENT 
 
  # Debug profile_getjsons.ps1  
-if($DEBUG[8]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Json()      => { getJson.ps1 } Loaded Successfully"} 
-   
+ if(InitialCheckStatus(1) -eq "enable")
+ { 
+     #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
+     Write-Output "[ OK ] Dependency : getJson.ps1 => Included { 5 } Functions Successfully"
+     Write-Output "[ OK ] Included : Function => { Get-Json() } Successfully"
+     Write-Output "[ OK ] Included : Function => { Get-JsonPath() } Successfully"
+     Write-Output "[ OK ] Included : Function => { Check-Json() } Successfully"
+     Write-Output "[ OK ] Included : Function => { Read-Json() } Successfully"
+     Write-Output "[ OK ] Included : Function => { List-Json() } Successfully"
+ }    
 # Read the JSON data from the file
 $jsons_json_raw_data = Get-Content -Path $JSON[5]["Path"] -Raw
 
@@ -54,11 +62,7 @@ function Get-Json($jsons_name)
         if (Test-Path $jsons_path){ return $jsons_array_data }
         else{ Write-Output "Error: $jsons_name not found in JSON List 'myJsonList.json"  }   
   }
-    else
-    {
-        $TABLE[5]["status"] = "enable"
-        List-Json
-    }
+    else { $jsons_array_data }
 }
 function Get-JsonPath($jsons_name)
 {
@@ -75,10 +79,7 @@ function Get-JsonPath($jsons_name)
         else{ Write-Output "Error: $jsons_name not found in JSON List 'jsons.json"  }   
     }
     else
-    {
-        $TABLE[5]["status"] = "enable"
-        List-Json
-    }
+    { $jsons_array_data }
 }
 
 function Check-Json(){
@@ -93,8 +94,6 @@ function Check-Json(){
 
 }
 function Read-Json($jsons_filename) {
-
-
 
     if($jsons_name)
     {
@@ -117,10 +116,7 @@ function Read-Json($jsons_filename) {
         Write-Output $jsonObject
     }
     else
-    {
-        $TABLE[5]["status"] = "enable"
-        List-Json
-    }
+    { $jsons_array_data }
 }
 # Function to display all jsons specified in the JSON File 'jsons.json'
 function List-Json(){
@@ -132,8 +128,7 @@ function List-Json(){
         @{label="Name"; expression={$_.Name}}, 
         @{label="JSON File"; expression={$_.File}},
         @{label="Path"; expression={$_.Path}} -AutoSize
-    } 
-    else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
+    } else { $jsons_array_data<# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
 }
 
  # getjsons("test")    # <-------------- NOTE-2 : TO RUN THIS jsons | UNCOMMENT 

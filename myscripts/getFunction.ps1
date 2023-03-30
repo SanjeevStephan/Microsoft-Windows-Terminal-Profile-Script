@@ -28,7 +28,15 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
 #. $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS function | UNCOMMENT 
 
  # Debug profile_getfunction.ps1  
-if($DEBUG[7]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Function()  => { getfunction.ps1 } Loaded Successfully"} 
+ if(InitialCheckStatus(1) -eq "enable")
+ { 
+     #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
+     Write-Output "[ OK ] Dependency : getfunction.ps1 => Included { 4 } Functions Successfully"
+     Write-Output "[ OK ] Included : Function => { Get-Function() } Successfully"
+     Write-Output "[ OK ] Included : Function => { Check-Function() } Successfully"
+     Write-Output "[ OK ] Included : Function => { List-Function() } Successfully"
+     Write-Output "[ OK ] Included : Function => { Run-Function() } Successfully"
+ }  
    
 # Read the JSON data from the file
 # 3 -> myFunctions.json
@@ -63,27 +71,32 @@ function Get-FunctionFromJSON($filename) {
 function Check-Function(){
 
 # Read the 'functions.json' file
-$jsonSource = ${env:myjson}
-$functions = Get-FunctionFromJSON "$jsonSource\profileFunctions.json"
+$jsonSource = "$Home\Documents\PowerShell\myjson\profileFunctions.json"
+$functions = Get-FunctionFromJSON $jsonSource
 
-# Loop through each function in the file
-foreach ($function in $functions) {
-    # Call the function without passing any arguments
-    $result = & $function.Path
-
-    # Check if the function returned true
-    if($result -eq $true)
+    if(Test-Path $jsonSource)
     {
-        $status = "Success"
-    }
-    else
-    {
-        $status = "Failed"
-    }
+            # Loop through each function in the file
+        foreach ($function in $functions) 
+        {
+            # Call the function without passing any arguments
+            $result = & $function.Path
 
-    # Output the result
-    Write-Output "Function Name : $($function.Name) [$status]"
-}
+            # Check if the function returned true
+            if($result -eq $true)
+            {
+                $status = "Success"
+            }
+            else
+            {
+                $status = "Failed"
+            }
+
+            # Output the result
+            Write-Output "Function Name : $($function.Name) [$status]"
+        }
+
+    }  else { Write-Output "Invalid Path $jsonSource"}
 
 }
 
@@ -92,9 +105,6 @@ function List-Function($column_name){
 <#
    Function to display only specified '$column_name' 
 #>
-
-
-
     switch($column_name)
     {
 
@@ -139,7 +149,16 @@ function List-Function($column_name){
                 @{label="Description"; expression={$_.Desc}} -AutoSize
             } 
             else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
-        }        
+        }      
+        "all"
+        {
+            $function_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$function_array_data.IndexOf($_) + 1}}, 
+            @{label="Function Name"; expression={$_.Name}}, 
+            @{label="Path"; expression={$_.Argument}},
+            @{label="Path"; expression={$_.Parameter}},
+            @{label="Path"; expression={$_.Syntax}},
+            @{label="Description"; expression={$_.Desc}} -AutoSize
+        }  
         Default 
         {
             Write-Output "1. Show MyFunctions"
@@ -156,19 +175,9 @@ function List-Function($column_name){
 
             # Convert the JSON data to a PowerShell object
             $function_array_data = ConvertFrom-Json -InputObject $function_json_raw_data 
-
-            if($($TABLE[7]["Status"]) -eq "enable") 
-            {  
-                $function_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$function_array_data.IndexOf($_) + 1}}, 
-                @{label="Function Name"; expression={$_.Name}}, 
-                @{label="Path"; expression={$_.Path}},
-                @{label="Description"; expression={$_.Desc}} -AutoSize
-            } else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
-
+            $function_array_data
         }
     }
-
-
 
 
 }

@@ -27,9 +27,18 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
 # getjsons the configuration file to load any additional dependencies
   #. $profile_config_path  # <-------------- NOTE-1 : TO RUN THIS jsons | UNCOMMENT 
 
- # Debug profile_getjsons.ps1  
-if($DEBUG[12]["Status"] -eq "enable"){ Write-Output "[ OK ] Check-Python()    => { getPython.ps1 } Loaded Successfully"} 
-   
+ # Debug profile_getjsons.ps1 
+ if(InitialCheckStatus(1) -eq "enable")
+ { 
+     #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
+     Write-Output "[ OK ] Dependency : getPython.ps1 => Included { 5 } Functions Successfully"
+     Write-Output "[ OK ] Included : Function => { Get-Python() } Successfully"
+     Write-Output "[ OK ] Included : Function => { Get-PythonPath() } Successfully"
+     Write-Output "[ OK ] Included : Function => { Check-Python() } Successfully"
+     Write-Output "[ OK ] Included : Function => { Read-Python() } Successfully"
+     Write-Output "[ OK ] Included : Function => { List-Python() } Successfully"
+ } 
+
 # Read the JSON data from the file
 $python_json_raw_data = Get-Content -Path $JSON[8]["Path"] -Raw
 
@@ -40,27 +49,33 @@ $python_array_data = ConvertFrom-Json -InputObject $python_json_raw_data
 # Function to getjsons by specifying jsons name
 function Get-Python($python_script_name)
 {
-    # Filter 'Pythons-Name' in the array and store as $python_array_data
-    $python_array_data = $python_array_data | Where-Object { $_.Name -eq $python_script_name }
-    
-    # Get the path to the jsons based on its name
-    $python_script_path = $($python_array_data.Path)
+    if($python_script_name)
+    {
+        # Filter 'Pythons-Name' in the array and store as $python_array_data
+        $python_array_data = $python_array_data | Where-Object { $_.Name -eq $python_script_name }
+        
+        # Get the path to the jsons based on its name
+        $python_script_path = $($python_array_data.Path)
 
-    # Check if the file exists before including it
-    if (Test-Path $python_script_path){ return $python_array_data }
-    else{ Write-Output "Error: $python_script_name not found in JSON List 'myJsonList.json"  }   
+        # Check if the file exists before including it
+        if (Test-Path $python_script_path){ return $python_array_data }
+        else{ Write-Output "Error: $python_script_name not found in JSON List 'myJsonList.json"  }   
+    } else { $python_array_data }
 }
 function Get-PythonPath($python_script_name)
 {
-    # Filter 'jsons-Name' in the array and store as $python_array_data
-    $python_array_data = $python_array_data | Where-Object { $_.Name -eq $python_script_name }
-    
-    # Get the path to the jsons based on its name
-    $python_script_path = $($python_array_data.Path)
+    if($python_script_name)
+    {
+        # Filter 'jsons-Name' in the array and store as $python_array_data
+        $python_array_data = $python_array_data | Where-Object { $_.Name -eq $python_script_name }
+        
+        # Get the path to the jsons based on its name
+        $python_script_path = $($python_array_data.Path)
 
-    # Check if the file exists before including it
-    if (Test-Path $python_script_path){ return $python_script_path }
-    else{ Write-Output "Error: $python_script_name not found in JSON List 'jsons.json"  }   
+        # Check if the file exists before including it
+        if (Test-Path $python_script_path){ return $python_script_path }
+        else{ Write-Output "Error: $python_script_name not found in JSON List 'jsons.json"  }  
+    } else { $python_array_data }
 }
 
 function Check-Python(){
@@ -106,7 +121,7 @@ function List-Python(){
         @{label="JSON File"; expression={$_.File}},
         @{label="Path"; expression={$_.Path}} -AutoSize
     } 
-    else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
+    else { $python_array_data<# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
 }
 
  # getjsons("test")    # <-------------- NOTE-2 : TO RUN THIS jsons | UNCOMMENT 
