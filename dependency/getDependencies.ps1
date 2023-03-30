@@ -47,6 +47,7 @@ function Get-Profile($dependencies_name)
         }   
 }
 function Check-Profile(){
+
     Write-Output "[ OK ] Dependency : getDependencies.ps1 => Included { 3 } Functions Successfully"
     foreach ($dependency in $dependencies_array_data) {
         if (Test-Path $dependency.Path) {
@@ -58,14 +59,14 @@ function Check-Profile(){
 
 }
 # Function to display all script specified in the JSON File 'dependencies.json'
-function List-Profile(){
+function List-Profile()
+{
+    $dependencies_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$dependencies_array_data.IndexOf($_) + 1}}, 
+    @{label="Name"; expression={$_.Name}}, 
+    @{label="File"; expression={$_.File}},
+    @{label="Path"; expression={$_.Path}} -AutoSize
 
-    if(($TABLE["show_all_dependencies"]) -eq "enable") 
-    {  
-        $dependencies_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$dependencies_array_data.IndexOf($_) + 1}}, 
-        @{label="Name"; expression={$_.Name}}, 
-        @{label="File"; expression={$_.File}},
-        @{label="Path"; expression={$_.Path}} -AutoSize
-    } 
-    else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
 }
+
+
+List-Profile

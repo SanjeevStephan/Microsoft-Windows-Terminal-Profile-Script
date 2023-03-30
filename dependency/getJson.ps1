@@ -107,14 +107,23 @@ function Read-Json($jsons_filename) {
 }
 # Function to display all jsons specified in the JSON File 'jsons.json'
 function List-Json(){
-
-    # config-show_all_jsons
-    if(($TABLE[5]["Status"]) -eq "enable") 
-    {   
+ 
         $jsons_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$jsons_array_data.IndexOf($_) + 1}}, 
         @{label="Name"; expression={$_.Name}}, 
         @{label="JSON File"; expression={$_.File}},
         @{label="Path"; expression={$_.Path}} -AutoSize
-    } else { $jsons_array_data<# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
 }
 
+function Run-thisJsonFunc()
+{
+<#
+    Get-Json("test")
+    Get-JsonPath("test")
+    Check-Json
+    Read-Json("test")
+    $jsons_array_data
+#>
+    List-Json
+}
+
+Run-thisJsonFunc

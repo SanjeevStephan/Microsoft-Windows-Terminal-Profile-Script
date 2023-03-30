@@ -120,18 +120,15 @@ function List-Script($column_name){
                 } 
                 else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
             }
-            "all"
+            Default
             {
-                if($($TABLE[3]["Status"]) -eq "enable") 
-                {  
-                    $script_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$script_array_data.IndexOf($_) + 1}}, 
-                    @{label="Script File"; expression={$_.File}}, 
-                    @{label="Path"; expression={$_.Path}},
-                    @{label="Description"; expression={$_.Desc}} -AutoSize
-                } 
-                else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
+ 
+                $script_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$script_array_data.IndexOf($_) + 1}}, 
+                @{label="Script File"; expression={$_.File}}, 
+                @{label="Path"; expression={$_.Path}},
+                @{label="Description"; expression={$_.Desc}} -AutoSize
+
             }
-            Default { $script_array_data }
         }
 
         return $true
@@ -139,11 +136,12 @@ function List-Script($column_name){
 
 
 # Debug profile_getScript.ps1  
-if(InitialCheckStatus(1) -eq "enable")
+function initialScript()
 { 
     #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
 
     $num_of_function = 3
+
 
     $StoredConfigStatus = Is-Available($profile_config_path)  #checks if 'profile_config.ps1' is available
     $storedJsonFileStatus = Is-Available($myScriptJsonSource) #checks if 'myScripts.json' is available
@@ -156,16 +154,23 @@ if(InitialCheckStatus(1) -eq "enable")
     $scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
 
     Write-Output "<-------------------{  $scriptName }-------------------------->"
-    Write-Host "[ OK ] Dependency : $scriptName => Included { $num_of_function } Functions Successfully" -ForegroundColor Blue
+    Write-Host "[ OK ] Dependency : $scriptName => Included { $num_of_function } Functions Successfully"
     Write-Output "[....] The Script Name : $scriptName"
     Write-Output "[....] The Script Path : $scriptFullPath"
     Write-Output "[....] Invoked By : $scriptExecutedBy"
     Write-Output "$($StoredConfigStatus["Status"]) Configuration-File { $configName } is $($StoredConfigStatus["IsAvailable"]) at $profile_config_path"
     Write-Output "$($storedJsonFileStatus["Status"]) JSON-File { $jsonFileName } is $($storedJsonFileStatus["IsAvailable"])"
 
- #   Write-Host "[ OK ] Included : Function => { Get-Script() } Successfully"  
-  #  Write-Host "[ OK ] Included : Function => { Check-Script() } Successfully"  
- #   Write-Host "[ OK ] Included : Function => { List-Script() } Successfully" 
 }
- # getScript("test")    # <-------------- NOTE-2 : TO RUN THIS SCRIPT | UNCOMMENT 
- # List-Script          # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 
+
+
+ function Run-thisListFunc() {
+
+<#
+    getScript("test")       
+    $script_array_data      
+#>
+    List-Script
+ }
+
+ Run-thisListFunc

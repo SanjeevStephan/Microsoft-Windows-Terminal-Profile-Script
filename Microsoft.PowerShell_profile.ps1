@@ -82,7 +82,7 @@ function initialize() {
     # $CHECKS[1]["Status"] = "enable"
     # $DEBUG[1]["Status"]  = "enable"
 
-    if($CHECKS[1]["Status"] -eq "enable") { Check-File all } # Test-Path Of all the dependencies
+    #if($CHECKS[1]["Status"] -eq "enable") { Check-File all } # Test-Path Of all the dependencies
     if($FEATURE[1]["Status"] -eq "enable") { & python "$HOME\Documents\PowerShell\mypython\figlet.py" --message $SETTINGS[1]["Value"] } 
     if($DEBUG[1]["Status"] -eq "enable") { Show-Config }     # initial_debug 
     Home # Change Directory 'cd' to $Home\Documents\PowerShell

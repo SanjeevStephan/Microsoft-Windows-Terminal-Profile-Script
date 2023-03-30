@@ -161,11 +161,14 @@ function List-Function($column_name){
 
 
 }
-function Run-Function() {
+function Run-thisFunction() {
 
-    getfunction("test")
+<#
     Check-Function
-    Table-Function("all") 
+    getfunction("test")
+#>   
+    List-Function("all") 
+
 }
 
- #   runFunction  # <-------------- NOTE-2 : TO RUN THIS function | UNCOMMENT 
+Run-thisFunction

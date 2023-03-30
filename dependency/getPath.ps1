@@ -161,22 +161,33 @@ function List-Path($column_name){
                 } 
                 else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
             }
-            "all"
+            Default
             {
-                if($($TABLE[2]["Status"]) -eq "enable") 
-                {   
-                    $paths_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$paths_array_data.IndexOf($_) + 1}}, 
-                    @{label="Directory Name"; expression={$_.Name}}, 
-                    #@{label="Directory"; expression={$_.Directory}},
-                    @{label="Path"; expression={$_.Path}},
-                    @{label="Description"; expression={$_.Desc}} -AutoSize
-                } 
-                else { <# Write-Output "[] 'Enable' the 'show_all_paths' in the $config_file" #> }
+                $paths_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$paths_array_data.IndexOf($_) + 1}}, 
+                @{label="Directory Name"; expression={$_.Name}}, 
+                #@{label="Directory"; expression={$_.Directory}},
+                @{label="Path"; expression={$_.Path}},
+                @{label="Description"; expression={$_.Desc}} -AutoSize
             }
-            Default { $paths_array_data }
         }
  }
 
+ function Run-thisPathFunction()
+ {
+ <#
+     Get-PathJson("terminal")
+     Get-Path("powershell")
+     Check-Path("powershell")
+     Check-ThisPath
+     Get-FileName("C:\Users\Sanju\Documents\PowerShell\profile_config.ps1")
+     Is-Available("C:\Users\Sanju\Documents\PowerShell\profile_config.ps1")
+     Read-Json("test")
+     $paths_array_data
+ #>
+    List-Path
+ }
+ 
+ Run-thisPathFunction
 
  # getPath("powershell") # <-------------- NOTE-2 : TO RUN THIS SCRIPT | UNCOMMENT 
  # Table-Path             # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 
