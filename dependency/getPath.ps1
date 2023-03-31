@@ -25,7 +25,17 @@
 # $directoryJsonPathSource = "$Home\Documents\PowerShell\myjson\directories.json"
 $directoryJsonPathSource = "$Home\Documents\PowerShell\myjson\directories.json"
 
-coreShowJSON($directoryJsonPathSource)
+$scriptName     = $MyInvocation.MyCommand.Name
+$scriptFullPath = $MyInvocation.MyCommand.Path
+$scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
+
+$storedScript_HashTable = @{
+    "Script Name"        = "$scriptName "
+    "Script Path"        = "$scriptFullPath"
+    "JSON Path"          = "$directoryJsonPathSource"
+    "Function Called By" = "$scriptExecutedBy"
+ }
+ coreShowJSON($storedScript_HashTable)
 
 $paths_json_raw_data = Get-Content -Path $directoryJsonPathSource  -Raw
 

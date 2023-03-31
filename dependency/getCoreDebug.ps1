@@ -1,32 +1,70 @@
+$core_profile_config = "$HOME/Documents/PowerShell/profile_config.ps1"
 
-
-function coreShowJSON($jsonFilePath )
+function coreShowJSON($hashTableBox)
 {
-    $jsonFileName = Split-Path -Path $MyInvocation.ScriptName -Leaf
 
-     # $jsonFileName = $jsonHashTableData["Json-File-Name"]
-     # $jsonFilePath = $jsonHashTableData["Json-File-Path"]
+    $scriptName       = $hashTableBox["Script Name"]
+    $scriptFullPath   = $hashTableBox["Script Path"]
+    $scriptExecutedBy = $hashTableBox["Function Called By"]
+    $jsonFilePath     = $hashTableBox["JSON Path"]
+    $jsonFileName     = Split-Path -Path $jsonFilePath -Leaf
 
-    Write-Host "[ OK ] Located => { $jsonFileName } at $jsonFilePath" -ForegroundColor Yellow
-    Write-Host "[ OK ] Loading  : All My Function from JSON List => { $jsonFileName }" -ForegroundColor Yellow    
-}
+    if(Test-Path $jsonFilePath)   { $isJsonFileAvailable   = "Available" } else { $isJsonFileAvailable   = "Not-Available"}
+    if(Test-Path $scriptFullPath) { $isScriptFileAvailable = "Available" } else { $isScriptFileAvailable = "Not-Available"}
+
+    Write-Host "[ INFO ] Script-Name   => { $scriptName }"            -ForegroundColor Yellow   
+    Write-Host "[ INFO ] Script-Path   => { $scriptFullPath }"        -ForegroundColor Yellow  
+    Write-Host "[ INFO ] Script-Status => { $isScriptFileAvailable }" -ForegroundColor Yellow       
+    Write-Host "[ INFO ] JSON-Name     => { $jsonFileName }"          -ForegroundColor Yellow   
+    Write-Host "[ INFO ] JSON-Path     => { $jsonFilePath }"          -ForegroundColor Yellow   
+    Write-Host "[ INFO ] JSON-Status   => { $isJsonFileAvailable }"   -ForegroundColor Yellow   
+    Write-Host "[ INFO ] Executed By   => { $scriptExecutedBy } "     -ForegroundColor White 
+
 <#
-
-Copybelow hastable to any dependency and enter the json-file and json-name 
-    $storedFuncHashTable = @{
-
-        "JSON-File-Name" = "$profileFunctionJsonFileName"
-        "JSON-File-Path" = "$profileFunctionFilePath"
-    }
-
-    coreDebugJSON($storedFuncHashTable)
+    Write-Host "[ OK ] Script-Name => { $scriptName } at $scriptFullPath" -ForegroundColor White 
+    Write-Host "[ OK ] Executed By => { $scriptExecutedBy } " -ForegroundColor White 
+    Write-Host "[ OK ] Located     => { $jsonFileName } at $jsonFilePath" -ForegroundColor Yellow
+    Write-Host "[ OK ] Loading : All Functions from JSON List => { $jsonFileName }" -ForegroundColor Yellow   
 #>
 
 
 
-function show-core($HashTable){
+}
+     
 
 
+
+<#
+        $storedScript_HashTable = = @{
+        "Script Name " = "$scriptName "
+        "Script Path"  = "$scriptFullPath"
+        "JSON Path "   = "$myScriptJsonSource"
+        "Function Called By" = "$scriptExecutedBy"
+    }
+    #>
+
+     # $jsonFileName = $jsonHashTableData["Json-File-Name"]
+     <# 
+     $scriptName     = $MyInvocation.MyCommand.Name
+     $scriptFullPath = $MyInvocation.MyCommand.Path
+    $jsonFileName = Split-Path -Path $MyInvocation.ScriptName -Leaf
+     $scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
+
+      
+     #>
+
+   
+    <#
+    
+    Copybelow hastable to any dependency and enter the json-file and json-name 
+        $storedFuncHashTable = @{
+    
+            "JSON-File-Name" = "$profileFunctionJsonFileName"
+            "JSON-File-Path" = "$profileFunctionFilePath"
+        }
+    
+        coreDebugJSON($storedFuncHashTable)
+    #>
     <#
     
     
@@ -47,7 +85,37 @@ function show-core($HashTable){
 
 
     $HashTable.GetEnumerator() | Sort-Object | Format-Table @{label="S.No"; expression={$_.Key}}, @{label="Color"; expression={$_.Value}} -AutoSize
-  #>
-}
+ 
+  
+  
+  
+  
+  $config_status = Is-Available($profile_config_path)  #checks if 'profile_config.ps1' is available
+$jsonFileStatus = Is-Available($myScriptJsonSource) #checks if 'myScripts.json' is available
+$configName = Get-FileName($profile_config_path)
+#$jsonFileName = Get-FileName($myScriptJsonSource) # Get JSON-File name
+
+
+
+$storedScript_HashTable = @{
+    "Script Name " = "$scriptName "
+    "Script Path" = "$scriptFullPath"
+   # "JSON Name" = "$jsonFileName"
+   # "JSON Path " = "$myScriptJsonSource"
+   # "JSON Status " = "$jsonFileStatus"
+   # "Config File-Name" = "$configName"
+   # "Config File-Status" = "$config_status"
+   # "Config File-path" = "$profile_config_path"
+    "Function Called By" = "$scriptExecutedBy"
+
+ }
+
+Show-Core($storedScript_HashTable)
+  
+  
+  
+  
+  
+    #>
 
 

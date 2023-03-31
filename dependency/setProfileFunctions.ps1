@@ -30,7 +30,17 @@ $profileFunctionJsonFileName = Get-Filename($profileFunctionFilePath)
 
 if(Test-Path $profileFunctionFilePath)
 {
-    coreShowJSON($profileFunctionFilePath) 
+    $scriptName     = $MyInvocation.MyCommand.Name
+    $scriptFullPath = $MyInvocation.MyCommand.Path
+    $scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
+    
+    $storedScript_HashTable = @{
+        "Script Name"        = "$scriptName "
+        "Script Path"        = "$scriptFullPath"
+        "JSON Path"          = "$profileFunctionFilePath"
+        "Function Called By" = "$scriptExecutedBy"
+     }
+     coreShowJSON($storedScript_HashTable)
 
     #show-core($storedFuncHashTable)
    

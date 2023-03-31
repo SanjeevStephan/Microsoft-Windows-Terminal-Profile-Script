@@ -24,7 +24,17 @@
 # Read the JSON data from the file
 $functionJsonFilePath = "$Home\Documents\PowerShell\myjson\profileFunctions.json"
 
-coreShowJSON($functionJsonFilePath)
+$scriptName     = $MyInvocation.MyCommand.Name
+$scriptFullPath = $MyInvocation.MyCommand.Path
+$scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
+
+$storedScript_HashTable = @{
+    "Script Name"        = "$scriptName "
+    "Script Path"        = "$scriptFullPath"
+    "JSON Path"          = "$functionJsonFilePath"
+    "Function Called By" = "$scriptExecutedBy"
+ }
+ coreShowJSON($storedScript_HashTable)
 
 $function_json_raw_data = Get-Content -Path $functionJsonFilePath -Raw
 

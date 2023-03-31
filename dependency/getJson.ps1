@@ -26,7 +26,17 @@ $profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
    
 $jsons_json_raw_data = "$Home\Documents\PowerShell\myjson\myJsonList.json"
 
-coreShowJSON($jsons_json_raw_data)
+$scriptName     = $MyInvocation.MyCommand.Name
+$scriptFullPath = $MyInvocation.MyCommand.Path
+$scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
+
+$storedScript_HashTable = @{
+    "Script Name"        = "$scriptName "
+    "Script Path"        = "$scriptFullPath"
+    "JSON Path"          = "$jsons_json_raw_data"
+    "Function Called By" = "$scriptExecutedBy"
+ }
+ coreShowJSON($storedScript_HashTable)
 
 # Read the JSON data from the file
 $jsons_json_raw_data = Get-Content -Path $jsons_json_raw_data -Raw

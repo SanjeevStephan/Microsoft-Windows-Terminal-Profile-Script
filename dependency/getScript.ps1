@@ -26,30 +26,17 @@ $myScriptJsonSource = Get-JsonPath("myScripts")
 
 $scriptName     = $MyInvocation.MyCommand.Name
 $scriptFullPath = $MyInvocation.MyCommand.Path
-
-$config_status = Is-Available($profile_config_path)  #checks if 'profile_config.ps1' is available
-$jsonFileStatus = Is-Available($myScriptJsonSource) #checks if 'myScripts.json' is available
-$configName = Split-Path -Path $profile_config_path -Leaf
-$jsonFileName = Get-FileName($myScriptJsonSource) # Get JSON-File name
-
 $scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
 
 $storedScript_HashTable = @{
-    "Script Name " = "$scriptName "
-    "Script Path" = "$scriptFullPath"
-    "JSON Name" = "$jsonFileName"
-    "JSON Path " = "$myScriptJsonSource"
-    "JSON Status " = "$jsonFileStatus"
-    "Config File-Name" = "$configName"
-    "Config File-Status" = "$config_status"
-    "Config File-path" = "$profile_config_path"
+    "Script Name"        = "$scriptName "
+    "Script Path"        = "$scriptFullPath"
+    "JSON Path"          = "$myScriptJsonSource"
     "Function Called By" = "$scriptExecutedBy"
-
  }
+ coreShowJSON($storedScript_HashTable)
 
-Show-Core($storedScript_HashTable)
 
-coreShowJSON($myScriptJsonSource)
 
 # Read the JSON data from the file
 $script_json_raw_data = Get-Content -Path $myScriptJsonSource  -Raw

@@ -30,7 +30,17 @@ $myFunctionJsonFileName = Get-Filename($myFunctionFilePath)
 
 if(Test-Path $myFunctionFilePath)
 {
-    coreShowJSON($myFunctionFilePath)
+    $scriptName     = $MyInvocation.MyCommand.Name
+    $scriptFullPath = $MyInvocation.MyCommand.Path
+    $scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
+    
+    $storedScript_HashTable = @{
+        "Script Name"        = "$scriptName "
+        "Script Path"        = "$scriptFullPath"
+        "JSON Path"          = "$myFunctionFilePath"
+        "Function Called By" = "$scriptExecutedBy"
+     }
+     coreShowJSON($storedScript_HashTable)
     
     # Read the contents of the JSON file into a PowerShell object
     $myFunctionJsonContent = Get-Content $myFunctionFilePath | ConvertFrom-Json

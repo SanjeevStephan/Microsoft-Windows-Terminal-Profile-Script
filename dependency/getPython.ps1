@@ -24,7 +24,18 @@
 # Read the JSON data from the file
 $python_json_source_file = Get-JsonPath("myJsonList")
 
-coreShowJSON($python_json_source_file)
+$scriptName     = $MyInvocation.MyCommand.Name
+$scriptFullPath = $MyInvocation.MyCommand.Path
+$scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
+
+$storedScript_HashTable = @{
+    "Script Name"        = "$scriptName "
+    "Script Path"        = "$scriptFullPath"
+    "JSON Path"          = "$python_json_source_file"
+    "Function Called By" = "$scriptExecutedBy"
+ }
+ coreShowJSON($storedScript_HashTable)
+
 
 $python_json_raw_data = Get-Content -Path $python_json_source_file -Raw
 #$python_json_raw_data = Get-JsonPath("myPython")

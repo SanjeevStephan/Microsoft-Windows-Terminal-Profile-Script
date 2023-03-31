@@ -24,7 +24,17 @@
 # Read the JSON data from the file $PATH[3]["Path"]
 $dependencies_json_source = "$Home\Documents\PowerShell\myjson\dependencies.json"
 
-coreShowJSON($dependencies_json_source)
+$scriptName     = $MyInvocation.MyCommand.Name
+$scriptFullPath = $MyInvocation.MyCommand.Path
+$scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
+
+$storedScript_HashTable = @{
+    "Script Name"        = "$scriptName "
+    "Script Path"        = "$scriptFullPath"
+    "JSON Path"          = "$dependencies_json_source"
+    "Function Called By" = "$scriptExecutedBy"
+ }
+ coreShowJSON($storedScript_HashTable)
 
 $dependencies_json_raw_data = Get-Content -Path $dependencies_json_source -Raw
 
