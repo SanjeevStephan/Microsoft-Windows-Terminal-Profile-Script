@@ -32,6 +32,7 @@ if(Test-Path $myFunctionFilePath)
 {
     $scriptName     = $MyInvocation.MyCommand.Name
     $scriptFullPath = $MyInvocation.MyCommand.Path
+    
     $scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
     
     $storedScript_HashTable = @{
@@ -39,6 +40,9 @@ if(Test-Path $myFunctionFilePath)
         "Script Path"        = "$scriptFullPath"
         "JSON Path"          = "$myFunctionFilePath"
         "Function Called By" = "$scriptExecutedBy"
+        "InvocationName"     = "$invocationName"
+        "Invocation Line"    = "$invocationLine "
+        "Invocation Command" = "$invocationCommand"
      }
      coreShowJSON($storedScript_HashTable)
     

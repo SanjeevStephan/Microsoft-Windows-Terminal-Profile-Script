@@ -2,12 +2,16 @@ $core_profile_config = "$HOME/Documents/PowerShell/profile_config.ps1"
 
 function coreShowJSON($hashTableBox)
 {
+    # Get-Member -InputObject $MyInvocation
 
     $scriptName       = $hashTableBox["Script Name"]
     $scriptFullPath   = $hashTableBox["Script Path"]
     $scriptExecutedBy = $hashTableBox["Function Called By"]
-    $jsonFilePath     = $hashTableBox["JSON Path"]
-    $jsonFileName     = Split-Path -Path $jsonFilePath -Leaf
+    $invocationName   = $hashTableBox["InvocationName"]
+    $invocationLine   = $hashTableBox["Invocation Line"]
+    $invocationCommand   = $hashTableBox["Invocation Command"]
+    $jsonFilePath      = $hashTableBox["JSON Path"]
+    $jsonFileName      = Split-Path -Path $jsonFilePath -Leaf
 
     if(Test-Path $jsonFilePath)   { $isJsonFileAvailable   = "Available" } else { $isJsonFileAvailable   = "Not-Available"}
     if(Test-Path $scriptFullPath) { $isScriptFileAvailable = "Available" } else { $isScriptFileAvailable = "Not-Available"}
@@ -18,9 +22,20 @@ function coreShowJSON($hashTableBox)
     Write-Host "[ INFO ] JSON-Name     => { $jsonFileName }"          -ForegroundColor Yellow   
     Write-Host "[ INFO ] JSON-Path     => { $jsonFilePath }"          -ForegroundColor Yellow   
     Write-Host "[ INFO ] JSON-Status   => { $isJsonFileAvailable }"   -ForegroundColor Yellow   
-    Write-Host "[ INFO ] Executed By   => { $scriptExecutedBy } "     -ForegroundColor White 
-
+    Write-Host "[ INFO ] Executed-By   => { $scriptExecutedBy } "     -ForegroundColor White 
+<#    
+    Write-Host "[ INFO ] Invocation-Name    => { $invocationName } "     -ForegroundColor White 
+    Write-Host "[ INFO ] Invocation-Line    => { $invocationLine } "     -ForegroundColor White 
+    Write-Host "[ INFO ] Invocation-Command => { $invocationCommand } "     -ForegroundColor White 
+#>
+    
 <#
+
+        "InvocationName"     = "$($MyInvocation.InvocationName)"
+        "Invocation Line"    = "$($MyInvocation.Line)"
+        "Invocation Command" ="$($MyInvocation.MyCommand)"
+
+
     Write-Host "[ OK ] Script-Name => { $scriptName } at $scriptFullPath" -ForegroundColor White 
     Write-Host "[ OK ] Executed By => { $scriptExecutedBy } " -ForegroundColor White 
     Write-Host "[ OK ] Located     => { $jsonFileName } at $jsonFilePath" -ForegroundColor Yellow
@@ -31,7 +46,11 @@ function coreShowJSON($hashTableBox)
 
 }
      
+function setCoreConfirmed(){
 
+    
+    Write-Host "[ OK ] Confirmed: '$($scripts.Name)' at $($scripts.Path)" -ForegroundColor Green
+}
 
 
 <#
@@ -67,7 +86,20 @@ function coreShowJSON($hashTableBox)
     #>
     <#
     
+       
     
+
+    Write-Host "Function 'Goto-Directory()' was called by $callingFunction"
+
+    #Write-Host "InvocationName: $($MyInvocation.InvocationName)"
+   # Write-Host "Line: $($MyInvocation.Line)"
+    #Write-Host "MyCommand: $($MyInvocation.MyCommand)"
+
+    #Write-Host "ScriptName: $($MyInvocation.ScriptName)"
+
+    #$scriptFileName = Split-Path -Path $MyInvocation.ScriptName -Leaf
+    #Write-Host "The caller's script file name is: $scriptFileName"
+
     
   
     Write-Host "Core File-Name : $($HashTable["File-Name"])"

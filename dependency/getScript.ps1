@@ -24,19 +24,30 @@
 # $myScriptJsonSource = "$Home\Documents\PowerShell\myjson\myScript.json"
 $myScriptJsonSource = Get-JsonPath("myScripts")
 
-$scriptName     = $MyInvocation.MyCommand.Name
-$scriptFullPath = $MyInvocation.MyCommand.Path
-$scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
+$scriptName        = $MyInvocation.MyCommand.Name
+$scriptFullPath    = $MyInvocation.MyCommand.Path
+$scriptExecutedBy  = Split-Path -Path $MyInvocation.ScriptName -Leaf
+$invocationName    = $($MyInvocation.InvocationName)
+$invocationLine    = "$($MyInvocation.Line)"
+$invocationCommand = "$($MyInvocation.MyCommand)"
+
 
 $storedScript_HashTable = @{
     "Script Name"        = "$scriptName "
     "Script Path"        = "$scriptFullPath"
     "JSON Path"          = "$myScriptJsonSource"
     "Function Called By" = "$scriptExecutedBy"
+    "InvocationName"     = "$invocationName"
+    "Invocation Line"    = "$invocationLine "
+    "Invocation Command" = "$invocationCommand"
  }
  coreShowJSON($storedScript_HashTable)
 
-
+<#
+ Write-Host "[ INFO ] Invocation-Name    => { $invocationName } "     -ForegroundColor White 
+ Write-Host "[ INFO ] Invocation-Line    => { $invocationLine } "     -ForegroundColor White 
+ Write-Host "[ INFO ] Invocation-Command => { $invocationCommand } "     -ForegroundColor White 
+#>
 
 # Read the JSON data from the file
 $script_json_raw_data = Get-Content -Path $myScriptJsonSource  -Raw
@@ -68,6 +79,12 @@ function Check-Script(){
 
     foreach ($scripts in $script_array_data) {
         if (Test-Path $scripts.Path) {
+
+            $scriptArray_HashTable = @{
+                "Script Name" = "$($scripts.Name)"
+                "Script Path" = "$($scripts.Path)"
+            }
+
             Write-Host "[ OK ] Confirmed: '$($scripts.Name)' at $($scripts.Path)" -ForegroundColor Green
         } else {
             Write-Host "[    ] Not found: $($scripts.File) at $($scripts.Path)" -ForegroundColor Red

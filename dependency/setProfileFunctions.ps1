@@ -39,6 +39,9 @@ if(Test-Path $profileFunctionFilePath)
         "Script Path"        = "$scriptFullPath"
         "JSON Path"          = "$profileFunctionFilePath"
         "Function Called By" = "$scriptExecutedBy"
+        "InvocationName"     = "$invocationName"
+        "Invocation Line"    = "$invocationLine "
+        "Invocation Command" = "$invocationCommand"
      }
      coreShowJSON($storedScript_HashTable)
 

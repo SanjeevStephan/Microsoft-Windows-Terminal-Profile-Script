@@ -33,6 +33,9 @@ $storedScript_HashTable = @{
     "Script Path"        = "$scriptFullPath"
     "JSON Path"          = "$python_json_source_file"
     "Function Called By" = "$scriptExecutedBy"
+    "InvocationName"     = "$invocationName"
+    "Invocation Line"    = "$invocationLine "
+    "Invocation Command" = "$invocationCommand"
  }
  coreShowJSON($storedScript_HashTable)
 
