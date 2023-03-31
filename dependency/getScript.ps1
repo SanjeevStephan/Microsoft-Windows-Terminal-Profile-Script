@@ -24,6 +24,33 @@
 # $myScriptJsonSource = "$Home\Documents\PowerShell\myjson\myScript.json"
 $myScriptJsonSource = Get-JsonPath("myScripts")
 
+$scriptName     = $MyInvocation.MyCommand.Name
+$scriptFullPath = $MyInvocation.MyCommand.Path
+
+$config_status = Is-Available($profile_config_path)  #checks if 'profile_config.ps1' is available
+$jsonFileStatus = Is-Available($myScriptJsonSource) #checks if 'myScripts.json' is available
+$configName = Split-Path -Path $profile_config_path -Leaf
+$jsonFileName = Get-FileName($myScriptJsonSource) # Get JSON-File name
+
+$scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
+
+$storedScript_HashTable = @{
+    "Script Name " = "$scriptName "
+    "Script Path" = "$scriptFullPath"
+    "JSON Name" = "$jsonFileName"
+    "JSON Path " = "$myScriptJsonSource"
+    "JSON Status " = "$jsonFileStatus"
+    "Config File-Name" = "$configName"
+    "Config File-Status" = "$config_status"
+    "Config File-path" = "$profile_config_path"
+    "Function Called By" = "$scriptExecutedBy"
+
+ }
+
+Show-Core($storedScript_HashTable)
+
+coreShowJSON($myScriptJsonSource)
+
 # Read the JSON data from the file
 $script_json_raw_data = Get-Content -Path $myScriptJsonSource  -Raw
 
@@ -130,47 +157,6 @@ function List-Script($column_name){
 
             }
         }
-
-        return $true
  }
 
-
-# Debug profile_getScript.ps1  
-function initialScript()
-{ 
-    #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
-
-    $num_of_function = 3
-
-
-    $StoredConfigStatus = Is-Available($profile_config_path)  #checks if 'profile_config.ps1' is available
-    $storedJsonFileStatus = Is-Available($myScriptJsonSource) #checks if 'myScripts.json' is available
-    $configName = Split-Path -Path $profile_config_path -Leaf
-    $jsonFileName = Get-FileName($myScriptJsonSource) # Get JSON-File name
-
-    $scriptName     = $MyInvocation.MyCommand.Name
-    $scriptFullPath = $MyInvocation.MyCommand.Path
-
-    $scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
-
-    Write-Output "<-------------------{  $scriptName }-------------------------->"
-    Write-Host "[ OK ] Dependency : $scriptName => Included { $num_of_function } Functions Successfully"
-    Write-Output "[....] The Script Name : $scriptName"
-    Write-Output "[....] The Script Path : $scriptFullPath"
-    Write-Output "[....] Invoked By : $scriptExecutedBy"
-    Write-Output "$($StoredConfigStatus["Status"]) Configuration-File { $configName } is $($StoredConfigStatus["IsAvailable"]) at $profile_config_path"
-    Write-Output "$($storedJsonFileStatus["Status"]) JSON-File { $jsonFileName } is $($storedJsonFileStatus["IsAvailable"])"
-
-}
-
-
- function Run-thisListFunc() {
-
-<#
-    getScript("test")       
-    $script_array_data      
-#>
-    List-Script
- }
-
- Run-thisListFunc
+ List-Script

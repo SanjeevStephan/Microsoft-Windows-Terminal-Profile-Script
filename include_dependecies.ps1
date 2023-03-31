@@ -38,7 +38,7 @@ if(Test-Path $profile_config_source)
        # "powerShell_profile" = "$profile_source\Microsoft.PowerShell_profile.ps1"
         "getDependencies"    = "$dependency_source\getDependencies.ps1"  
         "getColorSchemes"    = "$dependency_source\getColorSchemes.ps1"
-        "getCore"            = "$dependency_source\getCore.ps1"  
+        "getCoreDebug"            = "$dependency_source\getCoreDebug.ps1"  
         "getFunction"        = "$dependency_source\getFunction.ps1"
         "getJson"            = "$dependency_source\getJson.ps1"    
         "getPath"            = "$dependency_source\getPath.ps1"

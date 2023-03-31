@@ -24,6 +24,8 @@
 # Read the JSON data from the file
 $python_json_source_file = Get-JsonPath("myJsonList")
 
+coreShowJSON($python_json_source_file)
+
 $python_json_raw_data = Get-Content -Path $python_json_source_file -Raw
 #$python_json_raw_data = Get-JsonPath("myPython")
 
@@ -98,13 +100,24 @@ function Read-Python($python_script_filename) {
     Table-Json
 }
 # Function to display all jsons specified in the JSON File 'jsons.json'
-function List-Python(){
-
+function List-Python()
+{
         $python_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$python_array_data.IndexOf($_) + 1}}, 
         @{label="Name"; expression={$_.Name}}, 
         @{label="JSON File"; expression={$_.File}},
         @{label="Path"; expression={$_.Path}} -AutoSize
 }
 
+function Run-thisPythonFunc()
+{
+<#
+    Get-Python
+    Get-PythonPath
+    Check-Python
+    Read-Python
+#>
 
+    List-Python
+}
 
+Run-thisPythonFunc

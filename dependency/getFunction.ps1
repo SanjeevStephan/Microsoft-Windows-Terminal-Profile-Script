@@ -24,6 +24,8 @@
 # Read the JSON data from the file
 $functionJsonFilePath = "$Home\Documents\PowerShell\myjson\profileFunctions.json"
 
+coreShowJSON($functionJsonFilePath)
+
 $function_json_raw_data = Get-Content -Path $functionJsonFilePath -Raw
 
 # Convert the JSON data to a PowerShell object
@@ -134,9 +136,9 @@ function List-Function($column_name){
         {
             $function_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$function_array_data.IndexOf($_) + 1}}, 
             @{label="Function Name"; expression={$_.Name}}, 
-            @{label="Path"; expression={$_.Argument}},
-            @{label="Path"; expression={$_.Parameter}},
-            @{label="Path"; expression={$_.Syntax}},
+            @{label="Require Argument"; expression={$_.Argument}},
+            @{label="Parameter"; expression={$_.Parameter}},
+          #  @{label="Syntax"; expression={$_.Syntax}},
             @{label="Description"; expression={$_.Desc}} -AutoSize
         }  
         Default 

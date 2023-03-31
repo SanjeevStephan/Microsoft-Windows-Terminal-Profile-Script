@@ -30,8 +30,8 @@ $myFunctionJsonFileName = Get-Filename($myFunctionFilePath)
 
 if(Test-Path $myFunctionFilePath)
 {
-    Write-Host "[ OK ] Located => { $myFunctionJsonFileName } at $myFunctionFilePath" -ForegroundColor Yellow
-    Write-Host "[ OK ] Loading  : All My Function from JSON List => { $myFunctionJsonFileName }" -ForegroundColor Yellow
+    coreShowJSON($myFunctionFilePath)
+    
     # Read the contents of the JSON file into a PowerShell object
     $myFunctionJsonContent = Get-Content $myFunctionFilePath | ConvertFrom-Json
 

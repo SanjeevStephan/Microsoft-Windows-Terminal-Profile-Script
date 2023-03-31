@@ -30,8 +30,13 @@ $profileFunctionJsonFileName = Get-Filename($profileFunctionFilePath)
 
 if(Test-Path $profileFunctionFilePath)
 {
-    Write-Host "[ OK ] Located => { $profileFunctionJsonFileName } at $profileFunctionFilePath" -ForegroundColor Yellow
-    Write-Host "[ OK ] Loading  : All Profile Function from JSON List => { $profileFunctionJsonFileName }" -ForegroundColor Yellow   
+    coreShowJSON($profileFunctionFilePath) 
+
+    #show-core($storedFuncHashTable)
+   
+    #Write-Host "[ OK ] Located => { $profileFunctionJsonFileName } at $profileFunctionFilePath" -ForegroundColor Yellow
+    #Write-Host "[ OK ] Loading  : All Profile Function from JSON List => { $profileFunctionJsonFileName }" -ForegroundColor Yellow   
+    
     # Read the contents of the JSON file into a PowerShell object
     $myFunctionJsonContent = Get-Content $profileFunctionFilePath | ConvertFrom-Json
 

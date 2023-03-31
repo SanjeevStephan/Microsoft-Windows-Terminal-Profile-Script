@@ -25,6 +25,8 @@
 # $directoryJsonPathSource = "$Home\Documents\PowerShell\myjson\directories.json"
 $directoryJsonPathSource = "$Home\Documents\PowerShell\myjson\directories.json"
 
+coreShowJSON($directoryJsonPathSource)
+
 $paths_json_raw_data = Get-Content -Path $directoryJsonPathSource  -Raw
 
 # Convert the JSON data to a PowerShell object

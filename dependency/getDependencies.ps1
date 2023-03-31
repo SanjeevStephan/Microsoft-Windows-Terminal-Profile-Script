@@ -24,6 +24,8 @@
 # Read the JSON data from the file $PATH[3]["Path"]
 $dependencies_json_source = "$Home\Documents\PowerShell\myjson\dependencies.json"
 
+coreShowJSON($dependencies_json_source)
+
 $dependencies_json_raw_data = Get-Content -Path $dependencies_json_source -Raw
 
 # Convert the JSON data to a PowerShell object
