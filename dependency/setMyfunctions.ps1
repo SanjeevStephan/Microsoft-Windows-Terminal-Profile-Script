@@ -30,10 +30,11 @@ if(Test-Path $JSON.myFunctions)
     
     $scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
     
+    $jsonFilePath = $JSON.myFunctions
     $storedScript_HashTable = @{
         "Script Name"        = "$scriptName "
         "Script Path"        = "$scriptFullPath"
-        "JSON Path"          = "$myFunctionFilePath"
+        "JSON Path"          = "$jsonFilePath"
         "Function Called By" = "$scriptExecutedBy"
         "InvocationName"     = "$invocationName"
         "Invocation Line"    = "$invocationLine "

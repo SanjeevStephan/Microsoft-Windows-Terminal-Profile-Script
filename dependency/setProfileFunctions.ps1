@@ -31,10 +31,11 @@ if(Test-Path $JSON.profileFunctions)
     $scriptFullPath = $MyInvocation.MyCommand.Path
     $scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
     
+    $jsonFilePath = $JSON.profileFunctions
     $storedScript_HashTable = @{
         "Script Name"        = "$scriptName "
         "Script Path"        = "$scriptFullPath"
-        "JSON Path"          = "$($JSON.profileFunctions)"
+        "JSON Path"          = "$jsonFilePath"
         "Function Called By" = "$scriptExecutedBy"
         "InvocationName"     = "$invocationName"
         "Invocation Line"    = "$invocationLine "

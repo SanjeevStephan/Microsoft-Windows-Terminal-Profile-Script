@@ -2,7 +2,7 @@
      {
         "Name": "clip",
         "File": "clip.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\clip.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\clip.ps1",
         "Argument":"No",
         "Parameter" : ["$action","$filename"],
         "Syntax" : " clip {in|out} simple-test.txt ",
@@ -11,7 +11,7 @@
     {
         "Name": "copypath",
         "File": "copypath.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\copypath.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\copypath.ps1",
         "Argument":"No",
         "Parameter" : ["",""],
         "Syntax" : " clip {in|out} simple-test.txt ",
@@ -20,7 +20,7 @@
     {
         "Name": "check-link",
         "File": "check_link.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\check_link.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\check_link.ps1",
         "Argument":"Yes",
         "Parameter" : ["$url"],
         "Syntax" : "download-file '<url>'",
@@ -29,7 +29,7 @@
     {
         "Name": "download",
         "File": "download.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\download.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\download.ps1",
         "Argument":"Yes",
         "Parameter" : ["$url"],
         "Syntax" : "download-file '<url>'",
@@ -38,7 +38,7 @@
     {
         "Name": "download-file",
         "File": "download_file.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\download_file.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\download_file.ps1",
         "Argument":"Yes",
         "Parameter" : ["$url"],
         "Syntax" : "download-file '<url>'",
@@ -47,7 +47,7 @@
     {
         "Name": "goto",
         "File": "goto.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\goto.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\goto.ps1",
         "Argument":"No",
         "Parameter" : ["",""],
         "Syntax" : "",
@@ -56,7 +56,7 @@
     {
         "Name": "openinbrave",
         "File": "openinbrave.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\openinbrave.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\openinbrave.ps1",
         "Argument":"Yes",
         "Parameter" : ["$htmlfile"],
         "Syntax" : "",
@@ -65,7 +65,7 @@
     {
         "Name": "localhost",
         "File": "localhost.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\localhost.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\localhost.ps1",
         "Argument":"Yes",
         "Parameter" : ["",""],
         "Syntax" : "",
@@ -74,7 +74,7 @@
     {
         "Name": "removetest",
         "File": "removetest.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\removetest.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\removetest.ps1",
         "Argument":"Yes",
         "Parameter" : ["$filename"],
         "Syntax" : "removetest 'test_sample_file.txt' ",
@@ -83,7 +83,7 @@
     {
         "Name": "showip",
         "File": "showip.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\showip.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\showip.ps1",
         "Argument":"No",
         "Parameter" : [""],
         "Syntax" : "",
@@ -92,7 +92,7 @@
     {
         "Name": "stillconnected",
         "File": "stillconnected.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\stillconnected.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\stillconnected.ps1",
         "Argument":"No",
         "Parameter" : [""],
         "Syntax" : "",
@@ -101,7 +101,7 @@
     {
         "Name": "sleep",
         "File": "sleep.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\sleep.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\sleep.ps1",
         "Argument":"No",
         "Parameter" : [""],
         "Syntax" : "",
@@ -110,7 +110,7 @@
     {
         "Name": "goodbye",
         "File": "goodbye.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\goodbye.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\goodbye.ps1",
         "Argument":"No",
         "Parameter" : [""],
         "Syntax" : "",
@@ -119,7 +119,7 @@
     {
         "Name": "window",
         "File": "window.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\window.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\window.ps1",
         "Argument":"No",
         "Parameter" : [""],
         "Syntax" : "",
