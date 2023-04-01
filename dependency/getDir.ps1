@@ -1,7 +1,7 @@
 function Get-Dir()
 {
     # Read JSON data from file
-$json_data = Get-Content -Path Get-Json("directories") | ConvertFrom-Json
+$json_data = Get-Content -Path $DIRECTORY.directories | ConvertFrom-Json
 
 # Sort data alphabetically by directory name
 $sorted_data = $json_data | Sort-Object -Property Directory

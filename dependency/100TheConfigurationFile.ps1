@@ -43,6 +43,8 @@ $SOURCE = @{
     "powershell"= "$Home\Documents\PowerShell"
 }
 
+
+
 $DIRECTORY =  @{
     "home"                = "$Home"   
     "assets"              = "$($SOURCE.powershell)\assets"
@@ -100,6 +102,12 @@ $TAG =  @{
   
 } 
 
+$ASCII = @{
+    "superuser"     = "$Home\Documents\PowerShell\assets\ascii\superuser.ascii"
+    "theterminal"   = "$Home\Documents\PowerShell\assets\ascii\theterminal.ascii"
+    "profifle"      = "$Home\Documents\PowerShell\assets\ascii\theterminal.ascii"
+    
+}
 
 function List($title)
 {

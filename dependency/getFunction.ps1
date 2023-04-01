@@ -149,8 +149,9 @@ function List-Function($column_name){
         {
             $function_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$function_array_data.IndexOf($_) + 1}}, 
             @{label="Function Name"; expression={$_.Name}}, 
-            @{label="Require Argument"; expression={$_.Argument}},
+            @{label="Argument"; expression={$_.Argument}},
             @{label="Parameter"; expression={$_.Parameter}},
+            @{label="Syntax"; expression={$_.Syntax}},
           #  @{label="Syntax"; expression={$_.Syntax}},
             @{label="Description"; expression={$_.Desc}} -AutoSize
         }  
@@ -161,8 +162,8 @@ function List-Function($column_name){
             $chooce = Read-Host "Please Choose Your Option (1-2) : "
             switch($chooce)
             {
-                "1" { $functionJsonFilePath = $JSON[3]["Path"] }
-                "2" { $functionJsonFilePath = $JSON[7]["Path"] }
+                "1" { $functionJsonFilePath = $JSON.myFunctions }
+                "2" { $functionJsonFilePath = $JSON.profileFunctions }
                 Default { Write-Output "You have Entered '$choose' which is invalid | Try (1 or 2)"}
             }
 

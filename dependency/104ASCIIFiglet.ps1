@@ -1,5 +1,5 @@
 $figletHashTable = @{
-    "Name" = "Figlet"
+    "Name" = "ascii figlet"
     "File" = "Figlet.ps1"
     "Path" = "$Home\Documents\PowerShell\profileFunction\Figlet.ps1"
     "Argument" = "Yes"

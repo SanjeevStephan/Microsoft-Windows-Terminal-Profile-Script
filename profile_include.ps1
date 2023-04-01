@@ -24,6 +24,8 @@ $profile_config_path = Get-Content "$Home\Documents\PowerShell\profile.config"
 # getPath the configuration file to load any additional Paths
 . $profile_config_path  # <-------------- NOTE : LOAD THE CONFIG-FILE via (Dot-Sourcing)
 
+# Display Ascii-figlet Text "The Terminal"
+type $ASCII.theterminal 
 
 if(Test-Path $DEPENDENCY.TheConfigurationFile) 
 {

@@ -5,6 +5,7 @@
         "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\Check-File.ps1",
         "Argument":"Yes",
         "Parameter" : ["$type"],
+        "Syntax": "",
         "Desc": "Execute Script from this JSON List"
     },
     {
@@ -13,6 +14,7 @@
         "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\EXEC.ps1",
         "Argument":"Yes",
         "Parameter" : ["$script_name","$argument"],
+        "Syntax": "",
         "Desc": "Execute Script by passing Script Name from 'scripts.json"
     },
     {
@@ -20,23 +22,26 @@
         "File": "Goto-Directory.ps1",
         "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\Goto-Directory.ps1",
         "Argument":"Yes",
-        "Parameter" : ["$jsons_name"],
+        "Parameter" : ["$dir_name"],
+        "Syntax": "",
         "Desc": "Read JSON File and Display It"
     },
     {
         "Name": "Home",
         "File": "Home.ps1",
         "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\Home.ps1",
-        "Argument":"Yes",
-        "Parameter" : ["$jsons_name"],
+        "Argument":"No",
+        "Parameter" : [""],
+        "Syntax": "",
         "Desc": "Read JSON File and Display It"
     },
     {
         "Name": "Refresh",
         "File": "Refresh.ps1",
         "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\Refresh.ps1",
-        "Argument":"Yes",
-        "Parameter" : ["$jsons_name"],
+        "Argument":"No",
+        "Parameter" : [""],
+        "Syntax": "",
         "Desc": "Read JSON File and Display It"
     },
     {
@@ -44,7 +49,8 @@
         "File": "Show-List.ps1",
         "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\Show-List.ps1",
         "Argument":"Yes",
-        "Parameter" : ["$jsons_name"],
+        "Parameter" : ["$column_name"],
+        "Syntax": "",
         "Desc": "Read JSON File and Display It"
     },
     {
@@ -52,7 +58,8 @@
         "File": "Show-List.ps1",
         "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\Show-Table.ps1",
         "Argument":"Yes",
-        "Parameter" : ["$jsons_name"],
+        "Parameter" : ["$column_name"],
+        "Syntax": "",
         "Desc": "Read JSON File and Display It"
     }
 
