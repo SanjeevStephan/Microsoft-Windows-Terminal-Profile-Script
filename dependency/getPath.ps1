@@ -55,11 +55,11 @@ function Get-PathJson($directory_name)
         $directory_path_data = $paths_array_data | Where-Object { $_.Name -eq $directory_name }
         $directory_path = $($directory_path_data.Path)
 
-        if(($DEBUG["debug_path"]) -eq "enable") { Write-Output "Directory Name : $directory_name | Path $directory_path" }
+        Write-Output "Directory Name : $directory_name | Path $directory_path" 
 
         # Check if the file exists before including it
         if (Test-Path $directory_path){ return $directory_path_data }
-        else{ Write-Error "Error: $directory_name not found in the path : $directory_path" }
+        else{ Write-Warning "Error: $directory_name not found in the path : $directory_path" }
     } else { $paths_array_data }
 
 }
@@ -71,7 +71,7 @@ function Get-Path($directory_name)
         $directory_path_data = $paths_array_data | Where-Object { $_.Name -eq $directory_name }
         $directory_path = $($directory_path_data.Path)
 
-        if(($DEBUG["debug_path"]) -eq "enable") { Write-Output "Directory Name : $directory_name | Path $directory_path" }
+        # Write-Output "Directory Name : $directory_name | Path $directory_path" 
 
         # Check if the file exists before including it
         if (Test-Path $directory_path){ return $directory_path }
@@ -99,7 +99,7 @@ function Get-Path($directory_name)
         $directory_path_data = $paths_array_data | Where-Object { $_.Name -eq $directory_name }
         $directory_path = $($directory_path_data.Path)
 
-        if(($DEBUG["debug_path"]) -eq "enable") { Write-Output "Directory Name : $directory_name | Path $directory_path" }
+        Write-Output "Directory Name : $directory_name | Path $directory_path" 
 
         # Check if the file exists before including it
         if (Test-Path $directory_path){ return $directory_path }
@@ -179,7 +179,7 @@ function List-Path($column_name){
             Default
             {
                 $paths_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$paths_array_data.IndexOf($_) + 1}}, 
-                @{label="Directory Name"; expression={$_.Name}}, 
+                @{label="Directory"; expression={$_.Name}}, 
                 #@{label="Directory"; expression={$_.Directory}},
                 @{label="Path"; expression={$_.Path}},
                 @{label="Description"; expression={$_.Desc}} -AutoSize

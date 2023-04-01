@@ -20,15 +20,10 @@
         -v1.0    
         
 #----------------------------------------------------------------------------------#>
-# Define the path to the functions.json file
-# $jsonSource = $env:myjson
-
-# Define the path to the functions.json file
+# Define the path to the myFunctions.json file
 #$myFunctionFilePath = "$Home\Documents\PowerShell\myjson\myFunctions.json"
-$myFunctionFilePath = Get-JsonPath("myFunctions")
-$myFunctionJsonFileName = Get-Filename($myFunctionFilePath)
 
-if(Test-Path $myFunctionFilePath)
+if(Test-Path $JSON.myFunctions)
 {
     $scriptName     = $MyInvocation.MyCommand.Name
     $scriptFullPath = $MyInvocation.MyCommand.Path
@@ -47,7 +42,7 @@ if(Test-Path $myFunctionFilePath)
      coreShowJSON($storedScript_HashTable)
     
     # Read the contents of the JSON file into a PowerShell object
-    $myFunctionJsonContent = Get-Content $myFunctionFilePath | ConvertFrom-Json
+    $myFunctionJsonContent = Get-Content $JSON.myFunctions | ConvertFrom-Json
 
     # Create a hashtable to store the dependencies
     $myfunction_hashtable = @{}
@@ -56,7 +51,7 @@ if(Test-Path $myFunctionFilePath)
     foreach ($function in $myFunctionJsonContent) {
         $myfunction_hashtable[$function.Name] = "$($function.Path)"
 
-        if($CHECKS[1]["Status"] -eq "enable") { Write-Host "[ OK ] Included : MyFunction => { $($function.Name) }  Successfully"  -ForegroundColor Green } else {}
+        Write-Host "[ OK ] Included : MyFunction => { $($function.Name) }  Successfully"  -ForegroundColor Green 
         #Write-Output "Added : $myfunction_hashtable[$function.Name] = $myFunctionSource\$($function.File) `n"
     }
     # Write-Output "[ OK ] setMyFunction     => { setMyFunction.ps1 } Loaded Successfully"
@@ -71,8 +66,8 @@ if(Test-Path $myFunctionFilePath)
         } else 
         { 
             $filename = [System.IO.Path]::GetFileNameWithoutExtension($myfunction)
-            Write-Host "[    ] Missing  : MyFunction => { $filename } at $myfunction" -ForegroundColor Red 
+            Write-Host "[    ] Missing  : MyFunction => { $filename } at $myfunction" -ForegroundColor Red
         }
     }
 
-} else { Write-Host "[    ] Missing  : $myFunctionJsonFileName at $myFunctionFilePath" -ForegroundColor Red }
+} else { Write-Error "[    ] Missing  : $(Get-FileName($JSON.myfunctions)) at $($JSON.myFunctions)" }

@@ -2,7 +2,7 @@
     {
         "Name": "Check-File",
         "File": "Check-File.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\thefunctions\\Check-File.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\Check-File.ps1",
         "Argument":"Yes",
         "Parameter" : ["$type"],
         "Desc": "Execute Script from this JSON List"
@@ -10,23 +10,15 @@
     {
         "Name": "EXEC",
         "File": "EXEC.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\thefunctions\\EXEC.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\EXEC.ps1",
         "Argument":"Yes",
         "Parameter" : ["$script_name","$argument"],
         "Desc": "Execute Script by passing Script Name from 'scripts.json"
     },
     {
-        "Name": "Figlet",
-        "File": "Figlet.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\thefunctions\\Figlet.ps1",
-        "Argument":"Yes",
-        "Parameter" : ["$type"],
-        "Desc": "Test Script to display greetings"
-    },
-    {
         "Name": "Goto-Directory",
         "File": "Goto-Directory.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\thefunctions\\Goto-Directory.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\Goto-Directory.ps1",
         "Argument":"Yes",
         "Parameter" : ["$jsons_name"],
         "Desc": "Read JSON File and Display It"
@@ -34,7 +26,7 @@
     {
         "Name": "Home",
         "File": "Home.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\thefunctions\\Home.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\Home.ps1",
         "Argument":"Yes",
         "Parameter" : ["$jsons_name"],
         "Desc": "Read JSON File and Display It"
@@ -42,7 +34,7 @@
     {
         "Name": "Refresh",
         "File": "Refresh.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\thefunctions\\Refresh.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\Refresh.ps1",
         "Argument":"Yes",
         "Parameter" : ["$jsons_name"],
         "Desc": "Read JSON File and Display It"
@@ -50,7 +42,7 @@
     {
         "Name": "Show-List",
         "File": "Show-List.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\thefunctions\\Show-List.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\Show-List.ps1",
         "Argument":"Yes",
         "Parameter" : ["$jsons_name"],
         "Desc": "Read JSON File and Display It"
@@ -58,7 +50,7 @@
     {
         "Name": "Show-Table",
         "File": "Show-List.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\thefunctions\\Show-Table.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\Show-Table.ps1",
         "Argument":"Yes",
         "Parameter" : ["$jsons_name"],
         "Desc": "Read JSON File and Display It"

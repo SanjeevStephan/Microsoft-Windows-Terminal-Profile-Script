@@ -19,16 +19,13 @@
     VERSION
         -v1.0    
         
-#-------------------- Include Below File --------------------------------------#>
-# Define the path to the functions.json file
-# $jsonSource = $env:myjson
+#-------------------- setProfileFunctions.ps1 --------------------------------------#>
 
 # Define the path to the functions.json file
 #$profileFunctionFilePath = "$Home\Documents\PowerShell\myjson\myFunctions.json"
-$profileFunctionFilePath = Get-JsonPath("profileFunctions")
-$profileFunctionJsonFileName = Get-Filename($profileFunctionFilePath)
+# $profileFunctionFilePath = Get-JsonPath("profileFunctions")
 
-if(Test-Path $profileFunctionFilePath)
+if(Test-Path $JSON.profileFunctions)
 {
     $scriptName     = $MyInvocation.MyCommand.Name
     $scriptFullPath = $MyInvocation.MyCommand.Path
@@ -37,24 +34,16 @@ if(Test-Path $profileFunctionFilePath)
     $storedScript_HashTable = @{
         "Script Name"        = "$scriptName "
         "Script Path"        = "$scriptFullPath"
-        "JSON Path"          = "$profileFunctionFilePath"
+        "JSON Path"          = "$($JSON.profileFunctions)"
         "Function Called By" = "$scriptExecutedBy"
         "InvocationName"     = "$invocationName"
         "Invocation Line"    = "$invocationLine "
         "Invocation Command" = "$invocationCommand"
      }
      coreShowJSON($storedScript_HashTable)
-
-    #show-core($storedFuncHashTable)
-   
-    #Write-Host "[ OK ] Located => { $profileFunctionJsonFileName } at $profileFunctionFilePath" -ForegroundColor Yellow
-    #Write-Host "[ OK ] Loading  : All Profile Function from JSON List => { $profileFunctionJsonFileName }" -ForegroundColor Yellow   
     
     # Read the contents of the JSON file into a PowerShell object
-    $myFunctionJsonContent = Get-Content $profileFunctionFilePath | ConvertFrom-Json
-
-    # Define the path to the PowerShell profile directory
-    $myFunctionSource = "$HOME\Documents\PowerShell\myfunctions"
+    $myFunctionJsonContent = Get-Content $JSON.profileFunctions | ConvertFrom-Json
 
     # Create a hashtable to store the dependencies
     $profileFunction_hashtable = @{}
@@ -78,9 +67,9 @@ if(Test-Path $profileFunctionFilePath)
         } else 
         { 
             $filename = [System.IO.Path]::GetFileNameWithoutExtension($profilefunction)
-            Write-Host "[    ] Missing  : Profile-Function => { $filename } at $profilefunction" -ForegroundColor Red
+            Write-Error "[    ] Missing  : Profile-Function => { $filename } at $profilefunction" 
         }
     }
 
-} else { Write-Host "[    ] Missing  : $profileFunctionJsonFileName at $profileFunctionFilePath" -ForegroundColor Red }
+} else { Write-Error "[    ] Missing  : $(Get-FileName($JSON.profileFunctions)) at $($JSON.profileFunctions)" }
 

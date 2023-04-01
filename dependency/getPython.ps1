@@ -22,7 +22,7 @@
 
 #--------------------{ getPython.ps1 }--------------------------------------#>
 # Read the JSON data from the file
-$python_json_source_file = Get-JsonPath("myJsonList")
+$python_json_source_file = Get-JsonPath("myPythonScript")
 
 $scriptName     = $MyInvocation.MyCommand.Name
 $scriptFullPath = $MyInvocation.MyCommand.Path
@@ -117,9 +117,9 @@ function Read-Python($python_script_filename) {
 function List-Python()
 {
         $python_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$python_array_data.IndexOf($_) + 1}}, 
-        @{label="Name"; expression={$_.Name}}, 
-        @{label="JSON File"; expression={$_.File}},
-        @{label="Path"; expression={$_.Path}} -AutoSize
+        @{label="Script Name"; expression={$_.Name}}, 
+        @{label="Script File"; expression={$_.File}},
+        @{label="Python Script Path"; expression={$_.Path}} -AutoSize
 }
 
 function Run-thisPythonFunc()

@@ -2,7 +2,7 @@
      {
         "Name": "clip",
         "File": "clip.ps1",
-        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions\\clip.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction\\clip.ps1",
         "Argument":"No",
         "Parameter" : ["$action","$filename"],
         "Syntax" : " clip {in|out} simple-test.txt ",

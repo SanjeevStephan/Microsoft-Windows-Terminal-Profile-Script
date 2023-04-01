@@ -31,6 +31,7 @@ $invocationName    = $($MyInvocation.InvocationName)
 $invocationLine    = "$($MyInvocation.Line)"
 $invocationCommand = "$($MyInvocation.MyCommand)"
 
+DEBUG("Script has Started")
 
 $storedScript_HashTable = @{
     "Script Name"        = "$scriptName "
@@ -84,6 +85,8 @@ function Check-Script(){
                 "Script Name" = "$($scripts.Name)"
                 "Script Path" = "$($scripts.Path)"
             }
+
+            
 
             Write-Host "[ OK ] Confirmed: '$($scripts.Name)' at $($scripts.Path)" -ForegroundColor Green
         } else {
@@ -164,3 +167,5 @@ function List-Script($column_name){
  }
 
  List-Script
+ 
+ DEBUG("Script Ended")
