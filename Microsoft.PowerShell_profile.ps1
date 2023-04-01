@@ -72,7 +72,6 @@
         └───.\setMyfunctions.ps1
     └───mytest
         └───env            
-#. "$Home\Documents\PowerShell\auto\launch_profile.ps1"
 #-------------------- Must Include Below File --------------------------------------#>
 $pshell = "$Home\Documents\PowerShell\"
 . "$pshell\profileFunction\The-Prompt.ps1"
