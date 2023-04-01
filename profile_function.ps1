@@ -1,3 +1,4 @@
+Write-Host "[ OK ] Profile Function => { profile_function.ps1 } Loaded Successfully"
 <#
  ____             __ _ _        _____                 _   _                 
 |  _ \ _ __ ___  / _(_) | ___  |  ___|   _ _ __   ___| |_(_) ___  _ __  ___ 
@@ -20,8 +21,6 @@
         -26 March 2023   
 
 #>
-if(InitialCheckStatus(1) -eq "enable")
-{ 
-    #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
-    Write-Output "[ OK ] Profile Function  => { profile_function.ps1 } Loaded Successfully"
-} 
+
+#$cmd = prompt ""
+#Invoke-Expression $cmd
