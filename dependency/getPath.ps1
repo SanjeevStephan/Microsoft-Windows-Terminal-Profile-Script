@@ -109,6 +109,14 @@ function Get-Path($directory_name)
 
     
 }
+function Get-to-the-Directory($index)
+{ 
+    if(ispythoninstalled -eq $true){ Figlet $dir_name}
+    List-Path
+    $index = Read-Host "Which directory you want to go (1+N) :"
+    cd $paths_array_data[$index - 1].Path 
+}
+
 
 function Get-FileName($file_fullpath) {
     # $getfileName = Split-Path -Path $MyInvocation.ScriptName -Leaf
@@ -187,9 +195,9 @@ function List-Path($column_name){
         }
  }
 
- function Run-thisPathFunction()
- {
  <#
+  cd $paths_array_data[$index - 1].Path
+
      Get-PathJson("terminal")
      Get-Path("powershell")
      Check-Path("powershell")
@@ -200,9 +208,4 @@ function List-Path($column_name){
      $paths_array_data
  #>
     List-Path
- }
  
- Run-thisPathFunction
-
- # getPath("powershell") # <-------------- NOTE-2 : TO RUN THIS SCRIPT | UNCOMMENT 
- # Table-Path             # <-------------- NOTE-3 : TO RUN THIS SCRIPT | UNCOMMENT 

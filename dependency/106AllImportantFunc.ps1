@@ -4,14 +4,6 @@ function DEBUG($debugMsg){ Write-Host "[ DEBUG ] $scriptName : $debugMsg " -Fore
 
 
 
-<# 
-$command = "Figlet 'The Terminal'"
-Invoke-Expression $command
-#>
-
-
-
-
 
 
 

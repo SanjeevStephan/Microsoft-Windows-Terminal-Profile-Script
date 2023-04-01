@@ -50,5 +50,6 @@ function Get-File($file_name)
 
 function Get-FileName($path){
    $filename = Split-Path -Path $path -Leaf
+# $filename = [System.IO.Path]::GetFileNameWithoutExtension($path)
    return $filename
 }

@@ -177,14 +177,5 @@ function List-Function($column_name){
 
 
 }
-function Run-thisFunction() {
 
-<#
-    Check-Function
-    getfunction("test")
-#>   
-    List-Function("all") 
-
-}
-
-Run-thisFunction
+List-Function("all") 

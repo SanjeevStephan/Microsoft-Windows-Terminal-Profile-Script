@@ -72,15 +72,10 @@
         └───.\setMyfunctions.ps1
     └───mytest
         └───env            
-
+#. "$Home\Documents\PowerShell\auto\launch_profile.ps1"
 #-------------------- Must Include Below File --------------------------------------#>
-. "$HOME\Documents\PowerShell\profile_include.ps1"
-#-------------------- Functions {Read-Only}-------------------------------------
+$pshell = "$Home\Documents\PowerShell\"
+. "$pshell\profileFunction\The-Prompt.ps1"
+. "$pshell\auto\profile_include.ps1"
+. "$pshell\profile_function.ps1"
 
-function initialize() {
-
-    # Home # Change Directory 'cd' to $Home\Documents\PowerShell
-
- }
-
-initialize  #calling the initialize() function 

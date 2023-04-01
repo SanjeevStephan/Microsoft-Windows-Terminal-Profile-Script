@@ -1,23 +1,22 @@
 [
-    
-    {
-        "Name" : "powershell",
-        "Directory" : "PowerShell",
-        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\",
-        "Desc" : "Microsoft PowerShell Profile Directory"
-    },
-    {
-        "Name" : "terminal",
-        "Directory" : "terminal",
-        "Path" : "D:\\terminal",
-        "Desc" : "The Terminal Directory"
-    },
     {
         "Name" : "codes",
         "Directory" : "code-snippets",
         "Path" : "D:\\terminal\\code-snippets",
         "Desc" : "The Code-Snippets Directory"
     },
+    {
+        "Name" : "home",
+        "Directory" : "PowerShell",
+        "Path" : "$Home\\Documents\\PowerShell",
+        "Desc" : "PowerShell Home Directory"
+    },  
+    {
+        "Name" : "matrix",
+        "Directory" : "matrix",
+        "Path" : "D:\\terminal\\matrix",
+        "Desc" : "Terminal Matrix Directory"
+    },    
     {
         "Name" : "myscripts",
         "Directory" : "myscripts",
@@ -35,12 +34,6 @@
         "Directory" : "mypython",
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\mypython",
         "Desc" : "PowerShell's Profile -> 'mypython' Directory"
-    },
-    {
-        "Name" : "matrix",
-        "Directory" : "matrix",
-        "Path" : "D:\\terminal\\matrix",
-        "Desc" : "Terminal Matrix Directory"
     },
     {
         "Name" : "mrrobot",
@@ -67,13 +60,23 @@
         "Desc" : "Raspberry Pico's BadUSB Rubber Ducky's Payload"
     },
     {
+        "Name" : "powershell",
+        "Directory" : "PowerShell",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\",
+        "Desc" : "Microsoft PowerShell Profile Directory"
+    },
+    {
         "Name" : "study",
         "Directory" : "study",
         "Path" : "D:\\study",
         "Desc" : "Study Directory"
-    }
-
-
+    },
+    {
+        "Name" : "terminal",
+        "Directory" : "terminal",
+        "Path" : "D:\\terminal",
+        "Desc" : "The Terminal Directory"
+    },
 
 
 

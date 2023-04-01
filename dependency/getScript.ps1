@@ -31,8 +31,6 @@ $invocationName    = $($MyInvocation.InvocationName)
 $invocationLine    = "$($MyInvocation.Line)"
 $invocationCommand = "$($MyInvocation.MyCommand)"
 
-DEBUG("Script has Started")
-
 $storedScript_HashTable = @{
     "Script Name"        = "$scriptName "
     "Script Path"        = "$scriptFullPath"
@@ -167,5 +165,4 @@ function List-Script($column_name){
  }
 
  List-Script
- 
- DEBUG("Script Ended")
+

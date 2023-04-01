@@ -129,8 +129,6 @@ function List-Json(){
         @{label="Path"; expression={$_.Path}} -AutoSize
 }
 
-function Run-thisJsonFunc()
-{
 <#
     Get-Json("test")
     Get-JsonPath("test")
@@ -139,6 +137,3 @@ function Run-thisJsonFunc()
     $jsons_array_data
 #>
     List-Json
-}
-
-Run-thisJsonFunc

@@ -122,8 +122,7 @@ function List-Python()
         @{label="Python Script Path"; expression={$_.Path}} -AutoSize
 }
 
-function Run-thisPythonFunc()
-{
+
 <#
     Get-Python
     Get-PythonPath
@@ -132,6 +131,3 @@ function Run-thisPythonFunc()
 #>
 
     List-Python
-}
-
-Run-thisPythonFunc

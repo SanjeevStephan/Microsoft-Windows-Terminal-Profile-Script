@@ -1,6 +1,5 @@
 
 
-
 function coreShowJSON($hashTableBox)
 {
     # Get-Member -InputObject $MyInvocation

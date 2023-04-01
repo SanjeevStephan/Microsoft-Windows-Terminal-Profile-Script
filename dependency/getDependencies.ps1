@@ -23,10 +23,7 @@
 #-------------------- getDependencies.ps1 --------------------------------------#>
 # Read the JSON data from the file $PATH[3]["Path"]
 
-DEBUG("Script Started")
-
 $dependencies_json_source = $JSON.dependencies  #"$Home\Documents\PowerShell\myjson\dependencies.json"
-
 
 $scriptName     = $MyInvocation.MyCommand.Name
 $scriptFullPath = $MyInvocation.MyCommand.Path
@@ -89,4 +86,3 @@ function List-Profile()
 
 
 List-Profile
-DEBUG("Script Ended")
