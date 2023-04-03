@@ -50,6 +50,7 @@ $DIRECTORY =  @{
     "assets"              = "$($SOURCE.powershell)\assets"
     "ascii"               = "$($DIRECTORY.assets)\ascii"
     "dependency"          = "$($SOURCE.powershell)\dependency"
+    "docs"                = "$Home\Documents"
     "legacy"              = "$($SOURCE.powershell)\legacy"
     "myfunctions"         = "$($SOURCE.powershell)\myfunctions"
     "mygithubrepo"        = "$($SOURCE.powershell)\mygithubrepo"
@@ -57,7 +58,7 @@ $DIRECTORY =  @{
     "mypython"            = "$($SOURCE.powershell)\mypython"
     "myscripts"           = "$($SOURCE.powershell)\myscript"
     "mytest"              = "$($SOURCE.powershell)\mytest"
-    "thefunction"         = "$($SOURCE.powershell)\thefunction"
+    "profileFunction"     = "$($SOURCE.powershell)\profileFunction"
 } 
 
 $DEPENDENCY =  @{
