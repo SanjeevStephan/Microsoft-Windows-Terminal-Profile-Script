@@ -7,10 +7,8 @@
                                                                   
 .SYNOPSIS
     Script to include other PowerShell scripts as dependencies
-
 .DESCRIPTION
     Execute the script_files that are 'included' in this 'profile_include.ps1' script
-
 .NOTES
     AUTHOR
         -Sanjeev Stephan Murmu
@@ -19,58 +17,44 @@
     VERSION
         -v1.0    
         
-#-------------------- setProfileFunctions.ps1 --------------------------------------#>
+#-------------------- Must Check the Configuration File  --------------------------------------#>
+# Define the path to the configuration file that contains additional Paths
+#$profile_config_path = Get-Content "$Home\Documents\PowerShell\profile.config"
+$profile_config_path = "$Home\Documents\PowerShell\dependency\100TheConfigurationFile.ps1"
+# getPath the configuration file to load any additional Paths
+. $profile_config_path  # <-------------- NOTE : LOAD THE CONFIG-FILE via (Dot-Sourcing)
 
-# Define the path to the functions.json file
-#$profileFunctionFilePath = "$Home\Documents\PowerShell\myjson\myFunctions.json"
-# $profileFunctionFilePath = Get-JsonPath("profileFunctions")
+# Display Ascii-figlet Text "The Terminal"
+#type $ASCII.theterminal 
 
-if(Test-Path $JSON.profileFunctions)
+if(Test-Path $DEPENDENCY.TheConfigurationFile) 
 {
-    $scriptName     = $MyInvocation.MyCommand.Name
-    $scriptFullPath = $MyInvocation.MyCommand.Path
-    $scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
+
+    if(Test-Path $DIRECTORY.profileFunction)
+    {
+
+        #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
+        Write-Output "[ OK ] Profile include => { include.ps1 } Loaded Successfully"
     
-    $jsonFilePath = $JSON.profileFunctions
-    $storedScript_HashTable = @{
-        "Script Name"        = "$scriptName "
-        "Script Path"        = "$scriptFullPath"
-        "JSON Path"          = "$jsonFilePath"
-        "Function Called By" = "$scriptExecutedBy"
-        "InvocationName"     = "$invocationName"
-        "Invocation Line"    = "$invocationLine "
-        "Invocation Command" = "$invocationCommand"
-     }
-     coreShowJSON($storedScript_HashTable)
+        # Get all the *.ps1 files in the "profileFunction" directory
+        $profileFunction_files = Get-ChildItem -Path $DIRECTORY.profileFunction -Filter "*.ps1" | Select-Object -ExpandProperty FullName
     
-    # Read the contents of the JSON file into a PowerShell object
-    $myFunctionJsonContent = Get-Content $JSON.profileFunctions | ConvertFrom-Json
+        Write-Debug "Directory profileFunction : $($DIRECTORY.profileFunction)"
+        # Loop through each profileFunction file and include it in the profile
+        foreach ($path in $profileFunction_files) {
+            if (Test-Path $path) {
+    
 
-    # Create a hashtable to store the dependencies
-    $profileFunction_hashtable = @{}
-
-    # Loop through each function in the JSON object and add it to the dependencies hashtable
-    foreach ($function in $myFunctionJsonContent) {
-        $profileFunction_hashtable[$function.Name] = "$($function.Path)"
-
-        Write-Host "[ OK ] Included : Profile-Function => { $($function.Name) }  Successfully"  -ForegroundColor Green 
-        #Write-Output "Added : $profileFunction_hashtable[$function.Name] = $myFunctionSource\$($function.File) `n"
-    }
-
-    # Loop through each myfunction and include it in the profile
-    foreach ($profilefunction in $profileFunction_hashtable.Values | Sort-Object -Property Key ) {
-
-        if(Test-Path $profilefunction)
-        {
-
-        . $profilefunction
-
-        } else 
-        { 
-            $filename = [System.IO.Path]::GetFileNameWithoutExtension($profilefunction)
-            Write-Error "[    ] Missing  : Profile-Function => { $filename } at $profilefunction" 
+                Write-Host "[ OK ] Included : Profile-Function => { $(Split-Path -Leaf $path) } Successfully" -ForegroundColor  Green
+                #Write-Host "[ OK ] All Profile Function : $(Split-Path -Leaf $path) : Included $path " -ForegroundColor Green
+                . $path
+            } else {
+                Write-Warning "Missing $(Split-Path -Leaf $path) at path $path"
+            }
         }
-    }
 
-} else { Write-Error "[    ] Missing  : $(Get-FileName($JSON.profileFunctions)) at $($JSON.profileFunctions)" }
+    } else { Write-Error "profileFunction directory path is empty : $($DIRECTORY.profileFunction)"} 
 
+
+
+} else { Write-Error "Configuration File Missing { $($DEPENDENCY.TheConfigurationFile)}"}
