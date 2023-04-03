@@ -1,16 +1,22 @@
 [
     {
+        "Name" : "home",
+        "Directory" : "PowerShell",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell",
+        "Desc" : "PowerShell Home Directory"
+    }, 
+    {
         "Name" : "codes",
         "Directory" : "code-snippets",
         "Path" : "D:\\terminal\\code-snippets",
         "Desc" : "The Code-Snippets Directory"
     },
     {
-        "Name" : "home",
-        "Directory" : "PowerShell",
-        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell",
-        "Desc" : "PowerShell Home Directory"
-    },  
+        "Name" : "docs",
+        "Directory" : "documents",
+        "Path" : "C:\\Users\\Sanju\\Documents",
+        "Desc" : "User Documents Directory"
+    },
     {
         "Name" : "matrix",
         "Directory" : "matrix",
