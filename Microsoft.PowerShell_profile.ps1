@@ -73,8 +73,9 @@
     └───mytest
         └───env            
 #-------------------- Must Include Below File --------------------------------------#>
-$pshell = "$Home\Documents\PowerShell\"
-. "$pshell\profileFunction\The-Prompt.ps1"
-. "$pshell\auto\profile_include.ps1"
-. "$pshell\profile_function.ps1"
+$pshell = "$Home\Documents\PowerShell"
+. "$pshell\TheConfigurationFile.ps1"  
+. "$pshell\profileFunction\The-Prompt.ps1"  
+. "$pshell\myautoscript\profile_include.ps1"
+. "$pshell\ProfileFunctions.ps1"
 
