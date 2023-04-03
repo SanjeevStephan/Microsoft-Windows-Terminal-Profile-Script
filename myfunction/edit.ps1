@@ -1,7 +1,5 @@
-function edit()
+function edit($filename)
 {
-    code $SOURCE.powershell
-    echo "Editing PowerShell Directories"
-    Start-Sleep -Seconds 4
-    Refresh
+   $location = Get-Location
+   powershell_ise.exe "$location\$filename"
 }
