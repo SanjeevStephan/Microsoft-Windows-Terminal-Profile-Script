@@ -12,5 +12,5 @@ $figletHashTable = @{
 . $figletHashTable.Path
 
 # Call the function with the parameter value specified in the configuration
-Figlet -msg $figletHashTable.Name
+#Figlet -msg $figletHashTable.Name
 
