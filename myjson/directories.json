@@ -24,16 +24,16 @@
         "Desc" : "Terminal Matrix Directory"
     },    
     {
-        "Name" : "myscripts",
+        "Name" : "myautoscripts",
         "Directory" : "myscripts",
-        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myscripts",
-        "Desc" : "PowerShell's Profile -> 'myscripts' Directory"
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myautoscript",
+        "Desc" : "PowerShell's Profile -> 'myautoscript' Directory"
     },
     {
-        "Name" : "myfunctions",
+        "Name" : "myfunction",
         "Directory" : "myfunctions",
-        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunctions",
-        "Desc" : "PowerShell's Profile -> 'myfunctions' Directory"
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction",
+        "Desc" : "PowerShell's Profile -> 'myfunction' Directory"
     },
     {
         "Name" : "mypython",
