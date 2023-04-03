@@ -45,6 +45,15 @@
         "Desc": "Download the file using the URL passed as an argument"
     },
     {
+        "Name": "edit",
+        "File": "edit.ps1",
+        "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\edit.ps1",
+        "Argument":"no",
+        "Parameter" : ["$url"],
+        "Syntax" : "edit'",
+        "Desc": "Edit PowerShell Profile Directory Files"
+    },
+    {
         "Name": "goto",
         "File": "goto.ps1",
         "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\goto.ps1",
