@@ -1,6 +1,5 @@
 function Show-Table($type) {
     # Update the value of the 'show_all_paths' property
-    $TABLE.show_all_paths = "enable"
     
         if($type)
         {
