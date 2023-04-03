@@ -9,7 +9,7 @@ function isPythonInstalled()
 Write-Host "[....] Checking if the Python is Installed or not"
 if(isPythonInstalled -eq $true)
 {
-    Invoke-Expression $COMMAND.ascii_python_installed
+    #Invoke-Expression $COMMAND.ascii_python_installed
     Write-Host "[ OK ] Python is installed at $($FILEPATH.python)." -ForegroundColor Green
 }
 else 

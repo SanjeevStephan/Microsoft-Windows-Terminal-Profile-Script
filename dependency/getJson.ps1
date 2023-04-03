@@ -124,7 +124,7 @@ function Read-Json($jsons_filename) {
 function List-Json(){
  
         $jsons_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$jsons_array_data.IndexOf($_) + 1}}, 
-        @{label="Name"; expression={$_.Name}}, 
+        @{label="JSON Name"; expression={$_.Name}}, 
         @{label="JSON File"; expression={$_.File}},
         @{label="Path"; expression={$_.Path}} -AutoSize
 }

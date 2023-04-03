@@ -148,7 +148,7 @@ function List-Function($column_name){
         "all"
         {
             $function_array_data | Sort-Object | Format-Table @{label="S.No"; expression={$function_array_data.IndexOf($_) + 1}}, 
-            @{label="Function Name"; expression={$_.Name}}, 
+            @{label="Profile Function"; expression={$_.Name}}, 
             @{label="Argument"; expression={$_.Argument}},
             @{label="Parameter"; expression={$_.Parameter}},
             @{label="Syntax"; expression={$_.Syntax}},
