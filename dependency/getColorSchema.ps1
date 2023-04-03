@@ -6,6 +6,7 @@ $COLOR = @{
     4 =  @{Color = "Red";        Schema = "Error"     ; Desc = "Means Missing | Error | Don't Ignore These Error"}
     5 =  @{Color = "White";      Schema = "Casual"    ; Desc = "General Log Messages"}
     6 =  @{Color = "Yellow";     Schema = "Important" ; Desc = "Pay Attentiong to these Lines"}
+    7 =  @{Color = "Cyan";       Schema = "Important" ; Desc = "Auto Script to include all the files with (*.ps1) in specific directory"}
 }
 
 
@@ -19,6 +20,7 @@ function List-Color()
     Write-Host "[ COLOR ] Schema { Error }      : Red "     -ForegroundColor Red
     Write-Host "[ COLOR ] Schema { Function }   : Green "   -ForegroundColor Green
     Write-Host "[ COLOR ] Schema { Important }  : Yellow "  -ForegroundColor Yellow
+    Write-Host "[ COLOR ] Schema { Important }  : Cyan "    -ForegroundColor Cyan
 }
 
 List-Color
