@@ -85,7 +85,7 @@ _This repository contains_ :
 * Sub-Directories
     | Directory | Description |
     |:-----:|:------:|
-    | assets | contains profile's assets {cloned-github-repo | pics | syntax } |    
+    | assets | contains profile's assets {cloned-github-repo,pics,syntax } |    
     | depnedency | contains all the scripts which the profile dependes upone |
     | myautoscripts | contains all the automated scripts |    
     | myfunctions | contains all the simple but useful functions to do certian tasks |    
