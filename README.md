@@ -46,22 +46,29 @@ _This repository contains_ :
     | [Microsoft.PowerShell_profile.ps1](https://github.com/SanjeevStephan/superuser/blob/main/Microsoft.PowerShell_profile.ps1)| Main PowerShell Profile File |
     | [TheConfigurationFile.ps1](https://github.com/SanjeevStephan/superuser/blob/main/TheConfigurationFile.ps1) | Controls Settings  |
     | [profile_include.ps1](https://github.com/SanjeevStephan/superuser/blob/main/myautoscript/profile_include.ps1)  |  Includes all {*.ps1} files in the ./dependency directory |    
+    | [ProfileFunctions.ps1](https://github.com/SanjeevStephan/superuser/blob/main/ProfileFunctions.ps1)  |  Save your funtions here & execute directly on terminal  |    
     | [The-Prompt.ps1](https://github.com/SanjeevStephan/superuser/blob/main/profileFunction/The-Prompt.ps1)  |  The SuperUser Prompt  |
 
 
 * Dependencies
     | Profile-File | Description |
     |:---------:|:-------:|
-    | profile_config.ps1 | | 
-    | profile_include.ps1 | | 
-    | profile_exec_script.ps1 | | 
-    | profile_function.ps1 | | 
-    | profile_getDependencies.ps1|  | 
-    | profile_getFunction.ps1 |  | 
-    | profile_getJson.ps1 | | 
-    | profile_getPath.ps1 | fetch directory path from 'directories.json' by directory name | 
-    | profile_getScript.ps1 | | 
-
+    | TheCommands | | 
+    | Get-Dir | | 
+    | ASCIIFiglet | | 
+    | IsPythonInstalled | | 
+    | AllImportantFunc|  | 
+    | getColorSchema.ps1 |  | 
+    | getCoreDebug.ps1 | | 
+    | getDependencies.ps1 | fetch directory path from 'directories.json' by directory name | 
+    | getFunction.ps1 | | 
+    | getJson.ps1 |  | 
+    | getPath.ps1 | | 
+    | getPython.ps1 | fetch directory path from 'directories.json' by directory name | 
+    | getScript.ps1 | | 
+    | setAllProfileFunctions.ps1 |  | 
+    | setMyfunctions.ps1 | | 
+    
 * JSON
     | JSON-File | Description |
     |:---------:|:-------:|
