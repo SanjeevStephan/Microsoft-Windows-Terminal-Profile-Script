@@ -1,13 +1,16 @@
 # Welcome PowerShell's $uperUser
 > To The Windows Terminal, Console and Command-Line repository
 ```
- ____                        _   _               
-/ ___| _   _ _ __   ___ _ __| | | |___  ___ _ __ 
-\___ \| | | | '_ \ / _ \ '__| | | / __|/ _ \ '__| Microsoft.Profile_profile.ps1
- ___) | |_| | |_) |  __/ |  | |_| \__ \  __/ |    v1.0 | 26th March 2023
-|____/ \__,_| .__/ \___|_|   \___/|___/\___|_|   
-            |_|                                  
----------------------------------------------------------
+ ____                        _   _
+/ ___| _   _ _ __   ___ _ __| | | |___  ___ _ __
+\___ \| | | | '_ \ / _ \ '__| | | / __|/ _ \ '__| v1.0 | 26th March 2023
+ ___) | |_| | |_) |  __/ |  | |_| \__ \  __/ |    by Sanjeev Stephan Murmu
+|____/ \__,_| .__/ \___|_|   \___/|___/\___|_|    https://github.com/SanjeevStephan/
+            |_|
+
+[ OK ] Profile Function => { profile_function.ps1 } Loaded Successfully
+┌──(superuser㉿192.168.29.200)-[C:\Users\Sanju\Documents\PowerShell]
+└─$ PS>                                 
 ```
 
 ## SYNOPSIS
@@ -123,8 +126,20 @@ C:.
 ├───mypython
 └───profileFunction
 ```
+# How to Setup
 
-
+1. Open Terminal & navigate to User's home directory which is (C:\Users\\<username\>\Documents\)
+```
+cd $home\Documents
+ ```
+2. Clone the repository using *git clone*
+ ```
+ git clone https://github.com/SanjeevStephan/superuser.git
+```
+3. Restart the Terminal & start powerShell
+```
+ pwsh
+```
 # Installing and running Windows Terminal
 
 > Note: Windows Terminal requires Windows 10 2004 (build 19041) or later
