@@ -72,19 +72,26 @@ _This repository contains_ :
 * JSON
     | JSON-File | Description |
     |:---------:|:-------:|
-    | dependencies.json | list of all the files that makes up the profile  |
+    | dependencies.json | list of all the files that the profile depends on |
     | directories.json | index of all directories in-use |
-    | functions.json | list of useful functions |
-    | include.json | index of must-include dependencies |
-    | jsons.json  | index of all json-file used |
-    | scripts.json | index of all the scripts in-use| 
+    | myFunctions.json | list of simple but useful functions |
+    | myIncludes.json | index of must-include dependencies |
+    | myJsonList.json  | index of all json-file used |
+    | myPythonScript.json | index of all the python-scripts in-use| 
+    | myFileList.json | any refrerences files used |
+    | profileFunctions.json | important profile functions used by other scripts|
+    | myScripts.json | index of all the advanced scripts|     
         
 * Sub-Directories
     | Directory | Description |
     |:-----:|:------:|
-    | myfunctions | contains all the function in-use |
-    | myscripts | contains all the executable complex scripts |
-    | mytest | contains files used for testing purpose |       
+    | assets | contains profile's assets {cloned-github-repo | pics | syntax } |    
+    | depnedency | contains all the scripts which the profile dependes upone |
+    | myautoscripts | contains all the automated scripts |    
+    | myfunctions | contains all the simple but useful functions to do certian tasks |    
+    | myjson | contains json files lists|           
+    | mypython | contains all the executable python scripts |
+    | profileFunction | contains main functions used for by other scripts|       
 
 
 
