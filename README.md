@@ -12,6 +12,13 @@
 ┌──(superuser㉿192.168.29.200)-[C:\Users\Sanju\Documents\PowerShell]
 └─$ PS>                                 
 ```
+## Index
+* [Description](https://github.com/SanjeevStephan/superuser/edit/main/README.md#Description)
+* [Directory Structure](https://github.com/SanjeevStephan/superuser/edit/main/README.md#Directory-Structure)
+* [How to Setup](https://github.com/SanjeevStephan/superuser/edit/main/README.md#How-to-Setup)
+* [How this Works](https://github.com/SanjeevStephan/superuser/edit/main/README.md#How-this-Works)
+* [How to Contribute](https://github.com/SanjeevStephan/superuser/edit/main/README.md#How-to-Contribute)
+* [Installing and running New Windows Terminal](https://github.com/SanjeevStephan/superuser/edit/main/README.md#Installing-and-running-New-Windows-Terminal)
 
 ## SYNOPSIS
 > Microsoft Window Terminal Profile : SuperUser
