@@ -1,4 +1,4 @@
-# [Welcome](https://github.com/SanjeevStephan/superuser/blob/main/assets/log/readme.md) PowerShell's $uperUser 
+# Welcome PowerShell's [$uperUser](https://github.com/SanjeevStephan/superuser/blob/main/assets/log/readme.md)
 > To The Windows Terminal, Console and Command-Line repository
 ```
  ____                        _   _
