@@ -143,7 +143,7 @@ cd $home\Documents
 ```
 
 # How this Works?
-> To know how this profile script works. Kindly [click htere to read the docs](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md)
+> To know how this profile script works. Kindly [click here to read the docs](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md)
 
 # Installing and running Windows Terminal
 
