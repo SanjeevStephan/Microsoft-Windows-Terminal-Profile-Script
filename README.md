@@ -130,7 +130,8 @@ cd $home\Documents
 * You must be running Windows 10 2004 (build >= 10.0.19041.0) or later to run Windows Terminal
 * You must [enable Developer Mode in the Windows Settings app](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development) to locally install and run Windows Terminal 
 * You must have [PowerShell 7 or later](https://github.com/PowerShell/PowerShell/releases/latest) installed
-* You must have at least [VS 2022](https://visualstudio.microsoft.com/downloads/) installed
+* You must have [Git](https://git-scm.com/downloads) installed
+* You must have at least [VS 2022](https://visualstudio.microsoft.com/downloads/) installed or [Visual Studio Code](https://code.visualstudio.com/download) popularly known as VSCode
 * You must install the [.NET Framework Targeting Pack](https://docs.microsoft.com/dotnet/framework/install/guide-for-developers#to-install-the-net-framework-developer-pack-or-targeting-pack) to build test projects
 ## LINK
 * This Github Repository                  (https://github.com/SanjeevStephan/superuser)
