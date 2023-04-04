@@ -96,36 +96,6 @@ _This repository contains_ :
     | mypython | contains all the executable python scripts |
     | profileFunction | contains main functions used for by other scripts|       
 
-* Profile Directory Tree
-```
-Folder PATH listing
-Volume serial number is 0455-C176
-C:.
-├───assets
-│   ├───ascii
-│   ├───background
-│   ├───cheatsheet
-│   ├───clonedGithubRepos
-│   │   └───superadmin-dashboard
-│   ├───legacy
-│   │   ├───backup
-│   │   ├───profileFunction
-│   │   ├───syntax
-│   │   └───usefull-but-not-in-use
-│   └───mytest
-│       ├───env
-│       └───jsontest
-├───dependency
-│   ├───setEnv
-│   └───sources
-├───myautoscript
-├───myfunction
-│   └───parameterArgs
-├───myjson
-│   └───terminal
-├───mypython
-└───profileFunction
-```
 # How to Setup
 
 1. Download **git** for terminal [click here](https://git-scm.com/downloads)
@@ -145,6 +115,10 @@ cd $home\Documents
 # How this Works?
 > To know how this profile script works. Kindly [click here to read the docs](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md)
 
+
+# How to Contribute 
+> To know how you can contribute to this repository. Kindly [Click here](https://github.com/SanjeevStephan/superuser/blob/main/CONTRIBUTING.md)
+
 # Installing and running Windows Terminal
 
 > Note: Windows Terminal requires Windows 10 2004 (build 19041) or later
@@ -161,10 +135,3 @@ cd $home\Documents
 * Microsoft Windows Terminal Repository (https://github.com/microsoft/terminal)
 * PowerShell v7+                        (https://github.com/PowerShell/PowerShell/releases/latest)
 * Download [PowerShell-7.3.3-win-x64.zip](https://github.com/PowerShell/PowerShell/releases/download/v7.3.3/PowerShell-7.3.3-win-x64.zip)
-
-## NOTES
-
-> Must [Include Below File](https://github.com/SanjeevStephan/superuser/blob/main/include.ps1) in [Microsoft.Profile_profile.ps1](https://github.com/SanjeevStephan/superuser/blob/main/Microsoft.PowerShell_profile.ps1)
-```
-. "$HOME\Documents\PowerShell\include.ps1"
-```
