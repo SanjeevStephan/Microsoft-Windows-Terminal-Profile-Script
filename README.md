@@ -83,7 +83,17 @@ _This repository contains_ :
     | myScripts.json | index of all the advanced scripts|     
         
 * Sub-Directories
+    | Directory | Description |
+    |:-----:|:------:|
+    | assets | contains profile's assets {cloned-github-repo,pics,syntax } |    
+    | depnedency | contains all the scripts which the profile dependes upone |
+    | myautoscripts | contains all the automated scripts |    
+    | myfunctions | contains all the simple but useful functions to do certian tasks |    
+    | myjson | contains json files lists|           
+    | mypython | contains all the executable python scripts |
+    | profileFunction | contains main functions used for by other scripts|       
 
+* Profile Directory Tree
 ```
 Folder PATH listing
 Volume serial number is 0455-C176
@@ -113,16 +123,6 @@ C:.
 ├───mypython
 └───profileFunction
 ```
-    | Directory | Description |
-    |:-----:|:------:|
-    | assets | contains profile's assets {cloned-github-repo,pics,syntax } |    
-    | depnedency | contains all the scripts which the profile dependes upone |
-    | myautoscripts | contains all the automated scripts |    
-    | myfunctions | contains all the simple but useful functions to do certian tasks |    
-    | myjson | contains json files lists|           
-    | mypython | contains all the executable python scripts |
-    | profileFunction | contains main functions used for by other scripts|       
-
 
 
 # Installing and running Windows Terminal
