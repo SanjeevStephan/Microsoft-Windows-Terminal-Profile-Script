@@ -141,6 +141,10 @@ cd $home\Documents
 ```
  pwsh
 ```
+
+# How this Works?
+> To know how this profile script works. Kindly [click htere to read the docs](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md)
+
 # Installing and running Windows Terminal
 
 > Note: Windows Terminal requires Windows 10 2004 (build 19041) or later
