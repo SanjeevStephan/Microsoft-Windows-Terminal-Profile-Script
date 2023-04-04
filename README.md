@@ -19,6 +19,7 @@
 * [How this Works](https://github.com/SanjeevStephan/superuser/blob/main/README.md#How-this-Works)
 * [How to Contribute](https://github.com/SanjeevStephan/superuser/blob/main/README.md#How-to-Contribute)
 * [Installing and running New Windows Terminal](https://github.com/SanjeevStephan/superuser/blob/main/README.md#Installing-and-running-New-Windows-Terminal)
+* [Welcome Terminal Log](https://github.com/SanjeevStephan/superuser/blob/main/assets/log/welcome_log.txt)
 
 ## SYNOPSIS
 > Microsoft Window Terminal Profile : SuperUser
