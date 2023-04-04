@@ -107,10 +107,12 @@ cd $home\Documents
  ```
  git clone https://github.com/SanjeevStephan/superuser.git
 ```
-4. Restart the Terminal & start powerShell
+4. Now you will see a folder named SuperUser, renamed it to PowerShell
+5. Restart the Terminal & start powerShell
 ```
  pwsh
 ```
+6. If all the things went well you will be greeted by the terminal,similarly like this. [CLick here to see the log](https://github.com/SanjeevStephan/superuser/blob/main/assets/log/welcome_log.txt)
 
 # How this Works?
 > To know how this profile script works. Kindly [click here to read the docs](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md)
