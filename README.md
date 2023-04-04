@@ -26,7 +26,7 @@
 |      |                 |
 
 ## Description
-> This PowerShell Repository comprises the index of all the usefull functions and scripts for the window terminal
+> This PowerShell Repository comprises the index of **all the usefull functions and scripts** for the window terminal
 
 _This repository contains_ :
 * configuration
@@ -128,15 +128,16 @@ C:.
 ```
 # How to Setup
 
-1. Open Terminal & navigate to User's home directory which is (C:\Users\\<username\>\Documents\)
+1. Download **git** for terminal [click here](https://git-scm.com/downloads)
+2. Open Terminal & navigate to User's home directory which is (C:\Users\\<username\>\Documents\)
 ```
 cd $home\Documents
  ```
-2. Clone the repository using *git clone*
+3. Clone the repository using *git clone*
  ```
  git clone https://github.com/SanjeevStephan/superuser.git
 ```
-3. Restart the Terminal & start powerShell
+4. Restart the Terminal & start powerShell
 ```
  pwsh
 ```
