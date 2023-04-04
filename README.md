@@ -105,22 +105,26 @@ _This repository contains_ :
     | profileFunction | contains main functions used for by other scripts|       
 
 # How to Setup
-
-1. Download **git** for terminal [click here](https://git-scm.com/downloads)
-2. Open Terminal & navigate to User's home directory which is (C:\Users\\<username\>\Documents\)
+By Default PowerShell Executions is restricted for `CurrentUser`.
+1. Firstly, PowerShell execution policy is required to be one of: Unrestricted, RemoteSigned or ByPass to execute the installer. For example:
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+2. Download **git** for terminal [click here](https://git-scm.com/downloads)
+3. Open Terminal & navigate to User's home directory which is (C:\Users\\<username\>\Documents\)
 ```
 cd $home\Documents
  ```
-3. Clone the repository using *git clone*
+4. Clone the repository using *git clone*
  ```
  git clone https://github.com/SanjeevStephan/superuser.git
 ```
-4. Now you will see a folder named SuperUser, renamed it to PowerShell
-5. Restart the Terminal & start powerShell
+5. Now you will see a folder named SuperUser, renamed it to PowerShell
+6. Restart the Terminal & start powerShell
 ```
  pwsh
 ```
-6. If all the things went well you will be greeted by the terminal,similarly like this. [CLick here to see the log](https://github.com/SanjeevStephan/superuser/blob/main/assets/log/welcome_log.txt)
+7. If all the things went well you will be greeted by the terminal,similarly like this. [CLick here to see the log](https://github.com/SanjeevStephan/superuser/blob/main/assets/log/welcome_log.txt)
 
 # How this Works?
 > To know how this profile script works. Kindly [click here to read the docs](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md)
