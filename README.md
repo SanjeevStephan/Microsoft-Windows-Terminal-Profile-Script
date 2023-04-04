@@ -83,6 +83,36 @@ _This repository contains_ :
     | myScripts.json | index of all the advanced scripts|     
         
 * Sub-Directories
+
+```
+Folder PATH listing
+Volume serial number is 0455-C176
+C:.
+├───assets
+│   ├───ascii
+│   ├───background
+│   ├───cheatsheet
+│   ├───clonedGithubRepos
+│   │   └───superadmin-dashboard
+│   ├───legacy
+│   │   ├───backup
+│   │   ├───profileFunction
+│   │   ├───syntax
+│   │   └───usefull-but-not-in-use
+│   └───mytest
+│       ├───env
+│       └───jsontest
+├───dependency
+│   ├───setEnv
+│   └───sources
+├───myautoscript
+├───myfunction
+│   └───parameterArgs
+├───myjson
+│   └───terminal
+├───mypython
+└───profileFunction
+```
     | Directory | Description |
     |:-----:|:------:|
     | assets | contains profile's assets {cloned-github-repo,pics,syntax } |    
