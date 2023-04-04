@@ -121,7 +121,7 @@ cd $home\Documents
 # How to Contribute 
 > To know how you can contribute to this repository. Kindly [Click here](https://github.com/SanjeevStephan/superuser/blob/main/CONTRIBUTING.md)
 
-# Installing and running Windows Terminal
+# Installing and running New Windows Terminal
 
 > Note: Windows Terminal requires Windows 10 2004 (build 19041) or later
 
