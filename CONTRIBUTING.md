@@ -17,10 +17,14 @@
 
 7) Use VScode (code editor) to edit the codes, which you can [download from here](https://code.visualstudio.com/download)
 
-8) Now save your changes and exit the code-editor, type `git add .`, afterwards `git commit -m "<your name> 🍉"` and lastly `git push origin master`.
+8) Now save your changes and exit the code-editor, type 
+```
+git add . 
+git commit -m "<your name>"
+git push origin master
+```
+10) Go to your forked repo page, `sync` your fork and then there you will see a button in green which says `Open pull request`, press it and in the comments section type "Adding my name to contributer list" and press on `create pull request`.
 
-9) Go to your forked repo page, `sync` your fork and then there you will see a button in green which says `Open pull request`, press it and in the comments section type "Adding my name to contributer list" and press on `create pull request`.
-
-10) You have created a pull request, wait for a member to review and merge it : )
+11) You have created a pull request, wait for a member to review and merge it : )
 
 Lastly,I would encourage to take part in open-source contributions, to learn more about them check this blog [here](https://dragon2002.hashnode.dev/git-and-github-must-know-guide#heading-setting-up-github).
