@@ -83,7 +83,11 @@
         "Path" : "D:\\terminal",
         "Desc" : "The Terminal Directory"
     },
-
-
+    {
+        "Name" : "youtube",
+        "Directory" : "youtube",
+        "Path" : "E:\\YouTube",
+        "Desc" : "The YouTube Directory"
+    }
 
 ]
