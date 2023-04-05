@@ -1,19 +1,37 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
-    [
+    "actions": [
         {
-            "command": 
-            {
+            "command": {
                 "action": "copy",
                 "singleLine": false
             },
             "keys": "ctrl+c"
         },
         {
-            "command": 
-            {
+            "command": {
+                "action": "sendInput",
+                "input": "refresh ..\r"
+            },
+            "keys": "ctrl+r"
+        },
+        {
+            "command": {
+                "action": "sendInput",
+                "input": "goto ..\r"
+            },
+            "keys": "ctrl+g"
+        },
+        {
+            "command": {
+                "action": "sendInput",
+                "input": "window ..\r"
+            },
+            "keys": "ctrl+w"
+        },
+        {
+            "command": {
                 "action": "sendInput",
                 "input": "cd ..\r"
             },
@@ -28,8 +46,7 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -37,7 +54,7 @@
             "keys": "alt+shift+d"
         }
     ],
-    "alwaysOnTop": false,
+    "alwaysOnTop": true,
     "alwaysShowNotificationIcon": true,
     "autoHideWindow": false,
     "copyFormatting": "none",
@@ -45,21 +62,17 @@
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "focusFollowMouse": false,
     "launchMode": "default",
-    "profiles": 
-    {
-        "defaults": 
-        {
+    "profiles": {
+        "defaults": {
             "adjustIndistinguishableColors": "always",
             "backgroundImageOpacity": 0.2,
             "colorScheme": "Campbell",
-            "font": 
-            {
+            "font": {
                 "size": 12.0
             },
             "useAtlasEngine": true
         },
-        "list": 
-        [
+        "list": [
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -73,21 +86,19 @@
                 "name": "Command Prompt"
             },
             {
-                "backgroundImage": "E:\\Media\\hacker wallpapers\\uwp3198376.jpeg",
                 "colorScheme": "Campbell",
                 "experimental.retroTerminalEffect": false,
-                "font": 
-                {
+                "font": {
                     "size": 12.0,
                     "weight": "normal"
                 },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
-                "opacity": 90,
+                "opacity": 100,
                 "scrollbarState": "hidden",
                 "source": "Windows.Terminal.PowershellCore",
-                "useAcrylic": true
+                "useAcrylic": false
             },
             {
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
@@ -121,8 +132,7 @@
             }
         ]
     },
-    "schemes": 
-    [
+    "schemes": [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
