@@ -23,7 +23,7 @@ git add .
 git commit -m "<your name>"
 git push origin master
 ```
-10) Go to your forked repo page, `sync` your fork and then there you will see a button in green which says `Open pull request`, press it and in the comments section type "Adding my name to contributer list" and press on `create pull request`.
+10) Go to your forked repo page, sync your fork and then there you will see a button in green which says `Open pull request`, press it and in the comments section type "Adding my name to contributer list" and press on `create pull request`.
 
 11) You have created a pull request, wait for a member to review and merge it : )
 
