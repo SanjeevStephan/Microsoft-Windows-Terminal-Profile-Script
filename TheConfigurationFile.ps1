@@ -47,7 +47,7 @@ $SOURCE = @{
 
 $DIRECTORY =  @{
     "home"                = "$Home"   
-    "assets"              = "$($SOURCE.powershell)\assets"
+    "assets"              = "$($SOURCE.powershell)\myassets"
     "ascii"               = "$($DIRECTORY.assets)\ascii"
     "dependency"          = "$($SOURCE.powershell)\dependency"
     "docs"                = "$Home\Documents"
@@ -104,9 +104,9 @@ $TAG =  @{
 } 
 
 $ASCII = @{
-    "superuser"     = "$Home\Documents\PowerShell\assets\ascii\superuser.ascii"
-    "theterminal"   = "$Home\Documents\PowerShell\assets\ascii\theterminal.ascii"
-    "profifle"      = "$Home\Documents\PowerShell\assets\ascii\theterminal.ascii"
+    "superuser"     = "$($DIRECTORY.assets)\ascii\superuser.ascii"
+    "theterminal"   = "$($DIRECTORY.assets)\ascii\theterminal.ascii"
+    "profifle"      = "$($DIRECTORY.assets)\ascii\theterminal.ascii"
     
 }
 
