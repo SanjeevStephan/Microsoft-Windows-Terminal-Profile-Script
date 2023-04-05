@@ -1,0 +1,92 @@
+{
+  "questions": [
+    {
+      "question": "What is the capital of Italy?",
+      "answer": "Rome"
+    },
+    {
+      "question": "What is the color of the sky?",
+      "answer": "Blue"
+    },
+    {
+      "question": "how are you",
+      "answer": "I'm doing great!"
+    },
+    {
+      "question": "How are you doing mate?",
+      "answer": "I'm doing good"
+    },
+    {
+      "question": "What's up?^",
+      "answer": "Not much, what about you?"
+    },
+    {
+      "question": "Where can I subscribe?",
+      "answer": "Idk, subscribe to what?"
+    },
+    {
+      "question": "Say something funny",
+      "answer": "Your love life"
+    },
+    {
+      "question": "hi",
+      "answer": "hello"
+    },
+    {
+      "question": "doing what ?",
+      "answer": "just flying awesme"
+    },
+    {
+      "question": "bye",
+      "answer": "goodbye"
+    },
+    {
+      "question": "",
+      "answer": ""
+    },
+    {
+      "question": "are you sure ?",
+      "answer": "yes"
+    },
+    {
+      "question": "",
+      "answer": ""
+    },
+    {
+      "question": "see",
+      "answer": "i can see you now"
+    },
+    {
+      "question": "sing me a song ",
+      "answer": "i am not connected to the Internet right now"
+    },
+    {
+      "question": "hello",
+      "answer": "hi"
+    },
+    {
+      "question": "what have you eaten",
+      "answer": "bits & bytes"
+    },
+    {
+      "question": "good",
+      "answer": "well, then.."
+    },
+    {
+      "question": "how's the weather ",
+      "answer": "i am not connected to the internet yet"
+    },
+    {
+      "question": "weather ?",
+      "answer": "no internet damn yo!"
+    },
+    {
+      "question": "he",
+      "answer": "she"
+    },
+    {
+      "question": "refresh ..",
+      "answer": "refresh .."
+    }
+  ]
+}
