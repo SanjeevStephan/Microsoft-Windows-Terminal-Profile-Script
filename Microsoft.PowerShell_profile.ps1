@@ -77,5 +77,6 @@ $pshell = "$Home\Documents\PowerShell"
 . "$pshell\TheConfigurationFile.ps1"  
 . "$pshell\profileFunction\The-Prompt.ps1"  
 . "$pshell\myautoscript\profile_include.ps1"
+. "$pshell\myautoscript\write-motd.ps1"
 . "$pshell\ProfileFunctions.ps1"
 
