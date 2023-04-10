@@ -1,0 +1,19 @@
+[
+    {
+        "Name": "powershell",
+        "File": "python.exe",
+        "Path": "C:\\Users\\Sanju\\\\python.exe",
+        "Argument":"yes",
+        "Syntax" : "Get-File python",
+        "Desc": "The Python Executable File"
+    }, 
+    {
+        "Name": "python",
+        "File": "python.exe",
+        "Path": "C:\\Users\\Sanju\\AppData\\Local\\Programs\\Python\\Python*\\python.exe",
+        "Argument":"yes",
+        "Syntax" : "Get-File python",
+        "Desc": "The Python Executable File"
+    }
+
+]

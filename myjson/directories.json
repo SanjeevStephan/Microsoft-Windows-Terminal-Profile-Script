@@ -42,6 +42,12 @@
         "Desc" : "PowerShell's Profile -> 'mypython' Directory"
     },
     {
+        "Name" : "myjson",
+        "Directory" : "myjson",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myjson",
+        "Desc" : "PowerShell's Profile -> 'myjson' Directory"
+    },
+    {
         "Name" : "mrrobot",
         "Directory" : "mrrobot",
         "Path" : "D:\\mr_robot",
