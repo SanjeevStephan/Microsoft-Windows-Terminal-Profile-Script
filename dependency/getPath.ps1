@@ -85,7 +85,7 @@ function Check-Path(){
         if (Test-Path $paths.Path) {
             Write-Host "[ OK ] Confirmed: $($paths.Directory) at $($paths.Path)"
         } else {
-            Write-Warning "[    ] Not found: $($paths.Directory) at $($paths.Path)"
+            Write-Host "[    ] Not found: $($paths.Directory) at $($paths.Path)" -ForegroundColor Red
         }
     }
 

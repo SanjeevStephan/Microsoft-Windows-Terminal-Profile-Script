@@ -41,6 +41,7 @@ $SOURCE = @{
     "profile"   = "Microsoft.PowerShell_profile.ps1"
     "documents" = "$Home\Documents"
     "powershell"= "$Home\Documents\PowerShell"
+
 }
 
 
@@ -52,11 +53,11 @@ $DIRECTORY =  @{
     "dependency"          = "$($SOURCE.powershell)\dependency"
     "docs"                = "$Home\Documents"
     "legacy"              = "$($SOURCE.powershell)\legacy"
-    "myfunctions"         = "$($SOURCE.powershell)\myfunctions"
+    "myfunctions"         = "$($SOURCE.powershell)\myfunction"
     "mygithubrepo"        = "$($SOURCE.powershell)\mygithubrepo"
     "myjson"              = "$($SOURCE.powershell)\myjson"
     "mypython"            = "$($SOURCE.powershell)\mypython"
-    "myscripts"           = "$($SOURCE.powershell)\myscript"
+    "myscript"           = "$($SOURCE.powershell)\myscript"
     "mytest"              = "$($SOURCE.powershell)\mytest"
     "profileFunction"     = "$($SOURCE.powershell)\profileFunction"
 } 
@@ -86,6 +87,7 @@ $JSON = @{
 
 $FILEPATH = @{
     "python"  = "C:\Users\Sanju\AppData\Local\Programs\Python\Python*\python.exe"
+    "TheConfigurationFile" = "$Home\Documents\PowerShell\TheConfigurationFile.ps1"
 }
 
 

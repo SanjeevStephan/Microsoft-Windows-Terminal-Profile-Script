@@ -54,5 +54,14 @@
         "Argument":"Yes",
         "Parameter" : ["JSON File"],
         "Desc": "Read JSON File and Load the Function from the Script"
-    }      
+    },
+    {
+        "Name": "smarthome",
+        "File": "smarthome.ps1",
+        "Path": "D:\\github\\smarthome\\index.ps1",
+        "Argument":"No",
+        "Parameter" : [""],
+        "Syntax" : "",
+        "Desc": "Starts SmartHome Script"
+    },      
 ]

@@ -1,6 +1,6 @@
 
 function goto() { 
-
+    Check-Path
     List-Path
     $index = Read-Host "[ INPUT ] Which directory you want to go (1+N) :"
     #$index = Read-Host "[ INPUT ] Which directory you want to go (1+N) :"

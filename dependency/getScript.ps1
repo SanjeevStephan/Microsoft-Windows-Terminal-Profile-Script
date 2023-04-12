@@ -86,7 +86,7 @@ function Check-Script(){
 
             
 
-            Write-Host "[ OK ] Confirmed: '$($scripts.Name)' at $($scripts.Path)" -ForegroundColor Green
+            Write-Host "[ OK ] Confirmed: '$($scripts.Name)' at $($scripts.Path)" -ForegroundColor White
         } else {
             Write-Host "[    ] Not found: $($scripts.File) at $($scripts.Path)" -ForegroundColor Red
         }

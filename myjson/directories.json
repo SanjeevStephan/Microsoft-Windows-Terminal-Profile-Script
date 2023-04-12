@@ -8,8 +8,14 @@
     {
         "Name" : "codes",
         "Directory" : "code-snippets",
-        "Path" : "D:\\terminal\\code-snippets",
+        "Path" : "D:\\github\\terminal\\code-snippets",
         "Desc" : "The Code-Snippets Directory"
+    },
+    {
+        "Name" : "dependency",
+        "Directory" : "dependency",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\dependency",
+        "Desc" : "Dependency Directory"
     },
     {
         "Name" : "docs",
@@ -20,7 +26,7 @@
     {
         "Name" : "matrix",
         "Directory" : "matrix",
-        "Path" : "D:\\terminal\\matrix",
+        "Path" : "D:\\github\\terminal\\matrix",
         "Desc" : "Terminal Matrix Directory"
     },    
     {
@@ -48,27 +54,33 @@
         "Desc" : "PowerShell's Profile -> 'myjson' Directory"
     },
     {
+        "Name" : "myrepository",
+        "Directory" : "myrepository",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myrepository",
+        "Desc" : "PowerShell's Profile -> 'myrepository' Directory"
+    },
+    {
         "Name" : "mrrobot",
         "Directory" : "mrrobot",
-        "Path" : "D:\\mr_robot",
+        "Path" : "D:\\github\\mr_robot",
         "Desc" : "Mr Robot Directory"
     },
     {
         "Name" : "oracle",
         "Directory" : "oracle",
-        "Path" : "D:\\terminal\\matrix\\oracle",
+        "Path" : "D:\\github\\terminal\\matrix\\oracle",
         "Desc" : "Matrix Oracle Directory"
     },
     {
         "Name" : "pico",
         "Directory" : "pico",
-        "Path" : "D:\\mr_robot\\pico_ducky",
+        "Path" : "D:\\github\\mr_robot\\pico_ducky",
         "Desc" : "Raspberry Pico Directory"
     },
     {
         "Name" : "payload",
         "Directory" : "payload",
-        "Path" : "D:\\mr_robot\\pico_ducky\\payloads",
+        "Path" : "D:\\github\\mr_robot\\pico_ducky\\payloads",
         "Desc" : "Raspberry Pico's BadUSB Rubber Ducky's Payload"
     },
     {
@@ -78,15 +90,33 @@
         "Desc" : "Microsoft PowerShell Profile Directory"
     },
     {
+        "Name" : "profileFunction",
+        "Directory" : "profileFunction",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\profileFunction",
+        "Desc" : "Microsoft PowerShell Profile Function Directory"
+    },
+    {
         "Name" : "study",
         "Directory" : "study",
-        "Path" : "D:\\study",
+        "Path" : "D:\\github\\study",
         "Desc" : "Study Directory"
+    },
+    {
+        "Name" : "syntax",
+        "Directory" : "syntax",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myrepository\\myterminal\\.syntax",
+        "Desc" : "The Terminal Directory"
+    },
+    {
+        "Name" : "smarthome",
+        "Directory" : "smarthome",
+        "Path" : "D:\\github\\smarthome",
+        "Desc" : "The Smarthome project Directory"
     },
     {
         "Name" : "terminal",
         "Directory" : "terminal",
-        "Path" : "D:\\terminal",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myrepository\\myterminal",
         "Desc" : "The Terminal Directory"
     },
     {

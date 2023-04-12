@@ -85,12 +85,12 @@ function Get-JsonPath($jsons_name)
 }
 
 function Check-Json(){
-    Write-Output "[ OK ] Dependency : getJson.ps1 => Included { 5 } Functions Successfully"    
+    Write-Output "[ OK ] Dependency : getJson.ps1 => Included Successfully"    
     foreach ($jsons in $jsons_array_data) {
         if (Test-Path $jsons.Path) {
             Write-Output "[ OK ] Confirmed: $($jsons.File) at $($jsons.Path)"
         } else {
-            Write-Output "[    ] Not found: $($jsons.File) at $($jsons.Path)"
+            Write-Host "[    ] Not found: $($jsons.File) at $($jsons.Path)" -ForegroundColor Red
         }
     }
 
