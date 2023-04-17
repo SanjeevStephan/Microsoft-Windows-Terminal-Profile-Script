@@ -108,7 +108,7 @@
         "Desc": "Keep Displaying Time : Internet Status with 2 seconds delay"
     },
     {
-        "Name": "sleep",
+        "Name": "sleepnow",
         "File": "sleep.ps1",
         "Path": "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction\\sleep.ps1",
         "Argument":"No",
