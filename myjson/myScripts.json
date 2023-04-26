@@ -58,10 +58,19 @@
     {
         "Name": "smarthome",
         "File": "smarthome.ps1",
-        "Path": "D:\\github\\smarthome\\index.ps1",
+        "Path": "D:\\smarthome\\index.ps1",
         "Argument":"No",
         "Parameter" : [""],
         "Syntax" : "",
         "Desc": "Starts SmartHome Script"
     },      
+    {
+        "Name": "remotedesktop",
+        "File": "Remote-Desktop-Console.ps1",
+        "Path": "D:\\rdp\\Remote-Desktop-Console.ps1",
+        "Argument":"No",
+        "Parameter" : [""],
+        "Syntax" : "",
+        "Desc": "Starts Remote Desktop Protocol Script"
+    }, 
 ]

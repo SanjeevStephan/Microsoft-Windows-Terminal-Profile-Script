@@ -36,6 +36,12 @@
         "Desc" : "PowerShell's Profile -> 'myautoscript' Directory"
     },
     {
+        "Name" : "myscript",
+        "Directory" : "myscript",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myscript",
+        "Desc" : "PowerShell's Profile -> 'myscript' Directory"
+    },
+    {
         "Name" : "myfunction",
         "Directory" : "myfunctions",
         "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\myfunction",
@@ -96,6 +102,12 @@
         "Desc" : "Microsoft PowerShell Profile Function Directory"
     },
     {
+        "Name" : "remoteScript",
+        "Directory" : "remoteScript",
+        "Path" : "C:\\Users\\Sanju\\Documents\\PowerShell\\remoteScript",
+        "Desc" : "RemoteScript Directory"
+    },
+    {
         "Name" : "study",
         "Directory" : "study",
         "Path" : "D:\\github\\study",
@@ -110,7 +122,7 @@
     {
         "Name" : "smarthome",
         "Directory" : "smarthome",
-        "Path" : "D:\\github\\smarthome",
+        "Path" : "D:\\smarthome",
         "Desc" : "The Smarthome project Directory"
     },
     {

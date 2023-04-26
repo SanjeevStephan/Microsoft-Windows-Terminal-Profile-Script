@@ -11,9 +11,12 @@ function Execute-Smarthome() {
 
 
 }
+<#
 function uno() {
     try { if(Test-Path $scriptPath) { & $scriptPath } else { Write-Host "[ ERROR ] Failed to Execute Script : $scriptName " -ForegroundColor Red} }
-    <#Do this if a terminating exception happens#> 
+    <#Do this if a terminating exception happens# > 
     catch { Write-Host "[INVALID] script doesn't exists at Path : $scriptPath" -ForegroundColor Red  }
 
     }
+
+    #>

@@ -57,9 +57,10 @@ $DIRECTORY =  @{
     "mygithubrepo"        = "$($SOURCE.powershell)\mygithubrepo"
     "myjson"              = "$($SOURCE.powershell)\myjson"
     "mypython"            = "$($SOURCE.powershell)\mypython"
-    "myscript"           = "$($SOURCE.powershell)\myscript"
+    "myscript"            = "$($SOURCE.powershell)\myscript"
     "mytest"              = "$($SOURCE.powershell)\mytest"
     "profileFunction"     = "$($SOURCE.powershell)\profileFunction"
+    "remoteScript"        = "$($SOURCE.powershell)\remoteScript"
 } 
 
 $DEPENDENCY =  @{
