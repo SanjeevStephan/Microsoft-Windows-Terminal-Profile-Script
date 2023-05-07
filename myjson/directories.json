@@ -24,6 +24,12 @@
         "Desc" : "User Documents Directory"
     },
     {
+        "Name" : "github.io",
+        "Directory" : "github.io",
+        "Path" : "D:\\github.io",
+        "Desc" : "github's webpage directory"
+    },
+    {
         "Name" : "matrix",
         "Directory" : "matrix",
         "Path" : "D:\\github\\terminal\\matrix",
