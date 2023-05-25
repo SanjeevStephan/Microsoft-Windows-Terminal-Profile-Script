@@ -58,7 +58,7 @@
     {
         "Name": "smarthome",
         "File": "smarthome.ps1",
-        "Path": "D:\\smarthome\\index.ps1",
+        "Path": "D:\\ctsmarthome\\console\\index.ps1",
         "Argument":"No",
         "Parameter" : [""],
         "Syntax" : "",

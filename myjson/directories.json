@@ -126,9 +126,9 @@
         "Desc" : "The Terminal Directory"
     },
     {
-        "Name" : "smarthome",
-        "Directory" : "smarthome",
-        "Path" : "D:\\smarthome",
+        "Name" : "ctSmarthome",
+        "Directory" : "ctsmarthome",
+        "Path" : "D:\\ctsmarthome",
         "Desc" : "The Smarthome project Directory"
     },
     {

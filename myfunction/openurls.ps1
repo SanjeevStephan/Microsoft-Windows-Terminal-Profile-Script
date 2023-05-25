@@ -1,4 +1,4 @@
-function openurl($directoryToOpen){
+function openurls($directoryToOpen){
 
     $location = Get-Location
 
