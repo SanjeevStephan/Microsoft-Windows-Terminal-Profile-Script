@@ -111,12 +111,12 @@ By Default PowerShell Executions is restricted for `CurrentUser`.
 Get-ExecutionPolicy -List
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
-2. Download **git** for terminal[click here](https://git-scm.com/downloads)
+### For Windows 11 
+2. Install Git From Terminal via Winget tool 
 Install [winget tool](https://docs.microsoft.com/en-us/windows/package-manager/winget) if you don't already have it, then type this command in command prompt or Powershell.
 ```
 winget install --id Git.Git -e --source winget
 ```
-### For Windows 11 
 3. If You have Window 11 Installed Then Simply Install PowerShell using Winget (recommended)
 The following commands can be used to install PowerShell using the published winget packages:
 ```
@@ -139,24 +139,25 @@ winget install --id Microsoft.Powershell.Preview --source winget
 ```
 Note : You have to execute any one of the command and not both
 ### For Windows 10 
-6. Now Copy below url and paste it in browser or Alternatively [Click Here to Download PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#msi)
+6. To Download **git** for terminal [click here](https://git-scm.com/downloads)
+7. Now Copy below url and paste it in browser or Alternatively [Click Here to Download PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#msi)
 ```
 https://aka.ms/PSWindows
 ```
-7. Open Terminal & navigate to User's home directory which is (C:\Users\\<username\>\Documents\)
+8. Open Terminal & navigate to User's home directory which is (C:\Users\\<username\>\Documents\)
 ```
 cd $home\Documents
  ```
-8. Clone the repository using *git clone*
+9. Clone the repository using *git clone*
  ```
  git clone https://github.com/SanjeevStephan/superuser.git
 ```
-9. Now you will see a folder named SuperUser, renamed it to PowerShell
-10. Restart the Terminal & start powerShell
+10. Now you will see a folder named SuperUser, renamed it to PowerShell
+11. Restart the Terminal & start powerShell
 ```
  pwsh
 ```
-11. If all the things went well you will be greeted by the terminal,similarly like this. [CLick here to see the log](https://github.com/SanjeevStephan/superuser/blob/main/assets/log/welcome_log.txt)
+12. If all the things went well you will be greeted by the terminal,similarly like this. [CLick here to see the log](https://github.com/SanjeevStephan/superuser/blob/main/assets/log/welcome_log.txt)
 
 # How this Works?
 > To know how this profile script works. Kindly [click here to read the docs](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md)
