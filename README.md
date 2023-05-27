@@ -143,8 +143,8 @@ cd $home\Documents
 ## Additional Settings for Window 11 (New Microsoft Terminal)
 Go To Settings and do the following to maximize productivity
 * Change th <b>Default Profile</b> from Windows PowerShell {5.3} to PowerShell {7.3}
-* Change the <b>Default Terminal Application from <i>Let Window Decide</i> to <b>Windows Terminal
-* Toggle ON -> Launch on machine startup (if you want the window to open terminal at launch) 
+* Change the <b>Default Terminal Application</b> from <i>Let Window Decide</i> to <b>Windows Terminal</b>
+* <b>Toggle ON</b> -> Launch on machine startup (if you want the window to open terminal at launch) 
 
 ## Prerequisites
 * You must be running Windows 10 2004 (build >= 10.0.19041.0) or later to run Windows Terminal
