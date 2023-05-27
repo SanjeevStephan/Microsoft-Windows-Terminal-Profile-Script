@@ -116,7 +116,11 @@ Install [winget tool](https://docs.microsoft.com/en-us/windows/package-manager/w
 ```
 winget install --id Git.Git -e --source winget
 ```
-3. Open Terminal & navigate to User's home directory which is (C:\Users\\<username\>\Documents\)
+3. Now Copy below url and paste it in browser or Alternatively [Click Here to Download PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#msi)
+```
+https://aka.ms/PSWindows
+```
+4. Open Terminal & navigate to User's home directory which is (C:\Users\\<username\>\Documents\)
 ```
 cd $home\Documents
  ```
