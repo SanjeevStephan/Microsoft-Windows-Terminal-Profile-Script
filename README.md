@@ -60,50 +60,7 @@ _This repository contains_ :
     | [ProfileFunctions.ps1](https://github.com/SanjeevStephan/superuser/blob/main/ProfileFunctions.ps1)  |  Save your funtions here & execute directly on terminal   | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) |     
     | [The-Prompt.ps1](https://github.com/SanjeevStephan/superuser/blob/main/profileFunction/The-Prompt.ps1)  |  The SuperUser Prompt   | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) | 
 
-
-* Dependencies
-    | Profile-File | Description |
-    |:---------:|:-------:|
-    | TheCommands | | 
-    | Get-Dir | | 
-    | ASCIIFiglet | | 
-    | IsPythonInstalled | | 
-    | AllImportantFunc|  | 
-    | getColorSchema.ps1 |  | 
-    | getCoreDebug.ps1 | | 
-    | getDependencies.ps1 | fetch directory path from 'directories.json' by directory name | 
-    | getFunction.ps1 | | 
-    | getJson.ps1 |  | 
-    | getPath.ps1 | | 
-    | getPython.ps1 | fetch directory path from 'directories.json' by directory name | 
-    | getScript.ps1 | | 
-    | setAllProfileFunctions.ps1 |  | 
-    | setMyfunctions.ps1 | | 
-    
-* JSON
-    | JSON-File | Description |
-    |:---------:|:-------:|
-    | dependencies.json | list of all the files that the profile depends on |
-    | directories.json | index of all directories in-use |
-    | myFunctions.json | list of simple but useful functions |
-    | myIncludes.json | index of must-include dependencies |
-    | myJsonList.json  | index of all json-file used |
-    | myPythonScript.json | index of all the python-scripts in-use| 
-    | myFileList.json | any refrerences files used |
-    | profileFunctions.json | important profile functions used by other scripts|
-    | myScripts.json | index of all the advanced scripts|     
-        
-* Sub-Directories
-    | Directory | Description |
-    |:-----:|:------:|
-    | assets | contains profile's assets {cloned-github-repo,pics,syntax } |    
-    | depnedency | contains all the scripts which the profile dependes upone |
-    | myautoscripts | contains all the automated scripts |    
-    | myfunctions | contains all the simple but useful functions to do certian tasks |    
-    | myjson | contains json files lists|           
-    | mypython | contains all the executable python scripts |
-    | profileFunction | contains main functions used for by other scripts|       
-
+### For In-Detail Explaination | Please refer to [My Wiki ](https://github.com/SanjeevStephan/superuser/wiki)
 # How to Setup
 By Default PowerShell Executions is restricted for `CurrentUser`.
 1. Firstly, PowerShell execution policy is required to be one of: Unrestricted, RemoteSigned or ByPass to execute the installer. For example:
