@@ -108,9 +108,14 @@ _This repository contains_ :
 By Default PowerShell Executions is restricted for `CurrentUser`.
 1. Firstly, PowerShell execution policy is required to be one of: Unrestricted, RemoteSigned or ByPass to execute the installer. For example:
 ```
+Get-ExecutionPolicy -List
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
-2. Download **git** for terminal [click here](https://git-scm.com/downloads)
+2. Download **git** for terminal[click here](https://git-scm.com/downloads)
+Install [winget tool](https://docs.microsoft.com/en-us/windows/package-manager/winget) if you don't already have it, then type this command in command prompt or Powershell.
+```
+winget install --id Git.Git -e --source winget
+```
 3. Open Terminal & navigate to User's home directory which is (C:\Users\\<username\>\Documents\)
 ```
 cd $home\Documents
