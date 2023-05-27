@@ -196,3 +196,4 @@ cd $home\Documents
 * Microsoft Windows Terminal Repository (https://github.com/microsoft/terminal)
 * PowerShell v7+                        (https://github.com/PowerShell/PowerShell/releases/latest)
 * Download [PowerShell-7.3.3-win-x64.zip](https://github.com/PowerShell/PowerShell/releases/download/v7.3.3/PowerShell-7.3.3-win-x64.zip)
+* * Download [git for terminal](https://git-scm.com/downloads)
