@@ -153,7 +153,11 @@ Successfully installed
 ```
 https://aka.ms/PSWindows
 ```
-8. Open Terminal & navigate to User's home directory which is (C:\Users\\<username\>\Documents\)
+8. Verify The Powershell Installation by checking its version using below command
+```
+$PSVersionTable
+```
+9. Open Terminal & navigate to User's home directory which is (C:\Users\\<username\>\Documents\)
 ```
 cd $home\Documents
  ```
