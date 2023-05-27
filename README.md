@@ -117,7 +117,7 @@ Install [winget tool](https://docs.microsoft.com/en-us/windows/package-manager/w
 ```
 winget install --id Git.Git -e --source winget
 ```
-3. If You have Window 11 Installed Then Simply Install PowerShell using Winget (recommended)
+3. If You have Window 11 Installed Then Simply Install PowerShell using Winget (recommended) <br/>
 The following commands can be used to install PowerShell using the published winget packages:
 ```
 winget search Microsoft.PowerShell
@@ -137,7 +137,16 @@ or
 ```
 winget install --id Microsoft.Powershell.Preview --source winget
 ```
-Note : You have to execute any one of the command and not both
+Note : You have to execute any one of the command and not both <br/>
+You should the success message like this below
+```
+Found PowerShell [Microsoft.PowerShell] Version 7.3.4.0
+This application is licensed to you by its owner.
+Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Successfully verified installer hash
+Starting package install...
+Successfully installed
+```
 ### For Windows 10 
 6. To Download **git** for terminal [click here](https://git-scm.com/downloads)
 7. Now Copy below url and paste it in browser or Alternatively [Click Here to Download PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#msi)
