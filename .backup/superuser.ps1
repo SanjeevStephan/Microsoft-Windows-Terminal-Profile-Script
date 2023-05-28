@@ -164,47 +164,11 @@ $FEATURE = @{
     3 =  @{Title = "dependencies";   Status = "enable"}
 }
 
-
-
 $SETTINGS = @{
     1 =  @{Task = "Welcome Figlet Text";         Value = "Superuser"}
     2 =  @{Task = "Navigate to this Directory";   Value = "myfunctions"}
     3 =  @{Task = "dependencies";  Value = "enable"}
 }
 
-
-$CHECKS = @{
-    1 =  @{Title = "initial_check";      Status = "enable"}   
-    2 =  @{Title = "check_everything";   Status = "enable"}
-    3 =  @{Title = "check_config";       Status = "enable"}
-    4 =  @{Title = "check_env";          Status = "enable"}
-    5 =  @{Title = "check_include";      Status = "enable"}
-
-}
-
-
-function Show-Config($tag_name) 
-{ 
-
-    switch($tag_name)
-    {
-        "info"  { $INFO.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Profile INFO"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.DESC}} -AutoSize }
-        "file"  { $FILE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Main File"; expression={$_.Value.File}}, @{label="Description"; expression={$_.Value.Desc}} -AutoSize  }
-        "dir"   { $DIRECTORY.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="PATH Title"; expression={$_.Value.Title}}, @{label="Directory"; expression={$_.Value.Path}} -AutoSize  }
-        "debug" { $DEBUG.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="DEBUG Title"; expression={$_.Value.Title}}, @{label="Debug Status"; expression={$_.Value.Status}} -AutoSize }
- 
-        Default 
-        {
-            $INFO.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Profile INFO"; expression={$_.Value.Title}}, @{label="Description"; expression={$_.Value.DESC}} -AutoSize
-            $FILE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Main File"; expression={$_.Value.File}}, @{label="Description"; expression={$_.Value.Path}} -AutoSize  
-            $DIRECTORY.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="PATH Title"; expression={$_.Value.Title}}, @{label="Directory"; expression={$_.Value.Path}} -AutoSize    
-            $FEATURE.GetEnumerator() | Sort-Object | Format-Table @{label="Serial"; expression={$_.Key}}, @{label="Feature Title"; expression={$_.Value.Title}}, @{label="Feature Status"; expression={$_.Value.Status}} -AutoSize  
-                      
-        }
-    }
-
- }
-
-
 #>
-Write-Host "Hellllllllllllllllllllllllllllll WWWWWWWWWWWWWWWOORdl" -foregroundColor Cyan
+
