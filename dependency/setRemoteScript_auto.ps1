@@ -20,7 +20,8 @@
 #-------------------- Must Check the Configuration File  --------------------------------------#>
 # Define the path to the configuration file that contains additional Paths
 #$profile_config_path = Get-Content "$Home\Documents\PowerShell\profile.config"
-$profile_config_path = "$Home\Documents\PowerShell\TheConfigurationFile.ps1"
+$profile_config_path = "$Home\superuser.ps1"
+
 # getPath the configuration file to load any additional Paths
 #. $profile_config_path  # <-------------- NOTE : LOAD THE CONFIG-FILE via (Dot-Sourcing)
 

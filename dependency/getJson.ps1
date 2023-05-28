@@ -22,10 +22,13 @@
 
 #-------------------- Include Below File --------------------------------------#>
 # Define the path to the configuration file that contains additional dependencies
-$profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
-   
-$jsons_json_raw_data = "$Home\Documents\PowerShell\myjson\myJsonList.json"
 
+. "$Home\superuser.ps1"
+$profile_config_path = $ROOTFILES.profileConfig
+$jsons_json_raw_data = $JSON.myJsonList
+
+#$profile_config_path = "$Home\Documents\PowerShell\profile_config.ps1"
+#$jsons_json_raw_data = "$Home\Documents\PowerShell\myjson\myJsonList.json"
 $scriptName     = $MyInvocation.MyCommand.Name
 $scriptFullPath = $MyInvocation.MyCommand.Path
 $scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf

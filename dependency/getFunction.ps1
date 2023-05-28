@@ -22,8 +22,12 @@
 
 #-------------------- getFunction.ps1 --------------------------------------#>
 # Read the JSON data from the file
-$functionJsonFilePath = "$Home\Documents\PowerShell\myjson\profileFunctions.json"
+. "$Home\superuser.ps1"
+$functionJsonFilePath = $JSON.profileFunctions
+$jsonSource = $JSON.profileFunctions
 
+# $functionJsonFilePath = "$Home\Documents\PowerShell\myjson\profileFunctions.json"
+# $jsonSource = "$Home\Documents\PowerShell\myjson\profileFunctions.json"
 $scriptName     = $MyInvocation.MyCommand.Name
 $scriptFullPath = $MyInvocation.MyCommand.Path
 $scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf
@@ -66,7 +70,7 @@ function Get-FunctionFromJSON($filename) {
 function Check-Function(){
 Write-Output "[ OK ] Dependency : getfunction.ps1 => Included { 4 } Functions Successfully"
 # Read the 'functions.json' file
-$jsonSource = "$Home\Documents\PowerShell\myjson\profileFunctions.json"
+
 $functions = Get-FunctionFromJSON $jsonSource
 
     if(Test-Path $jsonSource)

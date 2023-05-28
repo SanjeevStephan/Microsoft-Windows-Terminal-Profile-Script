@@ -20,40 +20,39 @@
 #-------------------- Must Check the Configuration File  --------------------------------------#>
 # Define the path to the configuration file that contains additional Paths
 #$profile_config_path = Get-Content "$Home\Documents\PowerShell\profile.config"
-$profile_config_path = "$Home\superuser.ps1"
+$profile_config_path = "$home\superuser.ps1"
 # getPath the configuration file to load any additional Paths
-#. $profile_config_path  # <-------------- NOTE : LOAD THE CONFIG-FILE via (Dot-Sourcing)
+. $profile_config_path  # <-------------- NOTE : LOAD THE CONFIG-FILE via (Dot-Sourcing)
 
 # Display Ascii-figlet Text "The Terminal"
-#type $ASCII.theterminal 
+type $ASCII.theterminal 
 
 if(Test-Path $DEPENDENCY.TheConfigurationFile) 
 {
 
-    if(Test-Path $DIRECTORY.profileFunction)
+    if(Test-Path $DIRECTORY.dependency)
     {
 
-        #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
-        Write-Host "[ INCLUDE-ALL ] The {*.ps1} from the $($DIRECTORY.profileFunction)" -ForegroundColor Cyan
+        Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
+        Write-Host "[ INCLUDE-ALL ] The {*.ps1} in the $($DIRECTORY.dependency)" -ForegroundColor Cyan
+        Write-Output "[ OK ] Profile include => { profile_include.ps1 } Loaded Successfully"
     
-        # Get all the *.ps1 files in the "profileFunction" directory
-        $profileFunction_files = Get-ChildItem -Path $DIRECTORY.profileFunction -Filter "*.ps1" | Select-Object -ExpandProperty FullName
+        # Get all the *.ps1 files in the "dependency" directory
+        $dependency_files = Get-ChildItem -Path $DIRECTORY.dependency -Filter "*.ps1" | Select-Object -ExpandProperty FullName
     
-        Write-Debug "Directory profileFunction : $($DIRECTORY.profileFunction)"
-        # Loop through each profileFunction file and include it in the profile
-        foreach ($path in $profileFunction_files) {
+        Write-Debug "Directory Dependency : $($DIRECTORY.dependency)"
+        # Loop through each dependency file and include it in the profile
+        foreach ($path in $dependency_files) {
             if (Test-Path $path) {
     
-
-                Write-Host "[ OK ] Included : Profile-Function => { $(Split-Path -Leaf $path) } Successfully" -ForegroundColor  Green
-                #Write-Host "[ OK ] All Profile Function : $(Split-Path -Leaf $path) : Included $path " -ForegroundColor Green
+                Write-Host "[ OK ] Dependency : $(Split-Path -Leaf $path) : Included $path " -ForegroundColor Blue
                 . $path
             } else {
                 Write-Warning "Missing $(Split-Path -Leaf $path) at path $path"
             }
         }
-        Write-Output "[ OK ] All Profile Functions => { setAllProfileFunctions.ps1 } Loaded Successfully"
-    } else { Write-Error "profileFunction directory path is empty : $($DIRECTORY.profileFunction)"} 
+
+    } else { Write-Error "Dependency directory path is empty : $($DIRECTORY.dependency)"} 
 
 
 

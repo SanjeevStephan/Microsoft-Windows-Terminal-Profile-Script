@@ -23,7 +23,10 @@
 #-------------------- getPath Below File --------------------------------------#>
 # Read the JSON data from the file 
 # $directoryJsonPathSource = "$Home\Documents\PowerShell\myjson\directories.json"
-$directoryJsonPathSource = "$Home\Documents\PowerShell\myjson\directories.json"
+. "$Home\superuser.ps1"
+ $directoryJsonPathSource = $JSON.directories
+ 
+# $directoryJsonPathSource = "$Home\Documents\PowerShell\myjson\directories.json"
 
 $scriptName     = $MyInvocation.MyCommand.Name
 $scriptFullPath = $MyInvocation.MyCommand.Path

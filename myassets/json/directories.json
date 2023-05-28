@@ -1,0 +1,160 @@
+[
+    {
+        "Name" : "home",
+        "Directory" : "PowerShell",
+        "Path" : "C:\\Users\\Samst\\OneDrive\\Documents\\PowerShell",
+        "Desc" : "PowerShell Home Directory"
+    }, 
+    {
+        "Name" : "codes",
+        "Directory" : "code-snippets",
+        "Path" : "D:\\github\\terminal\\code-snippets",
+        "Desc" : "The Code-Snippets Directory"
+    },
+    {
+        "Name" : "dependency",
+        "Directory" : "dependency",
+        "Path" : "C:\\Users\\Samst\\OneDrive\\Documents\\PowerShell\\dependency",
+        "Desc" : "Dependency Directory"
+    },
+    {
+        "Name" : "docs",
+        "Directory" : "documents",
+        "Path" : "C:\\Users\\Samst\\OneDrive\\Documents",
+        "Desc" : "User Documents Directory"
+    },
+    {
+        "Name" : "github.io",
+        "Directory" : "github.io",
+        "Path" : "D:\\github.io",
+        "Desc" : "github's webpage directory"
+    },
+    {
+        "Name" : "matrix",
+        "Directory" : "matrix",
+        "Path" : "D:\\github\\terminal\\matrix",
+        "Desc" : "Terminal Matrix Directory"
+    },    
+    {
+        "Name" : "myautoscripts",
+        "Directory" : "myscripts",
+        "Path" : "C:\\Users\\Samst\\OneDrive\\Documents\\PowerShell\\myautoscript",
+        "Desc" : "PowerShell's Profile -> 'myautoscript' Directory"
+    },
+    {
+        "Name" : "myscript",
+        "Directory" : "myscript",
+        "Path" : "C:\\Users\\Samst\\OneDrive\\Documents\\PowerShell\\myscript",
+        "Desc" : "PowerShell's Profile -> 'myscript' Directory"
+    },
+    {
+        "Name" : "myfunction",
+        "Directory" : "myfunctions",
+        "Path" : "C:\\Users\\Samst\\OneDrive\\Documents\\PowerShell\\myfunction",
+        "Desc" : "PowerShell's Profile -> 'myfunction' Directory"
+    },
+    {
+        "Name" : "mypython",
+        "Directory" : "mypython",
+        "Path" : "C:\\Users\\Samst\\OneDrive\\Documents\\PowerShell\\mypython",
+        "Desc" : "PowerShell's Profile -> 'mypython' Directory"
+    },
+    {
+        "Name" : "myjson",
+        "Directory" : "myjson",
+        "Path" : "C:\\Users\\Samst\\OneDrive\\Documents\\PowerShell\\myjson",
+        "Desc" : "PowerShell's Profile -> 'myjson' Directory"
+    },
+    {
+        "Name" : "myrepository",
+        "Directory" : "myrepository",
+        "Path" : "C:\\Users\\Samst\\OneDrive\\Documents\\PowerShell\\myrepository",
+        "Desc" : "PowerShell's Profile -> 'myrepository' Directory"
+    },
+    {
+        "Name" : "mrrobot",
+        "Directory" : "mrrobot",
+        "Path" : "D:\\github\\mr_robot",
+        "Desc" : "Mr Robot Directory"
+    },
+    {
+        "Name" : "oracle",
+        "Directory" : "oracle",
+        "Path" : "D:\\github\\terminal\\matrix\\oracle",
+        "Desc" : "Matrix Oracle Directory"
+    },
+    {
+        "Name" : "pico",
+        "Directory" : "pico",
+        "Path" : "D:\\github\\mr_robot\\pico_ducky",
+        "Desc" : "Raspberry Pico Directory"
+    },
+    {
+        "Name" : "payload",
+        "Directory" : "payload",
+        "Path" : "D:\\github\\mr_robot\\pico_ducky\\payloads",
+        "Desc" : "Raspberry Pico's BadUSB Rubber Ducky's Payload"
+    },
+    {
+        "Name" : "powershell",
+        "Directory" : "PowerShell",
+        "Path" : "C:\\Users\\Samst\\OneDrive\\Documents\\PowerShell\\",
+        "Desc" : "Microsoft PowerShell Profile Directory"
+    },
+    {
+        "Name" : "profileFunction",
+        "Directory" : "profileFunction",
+        "Path" : "C:\\Users\\Samst\\OneDrive\\Documents\\PowerShell\\profileFunction",
+        "Desc" : "Microsoft PowerShell Profile Function Directory"
+    },
+    {
+        "Name" : "remoteScript",
+        "Directory" : "remoteScript",
+        "Path" : "C:\\Users\\Samst\\OneDrive\\Documents\\PowerShell\\remoteScript",
+        "Desc" : "RemoteScript Directory"
+    },
+    {
+        "Name" : "study",
+        "Directory" : "study",
+        "Path" : "D:\\github\\study",
+        "Desc" : "Study Directory"
+    },
+    {
+        "Name" : "syntax",
+        "Directory" : "syntax",
+        "Path" : "C:\\Users\\Samst\\OneDrive\\Documents\\PowerShell\\myrepository\\myterminal\\.syntax",
+        "Desc" : "The Terminal Directory"
+    },
+    {
+        "Name" : "ctSmarthome",
+        "Directory" : "ctsmarthome",
+        "Path" : "D:\\ctsmarthome",
+        "Desc" : "The Smarthome project Directory"
+    },
+    {
+        "Name" : "terminal",
+        "Directory" : "terminal",
+        "Path" : "C:\\Users\\Samst\\OneDrive\\Documents\\PowerShell\\myrepository\\myterminal",
+        "Desc" : "The Terminal Directory"
+    },
+    {
+        "Name" : "youtube",
+        "Directory" : "youtube",
+        "Path" : "E:\\YouTube",
+        "Desc" : "The YouTube Directory"
+    },
+    {
+        "Name" : "windowTerminalJson",
+        "Directory" : "youtube",
+        "Path" : "C:\\Users\\Samst\\OneDrive\\AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState",
+        "Desc" : "The Window Terminal Settings Directory"
+    }
+    
+
+]
+
+
+
+
+
+

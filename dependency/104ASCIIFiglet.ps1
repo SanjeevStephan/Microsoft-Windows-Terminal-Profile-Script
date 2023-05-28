@@ -1,3 +1,6 @@
+$profile_config_path = "$Home\superuser.ps1"
+. $profile_config_path
+
 $figletHashTable = @{
     "Name" = "ascii figlet"
     "File" = "Figlet.ps1"
@@ -9,7 +12,9 @@ $figletHashTable = @{
 }
 # 
 # Load the function from the file path specified in the configuration
-. $figletHashTable.Path
+$figletHashTable.Path = "$($DIRECTORY.profileFunction)\Figlet.ps1"
+
+ . $figletHashTable.Path
 
 # Call the function with the parameter value specified in the configuration
 #Figlet -msg $figletHashTable.Name

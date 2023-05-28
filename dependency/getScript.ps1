@@ -21,8 +21,10 @@
         -v1.0    
 
 #-------------------- Include Below File --------------------------------------#>
+. "$Home\superuser.ps1"
+$myScriptJsonSource = $JSON.myScripts
+# $myScriptJsonSource = Get-JsonPath("myScripts")
 # $myScriptJsonSource = "$Home\Documents\PowerShell\myjson\myScript.json"
-$myScriptJsonSource = Get-JsonPath("myScripts")
 
 $scriptName        = $MyInvocation.MyCommand.Name
 $scriptFullPath    = $MyInvocation.MyCommand.Path

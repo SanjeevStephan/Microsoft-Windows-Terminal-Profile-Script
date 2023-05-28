@@ -22,8 +22,10 @@
 
 #--------------------{ getPython.ps1 }--------------------------------------#>
 # Read the JSON data from the file
-$python_json_source_file = Get-JsonPath("myPythonScript")
 
+. "$Home\superuser.ps1"
+$python_json_source_file = $JSON.myPythonScript
+# $python_json_source_file = Get-JsonPath("myPythonScript")
 $scriptName     = $MyInvocation.MyCommand.Name
 $scriptFullPath = $MyInvocation.MyCommand.Path
 $scriptExecutedBy = Split-Path -Path $MyInvocation.ScriptName -Leaf

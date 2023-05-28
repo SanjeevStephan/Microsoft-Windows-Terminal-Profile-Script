@@ -21,8 +21,10 @@
 # Define the path to the configuration file that contains additional Paths
 #$profile_config_path = Get-Content "$Home\Documents\PowerShell\profile.config"
 $profile_config_path = "$Home\superuser.ps1"
+
+#$profile_config_path = "$Home\Documents\PowerShell\TheConfigurationFile.ps1"
 # getPath the configuration file to load any additional Paths
-#. $profile_config_path  # <-------------- NOTE : LOAD THE CONFIG-FILE via (Dot-Sourcing)
+. $profile_config_path  # <-------------- NOTE : LOAD THE CONFIG-FILE via (Dot-Sourcing)
 
 # Display Ascii-figlet Text "The Terminal"
 #type $ASCII.theterminal 
@@ -30,30 +32,30 @@ $profile_config_path = "$Home\superuser.ps1"
 if(Test-Path $DEPENDENCY.TheConfigurationFile) 
 {
 
-    if(Test-Path $DIRECTORY.profileFunction)
+    if(Test-Path $DIRECTORY.myscript)
     {
 
         #Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
-        Write-Host "[ INCLUDE-ALL ] The {*.ps1} from the $($DIRECTORY.profileFunction)" -ForegroundColor Cyan
+        Write-Host "[ INCLUDE-ALL ] The {*.ps1} from the $($DIRECTORY.myscript)" -ForegroundColor Cyan
     
-        # Get all the *.ps1 files in the "profileFunction" directory
-        $profileFunction_files = Get-ChildItem -Path $DIRECTORY.profileFunction -Filter "*.ps1" | Select-Object -ExpandProperty FullName
+        # Get all the *.ps1 files in the "myscript" directory
+        $myscript_files = Get-ChildItem -Path $DIRECTORY.myscript -Filter "*.ps1" | Select-Object -ExpandProperty FullName
     
-        Write-Debug "Directory profileFunction : $($DIRECTORY.profileFunction)"
-        # Loop through each profileFunction file and include it in the profile
-        foreach ($path in $profileFunction_files) {
+        Write-Debug "Directory myscript : $($DIRECTORY.myscript)"
+        # Loop through each myscript file and include it in the profile
+        foreach ($path in $myscript_files) {
             if (Test-Path $path) {
     
 
-                Write-Host "[ OK ] Included : Profile-Function => { $(Split-Path -Leaf $path) } Successfully" -ForegroundColor  Green
+                Write-Host "[ OK ] Included : MyScript Functions => { $(Split-Path -Leaf $path) } Successfully" -ForegroundColor  Green
                 #Write-Host "[ OK ] All Profile Function : $(Split-Path -Leaf $path) : Included $path " -ForegroundColor Green
                 . $path
             } else {
                 Write-Warning "Missing $(Split-Path -Leaf $path) at path $path"
             }
         }
-        Write-Output "[ OK ] All Profile Functions => { setAllProfileFunctions.ps1 } Loaded Successfully"
-    } else { Write-Error "profileFunction directory path is empty : $($DIRECTORY.profileFunction)"} 
+        Write-Output "[ OK ] All Profile Functions => { setAllmyscripts.ps1 } Loaded Successfully"
+    } else { Write-Error "myscript directory path is empty : $($DIRECTORY.myscript)"} 
 
 
 

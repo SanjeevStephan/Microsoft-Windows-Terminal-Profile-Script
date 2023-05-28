@@ -73,12 +73,15 @@
     └───mytest
         └───env            
 #-------------------- Must Include Below File --------------------------------------#>
-$pshell = "$Home\Documents\PowerShell"
-. "$pshell\TheConfigurationFile.ps1"  
+. "$Home\superuser.ps1"
+
+$pshell = $SOURCE.powershell
+#. "$pshell\TheConfigurationFile.ps1"  
 . "$pshell\profileFunction\The-Prompt.ps1"  
-. "$pshell\myautoscript\profile_include.ps1"
-. "$pshell\myautoscript\check_profile_and_directories.ps1"
-. "$pshell\ascii\superuser.ps1"
-. "$pshell\ascii\neofetch.ps1"
-. "$pshell\ProfileFunctions.ps1"
+. "$pshell\auto_discover_profile_function.ps1"
+. "$pshell\auto_discover_console_function.ps1"
+. "$pshell\auto_discover_tools_function.ps1"
+. "$pshell\check_profile_and_directories.ps1"
+. "$pshell\myassets\ascii\script\superuser.ps1"
+. "$pshell\myassets\ascii\script\neofetch.ps1"
 
