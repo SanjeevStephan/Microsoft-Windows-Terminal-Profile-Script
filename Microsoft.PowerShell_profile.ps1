@@ -82,6 +82,8 @@ $pshell = $SOURCE.powershell
 . "$pshell\auto_discover_console_function.ps1"
 . "$pshell\auto_discover_tools_function.ps1"
 . "$pshell\check_profile_and_directories.ps1"
+. "$pshell\initial_run.ps1"
+
 . "$pshell\myassets\ascii\script\superuser.ps1"
 . "$pshell\myassets\ascii\script\neofetch.ps1"
 
