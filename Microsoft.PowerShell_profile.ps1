@@ -78,9 +78,9 @@
 $pshell = $SOURCE.powershell
 #. "$pshell\TheConfigurationFile.ps1"  
 . "$pshell\profileFunction\The-Prompt.ps1"  
-. "$pshell\auto_discover_profile_function.ps1"
-. "$pshell\auto_discover_console_function.ps1"
-. "$pshell\auto_discover_tools_function.ps1"
+. "$pshell\.autodiscovery\auto_discover_profile_function.ps1"
+. "$pshell\.autodiscovery\auto_discover_console_function.ps1"
+. "$pshell\.autodiscovery\auto_discover_tools_function.ps1"
 . "$pshell\check_profile_and_directories.ps1"
 . "$pshell\initial_run.ps1"
 

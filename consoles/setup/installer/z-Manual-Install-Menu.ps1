@@ -32,7 +32,7 @@ function TheManualInstallPrompt() {
                     3 { Start-Process "https://www.python.org/downloads/" }
                     4 { Start-Process "https://code.visualstudio.com/Download" }
                     5 { Start-Process "https://central.github.com/deployments/desktop/desktop/latest/win32" }
-                    6 { }
+                    6 { Start-Process "https://nodejs.org/en/download" }
                     7 { }
                     8 { }
                     9 { }
@@ -47,10 +47,11 @@ function Manual-Install-Menu() {
     $install_options = @{
         0 = @{Name = "Home";          Description = "Go the Home (Main Console)" }
         1 = @{Name = "Git";           Description = "Install { Git } cli for Terminal" }
-        2 = @{Name = "PowerShell 7";  Description = "Install New Microsoft { PowerShell }" }
+        2 = @{Name = "PowerShell";    Description = "Install New Microsoft { PowerShell 7 }" }
         3 = @{Name = "Python ";       Description = "Download the latest version of { Python } for Windows" }
         4 = @{Name = "VSCode";        Description = "Download The OpenSource Code Editor { VSCode }" }           
         5 = @{Name = "Github-Desktop";Description = "Download { GitHub Desktop } which simplifies your development workflow." }                   
+        6 = @{Name = "Node.js";Description = "Download { Node.js® } an open-source, cross-platform JavaScript runtime environment.." }                   
     }
 
        do {
