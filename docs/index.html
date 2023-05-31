@@ -156,8 +156,8 @@
 		============================ -->
         <section id="idocs_start">
         <h1>Superuser</h1>
-        <h2>How this PowerShell Script Work?</h2>
-        <p class="lead">An Window PowerShell Automation Script!.</p>
+        <h2>A Powerfull PowerShell Profile Script!</h2>
+        <p class="lead">An Window PowerShell Automation Script for your everyday <strong>Terminal</strong> needs!.</p>
 		<hr>
 		<div class="row">
 			<div class="col-sm-6 col-lg-4">
@@ -169,7 +169,7 @@
 			<div class="col-sm-6 col-lg-4">
 				<ul class="list-unstyled">
 					<li><strong class="font-weight-700">Created:</strong> 26th March, 2023</li>
-					<li><strong>Update:</strong> 28 May, 2023</li>
+					<li><strong>Update:</strong> 28th May, 2023</li>
 				</ul>
 			</div>
 		</div>
@@ -178,29 +178,70 @@
         
 		<hr class="divider">
 		
-        <!-- Installation
+        <!-- Installation <a href=""></a>
 		============================ -->
         <section id="idocs_installation">
           <h2>Installation</h2>
-          <p class="lead">Follow the steps below to setup your site template:</p>
+          <p class="lead">Follow the steps below to setup your <strong><code>SuperUser</code></strong> profile:</p>
           <ol>
-            <li>Unzip the downloaded package and open the <strong>/HTML</strong> folder to find all the template files. You will need to upload these files to your hosting web server using FTP or localhost in order to use it on your website.</li>
-            <li>Below is the folder structure and needs to be uploaded to your website or localhost root directory:
-            <ul>
-			<li><code>HTML/assets</code> - Contains all of the assets referenced
-			  <ul>
-                <li><code>HTML/css</code> - Stylesheet files</li>
-                <li><code>HTML/images</code> - Images files</li>
-                <li><code>HTML/js</code> - Javacript files</li>
-                <li><code>HTML/sass</code> - Sass files</li>
-                <li><code>HTML/vendor</code> – All external libs.</li>
-              </ul>
-			</li>
-			<li><code>HTML/index.html</code> - Homepage
-			</ul>
+            <li><strong> <a class="ml-1" target="_blank" href="https://github.com/SanjeevStephan/superuser/archive/refs/heads/window11-v2.0.zip"><i class="fas fa-external-link-alt"></i> Click Here to Download</a></strong> this Script [ Superuser ] as Zip File</li>
+            <li>Unzip the downloaded package and open the <strong>/SuperUser</strong> folder to find all the files.</li>
+            <li>Below is the directory structure:
+                  <p>
+                      <ul>
+                        <li><code>PowerShell/Microsoft.PowerShell_Profile.ps1</code> - When the Initialization Begins</li>
+                        <li><code>PowerShell/assets</code> - Contains all assets for the Script</li>
+                        <li><code>PowerShell/data</code> - Contains all of The Configuration Data for the Script
+                          <ul>
+                            <li><code>PowerShell/data/ascii.json</code> - ASCII Typography Files</li>
+                            <li><code>PowerShell/data/config.json</code> - Configuration Data File</li>
+                            <li><code>PowerShell/data/directories.json</code> - Contains lists of directories & releated info</li>
+                            <li><code>PowerShell/data/files.json</code> - Contains lists of files & releated info</li>
+                            <li><code>PowerShell/data/settings.json</code> – All external libs.</li>
+                          </ul>
+                        </li>
+                        <li><code>PowerShell/docs</code> - This Documentations that you're reading.</li>
+                        <li><code>PowerShell/profile</code> - Contains all of the assets referenced
+                          <ul>
+                              <li><code>PowerShell/profile/auto</code> - Contains Auto-Discover Scripts</li>
+                              <li><code>PowerShell/profile/cmdlets</code> - Small Few Lines Scripts</li>
+                              <li><code>PowerShell/profile/dependency</code> - Profile Dependend Script files</li>
+                              <li><code>PowerShell/profile/functions</code> - Callable Profile's Function Scripts</li>
+                              <li><code>PowerShell/profile/prompt</code> – Personalized SuperUser Prompt.</li>
+                          </ul>
+                        </li>
+                        <li><code>PowerShell/superuser.ps1</code> - The Configuration File</li>
+                      </ul>
+                    </p>
             </li>
-            <li>You should upload all or specific HTML files as per your need.</li>
-            <li>You are good to go for adding your content now!</li>
+            <li>You will need to move these files to your User's Documents.<br/>
+              <p><span class="badge badge-danger text-uppercase mr-2">Note</span>Rename the <strong>/SuperUser</strong> folder to <strong>/PowerShell</strong>. </p>
+              
+                <p><strong>For Windows 11</strong></p>
+                <pre><code class="html">C:/Users/&lt;username&gt;/OneDrive/Documents/PowerShell</code></pre>
+
+                <p><strong>For Windows 10</strong></p>
+                <pre><code class="html">C:/Users/&lt;username&gt;/Documents/PowerShell</code></pre>
+                <p>You Directory Path Should look similar to the above path!</p>
+              </li>
+              <li>Open <strong>Environment Variable Window</strong>  (Search <code>env</code> from your taskbar & Open it) and <br/>  Add below Key-Value Pairs </li>
+                <p><strong>Pair #1</strong></p>
+                <pre><code class="html">
+  Key : superuser 
+  Value : C:\Users\&lt;Username&gt;\OneDrive\Documents\PowerShell\superuser.ps1
+                </code></pre>
+                <p><strong>Pair #2</strong></p>
+                <pre><code class="html">
+  Key : superuser_data
+  Value : C:\Users\&lt;Username&gt;\OneDrive\Documents\PowerShell\data
+                  </code></pre>
+                <p><strong>Pair #3</strong></p>
+                <pre><code class="html">
+  Key : superuser_profile
+  Value : C:\Users\&lt;Username&gt;\OneDrive\Documents\PowerShell\profile
+                  </code></pre>
+                  <p><span class="badge badge-danger text-uppercase mr-2">Note</span>You need to replace <code>&lt;Username&gt;</code> with your <strong>Username</strong> </p>
+              <li>Open The Terminal | Enjoy</li>
           </ol>
         </section>
         
@@ -209,7 +250,7 @@
         <!-- HTML Structure
 		============================ -->
         <section id="idocs_html_structure">
-          <h2>HTML Structure</h2>
+          <h2>Installation via Terminal</h2>
           <p>iDocs follows a simple and easy to customize coding structure. Here is the sample for your reference:<br>
             The template is based on <a class="ml-1" target="_blank" href="httpss://getbootstrap.com/"><i class="fas fa-external-link-alt"></i> Bootstrap Framework</a></p>
           <pre><code class="html">&lt;!DOCTYPE html&gt;
