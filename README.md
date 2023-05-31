@@ -100,6 +100,8 @@ $PSVersionTable
     For Windows 11 : C:\Users\\<username>\OneDrive\Documents\
     For Windows 10 : C:\Users\\<username>\Documents\
 ```
+Using Below Command
+```
 cd $home\OneDrive\Documents\
  ```
 8. Now Clone the "superuser' repository using bellow command
