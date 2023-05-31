@@ -36,31 +36,17 @@
 ## Description
 > This PowerShell Repository comprises the index of **all the usefull functions and scripts** for the window terminal
 
-_This repository contains_ :
-* configuration
-* dictionary
-* dependencies        
-* paths
-* variables
-* functions
-* file-Types
-    | File | Extension |
-    |:---------:|:-----------|
-    | Powershell-script| ps1 |
-    | JSON-file    |   json  |
-    | Markdown     |    md   |
-
 ### Directory Structure
 * Main 
     | File | Description | Explaination |
     |:---------:|:-----------|:---------:|
     | [Microsoft.PowerShell_profile.ps1](https://github.com/SanjeevStephan/superuser/blob/main/Microsoft.PowerShell_profile.ps1)| Main PowerShell Profile File | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) | 
-    | [TheConfigurationFile.ps1](https://github.com/SanjeevStephan/superuser/blob/main/TheConfigurationFile.ps1) | Controls Settings  | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) | 
-    | [profile_include.ps1](https://github.com/SanjeevStephan/superuser/blob/main/myautoscript/profile_include.ps1)  |  Includes all {*.ps1} files in the ./dependency directory  | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) |                     
-    | [ProfileFunctions.ps1](https://github.com/SanjeevStephan/superuser/blob/main/ProfileFunctions.ps1)  |  Save your funtions here & execute directly on terminal   | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) |     
+    | [superuser.ps1](https://github.com/SanjeevStephan/superuser/blob/main/TheConfigurationFile.ps1) | Controls Settings  | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) | 
+    | [Auto-Discover.ps1](https://github.com/SanjeevStephan/superuser/blob/main/myautoscript/profile_include.ps1)  |  Includes all {*.ps1} files in the ./dependency directory  | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) |                     
     | [The-Prompt.ps1](https://github.com/SanjeevStephan/superuser/blob/main/profileFunction/The-Prompt.ps1)  |  The SuperUser Prompt   | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) | 
 
 ### For In-Detail Explaination | Please refer to [My Detailed Guide](https://sanjeevstephan.github.io/superuser/)
+
 # How to Setup
 By Default PowerShell Executions is restricted for `CurrentUser`.
 1. Firstly, PowerShell execution policy is required to be one of: Unrestricted, RemoteSigned or ByPass to execute the installer. For example:
@@ -115,7 +101,7 @@ $PSVersionTable
 ```
 cd $home\OneDrive\Documents\
  ```
-8. Now Clone the "superuser' repository from using bellow command
+8. Now Clone the "superuser' repository using bellow command
  ```
  git clone https://github.com/SanjeevStephan/superuser.git
 ```
@@ -127,7 +113,7 @@ mv superuser PowerShell
 ```
 rundll32.exe sysdm.cpl,EditEnvironmentVariables
 ```
-11. Add a new environment-variable named <br/>
+11. Add a new environment-variable named 
 Key #1
 ```
         Key : superuser 
@@ -138,9 +124,17 @@ Key #2
         Key : superuser_data
         Value : C:\Users\<Username>\OneDrive\Documents\PowerShell\data
 ```
-12.  Now Restart the Terminal & switch to powerShell 7
+Key #3
 ```
-
+        Key : superuser_profile
+        Value : C:\Users\<Username>\OneDrive\Documents\PowerShell\profile
+```
+12.  Now Restart the Terminal & switch to powerShell 7
+13.  Check if the system recognize the 'environment-variable' we just added
+```
+ echo $env:superuser
+ echo $env:superuser_data
+ echo $env:superuser_profile
 ```
 11. If all the things went well you will be greeted by the terminal,similarly like this. [CLick here to see the log](https://github.com/SanjeevStephan/superuser/blob/main/assets/log/welcome_log.txt)
 
