@@ -74,7 +74,7 @@ Install [winget tool](https://docs.microsoft.com/en-us/windows/package-manager/w
 ```
 winget install --id Git.Git -e --source winget
 ```
-3. If You have Window 11 Installed Then Simply Install PowerShell using Winget (recommended) <br/>
+3.Install PowerShell using Winget (recommended) <br/>
 The following commands can be used to install PowerShell using the published winget packages:
 ```
 winget search Microsoft.PowerShell
@@ -104,30 +104,45 @@ Successfully verified installer hash
 Starting package install...
 Successfully installed
 ```
-### For Windows 10 
-6. To Download **git** for terminal [click here](https://git-scm.com/downloads)
-7. Now Copy below url and paste it in browser or Alternatively [Click Here to Download PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#msi)
-```
-https://aka.ms/PSWindows
-```
-8. Verify The Powershell Installation by checking its version using below command
+6. Verify The Powershell Installation by checking its version using below command
 ```
 $PSVersionTable
 ```
-9. Open Terminal & navigate to User's home directory which is (C:\Users\\<username\>\Documents\)
+### Downloading & Installing SuperUser Script
+7. Open Terminal & navigate to User's home directory <br/>
+    For Windows 11 : C:\Users\<username>\OneDrive\Documents\
+    For Windows 10 : C:\Users\<username>\Documents\
 ```
-cd $home\Documents
+cd $home\OneDrive\Documents\
  ```
-9. Clone the repository using *git clone*
+8. Now Clone the "superuser' repository from using bellow command
  ```
  git clone https://github.com/SanjeevStephan/superuser.git
 ```
-10. Now you will see a folder named SuperUser, renamed it to PowerShell
-11. Restart the Terminal & start powerShell
+9. Now you will see a folder named SuperUser, renamed it to PowerShell
 ```
- pwsh
+mv superuser PowerShell
 ```
-12. If all the things went well you will be greeted by the terminal,similarly like this. [CLick here to see the log](https://github.com/SanjeevStephan/superuser/blob/main/assets/log/welcome_log.txt)
+10. Open *Environment Variable* using below Command
+```
+rundll32.exe sysdm.cpl,EditEnvironmentVariables
+```
+11. Add a new environment-variable named <br/>
+Key #1
+```
+        Key : superuser 
+        Value : C:\Users\<Username>\OneDrive\Documents\PowerShell\superuser.ps1
+```
+Key #2
+```
+        Key : superuser_data
+        Value : C:\Users\<Username>\OneDrive\Documents\PowerShell\data
+```
+12.  Now Restart the Terminal & switch to powerShell 7
+```
+
+```
+11. If all the things went well you will be greeted by the terminal,similarly like this. [CLick here to see the log](https://github.com/SanjeevStephan/superuser/blob/main/assets/log/welcome_log.txt)
 
 # How this Works?
 > To know how this profile script works. Kindly [click here to read the docs](https://sanjeevstephan.github.io/superuser/)
