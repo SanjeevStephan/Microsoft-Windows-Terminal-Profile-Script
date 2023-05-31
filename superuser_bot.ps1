@@ -1,2 +1,0 @@
-. "$Home\superuser.ps1"
-

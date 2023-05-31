@@ -1,0 +1,39 @@
+* Open New Window Terminal 
+* Download git from [ https://git-scm.com/download/win ] or Install via winget-tool using below command
+   -> winget install --id Git.Git -e --source winget
+* Navigate to User's Home Documents Directory 
+    For Windows 11 : C:\Users\<username>\OneDrive\Documents\
+    For Windows 10 : C:\Users\<username>\Documents\
+    Type Below Command 
+    ->  cd $Home\Documents
+* Now Clone the "superuser' repository from using bellow command
+    -> git clone https://github.com/SanjeevStephan/superuser.git 
+* Rename the 'superuser' to 'PowerShell' Directory  
+    -> mv superuser PowerShell
+* Press [ Win + R ] to launch a 'Run' Window or Simply Copy and Paste the Command and Hit Enter <-|
+    -> rundll32.exe sysdm.cpl,EditEnvironmentVariables
+    Now you should see the 'environment-variable
+* Add a new environment-variable named 
+    #1
+        Key : superuser 
+        Value : C:\Users\Samst\OneDrive\Documents\PowerShell\superuser.ps1
+    #2
+        Key : superuser_data
+        Value : C:\Users\Samst\OneDrive\Documents\PowerShell\data
+
+    setx HOME %userprofile%
+* check if the system recognize the 'environment-variable' we just added
+    ->  echo $env:superuser
+       Output : C:\Users\Samst\OneDrive\Documents\PowerShell\superuser.ps1
+    -> echo $env:superuser_data
+* Add the Follow cmdlet in the [ PowerShell\Microsoft.PowerShell_profile.ps1 ]
+    -> . "$($env:superuser)
+* Now Restart the Terminal 
+
+
+# Things to do
+1. Rewrite the superuser.ps1 (hashtable) values into 'superuser.json' 
+2. Create a file named 'superuser.ps1' which contains all the 'variables' which stores the value accessed from data/*.json files
+3. include all the depencies in the 'Microsoft.Powershell_profile.ps1 using the variable from superuser.ps1'
+4. Add the 'superuser.ps1' filepath to the environment variable
+5. Restart the terminal

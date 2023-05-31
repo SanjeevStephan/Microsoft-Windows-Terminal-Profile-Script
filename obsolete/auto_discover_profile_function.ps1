@@ -25,22 +25,26 @@ $profile_config_path = "$home\superuser.ps1"
 . $profile_config_path  # <-------------- NOTE : LOAD THE CONFIG-FILE via (Dot-Sourcing)
 
 # Display Ascii-figlet Text "The Terminal"
-type $ASCII.theterminal 
 
-if(Test-Path $DEPENDENCY.TheConfigurationFile) 
-{
 
-    if(Test-Path $DIRECTORY.dependency)
+$directory_path = "$home/OneDrive/Documents/PowerShell/myfunction"
+
+# type $ASCII.theterminal 
+
+# if(Test-Path $DEPENDENCY.TheConfigurationFile) 
+# {
+
+    if(Test-Path $directory_path)
     {
 
         Write-Output "<-------------------{ Loading Dependencies }-------------------------->"
-        Write-Host "[ INCLUDE-ALL ] The {*.ps1} in the $($DIRECTORY.dependency)" -ForegroundColor Cyan
+        Write-Host "[ INCLUDE-ALL ] The {*.ps1} in the $directory_path" -ForegroundColor Cyan
         Write-Output "[ OK ] Profile include => { profile_include.ps1 } Loaded Successfully"
     
         # Get all the *.ps1 files in the "dependency" directory
-        $dependency_files = Get-ChildItem -Path $DIRECTORY.dependency -Filter "*.ps1" | Select-Object -ExpandProperty FullName
+        $dependency_files = Get-ChildItem -Path $directory_path -Filter "*.ps1" | Select-Object -ExpandProperty FullName
     
-        Write-Debug "Directory Dependency : $($DIRECTORY.dependency)"
+        Write-Debug "Directory Dependency : $directory_path"
         # Loop through each dependency file and include it in the profile
         foreach ($path in $dependency_files) {
             if (Test-Path $path) {
@@ -52,8 +56,8 @@ if(Test-Path $DEPENDENCY.TheConfigurationFile)
             }
         }
 
-    } else { Write-Error "Dependency directory path is empty : $($DIRECTORY.dependency)"} 
+    } else { Write-Error "Dependency directory path is empty : $directory_path"} 
 
 
 
-} else { Write-Error "Configuration File Missing { $($DEPENDENCY.TheConfigurationFile)}"}
+# } else { Write-Error "Configuration File Missing { $($DEPENDENCY.TheConfigurationFile)}"}

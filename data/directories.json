@@ -1,0 +1,49 @@
+{
+    "info" :
+    {
+        "title" : "directories",
+        "file"  : "directories.json",
+        "path"  : "PowerShell\\data",
+        "ascii" : "PowerShell\\data\\ascii\\text\\powershell_basic.ascii",
+        "desc"  : "contains sub-directories from the powershell directory"
+    },
+    "profile" : 
+    [
+        {
+            "index" : 0,
+            "title" : "Profile",
+            "path"  : "PowerShell\\profile",
+            "ascii" : "PowerShell\\data\\ascii\\text\\powershell_basic.ascii",
+            "desc"  : ""
+        },
+        {
+            "index" : 1,
+            "title" : "Autodiscovery",
+            "path"  : "PowerShell\\profile\\auto",
+            "ascii" : "PowerShell\\data\\ascii\\text\\powershell_basic.ascii",
+            "desc" : ""
+        },
+        {
+            "index" : 2,
+            "title" : "Short-Commands ",
+            "path"  : "PowerShell\\profile\\cmdlets",
+            "ascii" : "PowerShell\\data\\ascii\\text\\powershell_basic.ascii",
+            "desc"  : ""
+        },
+        {
+            "index" : 3,
+            "title" : "Dependency",
+            "path"  : "PowerShell\\profile\\dependency",
+            "ascii" : "PowerShell\\data\\ascii\\text\\powershell_basic.ascii",
+            "desc"  : ""
+        },
+        {
+            "index" : 4,
+            "title" : "Functions",
+            "path"  : "PowerShell\\profile\\functions",
+            "ascii" : "PowerShell\\data\\ascii\\text\\powershell_basic.ascii",
+            "desc"  : ""
+        }
+
+    ]
+}

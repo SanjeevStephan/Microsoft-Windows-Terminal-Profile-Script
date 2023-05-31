@@ -46,35 +46,48 @@
     │   └───works-great-but-not-in-use
     ├───myfunctions
     │   └───parameterArgs
-    ├───assets
-    │   └───tools
-    ├───data
-    |    |──────ascii
-    |    |       ├───.\script
-    |    |       └───.\text   
-    |    ├───.\ascii.json
-    |    ├───.\config.json
-    |    ├───.\directories.json
-    |    ├───.\files.json
-    |    ├───.\settings.json
-    |    └───.\source.json
-    ├───profile
-    |    ├───.\auto
-    |    |       ├───.\Auto-Discover.ps1
-    |    |       ├───.\discover_cmdlets.ps1
-    |    |       ├───.\discover_dependency.ps1
-    |    |       └───.\discover_functions.ps1 
-    |    ├───.\cmdlets
-    |    ├───.\dependency
-    |    ├───.\functions
-    |    └───.\prompt
-    |            ├───.\Superuser-Prompt.ps1
-    |            └───.\The-Prompt.ps1 
+    ├───myjson/
+        ├───.\dependencies.json
+        ├───.\directories.json
+        ├───.\myFunctions.json
+        ├───.\myIncludes.json
+        ├───.\myJsonList.json
+        ├───.\myPythonScript.json
+        ├───.\myScripts.json
+        └───.\profileFunctions.json
     ├───mypython
-    |    └───.\figlet.py    
+        └───.\figlet.py    
+    ├───myscripts
+        └──────setEnv
+               ├───.\argsAddVariableToEnv.ps1
+               └───.\passArgsViaHashTable.ps1               
+        ├───.\execScript.ps1
+        ├───.\getDependencies.ps1
+        ├───.\getFunction.ps1
+        ├───.\getJson.ps1
+        ├───.\getPath.ps1
+        ├───.\getPython.ps1
+        ├───.\getScript.ps1
+        ├───.\setEnv.ps1
+        └───.\setMyfunctions.ps1
     └───mytest
         └───env            
 #-------------------- Must Include Below File --------------------------------------#>
 
-. $env:superuser
+
+. "$($env:superuser)"
+
+# $data = $env:superuser_data
+# $Json = Get-Content -Raw -Path "$data/directories.json" | ConvertFrom-Json
+
+# $profile_name = $Json.source[0].profile
+# Write-Host "Profile : $profile_name"
+
+
+
+# Include or Load the PowerShell-Script in the Profile using dot-sourcing,
+#. $the_prompt_ps1
+#. $auto_discover_ps1
+#. $directory_discover_list_ps1
+
 

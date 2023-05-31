@@ -1,0 +1,7 @@
+
+{
+    "profile" : "Microsoft.PowerShell_profile.ps1",
+    "home"    : "$home\\OneDrive",
+    "documents": "$home\\OneDrive\\Documents",
+    "powershell": "$home\\OneDrive\\PowerShell"
+}

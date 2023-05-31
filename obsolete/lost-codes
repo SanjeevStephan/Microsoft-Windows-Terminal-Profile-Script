@@ -1,0 +1,14 @@
+# $data = $env:superuser_data
+# $Json = Get-Content -Raw -Path "$data/directories.json" | ConvertFrom-Json
+
+# $profile_name = $Json.source[0].profile
+# Write-Host "Profile : $profile_name"
+
+
+
+# Include or Load the PowerShell-Script in the Profile using dot-sourcing,
+#. $the_prompt_ps1
+#. $auto_discover_ps1
+#. $directory_discover_list_ps1
+
+

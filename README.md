@@ -30,7 +30,7 @@
 ### Version 
 | Version | Release Date |
 |:---------:|:-----------|
-| v1.0 | 26th March 2023 |
+| v2.0 | 30th May 2023 |
 |      |                 |
 
 ## Description
