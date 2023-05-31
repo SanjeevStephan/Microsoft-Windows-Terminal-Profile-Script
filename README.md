@@ -3,7 +3,7 @@
 ```
  ____                        _   _
 / ___| _   _ _ __   ___ _ __| | | |___  ___ _ __
-\___ \| | | | '_ \ / _ \ '__| | | / __|/ _ \ '__| v1.0 | 26th March 2023
+\___ \| | | | '_ \ / _ \ '__| | | / __|/ _ \ '__| v2.0 | 30th May 2023
  ___) | |_| | |_) |  __/ |  | |_| \__ \  __/ |    by Sanjeev Stephan Murmu
 |____/ \__,_| .__/ \___|_|   \___/|___/\___|_|    https://github.com/SanjeevStephan/
             |_|
@@ -36,31 +36,17 @@
 ## Description
 > This PowerShell Repository comprises the index of **all the usefull functions and scripts** for the window terminal
 
-_This repository contains_ :
-* configuration
-* dictionary
-* dependencies        
-* paths
-* variables
-* functions
-* file-Types
-    | File | Extension |
-    |:---------:|:-----------|
-    | Powershell-script| ps1 |
-    | JSON-file    |   json  |
-    | Markdown     |    md   |
-
 ### Directory Structure
 * Main 
     | File | Description | Explaination |
     |:---------:|:-----------|:---------:|
     | [Microsoft.PowerShell_profile.ps1](https://github.com/SanjeevStephan/superuser/blob/main/Microsoft.PowerShell_profile.ps1)| Main PowerShell Profile File | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) | 
-    | [TheConfigurationFile.ps1](https://github.com/SanjeevStephan/superuser/blob/main/TheConfigurationFile.ps1) | Controls Settings  | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) | 
-    | [profile_include.ps1](https://github.com/SanjeevStephan/superuser/blob/main/myautoscript/profile_include.ps1)  |  Includes all {*.ps1} files in the ./dependency directory  | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) |                     
-    | [ProfileFunctions.ps1](https://github.com/SanjeevStephan/superuser/blob/main/ProfileFunctions.ps1)  |  Save your funtions here & execute directly on terminal   | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) |     
+    | [superuser.ps1](https://github.com/SanjeevStephan/superuser/blob/main/TheConfigurationFile.ps1) | Controls Settings  | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) | 
+    | [Auto-Discover.ps1](https://github.com/SanjeevStephan/superuser/blob/main/myautoscript/profile_include.ps1)  |  Includes all {*.ps1} files in the ./dependency directory  | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) |                     
     | [The-Prompt.ps1](https://github.com/SanjeevStephan/superuser/blob/main/profileFunction/The-Prompt.ps1)  |  The SuperUser Prompt   | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) | 
 
-### For In-Detail Explaination | Please refer to [My Wiki ](https://github.com/SanjeevStephan/superuser/wiki)
+### For In-Detail Explaination | Please refer to [My Detailed Guide](https://sanjeevstephan.github.io/superuser/)
+
 # How to Setup
 By Default PowerShell Executions is restricted for `CurrentUser`.
 1. Firstly, PowerShell execution policy is required to be one of: Unrestricted, RemoteSigned or ByPass to execute the installer. For example:
@@ -74,7 +60,7 @@ Install [winget tool](https://docs.microsoft.com/en-us/windows/package-manager/w
 ```
 winget install --id Git.Git -e --source winget
 ```
-3. If You have Window 11 Installed Then Simply Install PowerShell using Winget (recommended) <br/>
+3.Install PowerShell using Winget (recommended) <br/>
 The following commands can be used to install PowerShell using the published winget packages:
 ```
 winget search Microsoft.PowerShell
@@ -104,33 +90,56 @@ Successfully verified installer hash
 Starting package install...
 Successfully installed
 ```
-### For Windows 10 
-6. To Download **git** for terminal [click here](https://git-scm.com/downloads)
-7. Now Copy below url and paste it in browser or Alternatively [Click Here to Download PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#msi)
-```
-https://aka.ms/PSWindows
-```
-8. Verify The Powershell Installation by checking its version using below command
+6. Verify The Powershell Installation by checking its version using below command
 ```
 $PSVersionTable
 ```
-9. Open Terminal & navigate to User's home directory which is (C:\Users\\<username\>\Documents\)
+### Downloading & Installing SuperUser Script
+7. Open Terminal & navigate to User's home directory <br/>
+    For Windows 11 : C:\Users\\<username>\OneDrive\Documents\
+    For Windows 10 : C:\Users\\<username>\Documents\
 ```
-cd $home\Documents
+cd $home\OneDrive\Documents\
  ```
-9. Clone the repository using *git clone*
+8. Now Clone the "superuser' repository using bellow command
  ```
  git clone https://github.com/SanjeevStephan/superuser.git
 ```
-10. Now you will see a folder named SuperUser, renamed it to PowerShell
-11. Restart the Terminal & start powerShell
+9. Now you will see a folder named SuperUser, renamed it to PowerShell
 ```
- pwsh
+mv superuser PowerShell
 ```
-12. If all the things went well you will be greeted by the terminal,similarly like this. [CLick here to see the log](https://github.com/SanjeevStephan/superuser/blob/main/assets/log/welcome_log.txt)
+10. Open *Environment Variable* using below Command
+```
+rundll32.exe sysdm.cpl,EditEnvironmentVariables
+```
+11. Add a new environment-variable named 
+Key #1
+```
+        Key : superuser 
+        Value : C:\Users\<Username>\OneDrive\Documents\PowerShell\superuser.ps1
+```
+Key #2
+```
+        Key : superuser_data
+        Value : C:\Users\<Username>\OneDrive\Documents\PowerShell\data
+```
+Key #3
+```
+        Key : superuser_profile
+        Value : C:\Users\<Username>\OneDrive\Documents\PowerShell\profile
+```
+12.  Now Restart the Terminal & switch to powerShell 7
+13.  Check if the system recognize the 'environment-variable' we just added
+```
+ echo $env:superuser
+ echo $env:superuser_data
+ echo $env:superuser_profile
+```
+11. If all the things went well you will be greeted by the terminal,similarly like this. [CLick here to see the log](https://github.com/SanjeevStephan/superuser/blob/main/assets/log/welcome_log.txt)
 
 # How this Works?
-> To know how this profile script works. Kindly [click here to read the docs](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md)
+> To know how this profile script works. Kindly [click here to read the docs](https://sanjeevstephan.github.io/superuser/)
 
 
 # How to Contribute 
