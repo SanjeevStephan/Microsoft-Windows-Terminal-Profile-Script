@@ -96,8 +96,8 @@ $PSVersionTable
 ```
 ### Downloading & Installing SuperUser Script
 7. Open Terminal & navigate to User's home directory <br/>
-    For Windows 11 : C:\Users\<username>\OneDrive\Documents\
-    For Windows 10 : C:\Users\<username>\Documents\
+    For Windows 11 : C:\Users\\<username>\OneDrive\Documents\
+    For Windows 10 : C:\Users\\<username>\Documents\
 ```
 cd $home\OneDrive\Documents\
  ```
