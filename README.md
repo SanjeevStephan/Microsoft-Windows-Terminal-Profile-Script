@@ -3,7 +3,7 @@
 ```
  ____                        _   _
 / ___| _   _ _ __   ___ _ __| | | |___  ___ _ __
-\___ \| | | | '_ \ / _ \ '__| | | / __|/ _ \ '__| v1.0 | 26th March 2023
+\___ \| | | | '_ \ / _ \ '__| | | / __|/ _ \ '__| v2.0 | 30th May 2023
  ___) | |_| | |_) |  __/ |  | |_| \__ \  __/ |    by Sanjeev Stephan Murmu
 |____/ \__,_| .__/ \___|_|   \___/|___/\___|_|    https://github.com/SanjeevStephan/
             |_|
@@ -60,7 +60,7 @@ _This repository contains_ :
     | [ProfileFunctions.ps1](https://github.com/SanjeevStephan/superuser/blob/main/ProfileFunctions.ps1)  |  Save your funtions here & execute directly on terminal   | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) |     
     | [The-Prompt.ps1](https://github.com/SanjeevStephan/superuser/blob/main/profileFunction/The-Prompt.ps1)  |  The SuperUser Prompt   | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) | 
 
-### For In-Detail Explaination | Please refer to [My Wiki ](https://github.com/SanjeevStephan/superuser/wiki)
+### For In-Detail Explaination | Please refer to [My Detailed Guide](https://sanjeevstephan.github.io/superuser/)
 # How to Setup
 By Default PowerShell Executions is restricted for `CurrentUser`.
 1. Firstly, PowerShell execution policy is required to be one of: Unrestricted, RemoteSigned or ByPass to execute the installer. For example:
@@ -130,7 +130,7 @@ cd $home\Documents
 12. If all the things went well you will be greeted by the terminal,similarly like this. [CLick here to see the log](https://github.com/SanjeevStephan/superuser/blob/main/assets/log/welcome_log.txt)
 
 # How this Works?
-> To know how this profile script works. Kindly [click here to read the docs](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md)
+> To know how this profile script works. Kindly [click here to read the docs](https://sanjeevstephan.github.io/superuser/)
 
 
 # How to Contribute 
