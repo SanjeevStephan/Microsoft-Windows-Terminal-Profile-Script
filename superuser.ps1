@@ -79,13 +79,14 @@ Write-Host "├────SuperUser.ps1"
 Write-Host "|    |     └────├ Initializing ] $title" -ForegroundColor Cyan
 Write-Host "|    |          ├ INFO ] Function Name : ReadJson()" -ForegroundColor Yellow
 Write-Host "|    |          ├ INFO ] Function Name : ReadJsonPath()" -ForegroundColor Yellow
+
 # initial run
 
 # =============================== 4.LOAD THE SCRIPTS FROM JSON FILE ==================================
 
 $total_dependency_to_include = $Dependency_JSON.profile[0].file.Length - 1
 # Write-Host "Counting Total Objects : $total_dependency_to_include"
-
+Write-Host "|    |          ├ JSON ] Loading Scripts From JSON File : dependencies.json" -ForegroundColor Yellow
 if(Test-Path $su)
 {
     for ($i = 0; $i -le $total_dependency_to_include; $i++) 
@@ -98,7 +99,7 @@ if(Test-Path $su)
         . $currentScriptFullPath
     }
     Write-Host "|    |          | " -ForegroundColor Cyan
-    Write-Host "|    |          └────[ Status ]  Script Terminated -> autodiscovery.ps1 " -ForegroundColor Cyan
+    Write-Host "|    |          └──[ JSON ] Finished Loading Scripts From JSON File : dependencies.json" -ForegroundColor Yellow
     
 } else { Write-Host "Looking For [ superuser.ps1 ] at $su" -ForegroundColor Red -BackgroundColor Black }
 

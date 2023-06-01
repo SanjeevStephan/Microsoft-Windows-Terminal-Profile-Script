@@ -82,7 +82,7 @@ if(Test-Path $autodiscover_this_directory)
         else { Write-Host "|    |          |        └────[ Status ]  Script Terminated -> autodiscovery.ps1 " -ForegroundColor Cyan  }
 
         
-
+        Write-Host "|    |          |        " -ForegroundColor Cyan 
  
     } else { Write-Error "$title directory path is empty : $autodiscover_this_directory"} 
 
