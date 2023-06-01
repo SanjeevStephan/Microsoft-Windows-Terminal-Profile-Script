@@ -12,3 +12,14 @@
 #. $directory_discover_list_ps1
 
 
+    .TAGS
+        ->  INFO
+        ->  FILE
+        ->  PATH
+        ->  DEBUG
+        ->  FEATURE
+        ->  EXECUTABLE
+        ->  ASSOCIATED
+    .FUNCTIONS
+        ->  See-Config()
+        ->  Debug-Config()
