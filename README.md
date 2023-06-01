@@ -96,8 +96,11 @@ $PSVersionTable
 ```
 ### Downloading & Installing SuperUser Script
 7. Open Terminal & navigate to User's home directory <br/>
-    For Windows 11 : C:\Users\\<username>\OneDrive\Documents\
-    For Windows 10 : C:\Users\\<username>\Documents\
+```
+    For Windows 11 : C:\Users\<username>\OneDrive\Documents\
+    For Windows 10 : C:\Users\<username>\Documents\
+```
+Using Below Command
 ```
 cd $home\OneDrive\Documents\
  ```
@@ -113,7 +116,7 @@ mv superuser PowerShell
 ```
 rundll32.exe sysdm.cpl,EditEnvironmentVariables
 ```
-11. Add a new environment-variable named 
+11. Add a new environment-variable named  <br/>
 Key #1
 ```
         Key : superuser 
