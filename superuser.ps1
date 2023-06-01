@@ -34,31 +34,36 @@ function ReadJsonPath($JsonPointer) {
     return $full_path
 }
 
+function DisplayASCII($asciiFilePath)
+{
+    $ascii_filepath = ReadJsonPath($asciiFilePath)
+    type $ascii_filepath 
+}
+
+
 # Fetch Json Path from the 'Environment Variable -> superuser_data
 $su = $env:superuser_data
 # JSON Files in the SuperUser's Data Directory 
 $Data = @{
-    "ascii"   = "$su\ascii.json"
-    "config"   = "$su\config.json"
-    "dir"      = "$su\directories.json"
-    "files"    = "$su\files.json"
-    "settings" = "$su\settings.json"
+    "ascii"      = "$su\ascii.json"
+    "config"     = "$su\config.json"
+    "dir"        = "$su\directories.json"
+    "dependency" = "$su\dependencies.json"
+    "settings"   = "$su\settings.json"
 }
-# Read the JSON by call the function 'readJson()' and passing the value of the 'Json-path'
-$Ascii_JSON = ReadJson($Data.ascii)
-$Files_JSON = ReadJson($Data.files)
 
 # =============================== 2.DISPLAY THE ASCII TEXT ==================================
+# Read the JSON by call the function 'readJson()' and passing the value of the 'Json-path'
+#$Ascii_JSON = ReadJson($Data.ascii)
+$Dependency_JSON = ReadJson($Data.dependency)
+
 # # # Display Ascii-figlet Text "The Terminal"
-$ascii_terminal = ReadJsonPath($Ascii_JSON.ascii.text.file[1].path) 
-type $ascii_terminal
+DisplayASCII($Dependency_JSON.data.ascii.superuser)
+DisplayASCII($Dependency_JSON.data.txt.directory_structure)
 
-# =============================== 3.LOAD THE SUPERUSER-PROMPT ==================================
-
-$the_prompt_ps1 = ReadJsonPath($Files_JSON.profile[1].file.the_prompt)
-
-# =============================== 4.BEGIN INITIALIZATION ==================================
+# =============================== 3.BEGIN INITIALIZATION ==================================
 # Pass the argument to the function 'readPath' to parse the json-pointers and return it with '$home' path
+Write-Host "[ INFO ] Function Name : ReadJson()" -ForegroundColor Yellow
 Write-Host "[ INFO ] Function Name : ReadJsonPath()" -ForegroundColor Yellow
 Write-Host "[ INFO ] Function Path : superuser.ps1"  -ForegroundColor Yellow
 
@@ -66,15 +71,15 @@ Write-Host "[ INFO ] Function Path : superuser.ps1"  -ForegroundColor Yellow
 $title = "SuperUser"
 Write-Host "<-------------------{ Initializing $title }-------------------------->" -ForegroundColor Cyan
 
-# =============================== 5.LOAD THE SCRIPTS FROM JSON FILE ==================================
+# =============================== 4.LOAD THE SCRIPTS FROM JSON FILE ==================================
 
-$total_files_to_include = $Files_JSON.profile[0].file.Length - 1
-# Write-Host "Counting Total Objects : $total_files_to_include"
+$total_dependency_to_include = $Dependency_JSON.profile[0].file.Length - 1
+# Write-Host "Counting Total Objects : $total_dependency_to_include"
 
-    for ($i = 0; $i -le $total_files_to_include; $i++) 
+    for ($i = 0; $i -le $total_dependency_to_include; $i++) 
     {
         # Write-Host "[ DEBUG ] Counting Total Objects : $i"
-        $pathFromJson          = $Files_JSON.profile[0].file[$i].path
+        $pathFromJson          = $Dependency_JSON.profile[0].file[$i].path
         $currentScriptFullPath = ReadJsonPath($pathFromJson)
         Write-Host "[ Loaded ] $currentScriptFullPath " -ForegroundColor Cyan
 
