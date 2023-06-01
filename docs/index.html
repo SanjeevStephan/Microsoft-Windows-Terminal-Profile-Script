@@ -118,8 +118,8 @@
         </li>
         <li class="nav-item"><a class="nav-link" href="#idocs_content">Content</a>
 			<ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="#idocs_typography">Typography</a></li>
-            <li class="nav-item"><a class="nav-link" href="#idocs_code">Code</a></li>
+            <li class="nav-item"><a class="nav-link" href="#idocs_microsoft_powershell_profile_ps1">Microsoft.PowerShell_profile</a></li>
+            <li class="nav-item"><a class="nav-link" href="#idocs_superuser_ps1">superuser.ps1</a></li>
             <li class="nav-item"><a class="nav-link" href="#idocs_table">Table</a></li>
 			<li class="nav-item"><a class="nav-link" href="#idocs_icons">Icons</a></li>
             <li class="nav-item"><a class="nav-link" href="#idocs_image">Image</a></li>
@@ -253,60 +253,10 @@
           <h2>Installation via Terminal</h2>
           <p>iDocs follows a simple and easy to customize coding structure. Here is the sample for your reference:<br>
             The template is based on <a class="ml-1" target="_blank" href="httpss://getbootstrap.com/"><i class="fas fa-external-link-alt"></i> Bootstrap Framework</a></p>
-          <pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
+          <pre><code class="html">
 
-&lt;!-- Your Title, Description, Stylesheets
-============================================= --&gt;
 
-&lt;/head&gt;
-
-&lt;body data-spy=&quot;scroll&quot; data-target=&quot;.idocs-navigation&quot; data-offset=&quot;125&quot;&gt;
-
-&lt;!-- Document Wrapper   
-=============================== --&gt;
-&lt;div id=&quot;main-wrapper&quot;&gt; 
-  
-  &lt;!-- Header
-  ============================ --&gt;
-  &lt;header id=&quot;header&quot; class=&quot;sticky-top&quot;&gt;
-   ......
-  &lt;/header&gt;
-  &lt;!-- Header End --&gt; 
-  
-  &lt;!-- Content
-  ============================ --&gt;
-  &lt;div id=&quot;content&quot; role=&quot;main&quot;&gt; 
-    
-    &lt;!-- Sidebar Navigation
-    ============================ --&gt;
-    &lt;div class=&quot;idocs-navigation bg-light&quot;&gt;
-     .....
-    &lt;/div&gt;
-    
-    &lt;!-- Docs Content
-    ============================ --&gt;
-    &lt;div class=&quot;idocs-content&quot;&gt;
-      &lt;div class=&quot;container&quot;&gt;
-        .......
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;!-- Content end --&gt; 
-  
-  &lt;!-- Footer --&gt;
-  &lt;footer id=&quot;footer&quot; class=&quot;section bg-dark footer-text-light&quot;&gt;
-    &lt;div class=&quot;container&quot;&gt; ...... &lt;/div&gt;
-  &lt;/footer&gt;
-  &lt;!-- Footer end --&gt; 
-  
-&lt;/div&gt;
-&lt;!-- Document Wrapper end --&gt; 
-
-&lt;!-- JavaScript --&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+</code></pre>
           <p class="alert alert-info">If you need more information, please visit bootstrap site: <a target="_blank" href="httpss://getbootstrap.com/docs/4.4/layout/grid/">httpss://getbootstrap.com</a></p>
         </section>
         
@@ -678,8 +628,8 @@
 		  
 		<!-- Typography
 		============================ -->
-		<section id="idocs_typography">
-		  <h2>Typography</h2>
+		<section id="idocs_microsoft_powershell_profile_ps1">
+		  <h2>Microsoft.PowerShell_profile.ps1</h2>
 		  <p class="text-4">Documentation and examples for typography, headings, body text, lists, and more.</p>
 		  <h3>Headings</h3>
 		  <table class="table table-bordered">
@@ -749,33 +699,268 @@
 		
 		<!-- Code
 		============================ -->
-		<section id="idocs_code">
-		  <h2>Code</h2>
-		  <p class="text-4">Documentation and examples for displaying inline and multiline blocks of code</p>
+		<section id="idocs_superuser_ps1">
+		  <h2>superuser.ps1</h2>
+		  <p class="text-4">The Configuration File </p>
+  
+		  <p>The <code>&lt;superuser.ps1&gt;</code> complete code</p>
+		  <pre><code class="html">
+
+    function ReadJson($JsonFile) {
+      $json_data = Get-Content -Raw -Path $JsonFile | ConvertFrom-Json
+      return $json_data
+    }
+    
+    function ReadJsonPath($JsonPointer) {
+      $profile_home = "$home\OneDrive\Documents"
+    
+      $full_path = "$profile_home\$($JsonPointer)" 
+    
+      # Write-Host "[ From-JSON ] File Path : $full_path" -ForegroundColor Cyan
+      return $full_path
+    }
+    
+    
+    
+    # Fetch Json Path from the 'Environment Variable -> superuser_data
+    $su = $env:superuser_data
+    # JSON Files in the SuperUser's Data Directory 
+    $Data = @{
+        "ascii"   = "$su\ascii.json"
+        "config"   = "$su\config.json"
+        "dir"      = "$su\directories.json"
+        "files"    = "$su\files.json"
+        "settings" = "$su\settings.json"
+        "autodiscovery" = "$su\"
+    }
+    # Read the JSON by call the function 'readJson()' and passing the value of the 'Json-path'
+    $Ascii_JSON = ReadJson($Data.ascii)
+    $Files_JSON = ReadJson($Data.files)
+    
+    # # # Display Ascii-figlet Text "The Terminal"
+    $ascii_terminal = ReadJsonPath($Ascii_JSON.ascii.text.file[1].path) 
+    type $ascii_terminal
+    
+    # Pass the argument to the function 'readPath' to parse the json-pointers and return it with '$home' path
+    Write-Host "[ INFO ] Function Name : ReadJsonPath()" -ForegroundColor Yellow
+    Write-Host "[ INFO ] Function Path : superuser.ps1"  -ForegroundColor Yellow
+    $the_prompt_ps1 = ReadJsonPath($Files_JSON.profile[1].file.the_prompt)
+    
+    $total_files_to_include = $Files_JSON.profile[0].file.Length - 1
+    # Write-Host "Counting Total Objects : $total_files_to_include"
+    
+    # initial run
+    $title = "SuperUser"
+    Write-Host "&lt;-------------------{ Initializing $title }--------------------------&gt;" -ForegroundColor Cyan
+    
+        for ($i = 0; $i -le $total_files_to_include; $i++) 
+        {
+            # Write-Host "[ DEBUG ] Counting Total Objects : $i"
+            $pathFromJson          = $Files_JSON.profile[0].file[$i].path
+            $currentScriptFullPath = ReadJsonPath($pathFromJson)
+            Write-Host "[ Loaded ] $currentScriptFullPath " -ForegroundColor Cyan
+    
+            . $currentScriptFullPath
+        }
+</code></pre>
 		  
-		  <h3 class="mt-5">Inline code</h3>
-		  <p>Wrap inline snippets of code with <code>&lt;code&gt;</code>. <span class="text-info">Be sure to escape HTML angle brackets</span>.</p>
 		  
-		  <p>For example, <code>&lt;section&gt;</code> should be wrapped as inline.</p>
-		  <pre><code class="html">For example, &lt;code&gt;&amp;lt;section&amp;gt;&lt;/code&gt; should be wrapped as inline.</code></pre>
-		  
-		  
-		  <h3 class="mt-5">Code blocks</h3>
+		  <h3 class="mt-6">Explaining<code>&lt;Code&gt;</code> blocks</h3>
 		  <p>Use <code>&lt;pre&gt;</code>s for multiple lines of code. <span class="text-info">Once again, be sure to escape any angle brackets in the code for proper rendering</span>. You may optionally add the <code>.pre-scrollable</code> class, which will set a max-height of 340px and provide a y-axis scrollbar.</p>
-		  <p><strong>For example:</strong></p>
-		  <pre><code class="html">&lt;p&gt;Sample text here...&lt;/p&gt;
-&lt;p&gt;And another line of sample text here...&lt;/p&gt;
-</code></pre>
-<p><strong>Have to use something like:</strong></p>
-<pre><code class="html">&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Sample text here...&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;And another line of sample text here...&amp;lt;/p&amp;gt;
-&lt;/pre&gt;&lt;/code&gt;
-</code></pre>
+		  
+      
+      <h3 class="mt-3">access the JSON File Content</h3>
+      <p><strong>Read the JSON File & Return the JSON Object[]</strong></p>
+		  <pre><code class="html">
+        function ReadJson($JsonFile) {
+          $json_data = Get-Content -Raw -Path $JsonFile | ConvertFrom-Json
+          return $json_data
+        }
+      </code></pre>
+		  <p>This Function <code>ReadJson()</code> have one parameter <code>$JsonFile</code> which takes the <u>path of the json file</u> as an argument <br>
+      and <strong>returns</strong> the JSON Object which futher can be used to fetch the value of elements of the json file</p>
+
+      
+  <p><strong>Fetch Path From Environment-Variable</strong></p>
+  <pre><code class="html">
+    $su = $env:superuser_data
+  </code></pre>
+  <p> Fetch Json Path from the 'Environment Variable -> superuser_data <br/>
+     ( <code>C:\Users\&lt;Username&gt;\OneDrive\Documents\PowerShell\data</code> )</p>
+
+  <p><strong>JSON Files in the SuperUser's Data Directory </strong></p>
+  <pre><code class="html">
+    $Data = @{
+        "ascii"   = "$su\ascii.json"
+        "config"   = "$su\config.json"
+        "dir"      = "$su\directories.json"
+        "files"    = "$su\files.json"
+        "settings" = "$su\settings.json"
+    }
+  </code></pre>
+  <p><code>HashTable</code> to store the files's path from the <code>$env:superuser_data</code> which can be retrieved later</p>
+
+  <p><strong>Save JSON Obect[] in Variable</strong></p>
+  <pre><code class="html" id="id_ascii_json">
+  $Ascii_JSON = ReadJson($Data.ascii)
+  $Files_JSON = ReadJson($Data.files)
+  </code></pre>
+  <p> Pass the json-file-path to the function & Stores the Obejct[] in the Variable</p>
 		
-		<h3 class="mt-5">Syntax highlighter</h3>
+  <!-- Code Blocks with { Header & Short-Paragraph }-->
+  <p><strong>Returns Full Path</strong></p>
+  <pre><code class="html">
+    function ReadJsonPath($JsonPointer) {
+      $profile_home = "$home\OneDrive\Documents"
+  
+      $full_path = "$profile_home\$($JsonPointer)" 
+  
+      # Write-Host "[ From-JSON ] File Path : $full_path" -ForegroundColor Cyan
+      return $full_path
+  }
+  </code></pre>
+  <p>Read the Short-Path from the JSON file and Returns the Full-Path</p>
+		
+
+  <!-- Display ASCII FIGLET on the terminal -->
+		<h3 class="mt-3">display ASCII</h3>
+    <!-- 
 		<p>We use <strong><a target="_blank" href="httpss://highlightjs.org/">Highlight Js</a></strong> for syntax highlight code snippet.</p>
 		<p>You can refer more information here: <a class="btn btn-primary" target="_blank" href="httpss://highlightjs.org/usage/"><i class="fas fa-external-link-alt mr-1"></i> How to use highlight.js</a></p>
-		</section>
+		-->
+  
+  
+    <!-- Code Blocks with { Header & Short-Paragraph }-->
+    <p><strong>Display Ascii-figlet Text "SuperUser"</strong></p>
+    <pre><code class="html">
+      $ascii_terminal = ReadJsonPath($Ascii_JSON.ascii.text.file[1].path) 
+      type $ascii_terminal
+    </code></pre>
+    <p>Read the Path from the JSON Object <code>$Ascii_JSON</code> using the JSON Pointer <code>$Ascii_JSON.ascii.text.file[1].path</code><br/>
+    and Store the Value of the Path to the Variable <code>$ascii_terminal</code> <br/>Use the <code>type</code> command to display the file-content on the terminal screen</p>
+      
+  
+  
+    <!-- Code Blocks with { Header & Short-Paragraph }-->
+    <p><strong>How to fetch Value from the JSON file</code></strong></p>
+    <p>Content of the JSON File <code>$su/ascii.json</code></p>
+    <pre><code class="html">
+      {
+        "info" :
+        {
+            "title" : "ascii",
+            "file"  : "ascii.json",
+            "path"  : "PowerShell\\data\\ascii",
+            "ascii" : "PowerShell\\data\\ascii\\text\\powershell_basic.ascii",
+            "desc"  : "contains sub-directories from the powershell directory"
+        },
+        "ascii" :
+        {
+            "script" :
+            {
+                "info":
+                {
+                    "title" : "ascii_script",
+                    "file"  : "",
+                    "path"  : "PowerShell\\data\\ascii\\script",
+                    "ascii" : "",
+                    "desc"  : ""
+    
+                },
+                "file" : 
+                [
+                    { "path" : "PowerShell\\data\\ascii\\script\\neofetch.ps1"},
+                    { "path" : "PowerShell\\data\\ascii\\script\\neofetch_windows.ps1"}
+                ]
+    
+            },
+            "text" :
+            {
+                "info":
+                {
+                    "title" : "ascii_text",
+                    "file"  : "",
+                    "path"  : "PowerShell\\data\\ascii\\text",
+                    "ascii" : "",
+                    "desc"  : ""
+                },
+                "file" :
+                [
+                    { "path" : "PowerShell\\data\\ascii\\text\\powershell_basic.ascii"},
+                    { "path" : "PowerShell\\data\\ascii\\text\\superuser.ascii"},
+                    { "path" : "PowerShell\\data\\ascii\\text\\theterminal.ascii"}
+                ]
+            }
+    
+        }
+    }
+    </code></pre>
+    <p>In order to read & fetch the value. We need to follow the <strong>FAMILY-TREE</strong> Concept <br/>
+        At first there is the <i><u>Grandfather</u></i> who have their <i><u>Children</u></i> & Sometimes the Children have their own kids <i><u>GrandChildren</u></i>
+    </p>
+    <pre><code>
+      ascii.json {}
+          |
+          |──────info {}
+          |──────ascii {}
+          |       ├────.\script {}
+          |       └────.\text {}  
+                         ├───.\info {}
+                         └───.\file []
+                                ├────.\path [0] -> powershell_basic.ascii
+                                ├────.\path [1] -> superuser.ascii (value we're interested in)
+                                └────.\path [2] -> theterminal.ascii
+  
+    </code></pre>
+
+    <p>
+      We are interested in below <strong>Key-Value</strong> Pair. More Specifically the <i><u>the second one</u></i>
+    </p>
+    <pre><code>
+      "file" :
+      [
+          { "path" : "PowerShell\\data\\ascii\\text\\powershell_basic.ascii"},
+          { "path" : "PowerShell\\data\\ascii\\text\\superuser.ascii"},
+          { "path" : "PowerShell\\data\\ascii\\text\\theterminal.ascii"}
+      ]
+    </code></pre>
+  
+    <p><strong>Lets Access the JSON Using Pointers</strong> <br/> We have to point to the value we're interested in! <br/>
+      <ul>
+        <li>At first We have the variable which contins the directory where json-file is located <code> $su = $env:superuser_data</code> (value fetched from Environment-Variable)</li>
+        <li>Then comes the variable which contains the JSON Object which is <a href="#id_ascii_json"><strong>$Ascii_JSON = Get-Content -Raw -Path "$su/ascii.json" | ConvertFrom-Json</strong></a></li>
+        <li>Then we need to point to the <strong>Key</strong> whose value we're interested in</li>
+        <li>In this case we are interested in retrieving the value <strong>superuser.ascii</strong></li>
+        <li>Notice the <code>{}</code> - Curly Brackets | <code>[ ]</code> - Square Brackets</li>
+      </ul>
+    
+      <pre><code>
+        ascii.json {}  
+            |
+            |──────info {}  -> $Ascii_JSON.info (this will return as object - as there are children keys within this)
+            |       ├────.\title -> $Ascii_JSON.info.title 
+            |       └────.\file  -> $Ascii_JSON.info.file
+            |──────ascii {}
+            |       ├────.\script {}
+            |       └────.\text {}  
+                           ├───.\info {}
+                           └───.\file []
+                                  ├────.\path [0] -> $Ascii_JSON.ascii.text.file[0].path
+                                  ├────.\path [1] -> $Ascii_JSON.ascii.text.file[1].path
+                                  └────.\path [2] -> $Ascii_JSON.ascii.text.file[2].path
+    
+      </code></pre>
+      <ul>
+        <li>Whenever the key we are accessing is inside the <code>{ }</code> - we simply access it using (<code> . </code>) - just <b>dot</b> and the Key that Whose Value we want.</li>
+        <li>And Whenever the key we are accessing is inside the <code>[ ]</code> - we simply access it using (<code>[ $index_no ]</code>) - where <b>index_no</b> is an integer</li>
+        <li>In an Array the <b>index_no</b> starts from <b>zero</b></li>
+      </ul>
+    
+    </p>
+  
+  
+  
+  </section>
 		
 		<hr class="divider">
 		
