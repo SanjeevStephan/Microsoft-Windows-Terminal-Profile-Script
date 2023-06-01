@@ -1,4 +1,4 @@
-function stillconnected() {
+function connected() {
 
     while($true) {
             if(Test-Connection google.com -Quiet) {

@@ -1,4 +1,4 @@
-function get-fname() {
+function lowercase() {
 $clipboardText = Get-Clipboard
 $modifiedText = $clipboardText.ToLower() -replace " ", "-"
 

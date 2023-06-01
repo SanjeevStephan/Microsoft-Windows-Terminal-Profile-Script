@@ -1,0 +1,21 @@
+{
+    "info" : 
+    {
+        "profile" : "Superuser",
+        "author"  : "Sanjeev Stephan Murmu",
+        "version" : "V2.0",
+        "github"  : "https://github.com/SanjeevStephan/superuser"   
+    },
+    "superuser" :
+    {
+        "json" : "superuser.json",
+        "script" : "superuser.ps1"
+    },
+    "directory" : 
+    {
+        "assets"  : "\\assets",
+        "data"    : "\\data",
+        "docs"    : "\\docs",
+        "profile" : "\\profile"
+    }
+}

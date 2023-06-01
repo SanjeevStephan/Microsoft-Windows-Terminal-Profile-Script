@@ -20,17 +20,23 @@
 # Defined the TAGs of the configuration file that contains additional dependencies settings & paths
 
 # =============================== 1.ACCESSING THE JSON CONTENT ==================================
+
+
+# Fetch Json Path from the 'Environment Variable -> superuser_data
+#$su = $env:superuser_data
+$su = $env:superuser
+$ps = $su.Split("superuser")[0]
+$su_name = Split-Path -Leaf $su
+
+if(Test-Path $su) { Write-Host "[ Found ] $su_name at $su" -ForegroundColor Black -BackgroundColor Green } else {  Write-Host "[ MISSING ] $su_name at $su" -ForegroundColor Black -BackgroundColor Red ;}
 function ReadJson($JsonFile) {
     $json_data = Get-Content -Raw -Path $JsonFile | ConvertFrom-Json
     return $json_data
 }
 
 function ReadJsonPath($JsonPointer) {
-    $profile_home = "$home\OneDrive\Documents"
-
+    $profile_home = $ps.Split("PowerShell")[0]
     $full_path = "$profile_home\$($JsonPointer)" 
-
-    # Write-Host "[ From-JSON ] File Path : $full_path" -ForegroundColor Cyan
     return $full_path
 }
 
@@ -40,33 +46,37 @@ function DisplayASCII($asciiFilePath)
     type $ascii_filepath 
 }
 
+function LoadData() {
+    $Data_JSON = Get-Content -Raw -Path "$ps/superuser.json"
+    $Data_DIR = $Data_JSON.directory.data
 
-# Fetch Json Path from the 'Environment Variable -> superuser_data
-$su = $env:superuser_data
+}
+
+
 # JSON Files in the SuperUser's Data Directory 
 $Data = @{
-    "ascii"      = "$su\ascii.json"
-    "config"     = "$su\config.json"
-    "dir"        = "$su\directories.json"
-    "dependency" = "$su\dependencies.json"
-    "settings"   = "$su\settings.json"
+    "ascii"      = "$ps\data\ascii.json"
+    "config"     = "$ps\data\config.json"
+    "dir"        = "$ps\data\directories.json"
+    "dependency" = "$ps\data\dependencies.json"
+    "settings"   = "$ps\data\settings.json"
 }
 
 # =============================== 2.DISPLAY THE ASCII TEXT ==================================
 # Read the JSON by call the function 'readJson()' and passing the value of the 'Json-path'
 #$Ascii_JSON = ReadJson($Data.ascii)
+$Ascii_JSON = ReadJson($Data.ascii)
 $Dependency_JSON = ReadJson($Data.dependency)
+$Directory_JSON = ReadJson($Data.dir)
 
 # # # Display Ascii-figlet Text "The Terminal"
-DisplayASCII($Dependency_JSON.data.ascii.superuser)
-DisplayASCII($Dependency_JSON.data.txt.directory_structure)
+DisplayASCII($Ascii_JSON.ascii.figlet.superuser)
+DisplayASCII($Ascii_JSON.ascii.txt.directory_structure)
 
 # =============================== 3.BEGIN INITIALIZATION ==================================
 # Pass the argument to the function 'readPath' to parse the json-pointers and return it with '$home' path
 Write-Host "[ INFO ] Function Name : ReadJson()" -ForegroundColor Yellow
 Write-Host "[ INFO ] Function Name : ReadJsonPath()" -ForegroundColor Yellow
-Write-Host "[ INFO ] Function Path : superuser.ps1"  -ForegroundColor Yellow
-
 # initial run
 $title = "SuperUser"
 Write-Host "<-------------------{ Initializing $title }-------------------------->" -ForegroundColor Cyan
@@ -76,6 +86,8 @@ Write-Host "<-------------------{ Initializing $title }-------------------------
 $total_dependency_to_include = $Dependency_JSON.profile[0].file.Length - 1
 # Write-Host "Counting Total Objects : $total_dependency_to_include"
 
+if(Test-Path $su)
+{
     for ($i = 0; $i -le $total_dependency_to_include; $i++) 
     {
         # Write-Host "[ DEBUG ] Counting Total Objects : $i"
@@ -85,6 +97,10 @@ $total_dependency_to_include = $Dependency_JSON.profile[0].file.Length - 1
 
         . $currentScriptFullPath
     }
+
+} else { Write-Host "Looking For [ superuser.ps1 ] at $su" -ForegroundColor Red -BackgroundColor Black }
+
+
 
 
 

@@ -3,8 +3,8 @@
     {
         "title" : "ascii",
         "file"  : "ascii.json",
-        "path"  : "PowerShell\\data\\ascii",
-        "ascii" : "PowerShell\\data\\ascii\\text\\powershell_basic.ascii",
+        "path"  : "PowerShell\\assets\\ascii",
+        "ascii" : "PowerShell\\assets\\ascii\\text\\powershell_basic.ascii",
         "desc"  : "contains sub-directories from the powershell directory"
     },
     "ascii" :
@@ -15,35 +15,42 @@
             {
                 "title" : "ascii_script",
                 "file"  : "",
-                "path"  : "PowerShell\\data\\ascii\\script",
+                "path"  : "PowerShell\\assets\\ascii\\script",
                 "ascii" : "",
                 "desc"  : ""
 
             },
             "file" : 
             [
-                { "path" : "PowerShell\\data\\ascii\\script\\neofetch.ps1"},
-                { "path" : "PowerShell\\data\\ascii\\script\\neofetch_windows.ps1"}
+                { "path" : "PowerShell\\assets\\ascii\\script\\neofetch.ps1"},
+                { "path" : "PowerShell\\assets\\ascii\\script\\neofetch_windows.ps1"}
             ]
 
         },
-        "text" :
+        "figlet" :
         {
             "info":
             {
                 "title" : "ascii_text",
                 "file"  : "",
-                "path"  : "PowerShell\\data\\ascii\\text",
+                "path"  : "PowerShell\\assets\\ascii\\figlet",
                 "ascii" : "",
                 "desc"  : ""
             },
             "file" :
             [
-                { "path" : "PowerShell\\data\\ascii\\text\\powershell_basic.ascii"},
-                { "path" : "PowerShell\\data\\ascii\\text\\superuser.ascii"},
-                { "path" : "PowerShell\\data\\ascii\\text\\theterminal.ascii"}
-            ]
+                { "path" : "PowerShell\\assets\\ascii\\figlet\\powershell_basic.ascii"},
+                { "path" : "PowerShell\\assets\\ascii\\figlet\\superuser.ascii"},
+                { "path" : "PowerShell\\assets\\ascii\\figlet\\theterminal.ascii"}
+            ],
+            "superuser": "PowerShell\\assets\\ascii\\figlet\\superuser.ascii"
+
+        },
+        "txt" :
+        {
+            "directory_structure" : "PowerShell\\assets\\ascii\\txt\\directory_structure.txt"
         }
 
     }
+   
 }

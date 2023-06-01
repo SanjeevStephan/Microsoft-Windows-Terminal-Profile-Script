@@ -9,7 +9,6 @@ function copypath() {
     
     #>
     
-    
         $current_directory = Get-Location
         $current_directory | Set-Clipboard
         Write-Output "[Copied] Directory Path: $($current_directory.Path)"

@@ -24,7 +24,7 @@
 
 # Define three parameters: name, address, and age
 param (
-  [int]$directory_index=4
+  [int]$directory_index=5
 )
 
 # function Auto-Discover($directory_index) {
@@ -64,7 +64,7 @@ $no_of_files_included        = 0
             if (Test-Path $path) {
     
                 $no_of_files_included = $no_of_files_included + 1
-                Write-Host " [ OK ] $title : $(Split-Path -Leaf $path)" -ForegroundColor Green -BackgroundColor Black
+                Write-Host " [ RUN ] $title : $(Split-Path -Leaf $path)" -ForegroundColor Green
                 . $path
             } else {
                 Write-Warning "Missing $(Split-Path -Leaf $path) at path $path"

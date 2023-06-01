@@ -8,7 +8,7 @@ function Download-File($url)
 
         Write-Output "URL : $url"
         Write-Output "Active Location : $location"
-
+        $fileName = Split-Path -Path $url -Leaf
         # Get the base name of the zip file (without the extension)
         $zipFileNameWithoutExtension = [System.IO.Path]::GetFileNameWithoutExtension($url)
 
@@ -16,10 +16,10 @@ function Download-File($url)
         Write-Output "Output Directory : $outputFolder"
 
         # Download the ZIP file
-        Invoke-WebRequest -Uri $url -OutFile "$location\PSTool.zip"
+        Invoke-WebRequest -Uri $url -OutFile "$location\$fileName"
         
         # Extract the ZIP file
-        Expand-Archive -Path "$location\PSTool.zip" -DestinationPath $outputFolder
+        Expand-Archive -Path "$location\$fileName" -DestinationPath $outputFolder
 
         # Navigate to the directory
         Set-Location -Path $outputFolder

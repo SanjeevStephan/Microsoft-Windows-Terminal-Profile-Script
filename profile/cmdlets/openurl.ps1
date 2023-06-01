@@ -1,4 +1,4 @@
-function openinbrave($htmlfile){
+function openurl($htmlfile){
 
     $location = Get-Location
     $localpath = "file:\\$location$htmlfile"
