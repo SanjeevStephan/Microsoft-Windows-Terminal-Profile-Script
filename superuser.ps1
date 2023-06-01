@@ -97,11 +97,14 @@ if(Test-Path $su)
         
         . $currentScriptFullPath
     }
+    Write-Host "|    |          | " -ForegroundColor Cyan
+    Write-Host "|    |          └────[ Status ]  Script Terminated -> autodiscovery.ps1 " -ForegroundColor Cyan
     
 } else { Write-Host "Looking For [ superuser.ps1 ] at $su" -ForegroundColor Red -BackgroundColor Black }
 
 Write-Host "|    |" -ForegroundColor Cyan
 Write-Host "|    └───[ Status ]  Script Terminated -> superuser.ps1 " -ForegroundColor Cyan
+Write-Host "|    " -ForegroundColor Cyan
 
 #Write-Host "|    |    [ STATUS ] SuperUser Script Terminated" -ForegroundColor Magenta
 

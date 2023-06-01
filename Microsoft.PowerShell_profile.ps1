@@ -87,4 +87,4 @@ if(Test-Path $su)
 } 
 else { Write-Host "[ MISSING ] $su_name at $su" -ForegroundColor Black -BackgroundColor Red }
 
-
+Write-Host "└────────[ Status ]  Script Terminated -> Microsoft.PowerShell_profile.ps1 " -ForegroundColor Cyan

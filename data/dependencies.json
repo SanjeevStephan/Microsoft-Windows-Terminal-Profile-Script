@@ -26,7 +26,8 @@
             "file"  : 
             [
                 {   "path": "PowerShell\\profile\\prompt\\The-Prompt.ps1" },
-                {   "path" : "PowerShell\\profile\\autodiscovery.ps1" }
+                {   "path" : "PowerShell\\profile\\autodiscovery.ps1" },
+                {   "path" : "PowerShell\\profile\\prompt\\Superuser-Prompt.ps1" }
 
             ],
             "note": "put your file-paths above in the autodiscvery to load the scritps automatically when the terminal loads",
