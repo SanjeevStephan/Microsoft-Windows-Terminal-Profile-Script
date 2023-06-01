@@ -18,7 +18,7 @@
         },
         {
             "index" : 1,
-            "title" : "Autodiscovery",
+            "title" : "Auto",
             "path"  : "PowerShell\\profile\\auto",
             "ascii" : "PowerShell\\data\\ascii\\text\\powershell_basic.ascii",
             "desc"  : "Scripts in this directory will automatically include or load scripts from below directory"

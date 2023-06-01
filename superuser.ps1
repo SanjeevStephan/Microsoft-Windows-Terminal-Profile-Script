@@ -24,11 +24,10 @@
 
 # Fetch Json Path from the 'Environment Variable -> superuser_data
 #$su = $env:superuser_data
-$su = $env:superuser
+#$su = $env:superuser
 $ps = $su.Split("superuser")[0]
 $su_name = Split-Path -Leaf $su
-
-if(Test-Path $su) { Write-Host "[ Found ] $su_name at $su" -ForegroundColor Black -BackgroundColor Green } else {  Write-Host "[ MISSING ] $su_name at $su" -ForegroundColor Black -BackgroundColor Red ;}
+$title = "SuperUser"
 function ReadJson($JsonFile) {
     $json_data = Get-Content -Raw -Path $JsonFile | ConvertFrom-Json
     return $json_data
@@ -70,16 +69,17 @@ $Dependency_JSON = ReadJson($Data.dependency)
 $Directory_JSON = ReadJson($Data.dir)
 
 # # # Display Ascii-figlet Text "The Terminal"
-DisplayASCII($Ascii_JSON.ascii.figlet.superuser)
-DisplayASCII($Ascii_JSON.ascii.txt.directory_structure)
+# DisplayASCII($Ascii_JSON.ascii.figlet.superuser)
+# DisplayASCII($Ascii_JSON.ascii.txt.directory_structure)
 
 # =============================== 3.BEGIN INITIALIZATION ==================================
 # Pass the argument to the function 'readPath' to parse the json-pointers and return it with '$home' path
-Write-Host "[ INFO ] Function Name : ReadJson()" -ForegroundColor Yellow
-Write-Host "[ INFO ] Function Name : ReadJsonPath()" -ForegroundColor Yellow
+Write-Host "|          " -ForegroundColor Cyan
+Write-Host "├────SuperUser.ps1"
+Write-Host "|    |     └────├ Initializing ] $title" -ForegroundColor Cyan
+Write-Host "|    |          ├ INFO ] Function Name : ReadJson()" -ForegroundColor Yellow
+Write-Host "|    |          ├ INFO ] Function Name : ReadJsonPath()" -ForegroundColor Yellow
 # initial run
-$title = "SuperUser"
-Write-Host "<-------------------{ Initializing $title }-------------------------->" -ForegroundColor Cyan
 
 # =============================== 4.LOAD THE SCRIPTS FROM JSON FILE ==================================
 
@@ -93,16 +93,17 @@ if(Test-Path $su)
         # Write-Host "[ DEBUG ] Counting Total Objects : $i"
         $pathFromJson          = $Dependency_JSON.profile[0].file[$i].path
         $currentScriptFullPath = ReadJsonPath($pathFromJson)
-        Write-Host "[ Loaded ] $currentScriptFullPath " -ForegroundColor Cyan
-
+        Write-Host "|    |          ├ Loaded ] $currentScriptFullPath " -ForegroundColor Cyan
+        
         . $currentScriptFullPath
     }
-
+    
 } else { Write-Host "Looking For [ superuser.ps1 ] at $su" -ForegroundColor Red -BackgroundColor Black }
 
+Write-Host "|    |" -ForegroundColor Cyan
+Write-Host "|    └───[ Status ]  Script Terminated -> superuser.ps1 " -ForegroundColor Cyan
 
-
-
+#Write-Host "|    |    [ STATUS ] SuperUser Script Terminated" -ForegroundColor Magenta
 
 
 <#

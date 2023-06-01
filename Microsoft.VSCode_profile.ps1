@@ -74,8 +74,17 @@
         └───env            
 #-------------------- Must Include Below File --------------------------------------#>
 
+# if(Test-Path $su) { Write-Host "[ Found ] $su_name at $su" -ForegroundColor Black -BackgroundColor Green } else {  Write-Host "[ MISSING ] $su_name at $su" -ForegroundColor Black -BackgroundColor Red ;}
+$su = $env:superuser
+if(Test-Path $su) 
+{
+    Write-Host "[ Found ] Superuser.ps1" -ForegroundColor Black -BackgroundColor Green
 
-. "$($env:superuser)"
+    . "$($env:superuser)"
+} 
+else { Write-Host "[ MISSING ] $su_name at $su" -ForegroundColor Black -BackgroundColor Red }
+
+
 
 # $data = $env:superuser_data
 # $Json = Get-Content -Raw -Path "$data/directories.json" | ConvertFrom-Json

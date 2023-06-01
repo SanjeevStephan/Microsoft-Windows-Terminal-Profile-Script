@@ -77,5 +77,14 @@
         └───env            
 #-------------------- Must Include Below File --------------------------------------#>
 
-. $env:superuser
+$su = $env:superuser
+
+if(Test-Path $su) 
+{
+    Write-Host "[ Found ] Superuser.ps1 at $su" -ForegroundColor Black -BackgroundColor Green
+    Write-Host "Microsoft.PowerShell_profile.ps1"
+    . "$($env:superuser)"
+} 
+else { Write-Host "[ MISSING ] $su_name at $su" -ForegroundColor Black -BackgroundColor Red }
+
 

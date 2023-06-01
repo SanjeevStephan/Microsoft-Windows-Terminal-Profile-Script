@@ -43,16 +43,18 @@ $no_of_files_included        = 0
 
 # # Display Ascii-figlet Text "The Terminal"
 #type $ascii_path   
+#Write-Host "|    |" -ForegroundColor Cyan 
 
-    if(Test-Path $autodiscover_this_directory)
+if(Test-Path $autodiscover_this_directory)
     {
-        Write-Host "<-------------------{ Loading $title }-------------------------->" -ForegroundColor Cyan 
-
-        Write-Host "[ STARTED ] Auto Discovery of Functions Scripts in the Directories { $directory_title } " -ForegroundColor White   
-        
-        Write-Host "[ JSON ]  File Path : $json_filename " -ForegroundColor Yellow
-        Write-Host "[ FOUND ] Directory : $autodiscover_this_directory" -ForegroundColor Yellow
-        Write-Host "[ LOADING-ALL ] The {*.ps1} in the { $directory_short_path } " -ForegroundColor Cyan
+        Write-Host "|    |          "
+        Write-Host "|    ├──── autodiscovery.ps1" -ForegroundColor Cyan 
+ #      Write-Host "|    |     └────├ Loading ] $title " -ForegroundColor Cyan 
+        Write-Host "|    |     └────├ STARTED ] Auto Discovery of Functions Scripts in the Directories { $directory_title } " -ForegroundColor White   
+#       Write-Host "|    |          ├ JSON ]  File Path : $json_filename " -ForegroundColor Yellow
+#       Write-Host "|    |          ├ FOUND ] Directory : $autodiscover_this_directory" -ForegroundColor Yellow
+        Write-Host "|    |          ├ LOADING-ALL ] The {*.ps1} in the { $directory_short_path } " -ForegroundColor Cyan
+#       Write-Host "|    |          └────├ Loading ] $title " -ForegroundColor Cyan 
         # Write-Output "[ OK ] $title include => { profile_include.ps1 } Loaded Successfully"
     
         # Get all the *.ps1 files in the "dependency" directory
@@ -64,7 +66,7 @@ $no_of_files_included        = 0
             if (Test-Path $path) {
     
                 $no_of_files_included = $no_of_files_included + 1
-                Write-Host "[ AUTO ] Discovering $title : $(Split-Path -Leaf $path)" -ForegroundColor Green 
+                Write-Host "|    |          ├────[ AUTO ] Discovering $title : $(Split-Path -Leaf $path)" -ForegroundColor Green 
                 . $path
             } else {
                 Write-Warning "Missing $(Split-Path -Leaf $path) at path $path"
@@ -74,11 +76,11 @@ $no_of_files_included        = 0
        
         ## Check the Number of Files have been discovered and display output accordingly
         if($no_of_files_included -eq 0) 
-        { Write-Host "[ FAILED ] No Files Have beend Discovered " -ForegroundColor Red  }
-        else { Write-Host "[ SUCCESS ] Total { $no_of_files_included } PowerShell Scripts have been Successfully Discovered " -ForegroundColor Green }
+        {      Write-Host "|    |          └────[ FAILED ] No Files Have beend Discovered " -ForegroundColor Red  }
+        else { Write-Host "|    |          └────[ SUCCESS ] Total { $no_of_files_included } PowerShell Scripts have been Successfully Discovered " -ForegroundColor Green }
 
 
     } else { Write-Error "$title directory path is empty : $autodiscover_this_directory"} 
 
 
-# }
+#                 {   "path": "PowerShell\\profile\\prompt\\neofetch.ps1" } }

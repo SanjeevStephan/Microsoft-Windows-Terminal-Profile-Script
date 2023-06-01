@@ -1,35 +1,35 @@
-    [ INFO ] Directory Structure
-    
-    $Home\Documents\PowerShell\
-    ├───lost
-    │   └───works-great-but-not-in-use
-    ├───myfunctions
-    │   └───parameterArgs
-    ├───assets
-    │   └───tools
-    ├───data
-    |    |──────ascii
-    |    |       ├───.\script
-    |    |       └───.\text   
-    |    ├───.\ascii.json
-    |    ├───.\config.json
-    |    ├───.\directories.json
-    |    ├───.\files.json
-    |    ├───.\settings.json
-    |    └───.\source.json
-    ├───profile
-    |    ├───.\auto
-    |    |       ├───.\Auto-Discover.ps1
-    |    |       ├───.\discover_cmdlets.ps1
-    |    |       ├───.\discover_dependency.ps1
-    |    |       └───.\discover_functions.ps1 
-    |    ├───.\cmdlets
-    |    ├───.\dependency
-    |    ├───.\functions
-    |    └───.\prompt
-    |            ├───.\Superuser-Prompt.ps1
-    |            └───.\The-Prompt.ps1 
-    ├───mypython
-    |    └───.\figlet.py    
-    └───mytest
-        └───env     
+[ INFO ] Directory Structure
+
+$Home\Documents\PowerShell\
+├───lost
+│   └───works-great-but-not-in-use
+├───myfunctions
+│   └───parameterArgs
+├───assets
+│   └───tools
+├───data
+|    |──────ascii
+|    |       ├───.\script
+|    |       └───.\text   
+|    ├───.\ascii.json
+|    ├───.\config.json
+|    ├───.\directories.json
+|    ├───.\files.json
+|    ├───.\settings.json
+|    └───.\source.json
+├───profile
+|    ├───.\auto
+|    |       ├───.\Auto-Discover.ps1
+|    |       ├───.\discover_cmdlets.ps1
+|    |       ├───.\discover_dependency.ps1
+|    |       └───.\discover_functions.ps1 
+|    ├───.\cmdlets
+|    ├───.\dependency
+|    ├───.\functions
+|    └───.\prompt
+|            ├───.\Superuser-Prompt.ps1
+|            └───.\The-Prompt.ps1 
+├───mypython
+|    └───.\figlet.py    
+└───mytest
+    └───env     
