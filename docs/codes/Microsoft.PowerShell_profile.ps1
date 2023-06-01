@@ -27,7 +27,7 @@
 
     .PROFILE_MAIN 
         -> Microsoft.PowerShell_profile.ps1
-        -> superuser.ps1
+        -> include.ps1
         -> README.md
 
     .CONTAINS
