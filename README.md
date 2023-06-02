@@ -1,4 +1,4 @@
-# Welcome PowerShell's [$uperUser](https://github.com/SanjeevStephan/superuser/blob/main/assets/log/welcome_log.txt)
+# Welcome PowerShell's [$uperUser](https://sanjeevstephan.github.io/superuser/)
 > To The Windows Terminal, Console and Command-Line repository
 ```
  ____                        _   _
