@@ -1,5 +1,6 @@
 # Welcome PowerShell's [$uperUser](https://sanjeevstephan.github.io/superuser/) 
 > To The Windows Terminal, Console and Command-Line repository
+### Powerful Window Automations Script
 
 ```
 [ Found ] Superuser.ps1 at C:\Users\Samst\OneDrive\Documents\PowerShell\superuser.ps1
