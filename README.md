@@ -12,7 +12,7 @@ Microsoft.PowerShell_profile.ps1
 |    |          ├ INFO ] Function Name : ReadJsonPath()
 |    |          ├ JSON ] Loading Scripts From JSON File : dependencies.json
 |    |          |
-|    |          ├ Loaded ] C:\Users\Samst\OneDrive\Documents\\PowerShell\profile\prompt\Superuser-Prompt.ps1
+|    |          ├ Loaded ] C:\Users\Samst\OneDrive\Documents\\PowerShell\profile\prompt\The-Prompt.ps1
 |    |          |
 |    |          └──[ JSON ] Finished Loading Scripts From JSON File : dependencies.json
 |    |
