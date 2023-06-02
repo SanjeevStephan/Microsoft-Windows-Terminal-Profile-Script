@@ -4,14 +4,77 @@
 ![image](https://github.com/SanjeevStephan/superuser/blob/window11-v2.0/assets/imgs/superuser-terminal-01.png)
 
 ```
- ____                        _   _
-/ ___| _   _ _ __   ___ _ __| | | |___  ___ _ __
-\___ \| | | | '_ \ / _ \ '__| | | / __|/ _ \ '__| v2.0 | 30th May 2023
- ___) | |_| | |_) |  __/ |  | |_| \__ \  __/ |    by Sanjeev Stephan Murmu
-|____/ \__,_| .__/ \___|_|   \___/|___/\___|_|    https://github.com/SanjeevStephan/
-            |_|
-
-[ OK ] Profile Function => { profile_function.ps1 } Loaded Successfully
+[ Found ] Superuser.ps1 at C:\Users\Samst\OneDrive\Documents\PowerShell\superuser.ps1
+Microsoft.PowerShell_profile.ps1
+|
+├────SuperUser.ps1
+|    |     └────├ Initializing ] superuser
+|    |          ├ INFO ] Function Name : ReadJson()
+|    |          ├ INFO ] Function Name : ReadJsonPath()
+|    |          ├ JSON ] Loading Scripts From JSON File : dependencies.json
+|    |          ├ Loaded ] C:\Users\Samst\OneDrive\Documents\\PowerShell\profile\autodiscovery.ps1
+|    |          ├──── autodiscovery.ps1
+|    |          |     └──[ STARTED ] Auto Discovery of Functions Scripts in the Directories { auto }
+|    |          |        ├ LOADING-ALL ] The {*.ps1} in the { PowerShell\profile\auto }
+|    |          |        ├────[ AUTO ] Discovering Auto : discover_cmdlets.ps1
+|    |          |        |    ├ STARTED ] Auto Discovery of Short-Commands  Scripts in the Directories { cmdlets }
+|    |          |        |    ├ FOUND ] Directory : C:\Users\Samst\OneDrive\Documents\\PowerShell\profile\cmdlets
+|    |          |        |    ├ LOADING-ALL ] The {*.ps1} in the { PowerShell\profile\cmdlets }
+|    |          |        |    ├ OK ] Short-Commands  : clip.ps1
+|    |          |        |    ├ OK ] Short-Commands  : connected.ps1
+|    |          |        |    ├ OK ] Short-Commands  : copypath.ps1
+|    |          |        |    ├ OK ] Short-Commands  : edit-config.ps1
+|    |          |        |    ├ OK ] Short-Commands  : edit.ps1
+|    |          |        |    ├ OK ] Short-Commands  : figlet.ps1
+|    |          |        |    ├ OK ] Short-Commands  : goodbye.ps1
+|    |          |        |    ├ OK ] Short-Commands  : lowercase.ps1
+|    |          |        |    ├ OK ] Short-Commands  : openurl.ps1
+|    |          |        |    ├ OK ] Short-Commands  : refresh.ps1
+|    |          |        |    ├ OK ] Short-Commands  : seeyou.ps1
+|    |          |        |    ├ OK ] Short-Commands  : showip.ps1
+|    |          |        |    ├ OK ] Short-Commands  : sleepnow.ps1
+|    |          |        |    ├ OK ] Short-Commands  : window.ps1
+|    |          |        |    └────[ SUCCESS ] Total { 14 } Scripts have been Successfully Discovered in { cmdlets }
+|    |          |        |
+|    |          |        ├────[ AUTO ] Discovering Short-Commands  : discover_dependency.ps1
+|    |          |        |    ├ STARTED ] Auto Discovery of Dependency Scripts in the Directories { dependency }
+|    |          |        |    ├ FOUND ] Directory : C:\Users\Samst\OneDrive\Documents\\PowerShell\profile\dependency
+|    |          |        |    ├ LOADING-ALL ] The {*.ps1} in the { PowerShell\profile\dependency }
+|    |          |        |    └────[ FAILED ] No Files Have been Discovered in { dependency }
+|    |          |        |
+|    |          |        ├────[ AUTO ] Discovering Dependency : discover_functions.ps1
+|    |          |        |    ├ STARTED ] Auto Discovery of Functions Scripts in the Directories { functions }
+|    |          |        |    ├ FOUND ] Directory : C:\Users\Samst\OneDrive\Documents\\PowerShell\profile\functions
+|    |          |        |    ├ LOADING-ALL ] The {*.ps1} in the { PowerShell\profile\functions }
+|    |          |        |    └────[ FAILED ] No Files Have been Discovered in { functions }
+|    |          |        |
+|    |          |        ├────[ AUTO ] Discovering Functions : discover_run.ps1
+|    |          |        |    ├ STARTED ] Auto Discovery of Automatically Scripts in the Directories { run }
+|    |          |        |    ├ FOUND ] Directory : C:\Users\Samst\OneDrive\Documents\\PowerShell\profile\run
+|    |          |        |    ├ LOADING-ALL ] The {*.ps1} in the { PowerShell\profile\run }
+|    |          |        |    ├ RUN ] Automatically : is_superuser_available.ps1
+|    |          |        |    |     └──[ Found ] superuser at C:\Users\Samst\OneDrive\Documents\PowerShell\superuser.ps1
+|    |          |        |    ├ RUN ] Automatically : IsPythonInstalled.ps1
+|    |          |        |    └────[ SUCCESS ] Total { 2 } Scripts have been Successfully Discovered in { run }
+|    |          |        |
+|    |          |        └────[ Status ]  Script Terminated -> autodiscovery.ps1
+|    |          |
+|    |          ├ Loaded ] C:\Users\Samst\OneDrive\Documents\\PowerShell\profile\prompt\Superuser-Prompt.ps1
+|    |          |
+|    |          └──[ JSON ] Finished Loading Scripts From JSON File : dependencies.json
+|    |
+|    |------------------------------------------------------------------------------------------------|
+|    |     ____                        _   _                                                          |
+|    |    / ___| _   _ _ __   ___ _ __| | | |___  ___ _ __   v2.0 | 30th March 2023                   |
+|    |    \___ \| | | | '_ \ / _ \ '__| | | / __|/ _ \ '__|  by Sanjeev Stephan Murmu                 |
+|    |     ___) | |_| | |_) |  __/ |  | |_| \__ \  __/ |     https://github.com/SanjeevStephan        |
+|    |    |____/ \__,_| .__/ \___|_|   \___/|___/\___|_|     https://sanjeevstephan.github.io         |
+|    |                |_|                                    https://www.youtube.com/@SanjeevStephan  |
+|    |------------------------------------------------------------------------------------------------|
+|    |
+|    └───[ Status ]  Script Terminated -> superuser.ps1
+|
+└────────[ Status ]  Script Terminated -> Microsoft.PowerShell_profile.ps1
 ┌──(superuser㉿192.168.29.200)-[C:\Users\Sanju\Documents\PowerShell]
 └─$ PS>                                 
 ```
