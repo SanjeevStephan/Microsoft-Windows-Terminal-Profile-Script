@@ -19,15 +19,11 @@
 
 # Defined the TAGs of the configuration file that contains additional dependencies settings & paths
 
-# =============================== 1.ACCESSING THE JSON CONTENT ==================================
-
-
-# Fetch Json Path from the 'Environment Variable -> superuser_data
-#$su = $env:superuser_data
-#$su = $env:superuser
+# =============================== 1.Initializing Functions ==================================
+#$su = $env:superuser # Fetch Json Path from the 'Environment Variable -> superuser_data
 $ps = $su.Split("superuser")[0]
-$su_name = Split-Path -Leaf $su
-$title = "SuperUser"
+$su_file = Split-Path -Leaf $su
+$su_name = $su_file.Split(".ps1")[0]
 function ReadJson($JsonFile) {
     $json_data = Get-Content -Raw -Path $JsonFile | ConvertFrom-Json
     return $json_data
@@ -42,7 +38,7 @@ function ReadJsonPath($JsonPointer) {
 function DisplayASCII($asciiFilePath)
 {
     $ascii_filepath = ReadJsonPath($asciiFilePath)
-    type $ascii_filepath 
+    type  $ascii_filepath
 }
 
 function LoadData() {
@@ -51,70 +47,63 @@ function LoadData() {
 
 }
 
-
 # JSON Files in the SuperUser's Data Directory 
 $Data = @{
     "ascii"      = "$ps\data\ascii.json"
     "config"     = "$ps\data\config.json"
     "dir"        = "$ps\data\directories.json"
     "dependency" = "$ps\data\dependencies.json"
+    "python"     = "$ps\data\python.json"
     "settings"   = "$ps\data\settings.json"
 }
 
-# =============================== 2.DISPLAY THE ASCII TEXT ==================================
+# =============================== 2.ACCESSING THE JSON CONTENT ==================================
 # Read the JSON by call the function 'readJson()' and passing the value of the 'Json-path'
-#$Ascii_JSON = ReadJson($Data.ascii)
-$Ascii_JSON = ReadJson($Data.ascii)
+$Ascii_JSON      = ReadJson($Data.ascii)
 $Dependency_JSON = ReadJson($Data.dependency)
-$Directory_JSON = ReadJson($Data.dir)
+$Directory_JSON  = ReadJson($Data.dir)
+$Python_JSON     = ReadJson($Data.python)
 
-# # # Display Ascii-figlet Text "The Terminal"
-# DisplayASCII($Ascii_JSON.ascii.figlet.superuser)
-# DisplayASCII($Ascii_JSON.ascii.txt.directory_structure)
-
-# =============================== 3.BEGIN INITIALIZATION ==================================
-# Pass the argument to the function 'readPath' to parse the json-pointers and return it with '$home' path
+# ===============================3. Declaring Global Variables =====================================
+# Pass the argument to the function 'ReadJsonPath' to parse the json-pointers and return it with '$home' path
+$su_ascii = ReadJsonpath($Ascii_JSON.ascii.script.superuser)
+$Python_PATH = ReadJsonPath($Python_JSON.info.path) 
+$total_dependency_to_include = $Dependency_JSON.profile.initialize.file.Length - 1
+# ===============================4.BEGIN INITIALIZATION ==================================
 Write-Host "|          " -ForegroundColor Cyan
 Write-Host "├────SuperUser.ps1"
-Write-Host "|    |     └────├ Initializing ] $title" -ForegroundColor Cyan
+Write-Host "|    |     └────├ Initializing ] $su_name" -ForegroundColor Cyan
 Write-Host "|    |          ├ INFO ] Function Name : ReadJson()" -ForegroundColor Yellow
 Write-Host "|    |          ├ INFO ] Function Name : ReadJsonPath()" -ForegroundColor Yellow
-
-# initial run
-
 # =============================== 4.LOAD THE SCRIPTS FROM JSON FILE ==================================
-
-$total_dependency_to_include = $Dependency_JSON.profile[0].file.Length - 1
-# Write-Host "Counting Total Objects : $total_dependency_to_include"
 Write-Host "|    |          ├ JSON ] Loading Scripts From JSON File : dependencies.json" -ForegroundColor Yellow
 if(Test-Path $su)
 {
     for ($i = 0; $i -le $total_dependency_to_include; $i++) 
     {
-        # Write-Host "[ DEBUG ] Counting Total Objects : $i"
-        $pathFromJson          = $Dependency_JSON.profile[0].file[$i].path
+      # Write-Host "|    |          ├  DEBUG ] Counting Total Objects : $i"
+        $pathFromJson          = $Dependency_JSON.profile.initialize.file[$i].path
         $currentScriptFullPath = ReadJsonPath($pathFromJson)
         Write-Host "|    |          ├ Loaded ] $currentScriptFullPath " -ForegroundColor Cyan
         
-        . $currentScriptFullPath
+        . $currentScriptFullPath # Loads the PowerSchell Scripts 
     }
-    Write-Host "|    |          | " -ForegroundColor Cyan
-    Write-Host "|    |          └──[ JSON ] Finished Loading Scripts From JSON File : dependencies.json" -ForegroundColor Yellow
+        Write-Host "|    |          | " -ForegroundColor Cyan
+        Write-Host "|    |          └──[ JSON ] Finished Loading Scripts From JSON File : dependencies.json" -ForegroundColor Yellow
     
 } else { Write-Host "Looking For [ superuser.ps1 ] at $su" -ForegroundColor Red -BackgroundColor Black }
 
-Write-Host "|    |" -ForegroundColor Cyan
-Write-Host "|    └───[ Status ]  Script Terminated -> superuser.ps1 " -ForegroundColor Cyan
-Write-Host "|    " -ForegroundColor Cyan
-
-#Write-Host "|    |    [ STATUS ] SuperUser Script Terminated" -ForegroundColor Magenta
-
-
+        Write-Host "|    |           " -ForegroundColor Cyan
+# =============================== 4.DISPLAY ASCII SUPERUSER ==================================
+. $su_ascii # Display the ASCII Superuser
+# =============================== 5.SuperUser Terminated =====================================
+        Write-Host "|    |" -ForegroundColor Cyan
+        Write-Host "|    └───[ Status ]  Script Terminated -> superuser.ps1 " -ForegroundColor Cyan
+        Write-Host "|    " -ForegroundColor Cyan
 <#
   YELLOW - INFO
   CYAN   - LOADED/LOADING
   BLUE - Process
   GREEN(bg)/BLACK(fg) => Functions (Auto-Discover)
 #>
-
 

@@ -24,7 +24,8 @@
             [
                 { "path" : "PowerShell\\assets\\ascii\\script\\neofetch.ps1"},
                 { "path" : "PowerShell\\assets\\ascii\\script\\neofetch_windows.ps1"}
-            ]
+            ],
+            "superuser": "PowerShell\\assets\\ascii\\script\\superuser_ascii.ps1"
 
         },
         "figlet" :

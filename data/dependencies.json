@@ -20,7 +20,8 @@
         ]
     },
     "profile" :
-    [
+    {
+        "initialize" :
         {
             "title" : "initial run",
             "file"  : 
@@ -33,24 +34,8 @@
             "note": "put your file-paths above in the autodiscvery to load the scritps automatically when the terminal loads",
             "desc": "Contains Scripts that will load or include the powershell scripts from the directory as specified"
             
-        },
-        {
-            "title": "dependency",
-            "file" : 
-            {
-                "path": "PowerShell\\profile\\cmdlets\\The-Prompt.ps1"
-            },
-            "desc" : "Contains Important Files on which the profile-script : superuser depended upon"
-        },
-        {
-            "title": "functions",
-            "file" : 
-            {
-                "path": "PowerShell\\profile\\cmdlets\\The-Prompt.ps1"
-            },
-            "desc" : "Contains Important Files on which the profile-script : superuser depended upon"
         }
 
 
-    ]
+    }
 }

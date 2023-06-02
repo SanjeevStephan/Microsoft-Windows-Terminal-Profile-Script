@@ -77,13 +77,17 @@
         └───env            
 #-------------------- Must Include Below File --------------------------------------#>
 
-$su = $env:superuser
+# Fetch Path From Environment-Variables
+$su = $env:superuser 
 
+# Verify 'superuser.ps1' exists on the path '$env:superuser'
 if(Test-Path $su) 
 {
     Write-Host "[ Found ] Superuser.ps1 at $su" -ForegroundColor Black -BackgroundColor Green
     Write-Host "Microsoft.PowerShell_profile.ps1"
     . "$($env:superuser)"
+
+ 
 } 
 else { Write-Host "[ MISSING ] $su_name at $su" -ForegroundColor Black -BackgroundColor Red }
 

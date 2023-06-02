@@ -23,10 +23,11 @@
 
     .VERSION 
         -> 1.0 | 26th March 2023
+        -> 2.0 | 28th May 2023
 
     .PROFILE_MAIN 
         -> Microsoft.PowerShell_profile.ps1
-        -> include.ps1
+        -> superuser.ps1
         -> README.md
 
     .CONTAINS
@@ -46,57 +47,44 @@
     │   └───works-great-but-not-in-use
     ├───myfunctions
     │   └───parameterArgs
-    ├───myjson/
-        ├───.\dependencies.json
-        ├───.\directories.json
-        ├───.\myFunctions.json
-        ├───.\myIncludes.json
-        ├───.\myJsonList.json
-        ├───.\myPythonScript.json
-        ├───.\myScripts.json
-        └───.\profileFunctions.json
+    ├───assets
+    │   └───tools
+    ├───data
+    |    |──────ascii
+    |    |       ├───.\script
+    |    |       └───.\text   
+    |    ├───.\ascii.json
+    |    ├───.\config.json
+    |    ├───.\directories.json
+    |    ├───.\files.json
+    |    ├───.\settings.json
+    |    └───.\source.json
+    ├───profile
+    |    ├───.\auto
+    |    |       ├───.\Auto-Discover.ps1
+    |    |       ├───.\discover_cmdlets.ps1
+    |    |       ├───.\discover_dependency.ps1
+    |    |       └───.\discover_functions.ps1 
+    |    ├───.\cmdlets
+    |    ├───.\dependency
+    |    ├───.\functions
+    |    └───.\prompt
+    |            ├───.\Superuser-Prompt.ps1
+    |            └───.\The-Prompt.ps1 
     ├───mypython
-        └───.\figlet.py    
-    ├───myscripts
-        └──────setEnv
-               ├───.\argsAddVariableToEnv.ps1
-               └───.\passArgsViaHashTable.ps1               
-        ├───.\execScript.ps1
-        ├───.\getDependencies.ps1
-        ├───.\getFunction.ps1
-        ├───.\getJson.ps1
-        ├───.\getPath.ps1
-        ├───.\getPython.ps1
-        ├───.\getScript.ps1
-        ├───.\setEnv.ps1
-        └───.\setMyfunctions.ps1
+    |    └───.\figlet.py    
     └───mytest
         └───env            
 #-------------------- Must Include Below File --------------------------------------#>
 
-# if(Test-Path $su) { Write-Host "[ Found ] $su_name at $su" -ForegroundColor Black -BackgroundColor Green } else {  Write-Host "[ MISSING ] $su_name at $su" -ForegroundColor Black -BackgroundColor Red ;}
 $su = $env:superuser
+
 if(Test-Path $su) 
 {
-    Write-Host "[ Found ] Superuser.ps1" -ForegroundColor Black -BackgroundColor Green
-
-    . "$($env:superuser)"
+    Write-Host "[ Found ] Superuser.ps1 at $su" -ForegroundColor Black -BackgroundColor Green
+    Write-Host "Microsoft.PowerShell_profile.ps1"
+    . $su 
 } 
 else { Write-Host "[ MISSING ] $su_name at $su" -ForegroundColor Black -BackgroundColor Red }
 
-
-
-# $data = $env:superuser_data
-# $Json = Get-Content -Raw -Path "$data/directories.json" | ConvertFrom-Json
-
-# $profile_name = $Json.source[0].profile
-# Write-Host "Profile : $profile_name"
-
-
-
-# Include or Load the PowerShell-Script in the Profile using dot-sourcing,
-#. $the_prompt_ps1
-#. $auto_discover_ps1
-#. $directory_discover_list_ps1
-
-
+Write-Host "└────────[ Status ]  Script Terminated -> Microsoft.PowerShell_profile.ps1 " -ForegroundColor Cyan

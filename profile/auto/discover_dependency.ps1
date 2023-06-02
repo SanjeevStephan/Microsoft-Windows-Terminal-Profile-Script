@@ -63,7 +63,7 @@ $no_of_files_included        = 0
             if (Test-Path $path) {
     
                 $no_of_files_included = $no_of_files_included + 1
-                Write-Host " [ OK ] $title : $(Split-Path -Leaf $path)" -ForegroundColor Black -BackgroundColor Green
+                Write-Host "|    |          |        |    ├[ OK ] $title : $(Split-Path -Leaf $path)" -ForegroundColor Green
                 . $path
             } else {
                 Write-Warning "Missing $(Split-Path -Leaf $path) at path $path"

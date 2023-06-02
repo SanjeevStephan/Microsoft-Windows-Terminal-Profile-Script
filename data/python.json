@@ -1,0 +1,27 @@
+{
+    "info" :
+    {
+        "info" : "Python Scripts",
+        "file" : "python.json",
+        "path" : "PowerShell\\profile\\python",
+        "installed" : "AppData\\Local\\Programs\\Python",
+        "desc" : "Contains Python Scripts"
+    },
+    "python" : 
+    {
+           "script" :  
+           [
+                {
+                    "index": 0,
+                    "file" : "\\figlet.py",
+                    "arg" : "textMsg",
+                    "path" : "PowerShell\\profile\\python\\figlet.py",
+                    "desc" : "Display ASCII Text on the terminal"
+                }
+           ]
+
+           
+        
+    }
+}
+
