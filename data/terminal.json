@@ -1,0 +1,17 @@
+{
+    "info" :
+    {
+        "title" : "terminal",
+        "file"  : "terminal.json",
+        "app"   : "New Microsoft Window Terminal",
+        "version": "7.3.4",
+        "ascii" : "PowerShell\\data\\ascii\\text\\powershell_basic.ascii",
+        "desc"  : "contains settings for the New Microsoft Window Terminal"
+    },
+    "path":
+    {
+        "backup": "PowerShell\\data\\backup\\terminal",
+        "setting" : "AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState"
+    }
+
+}

@@ -8,7 +8,7 @@
     },
     "superuser" :
     {
-        "json" : "superuser.json",
+        "json" :  "superuser.json",
         "script" : "superuser.ps1"
     },
     "directory" : 
