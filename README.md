@@ -12,52 +12,6 @@ Microsoft.PowerShell_profile.ps1
 |    |          ├ INFO ] Function Name : ReadJson()
 |    |          ├ INFO ] Function Name : ReadJsonPath()
 |    |          ├ JSON ] Loading Scripts From JSON File : dependencies.json
-|    |          ├ Loaded ] C:\Users\Samst\OneDrive\Documents\\PowerShell\profile\autodiscovery.ps1
-|    |          ├──── autodiscovery.ps1
-|    |          |     └──[ STARTED ] Auto Discovery of Functions Scripts in the Directories { auto }
-|    |          |        ├ LOADING-ALL ] The {*.ps1} in the { PowerShell\profile\auto }
-|    |          |        ├────[ AUTO ] Discovering Auto : discover_cmdlets.ps1
-|    |          |        |    ├ STARTED ] Auto Discovery of Short-Commands  Scripts in the Directories { cmdlets }
-|    |          |        |    ├ FOUND ] Directory : C:\Users\Samst\OneDrive\Documents\\PowerShell\profile\cmdlets
-|    |          |        |    ├ LOADING-ALL ] The {*.ps1} in the { PowerShell\profile\cmdlets }
-|    |          |        |    ├ OK ] Short-Commands  : clip.ps1
-|    |          |        |    ├ OK ] Short-Commands  : connected.ps1
-|    |          |        |    ├ OK ] Short-Commands  : copypath.ps1
-|    |          |        |    ├ OK ] Short-Commands  : edit-config.ps1
-|    |          |        |    ├ OK ] Short-Commands  : edit.ps1
-|    |          |        |    ├ OK ] Short-Commands  : figlet.ps1
-|    |          |        |    ├ OK ] Short-Commands  : goodbye.ps1
-|    |          |        |    ├ OK ] Short-Commands  : lowercase.ps1
-|    |          |        |    ├ OK ] Short-Commands  : openurl.ps1
-|    |          |        |    ├ OK ] Short-Commands  : refresh.ps1
-|    |          |        |    ├ OK ] Short-Commands  : seeyou.ps1
-|    |          |        |    ├ OK ] Short-Commands  : showip.ps1
-|    |          |        |    ├ OK ] Short-Commands  : sleepnow.ps1
-|    |          |        |    ├ OK ] Short-Commands  : window.ps1
-|    |          |        |    └────[ SUCCESS ] Total { 14 } Scripts have been Successfully Discovered in { cmdlets }
-|    |          |        |
-|    |          |        ├────[ AUTO ] Discovering Short-Commands  : discover_dependency.ps1
-|    |          |        |    ├ STARTED ] Auto Discovery of Dependency Scripts in the Directories { dependency }
-|    |          |        |    ├ FOUND ] Directory : C:\Users\Samst\OneDrive\Documents\\PowerShell\profile\dependency
-|    |          |        |    ├ LOADING-ALL ] The {*.ps1} in the { PowerShell\profile\dependency }
-|    |          |        |    └────[ FAILED ] No Files Have been Discovered in { dependency }
-|    |          |        |
-|    |          |        ├────[ AUTO ] Discovering Dependency : discover_functions.ps1
-|    |          |        |    ├ STARTED ] Auto Discovery of Functions Scripts in the Directories { functions }
-|    |          |        |    ├ FOUND ] Directory : C:\Users\Samst\OneDrive\Documents\\PowerShell\profile\functions
-|    |          |        |    ├ LOADING-ALL ] The {*.ps1} in the { PowerShell\profile\functions }
-|    |          |        |    └────[ FAILED ] No Files Have been Discovered in { functions }
-|    |          |        |
-|    |          |        ├────[ AUTO ] Discovering Functions : discover_run.ps1
-|    |          |        |    ├ STARTED ] Auto Discovery of Automatically Scripts in the Directories { run }
-|    |          |        |    ├ FOUND ] Directory : C:\Users\Samst\OneDrive\Documents\\PowerShell\profile\run
-|    |          |        |    ├ LOADING-ALL ] The {*.ps1} in the { PowerShell\profile\run }
-|    |          |        |    ├ RUN ] Automatically : is_superuser_available.ps1
-|    |          |        |    |     └──[ Found ] superuser at C:\Users\Samst\OneDrive\Documents\PowerShell\superuser.ps1
-|    |          |        |    ├ RUN ] Automatically : IsPythonInstalled.ps1
-|    |          |        |    └────[ SUCCESS ] Total { 2 } Scripts have been Successfully Discovered in { run }
-|    |          |        |
-|    |          |        └────[ Status ]  Script Terminated -> autodiscovery.ps1
 |    |          |
 |    |          ├ Loaded ] C:\Users\Samst\OneDrive\Documents\\PowerShell\profile\prompt\Superuser-Prompt.ps1
 |    |          |
