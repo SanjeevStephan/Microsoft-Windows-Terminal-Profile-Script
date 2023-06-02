@@ -2,35 +2,8 @@
 > To The Windows Terminal, Console and Command-Line repository
 ### Powerful Window Automations Script
 
-```
-[ Found ] Superuser.ps1 at C:\Users\Samst\OneDrive\Documents\PowerShell\superuser.ps1
-Microsoft.PowerShell_profile.ps1
-|
-├────SuperUser.ps1
-|    |     └────├ Initializing ] superuser
-|    |          ├ INFO ] Function Name : ReadJson()
-|    |          ├ INFO ] Function Name : ReadJsonPath()
-|    |          ├ JSON ] Loading Scripts From JSON File : dependencies.json
-|    |          |
-|    |          ├ Loaded ] C:\Users\Samst\OneDrive\Documents\\PowerShell\profile\prompt\The-Prompt.ps1
-|    |          |
-|    |          └──[ JSON ] Finished Loading Scripts From JSON File : dependencies.json
-|    |
-|    |------------------------------------------------------------------------------------------------|
-|    |     ____                        _   _                                                          |
-|    |    / ___| _   _ _ __   ___ _ __| | | |___  ___ _ __   v2.0 | 30th March 2023                   |
-|    |    \___ \| | | | '_ \ / _ \ '__| | | / __|/ _ \ '__|  by Sanjeev Stephan Murmu                 |
-|    |     ___) | |_| | |_) |  __/ |  | |_| \__ \  __/ |     https://github.com/SanjeevStephan        |
-|    |    |____/ \__,_| .__/ \___|_|   \___/|___/\___|_|     https://sanjeevstephan.github.io         |
-|    |                |_|                                    https://www.youtube.com/@SanjeevStephan  |
-|    |------------------------------------------------------------------------------------------------|
-|    |
-|    └───[ Status ]  Script Terminated -> superuser.ps1
-|
-└────────[ Status ]  Script Terminated -> Microsoft.PowerShell_profile.ps1
-┌──(superuser㉿192.168.29.200)-[C:\Users\Sanju\Documents\PowerShell]
-└─$ PS>                                 
-```
+![Terminal Log](https://sanjeevstephan.github.io/superuser/assets/uploads/superuser-terminal-01.png)
+
 ## Index
 * [Description](https://github.com/SanjeevStephan/superuser/blob/main/README.md#Description)
 * [Directory Structure](https://github.com/SanjeevStephan/superuser/blob/main/README.md#Directory-Structure)
