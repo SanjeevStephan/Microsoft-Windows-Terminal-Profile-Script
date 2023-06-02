@@ -1,8 +1,6 @@
 # Welcome PowerShell's [$uperUser](https://sanjeevstephan.github.io/superuser/) 
 > To The Windows Terminal, Console and Command-Line repository
 
-![image](https://github.com/SanjeevStephan/superuser/blob/window11-v2.0/assets/imgs/superuser-terminal-01.png)
-
 ```
 [ Found ] Superuser.ps1 at C:\Users\Samst\OneDrive\Documents\PowerShell\superuser.ps1
 Microsoft.PowerShell_profile.ps1
