@@ -117,20 +117,10 @@ mv superuser PowerShell
 rundll32.exe sysdm.cpl,EditEnvironmentVariables
 ```
 11. Add a new environment-variable named  <br/>
-Key #1
+superuser
 ```
         Key : superuser 
         Value : C:\Users\<Username>\OneDrive\Documents\PowerShell\superuser.ps1
-```
-Key #2
-```
-        Key : superuser_data
-        Value : C:\Users\<Username>\OneDrive\Documents\PowerShell\data
-```
-Key #3
-```
-        Key : superuser_profile
-        Value : C:\Users\<Username>\OneDrive\Documents\PowerShell\profile
 ```
 12.  Now Restart the Terminal & switch to powerShell 7
 13.  Check if the system recognize the 'environment-variable' we just added
