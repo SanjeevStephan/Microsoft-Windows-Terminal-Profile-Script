@@ -25,18 +25,11 @@ $ps = $su.Split("superuser")[0]
 $su_file = Split-Path -Leaf $su
 $su_name = $su_file.Split(".ps1")[0]
 $su_json = "$( $su.Split(".ps1")[0] ).json"
-
-#This Function : ReadJson() takes [ Path-to-Json-File ] as argument
-#And Returns : the Whole JSON Object
 function ReadJson($JsonFile) {
     $json_data = Get-Content -Raw -Path $JsonFile | ConvertFrom-Json
     return $json_data
 }
-# This Function : ReadJsonPath() takes takes the-path-from-the-json-file 
-# which consists something like this : PowerShell\\data\ascii.json and 
-# Returns the Full-Path such as : C:\\Users\\<Username>\\OneDrive\\Documents\\ + PowerShell\\data\\\ascii.json
 function ReadJsonPath($JsonPointer) {
-
     $profile_home = $ps.Split("PowerShell")[0]
     $full_path = "$profile_home\$($JsonPointer)" 
     return $full_path
@@ -52,58 +45,50 @@ function LoadData() {
     $Data_JSON = Get-Content -Raw -Path "$ps/superuser.json"
     $Data_DIR = $Data_JSON.directory.data
 
-    echo $Data_DIR
+}
 
+$JSON_SuperData  = ReadJson($su_json)
 
+# JSON Files in the SuperUser's Data Directory 
+$Data = @{
+    "ascii"      = "$ps\data\ascii.json"
+    "config"     = "$ps\data\.empty\config.json"
+    "dir"        = "$ps\data\directories.json"
+    "dependency" = "$ps\data\dependencies.json"
+    "python"     = "$ps\data\python.json"
+    "settings"   = "$ps\data\.empty\settings.json"
+    "scripts"    = "$ps\data\scripts.json"
+    "terminal"   = "$ps\data\terminal.json"
 }
 
 # =============================== 2.ACCESSING THE JSON CONTENT ==================================
-# Break-down of the below code
-<#
-    0. First We Supplied the Function : ReadJSON() with the path-to-the-json-file name 'superuser.json'
-        and Stored in the Variable named : $JSON_SuperData
-        Which returns the JSON-OBJECT (means -> data consisting of KEY:VALUE Pairs )
-#>   $JSON_SuperData  = ReadJson($su_json)
-<#
-    1. $JSON_SuperData.file.dependency.ascii
-        -> $JSON_SuperData is a Json Object & When we use (.) we are basically
-         
-        saying that go-inside-this-JSON-Object and and fetch the value by pointing it using they KEY.
-        Which in this case will be 
-        Go-inside-the JSON_Object => $JSON_SuperData -> file -> dependency -> ascii (grab-the-value-of-ascii) 
-    2. Get The Value from the KEY (ascii)
+# Read the JSON by call the function 'readJson()' and passing the value of the 'Json-path'
+# $Ascii_JSON      = ReadJson($JSON_SuperData.file.dependency.ascii)
+# $Dependency_JSON = ReadJson($JSON_SuperData.file.dependency.dependencies)
 
-        TYPE This in Console -> echo $JSON_SuperData.file.dependency.ascii
-        You'll Get -> PowerShell\data\ascii.json
+# $Python_JSON    = ReadJson($JSON_SuperData.file.dependency.python)
+# $Script_JSON    = ReadJson($JSON_SuperData.file.dependency.scripts)
+# $Terminal_JSON  = ReadJson($JSON_SuperData.file.dependency.terminal)
 
-    3. Now are have the VALUE from our KEY (ascii)
-        the value we have is incomplete and we cannot access the json-file with it.
-        We have to use another function named : ReadJsonFile() 
-        which takes (the path-value-from-above-step) and 
-        Add the $home directory path to it which is : C:\\Users\\<Username>\\OneDrive\\Documents
-        And Returns the Full-Path...
-    4. Which we later on supplied again to the Function : ReadJson()
-        and gets the JSON_Objects for the file we supplied the path for!
-    5. Now we can grab the Value by Accessing using the STEP:1 Method.
-        such as 
-       TYPE This in Console -> echo $Ascii_JSON.ascii.script.superuser
-       
-#>
+# Read the JSON by call the function 'readJson()' and passing the value of the 'Json-path'
+$Ascii_JSON      = ReadJson($Data.ascii)
+$Dependency_JSON = ReadJson($Data.dependency)
+$Directory_JSON  = ReadJson($Data.dir)
+$Python_JSON     = ReadJson($Data.python)
+$Terminal_JSON   = ReadJson($Data.terminal)
 
 
-$Ascii_JSON      = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.ascii))
-#$Dependency_JSON = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.dependencies))
-$Directory_JSON  = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.directories))
-$Python_JSON     = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.python))
-$Script_JSON     = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.scripts))
-$Terminal_JSON   = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.terminal))
-
+# echo "Python_JSON : $Python_JSON "
+# echo "Ascii_JSON : $Ascii_JSON "
+# echo "Script_JSON : $Script_JSON "
+# echo "Terminal_JSON : $Terminal_JSON "
+# echo "Dependency_JSON : $Dependency_JSON "
 # ===============================3. Declaring Global Variables =====================================
 # Pass the argument to the function 'ReadJsonPath' to parse the json-pointers and return it with '$home' path
 $su_ascii = ReadJsonpath($Ascii_JSON.ascii.script.superuser)
 $Python_PATH = ReadJsonPath($Python_JSON.info.path) 
 
-$total_dependency_to_include = $JSON_SuperData.file.initialize.file.Length - 1
+$total_dependency_to_include = $Dependency_JSON.profile.initialize.file.Length - 1
 # ===============================4.BEGIN INITIALIZATION ==================================
 Write-Host "|          " -ForegroundColor Cyan
 Write-Host "├────SuperUser.ps1"
@@ -114,10 +99,11 @@ Write-Host "|    |          ├ INFO ] Function Name : ReadJsonPath()" -Foregrou
 Write-Host "|    |          ├ JSON ] Loading Scripts From JSON File : dependencies.json" -ForegroundColor Yellow
 if(Test-Path $su)
 {
+    echo "hi"
     for ($i = 0; $i -le $total_dependency_to_include; $i++) 
     {
       # Write-Host "|    |          ├  DEBUG ] Counting Total Objects : $i"
-        $pathFromJson          = $JSON_SuperData.file.initialize.file[$i].path
+        $pathFromJson          = $Dependency_JSON.profile.initialize.file[$i].path
         $currentScriptFullPath = ReadJsonPath($pathFromJson)
         Write-Host "|    |          ├ Loaded ] $currentScriptFullPath " -ForegroundColor Cyan
         
@@ -137,7 +123,7 @@ if(Test-Path $su)
         Write-Host "|    " -ForegroundColor Cyan
 <#
   YELLOW - INFO
-  CYAN   - LOADED/LOADING/SOMETHING Happening
+  CYAN   - LOADED/LOADING
   BLUE - Process
   GREEN(bg)/BLACK(fg) => Functions (Auto-Discover)
 #>

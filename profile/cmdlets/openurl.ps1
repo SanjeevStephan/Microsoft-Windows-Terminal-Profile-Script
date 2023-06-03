@@ -5,4 +5,6 @@ function openurl($htmlfile){
     $webpath = $localpath.Replace("\","/")
     Write-Output "Opening path in brave: $webpath"
     Start-Process brave.exe $webpath
-    }
+
+    
+ }

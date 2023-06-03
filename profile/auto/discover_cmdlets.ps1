@@ -24,20 +24,19 @@ param (
   [int]$directory_index=2
 )
 
-$JSON_DATA                   = ReadJson($Data.dir)
 $json_filename               = $JSON_DATA.info.file
-$autodiscover_this_directory = ReadJsonPath($JSON_DATA.profile[$directory_index].path)
-$ascii_path                  = ReadJsonPath($JSON_DATA.profile[$directory_index].ascii)
-$title                       = $JSON_DATA.profile[$directory_index].title
-$directory_short_path        = $JSON_DATA.profile[$directory_index].path
+$autodiscover_this_directory = ReadJsonPath($Directory_JSON.profile[$directory_index].path)
+$ascii_path                  = ReadJsonPath($Directory_JSON.profile[$directory_index].ascii)
+$title                       = $Directory_JSON.profile[$directory_index].title
+$directory_short_path        = $Directory_JSON.profile[$directory_index].path
 $directory_title             = Split-Path -Leaf $autodiscover_this_directory 
 $no_of_files_included        = 0
 
 
     if(Test-Path $autodiscover_this_directory)
     { 
-        Write-Host "|    |          |        |    ├ STARTED ] Auto Discovery of $title Scripts in the Directories { $directory_title } " -ForegroundColor White   
         Write-Host "|    |          |        |    ├ FOUND ] Directory : $autodiscover_this_directory" -ForegroundColor Yellow
+        Write-Host "|    |          |        |    ├ STARTED ] Auto Discovery of $title Scripts in the Directories { $directory_title } " -ForegroundColor White   
         Write-Host "|    |          |        |    ├ LOADING-ALL ] The {*.ps1} in the { $directory_short_path } " -ForegroundColor Cyan
     
         # Get all the *.ps1 files in the "dependency" directory
@@ -52,7 +51,7 @@ $no_of_files_included        = 0
                 Write-Host "|    |          |        |    ├ OK ] $title : $(Split-Path -Leaf $path)" -ForegroundColor Green  
                 . $path
             } else {
-                Write-Warning "Missing $(Split-Path -Leaf $path) at path $path"
+                Write-Warning "|    |          |        |    ├ Missing $(Split-Path -Leaf $path) at path $path"
             }
         }
 

@@ -6,19 +6,6 @@
         "path"  : "PowerShell\\data",
         "desc"  : "contains files & scripts from the powershell directory"       
     },
-    "data" :
-    {
-        "file" : 
-        [
-            {   "json" : "PowerShell\\data\\ascii.json" },
-            {   "json" : "PowerShell\\data\\config.json" },
-            {   "json" : "PowerShell\\data\\directories.json" },
-            {   "json" : "PowerShell\\data\\dependencies.json" },
-            {   "json" : "PowerShell\\data\\settings.json" },
-            {   "json" : "PowerShell\\data\\superuser.json" }
-            
-        ]
-    },
     "profile" :
     {
         "initialize" :

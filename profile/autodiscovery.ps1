@@ -31,13 +31,12 @@ param (
 # $SuperuserData = @{}
 # directory_index = 3
 
-$JSON_DATA                   = ReadJson($Data.dir)
-$json_filename               = $JSON_DATA.info.file
-#$directory_index             = $JSON_DATA.profile[3].index
-$autodiscover_this_directory = ReadJsonPath($JSON_DATA.profile[$directory_index].path)
-$ascii_path                  = ReadJsonPath($JSON_DATA.profile[$directory_index].ascii)
-$title                       = $JSON_DATA.profile[$directory_index].title
-$directory_short_path        = $JSON_DATA.profile[$directory_index].path
+$json_filename               = $Directory_JSON.info.file
+#$directory_index            = $Directory_JSON.profile[3].index
+$autodiscover_this_directory = ReadJsonPath($Directory_JSON.profile[$directory_index].path)
+$ascii_path                  = ReadJsonPath($Directory_JSON.profile[$directory_index].ascii)
+$title                       = $Directory_JSON.profile[$directory_index].title
+$directory_short_path        = $Directory_JSON.profile[$directory_index].path
 $directory_title             = Split-Path -Leaf $autodiscover_this_directory 
 $no_of_files_included        = 0
 

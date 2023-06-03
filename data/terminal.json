@@ -10,8 +10,16 @@
     },
     "path":
     {
-        "backup": "PowerShell\\data\\backup\\terminal",
-        "setting" : "AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState"
+        "backup_dir": "PowerShell\\data\\backup\\new_terminal\\",
+        "backup_file": "PowerShell\\data\\backup\\new_terminal\\settings.json",
+        "renamed_to_file": "PowerShell\\data\\backup\\new_terminal\\settings.old.json",
+        "env" : "$env:LOCALAPPDATA",
+        "source_file" : "\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState\\settings.json"
+    },
+    "script":
+    {
+        "path" : "PowerShell\\profile\\run\\backup-terminal-settings.ps1",
+        "desc" : "copyies the $source_file to $backup_dir. if $backup_file exists then renamed to $renamed_to_file.and if $renamed_to_file exists then delete and copy again."
     }
 
 }

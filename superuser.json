@@ -17,5 +17,34 @@
         "data"    : "\\data",
         "docs"    : "\\docs",
         "profile" : "\\profile"
+    },
+    "file" :
+    {
+        "dependency" :
+        {
+            "ascii"        : "PowerShell\\data\\ascii.json",
+            "config"       : "PowerShell\\data\\config.json",
+            "directories"  : "PowerShell\\data\\directories.json" ,
+            "dependencies" : "PowerShell\\data\\dependencies.json",
+            "python"       : "PowerShell\\data\\python.json",
+            "scripts"      : "PowerShell\\data\\scripts.json",
+            "settings"     : "PowerShell\\data\\settings.json",
+            "terminal"     : "PowerShell\\data\\terminal.json"
+            
+        },
+        "initialize" :
+        {
+            "title" : "initial run",
+            "file"  : 
+            [
+
+                {   "path" : "PowerShell\\profile\\autodiscovery.ps1" },
+                {   "path": "PowerShell\\profile\\prompt\\Superuser-Prompt.ps1" }
+
+            ],
+            "note": "put your file-paths above in the autodiscvery to load the scritps automatically when the terminal loads",
+            "desc": "Contains Scripts that will load or include the powershell scripts from the directory as specified"
+            
+        }
     }
 }
