@@ -48,14 +48,7 @@ function DisplayASCII($asciiFilePath)
     #type  $ascii_filepath
 }
 
-function LoadData() {
-    $Data_JSON = Get-Content -Raw -Path "$ps/superuser.json"
-    $Data_DIR = $Data_JSON.directory.data
-
-    echo $Data_DIR
-
-
-}
+function LoadSuperData() { return Get-Content -Raw -Path $su_json | ConvertFrom-Json }
 
 # =============================== 2.ACCESSING THE JSON CONTENT ==================================
 # Break-down of the below code
@@ -63,7 +56,7 @@ function LoadData() {
     0. First We Supplied the Function : ReadJSON() with the path-to-the-json-file name 'superuser.json'
         and Stored in the Variable named : $JSON_SuperData
         Which returns the JSON-OBJECT (means -> data consisting of KEY:VALUE Pairs )
-#>   $JSON_SuperData  = ReadJson($su_json)
+#>   $JSON_SuperData  = LoadSuperData
 <#
     1. $JSON_SuperData.file.dependency.ascii
         -> $JSON_SuperData is a Json Object & When we use (.) we are basically
@@ -89,7 +82,6 @@ function LoadData() {
        TYPE This in Console -> echo $Ascii_JSON.ascii.script.superuser
        
 #>
-
 
 $Ascii_JSON      = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.ascii))
 #$Dependency_JSON = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.dependencies))
