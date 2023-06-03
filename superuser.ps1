@@ -89,6 +89,7 @@ $Directory_JSON  = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.directo
 $Python_JSON     = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.python))
 $Script_JSON     = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.scripts))
 $Terminal_JSON   = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.terminal))
+#$Shortcut_JSON   = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.shortcuts))
 
 # ===============================3. Declaring Global Variables =====================================
 # Pass the argument to the function 'ReadJsonPath' to parse the json-pointers and return it with '$home' path

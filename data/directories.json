@@ -50,6 +50,13 @@
             "path"  : "PowerShell\\profile\\run",
             "ascii" : "PowerShell\\data\\ascii\\text\\powershell_basic.ascii",
             "desc"  : "Scripts in this directory will automatically get executed not need to individually call them."
+        },
+        {
+            "index" : 6,
+            "title" : "Shotcuts to Consoles",
+            "path"  : "PowerShell\\profile\\shortcuts",
+            "ascii" : "PowerShell\\data\\ascii\\text\\powershell_basic.ascii",
+            "desc"  : "Launch Consoles via Shortcuts."
         }
 
     ]

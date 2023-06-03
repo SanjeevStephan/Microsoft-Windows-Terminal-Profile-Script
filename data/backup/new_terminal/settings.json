@@ -79,6 +79,14 @@
             "command": 
             {
                 "action": "sendInput",
+                "input": "cd $env:Github \r"
+            },
+            "keys": "ctrl+shift+g"
+        },
+        {
+            "command": 
+            {
+                "action": "sendInput",
                 "input": "cd $env:OneDrive \r"
             },
             "keys": "ctrl+shift+o"

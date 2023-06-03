@@ -28,6 +28,7 @@
             "dependencies" : "PowerShell\\data\\dependencies.json",
             "python"       : "PowerShell\\data\\python.json",
             "scripts"      : "PowerShell\\data\\scripts.json",
+            "shortcuts"      : "PowerShell\\data\\shortcuts.json",
             "settings"     : "PowerShell\\data\\settings.json",
             "terminal"     : "PowerShell\\data\\terminal.json"
             

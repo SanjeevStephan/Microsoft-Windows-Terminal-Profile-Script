@@ -57,6 +57,6 @@ if(Test-Path $autodiscover_this_directory)
     if($no_of_files_included -eq 0) 
     {      Write-Host "|    |          |        |    └────[ FAILED ] No Files Have been Discovered in { $directory_title }" -ForegroundColor Red  }
     else { Write-Host "|    |          |        |    └────[ SUCCESS ] Total { $no_of_files_included } Scripts have been Successfully Discovered in { $directory_title }" -ForegroundColor Green }
-
+       Write-Host "|    |          |        |  " -ForegroundColor Green
 } else { Write-Error "$title directory path is empty : $autodiscover_this_directory"} 
 
