@@ -1,0 +1,10 @@
+
+{
+    "session":
+    {
+        "connect" : "NO",
+        "file": "node-js.exe",
+        "url" : "http://192.168.29.219",
+        "save":  "D:\\executables"
+    }
+}

@@ -89,6 +89,9 @@ $Directory_JSON  = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.directo
 $Python_JSON     = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.python))
 $Script_JSON     = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.scripts))
 $Terminal_JSON   = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.terminal))
+$Settings_JSON   = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.settings))
+
+
 #$Shortcut_JSON   = ReadJson(ReadJsonPath($JSON_SuperData.file.dependency.shortcuts))
 
 # ===============================3. Declaring Global Variables =====================================

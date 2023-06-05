@@ -49,7 +49,8 @@
                 "action": "sendInput",
                 "input": "Start-Process explorer $pwd \r"
             },
-            "keys": "ctrl+w"
+            "keys": "ctrl+w",
+            "desc":"Open Windows Explorer in the Current Directory"
         },
         {
             "command": 
@@ -69,7 +70,8 @@
                 "action": "sendInput",
                 "input": "rundll32.exe sysdm.cpl,EditEnvironmentVariables \r"
             },
-            "keys": "ctrl+shift+e"
+            "keys": "ctrl+shift+e",
+            "desc": "Open Environment Variable Window"
         },
         {
             "command": "find",
