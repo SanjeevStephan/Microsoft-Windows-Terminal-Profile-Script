@@ -1,0 +1,5 @@
+powershell command to check if environment key $env:Github is available
+powershell command to check if certain key in the hashtable is available and if available display it
+convert hashtable to json in powershell
+loop through hashtable keys and values in powershell
+ powershell code to write value to the key named 'student' in this json file "student.json" whose contents are { "student" : "stephan" } from json file
