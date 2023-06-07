@@ -15,17 +15,9 @@
             "command": 
             {
                 "action": "sendInput",
-                "input": "refresh ..\r"
+                "input": "Start-Process explorer $pwd \r"
             },
-            "keys": "ctrl+r"
-        },
-        {
-            "command": 
-            {
-                "action": "sendInput",
-                "input": "ls \r"
-            },
-            "keys": "ctrl+l"
+            "keys": "ctrl+w"
         },
         {
             "command": 
@@ -39,18 +31,25 @@
             "command": 
             {
                 "action": "sendInput",
-                "input": "New-Item "
+                "input": "ls \r"
             },
-            "keys": "ctrl+n"
+            "keys": "ctrl+l"
         },
         {
             "command": 
             {
                 "action": "sendInput",
-                "input": "Start-Process explorer $pwd \r"
+                "input": "refresh ..\r"
             },
-            "keys": "ctrl+w",
-            "desc":"Open Windows Explorer in the Current Directory"
+            "keys": "ctrl+r"
+        },
+        {
+            "command": 
+            {
+                "action": "sendInput",
+                "input": "New-Item "
+            },
+            "keys": "ctrl+n"
         },
         {
             "command": 
@@ -70,8 +69,7 @@
                 "action": "sendInput",
                 "input": "rundll32.exe sysdm.cpl,EditEnvironmentVariables \r"
             },
-            "keys": "ctrl+shift+e",
-            "desc": "Open Environment Variable Window"
+            "keys": "ctrl+shift+e"
         },
         {
             "command": "find",
@@ -84,6 +82,15 @@
                 "input": "cd $env:Github \r"
             },
             "keys": "ctrl+shift+g"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
         },
         {
             "command": 
@@ -116,15 +123,6 @@
                 "input": "smarthome \r"
             },
             "keys": "ctrl+shift+s"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
         },
         {
             "command": 
@@ -163,10 +161,24 @@
                 "name": "Command Prompt"
             },
             {
+                "guid": "{55ca431a-3a87-5fb3-83cd-11ececc031d2}",
+                "hidden": false,
+                "icon": "file:///C:/Users/Samst/OneDrive/Pictures/icon/icons8-linux-server-100.png",
+                "name": "Enhanced Kali Linux",
+                "commandline": "wsl -d kali-linux kex --wtstart -s",
+                "startingDirectory" : "//wsl$/kali-linux/home/watchdog"
+            },
+            {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
+                "hidden": false,
+                "name": "kali-linux",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
