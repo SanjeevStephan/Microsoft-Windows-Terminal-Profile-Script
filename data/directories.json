@@ -59,5 +59,9 @@
             "desc"  : "Launch Consoles via Shortcuts."
         }
 
-    ]
+    ],
+    "software" :
+    {
+        "python" :  "AppData\\Local\\Programs\\Python\\Python*\\python.exe"
+    }
 }
