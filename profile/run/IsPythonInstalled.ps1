@@ -17,3 +17,16 @@
 #     Write-Host  "[    ] Missing : $($FILEPATH.python)" -ForegroundColor Red
 #     Write-Warning "[    ] Python is not installed."
 # }
+
+
+
+$python_installed_locatiion = "$home\$($Directory_JSON.software.python)"
+
+if(Test-Path $python_installed_locatiion)
+{
+    Write-Host "|    |          |        |    |     ├──[ PYTHON ] is Installed On Your SyStem " -ForegroundColor Cyan
+}
+else 
+{
+    Write-Host "|    |          |        |    |     ├──[ PYTHON ] is Not Installed " -ForegroundColor Red
+}
