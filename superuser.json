@@ -40,6 +40,7 @@
             [
 
                 {   "path" : "PowerShell\\profile\\autodiscovery.ps1" },
+                {   "path": "PowerShell\\profile\\prompt\\Superuser-Prompt.ps1" },
                 {   "path": "PowerShell\\profile\\prompt\\Superuser-Prompt.ps1" }
 
             ],
