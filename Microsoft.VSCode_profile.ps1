@@ -79,12 +79,24 @@
 
 $su = $env:superuser
 
-if(Test-Path $su) 
+if([string]::IsNullOrEmpty($su))
 {
-    Write-Host "[ Found ] Superuser.ps1 at $su" -ForegroundColor Black -BackgroundColor Green
-    Write-Host "Microsoft.PowerShell_profile.ps1"
-    . $su 
-} 
-else { Write-Host "[ MISSING ] $su_name at $su" -ForegroundColor Black -BackgroundColor Red }
 
-Write-Host "└────────[ Status ]  Script Terminated -> Microsoft.PowerShell_profile.ps1 " -ForegroundColor Cyan
+    Write-Host "[ Missing ] Superuser.ps1 " -ForegroundColor Black -BackgroundColor Red -NoNewline
+    Write-Host " Add " -ForegroundColor Black -BackgroundColor Green -NoNewline
+    Write-Host " Key { superuser } to the Environment Variable " -ForegroundColor Black -BackgroundColor Cyan
+    
+} else 
+{  
+
+    if(Test-Path $su) 
+    {
+        Write-Host "[ Found ] Superuser.ps1 at $su" -ForegroundColor Black -BackgroundColor Green
+        Write-Host "Microsoft.PowerShell_profile.ps1"
+        . $su 
+    } 
+    else { Write-Host "[ MISSING ] $su_name at $su" -ForegroundColor Black -BackgroundColor Red }
+
+    Write-Host "└────────[ Status ]  Script Terminated -> Microsoft.PowerShell_profile.ps1 " -ForegroundColor Cyan
+
+}

@@ -79,14 +79,46 @@
 
 # Fetch Path From Environment-Variables
 $su = $env:superuser 
+$github = "$($env:OneDrive)\Documents\GitHub"
+$autoinstaller = "$github\autoinstaller"
 
 # Verify 'superuser.ps1' exists on the path '$env:superuser'
-if(Test-Path $su) 
+if([string]::IsNullOrEmpty($su))
 {
-    Write-Host "[ Found ] Superuser.ps1 at $su" -ForegroundColor Black -BackgroundColor Green
-    Write-Host "Microsoft.PowerShell_profile.ps1"
-    . "$($env:superuser)"
-} 
-else { Write-Host "[ MISSING ] $su_name at $su" -ForegroundColor Black -BackgroundColor Red }
 
-Write-Host "└────────[ Status ]  Script Terminated -> Microsoft.PowerShell_profile.ps1 " -ForegroundColor Cyan
+    Write-Host "[ Missing ] Superuser.ps1 " -ForegroundColor Black -BackgroundColor Red -NoNewline
+    Write-Host " Add " -ForegroundColor Black -BackgroundColor Cyan -NoNewline
+    Write-Host " Key { superuser } to the Environment Variable " -ForegroundColor Black -BackgroundColor  Green
+    
+     if(Test-Path $autoinstaller)
+     {
+        type "$autoinstaller\setup.instructions"
+        cd $autoinstaller
+     }
+     else 
+     {
+
+        Write-Host "[ Missing ] setup.instructions " -ForegroundColor Black -BackgroundColor Red -NoNewline
+        Write-Host " At " -ForegroundColor Black -BackgroundColor Cyan -NoNewline
+        Write-Host "{ $autoinstaller }" -ForegroundColor Black -BackgroundColor  Green
+
+        # $autoinstaller_repository = ""
+        # Invoke-Expression "winget install --id Git.Git --source winget"
+        # cd $github
+        # Invoke-Expression "git clone $autoinstaller_repository"
+     }
+
+} else 
+{  
+
+    if(Test-Path $su) 
+    {
+        Write-Host "[ Found ] Superuser.ps1 at $su" -ForegroundColor Black -BackgroundColor Green
+        Write-Host "Microsoft.PowerShell_profile.ps1"
+        . $su 
+    } 
+    else { Write-Host "[ MISSING ] $su_name at $su" -ForegroundColor Black -BackgroundColor Red }
+
+    Write-Host "└────────[ Status ]  Script Terminated -> Microsoft.PowerShell_profile.ps1 " -ForegroundColor Cyan
+
+}

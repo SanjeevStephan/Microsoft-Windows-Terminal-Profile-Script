@@ -96,6 +96,14 @@
             "command": 
             {
                 "action": "sendInput",
+                "input": "cd OneDrive\\Documents\\GitHub\\autoinstaller \r"
+            },
+            "keys": "ctrl+shift+i"
+        },
+        {
+            "command": 
+            {
+                "action": "sendInput",
                 "input": "home ..\r"
             },
             "keys": "ctrl+shift+h"
