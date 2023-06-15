@@ -67,6 +67,14 @@
             "command": 
             {
                 "action": "sendInput",
+                "input": "cd OneDrive\\Documents\\GitHub\\autoinstaller \r"
+            },
+            "keys": "ctrl+shift+i"
+        },
+        {
+            "command": 
+            {
+                "action": "sendInput",
                 "input": "rundll32.exe sysdm.cpl,EditEnvironmentVariables \r"
             },
             "keys": "ctrl+shift+e"
@@ -91,14 +99,6 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
-        },
-        {
-            "command": 
-            {
-                "action": "sendInput",
-                "input": "cd OneDrive\\Documents\\GitHub\\autoinstaller \r"
-            },
-            "keys": "ctrl+shift+i"
         },
         {
             "command": 
@@ -169,12 +169,12 @@
                 "name": "Command Prompt"
             },
             {
+                "commandline": "wsl -d kali-linux kex --wtstart -s",
                 "guid": "{55ca431a-3a87-5fb3-83cd-11ececc031d2}",
                 "hidden": false,
                 "icon": "file:///C:/Users/Samst/OneDrive/Pictures/icon/icons8-linux-server-100.png",
                 "name": "Enhanced Kali Linux",
-                "commandline": "wsl -d kali-linux kex --wtstart -s",
-                "startingDirectory" : "//wsl$/kali-linux/home/watchdog"
+                "startingDirectory": "//wsl$/kali-linux/home/watchdog"
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
@@ -183,9 +183,15 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "guid": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
+                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
                 "hidden": false,
-                "name": "kali-linux",
+                "name": "Ubuntu",
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+            },
+            {
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": true,
+                "name": "Ubuntu",
                 "source": "Windows.Terminal.Wsl"
             }
         ]
@@ -375,6 +381,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#D3D7CF",
             "yellow": "#C4A000"
+        },
+        {
+            "background": "#300A24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#A2734C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#26A269",
+            "name": "Ubuntu-ColorScheme",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#A2734C"
         },
         {
             "background": "#000000",
