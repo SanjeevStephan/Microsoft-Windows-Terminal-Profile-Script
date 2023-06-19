@@ -47,6 +47,14 @@
             "command": 
             {
                 "action": "sendInput",
+                "input": "cd $env:PowerShell \r"
+            },
+            "keys": "ctrl+shift+p"
+        },
+        {
+            "command": 
+            {
+                "action": "sendInput",
                 "input": "New-Item "
             },
             "keys": "ctrl+n"
@@ -94,6 +102,22 @@
         {
             "command": 
             {
+                "action": "sendInput",
+                "input": "keepass \r"
+            },
+            "keys": "ctrl+shift+k"
+        },
+        {
+            "command": 
+            {
+                "action": "sendInput",
+                "input": "cd $env:OneDrive \r"
+            },
+            "keys": "ctrl+shift+o"
+        },
+        {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -107,22 +131,6 @@
                 "input": "home ..\r"
             },
             "keys": "ctrl+shift+h"
-        },
-        {
-            "command": 
-            {
-                "action": "sendInput",
-                "input": "cd $env:OneDrive \r"
-            },
-            "keys": "ctrl+shift+o"
-        },
-        {
-            "command": 
-            {
-                "action": "sendInput",
-                "input": "cd $env:PowerShell \r"
-            },
-            "keys": "ctrl+shift+p"
         },
         {
             "command": 
@@ -183,10 +191,17 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
+                "colorScheme": "Ubuntu-ColorScheme",
+                "font": 
+                {
+                    "face": "Courier New"
+                },
                 "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
                 "hidden": false,
                 "name": "Ubuntu",
-                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+                "opacity": 85,
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc",
+                "useAcrylic": false
             },
             {
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
