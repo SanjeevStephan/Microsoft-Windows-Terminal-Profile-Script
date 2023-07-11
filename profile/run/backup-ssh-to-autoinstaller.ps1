@@ -44,6 +44,9 @@ $backup_dir = $env:autoinstaller_ssh # $env:OneDrive\Documents\PowerShell\\data\
 $short_bkp_path = $backup_dir.Split("\Documents\")[1]
 
 
+if(Test-Path $source_dir)
+{
+
 if(Test-Path $backup_dir)
 {
      Write-Host "|    |          |        |    |     ├──[ FOUND ] SOURCE : $source_dir" -ForegroundColor Yellow 
@@ -65,3 +68,7 @@ if(Test-Path $backup_dir)
     }
           Write-Host "|    |          |        |    |     └──[ OK ] Successfully Copied File to Path : $short_bkp_path" -ForegroundColor Green 
  } else { Write-Host "|    |          |        |    |     └──[   ] Not Found   : $backup_dir" -ForegroundColor Red }
+
+
+
+} else { Write-Host "|    |          |        |    |     └──[   ] Not Found   : $source_dir" -ForegroundColor Red }
