@@ -7,17 +7,9 @@
             "command": 
             {
                 "action": "sendInput",
-                "input": "Start-Process explorer $pwd \r"
+                "input": "refresh ..\r"
             },
-            "keys": "ctrl+w"
-        },
-        {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "keys": "ctrl+c"
+            "keys": "ctrl+r"
         },
         {
             "command": 
@@ -38,18 +30,18 @@
         {
             "command": 
             {
-                "action": "sendInput",
-                "input": "refresh ..\r"
+                "action": "copy",
+                "singleLine": false
             },
-            "keys": "ctrl+r"
+            "keys": "ctrl+c"
         },
         {
             "command": 
             {
                 "action": "sendInput",
-                "input": "cd $env:PowerShell \r"
+                "input": "Start-Process explorer $pwd \r"
             },
-            "keys": "ctrl+shift+p"
+            "keys": "ctrl+w"
         },
         {
             "command": 
@@ -58,6 +50,29 @@
                 "input": "ssh kali \r"
             },
             "keys": "ctrl+k"
+        },
+        {
+            "command": 
+            {
+                "action": "sendInput",
+                "input": "cd C:\\Users\\Samst\\OneDrive\\Documents\\GitHub\\Python-for-Data-Science \r"
+            },
+            "keys": "ctrl+shift+p"
+        },
+        {
+            "command": 
+            {
+                "action": "sendInput",
+                "input": "New-Item "
+            },
+            "keys": "ctrl+n"
+        },
+        {
+            "command": 
+            {
+                "action": "sendInput",
+                "input": "cd $env:PowerShell \r"
+            }
         },
         {
             "command": 
@@ -74,14 +89,6 @@
                 "input": "goto-secret \r"
             },
             "keys": "ctrl+shift+s"
-        },
-        {
-            "command": 
-            {
-                "action": "sendInput",
-                "input": "New-Item "
-            },
-            "keys": "ctrl+n"
         },
         {
             "command": 
@@ -111,17 +118,17 @@
             "command": 
             {
                 "action": "sendInput",
-                "input": "cd $env:OneDrive \r"
+                "input": "cd $env:Github \r"
             },
-            "keys": "ctrl+shift+o"
+            "keys": "ctrl+shift+g"
         },
         {
             "command": 
             {
                 "action": "sendInput",
-                "input": "cd $env:Github \r"
+                "input": "cd $env:OneDrive \r"
             },
-            "keys": "ctrl+shift+g"
+            "keys": "ctrl+shift+o"
         },
         {
             "command": 
@@ -176,7 +183,7 @@
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
-                "opacity": 80,
+                "opacity": 100,
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
