@@ -3,7 +3,7 @@
 # Define a function to copy/download files from MySecondBrain based on index.
 function downloadFiles($index) {
 
-    $ip_addr = "192.168.40.95"
+    $ip_addr = "$($env:cipher_ip)"
    #  $move_pasted_files = "Pasted*.png"
 
     # Define source and destination paths.
@@ -29,7 +29,7 @@ function downloadFiles($index) {
        # cp "$($from_paths[$index])" $to_paths[$index] -Recurse -force -Verbose 
 
 
-       scp -i "C:\Users\Samst\.ssh\kali_linux_id_rsa" -r "cipher@$($ip_addr):/github/hackersbrain/*" $to_paths[$index]
+       scp -i "$($env:cipher_key)" -r "cipher@$($ip_addr):/github/hackersbrain/*" $to_paths[$index]
 
 
     } else { 
