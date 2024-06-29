@@ -1,6 +1,0 @@
-1. changes made in [ Microsoft.PowerShell_profile.ps1 ] => $pshell = "$Home\OneDrive\Documents\PowerShell"
-2. changes made in [ TheConfigurationFile.ps1 ] -> $SOURCE directory path changed
-3. changes made in [ dependency/104ASCIIFiglet.ps1 | Line 12 ] -> $figletHashTable.Path = "$Home\OneDrive\Documents\PowerShell\profileFunction\Figlet.ps1"
-4. changes made in [ dependency/getFunction.ps1 | Line 25-27 ] -> Hashtable reference made => "$Home\superuser.ps1"
-5. changes made in [ dependency/getJson.ps1 | Line 26-28 ] -> Hashtable reference made => "$Home\superuser.ps1"
-6. changes made in [ dependency\getPath.ps1 | Line 26-28 ] -> Hashtable reference made => "$Home\superuser.ps1"

@@ -1,1 +1,0 @@
-function openfilter() { dir | Out-GridView }

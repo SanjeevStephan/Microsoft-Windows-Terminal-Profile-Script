@@ -1,1 +1,0 @@
-function pinggoogle() { ping -t 8.8.8.8 } # Ping google-dns-server
