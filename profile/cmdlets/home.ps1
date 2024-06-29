@@ -1,1 +1,0 @@
-function home() { cd $env:PowerShell } 
