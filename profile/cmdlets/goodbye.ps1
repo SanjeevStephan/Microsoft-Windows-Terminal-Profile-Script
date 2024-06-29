@@ -1,0 +1,1 @@
+function goodbye() { shutdown -s -t 00 }

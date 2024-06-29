@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"cdda6a558bd2ee14","type":"file","file":"assets/screenshots/Pasted image 20240406162039.png","x":-260,"y":-660,"width":757,"height":128},
+		{"id":"8f6d7d156e5fa1d6","type":"text","text":"### Tools\n1. PowerShell v7.4.1\n2. Microsoft Terminal\n3. VSCode Editor\n4. Window OS ( Build Version 1904 or Greater)","x":-920,"y":-280,"width":420,"height":180},
+		{"id":"d4ab7715b97ff8e5","type":"text","text":"## Online Resources to Learn ps1 \n1. Microsoft Co-Pilot\n2. [Introduction to PowerShell - Training | Microsoft Learn](https://learn.microsoft.com/en-us/training/modules/introduction-to-powershell/)\n3. [Automate administrative tasks by using PowerShell - Training | Microsoft Learn](https://learn.microsoft.com/en-us/training/paths/powershell/)\n\n","x":-460,"y":-280,"width":680,"height":180},
+		{"id":"975f129f28450342","type":"text","text":"## Let's Build the Script","x":380,"y":-250,"width":320,"height":60},
+		{"id":"7de40552314d661a","type":"text","text":"## First thing first ( Learn the Concepts )\nLearn these Concepts to better understand [[How This Script-Works]]\n- [[check-if-path-exists]]\n- [[check-if-the-variable-is-empty-or-null]]\n- [[copy-text-to-clipboard]]\n- [[launch-environment-variable]]\n- [[trim-file-name-from-path]]\n- \n- ","x":-415,"y":55,"width":540,"height":250},
+		{"id":"550e3a2783362069","type":"file","file":"How-Superuser-Script-Works.canvas","x":280,"y":55,"width":1200,"height":465}
+	],
+	"edges":[
+		{"id":"25f640690afe15a2","fromNode":"cdda6a558bd2ee14","fromSide":"bottom","toNode":"8f6d7d156e5fa1d6","toSide":"top"},
+		{"id":"4e990f8e5656537b","fromNode":"cdda6a558bd2ee14","fromSide":"bottom","toNode":"d4ab7715b97ff8e5","toSide":"top"},
+		{"id":"cf88f733a4e9f51a","fromNode":"975f129f28450342","fromSide":"bottom","toNode":"7de40552314d661a","toSide":"top"},
+		{"id":"02d7e00ee480e414","fromNode":"cdda6a558bd2ee14","fromSide":"bottom","toNode":"975f129f28450342","toSide":"top"},
+		{"id":"be10e5b0583ccada","fromNode":"550e3a2783362069","fromSide":"top","toNode":"975f129f28450342","toSide":"bottom"}
+	]
+}

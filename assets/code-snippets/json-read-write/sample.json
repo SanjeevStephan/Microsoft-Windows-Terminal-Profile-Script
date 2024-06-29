@@ -1,0 +1,14 @@
+{
+    "info":
+    {
+        "name" : "Sanjev Stephan",
+        "country " : "India",
+        "gender"   : "Male"
+    },
+    "skills":
+    [
+        {   "skill" : "Video-Editing in Premier Pro"},
+        {   "skill" : "Photo-Editing in Photoshop"},
+        {   "skill" : "Master in PowerShell Scripting"}
+    ]
+}

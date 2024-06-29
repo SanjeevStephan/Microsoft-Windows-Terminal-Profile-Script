@@ -1,4 +1,7 @@
 # Welcome PowerShell's [$uperUser](https://sanjeevstephan.github.io/superuser/) 
+
+^30d814
+
 > To The Windows Terminal, Console and Command-Line repository
 ### Powerful Window Automations Script
 
@@ -30,12 +33,13 @@
 
 ### Directory Structure
 * Main 
-    | File | Description | Explaination |
-    |:---------:|:-----------|:---------:|
-    | [Microsoft.PowerShell_profile.ps1](https://github.com/SanjeevStephan/superuser/blob/main/Microsoft.PowerShell_profile.ps1)| Main PowerShell Profile File | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) | 
-    | [superuser.ps1](https://github.com/SanjeevStephan/superuser/blob/main/TheConfigurationFile.ps1) | Controls Settings  | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) | 
-    | [Auto-Discover.ps1](https://github.com/SanjeevStephan/superuser/blob/main/myautoscript/profile_include.ps1)  |  Includes all {*.ps1} files in the ./dependency directory  | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) |                     
-    | [The-Prompt.ps1](https://github.com/SanjeevStephan/superuser/blob/main/profileFunction/The-Prompt.ps1)  |  The SuperUser Prompt   | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) | 
+
+| File                                                                                                                       | Description                                              | Explaination                                                                     |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| [Microsoft.PowerShell_profile.ps1](https://github.com/SanjeevStephan/superuser/blob/main/Microsoft.PowerShell_profile.ps1) | Main PowerShell Profile File                             | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) |
+| [superuser.ps1](https://github.com/SanjeevStephan/superuser/blob/main/TheConfigurationFile.ps1)                            | c                                                        | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) |
+| [Auto-Discover.ps1](https://github.com/SanjeevStephan/superuser/blob/main/myautoscript/profile_include.ps1)                | Includes all {*.ps1} files in the ./dependency directory | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) |
+| [The-Prompt.ps1](https://github.com/SanjeevStephan/superuser/blob/main/profileFunction/The-Prompt.ps1)                     | The SuperUser Prompt                                     | [ReadMe](https://github.com/SanjeevStephan/superuser/blob/main/mydocs/readme.md) |
 
 ### For In-Detail Explaination | Please refer to [My Detailed Guide](https://sanjeevstephan.github.io/superuser/)
 
@@ -148,8 +152,8 @@ Go To Settings and do the following to maximize productivity
 * You must have at least [VS 2022](https://visualstudio.microsoft.com/downloads/) installed or [Visual Studio Code](https://code.visualstudio.com/download) popularly known as VSCode
 * You must install the [.NET Framework Targeting Pack](https://docs.microsoft.com/dotnet/framework/install/guide-for-developers#to-install-the-net-framework-developer-pack-or-targeting-pack) to build test projects
 ## LINK
-* This Github Repository                  (https://github.com/SanjeevStephan/superuser)
+* This Github Repository (https://github.com/SanjeevStephan/superuser)
 * Microsoft Windows Terminal Repository (https://github.com/microsoft/terminal)
-* PowerShell v7+                        (https://github.com/PowerShell/PowerShell/releases/latest)
+* PowerShell v7+ (https://github.com/PowerShell/PowerShell/releases/latest)
 * Download [PowerShell-7.3.3-win-x64.zip](https://github.com/PowerShell/PowerShell/releases/download/v7.3.3/PowerShell-7.3.3-win-x64.zip)
 * Download [git for terminal](https://git-scm.com/downloads)

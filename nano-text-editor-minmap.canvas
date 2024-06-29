@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"141285dbe0c34594","type":"text","text":"## 2. Extract\n\nExtract the contents of the downloaded file to a folder","x":-740,"y":0,"width":450,"height":200},
+		{"id":"9593775d1658eea5","type":"file","file":"Pasted image 20240408134532.png","x":-415,"y":-540,"width":400,"height":225},
+		{"id":"33d00454de215ee2","type":"text","text":"## 5. Create A Script (nano.ps1)\n\n```PowerShell\nfunction nano($textfile)\n{\n\t. $env:nano $textfile\n}\n```","x":500,"y":0,"width":420,"height":200},
+		{"id":"36b55ef83269cb12","type":"text","text":"## 1. Download\n1. [nano – Text editor (nano-editor.org)](https://www.nano-editor.org/)\n2. [Releases · okibcn/nano-for-windows (github.com)](https://github.com/okibcn/nano-for-windows/releases)","x":-1260,"y":0,"width":480,"height":200},
+		{"id":"a906750d8e5c3fbe","type":"text","text":"## 4. Add Env\n\nEdit the system environment variables to add the nano folder to the PATH","x":120,"y":0,"width":340,"height":200},
+		{"id":"87b959af7d1be911","type":"text","text":"## 3. Move\n\nMove the **nano.exe**  to `C:\\Users\\<username>\\OneDrive\\Documents\\PowerShell\\assets\\executable`","x":-260,"y":0,"width":365,"height":200},
+		{"id":"ad8f4c52c2953458","type":"file","file":"Pasted image 20240408140214.png","x":-880,"y":360,"width":460,"height":779},
+		{"id":"9c108b4cf9365a2e","type":"file","file":"Pasted image 20240408135308.png","x":-2080,"y":360,"width":911,"height":280},
+		{"id":"343b47ed480725af","type":"file","file":"Pasted image 20240408140342.png","x":-90,"y":415,"width":759,"height":235},
+		{"id":"8486cea92f032655","type":"file","file":"Pasted image 20240408135519.png","x":880,"y":533,"width":1138,"height":345}
+	],
+	"edges":[
+		{"id":"d33812e35c496b1c","fromNode":"9593775d1658eea5","fromSide":"bottom","toNode":"36b55ef83269cb12","toSide":"top"},
+		{"id":"98bd9079a7aa59b5","fromNode":"9593775d1658eea5","fromSide":"bottom","toNode":"141285dbe0c34594","toSide":"top"},
+		{"id":"91d7289a5b11a70b","fromNode":"9593775d1658eea5","fromSide":"bottom","toNode":"87b959af7d1be911","toSide":"top"},
+		{"id":"516e61387f49684e","fromNode":"9593775d1658eea5","fromSide":"bottom","toNode":"33d00454de215ee2","toSide":"top"},
+		{"id":"463a89d07d578791","fromNode":"9593775d1658eea5","fromSide":"bottom","toNode":"a906750d8e5c3fbe","toSide":"top"},
+		{"id":"ac50ce689a6efb3f","fromNode":"36b55ef83269cb12","fromSide":"bottom","toNode":"9c108b4cf9365a2e","toSide":"top"},
+		{"id":"6d30ef253dd69993","fromNode":"a906750d8e5c3fbe","fromSide":"bottom","toNode":"8486cea92f032655","toSide":"top"},
+		{"id":"9909a113be57e380","fromNode":"141285dbe0c34594","fromSide":"bottom","toNode":"ad8f4c52c2953458","toSide":"top"},
+		{"id":"738f5a9bb59fdc7c","fromNode":"87b959af7d1be911","fromSide":"bottom","toNode":"343b47ed480725af","toSide":"top"},
+		{"id":"da9817699500db25","fromNode":"9c108b4cf9365a2e","fromSide":"right","toNode":"ad8f4c52c2953458","toSide":"left"},
+		{"id":"ecd8ab05223a771d","fromNode":"ad8f4c52c2953458","fromSide":"right","toNode":"343b47ed480725af","toSide":"left"},
+		{"id":"b2fb66d226dc8b0e","fromNode":"343b47ed480725af","fromSide":"right","toNode":"8486cea92f032655","toSide":"left"}
+	]
+}

@@ -1,52 +1,92 @@
 {
-    "info" : 
+    "info":
     {
-        "profile" : "Superuser",
-        "author"  : "Sanjeev Stephan Murmu",
-        "version" : "V2.0",
-        "github"  : "https://github.com/SanjeevStephan/superuser"   
+        "profile"   :   "SuperUser",
+        "author"    :   "Sanjeev Stephan ",
+        "version"   :   "v3.0",
+        "update"    :   "8th April 2024",
+        "github"    :   "https://github.com/SanjeevStephan/superuser",
+        "website"   :   "https://sanjeevstephan.github.io",
+        "youtube"   :   "https://www.youtube.com/@SanjeevStephan"
     },
     "superuser" :
     {
-        "json" :  "superuser.json",
-        "script" : "superuser.ps1"
+        "json"  :   "superuser.json",
+        "script":   "superuser.ps1"
     },
-    "directory" : 
+    "dependency" :
     {
-        "assets"  : "\\assets",
-        "data"    : "\\data",
-        "docs"    : "\\docs",
-        "profile" : "\\profile"
-    },
-    "file" :
-    {
-        "dependency" :
+        "directory" :
         {
-            "ascii"        : "PowerShell\\data\\ascii.json",
-            "config"       : "PowerShell\\data\\config.json",
-            "directories"  : "PowerShell\\data\\directories.json" ,
-            "dependencies" : "PowerShell\\data\\dependencies.json",
-            "python"       : "PowerShell\\data\\python.json",
-            "scripts"      : "PowerShell\\data\\scripts.json",
-            "shortcuts"      : "PowerShell\\data\\shortcuts.json",
-            "settings"     : "PowerShell\\data\\settings.json",
-            "terminal"     : "PowerShell\\data\\terminal.json"
-            
-        },
-        "initialize" :
-        {
-            "title" : "initial run",
-            "file"  : 
+            "assets"    :   "\\assets",
+            "data"      :   "\\data",
+            "docs"      :   "\\docs",
+            "profile"   :   
             [
+                {
+                    "index"  : 0,
+                    "title"  : "profile",
+                    "path"   : "\\profile",
+                    "script" : "profile-discovery.ps1",
+                    "desc"   : "The Root Profile Directory"
+                },
+                {
+                    "index"  : 1,
+                    "title"  : "autorun",
+                    "path"   :  "\\profile\\autorun",
+                    "script" : "autorun-discovery.ps1",
+                    "desc"   :  "Scripts in this directory will automatically get executed when superuser.ps1 loads"
+                },
+                {
+                    "index"  : 2,
+                    "title"  : "cmdlet",
+                    "path"   :  "\\profile\\cmdlets",
+                    "script" : "cmdlet-discovery.ps1",
+                    "desc"   :  "function name in these scripts can be called directly from the terminal itself"
+                },
+                {
+                    "index"  : 3,
+                    "title"  : "console",
+                    "path"   :  "\\profile\\goto",
+                    "script" : "goto-discovery.ps1",
+                    "desc"   :  "Goto External Directory and Launch ps1 Consoles"
+                },
+                {
+                    "index"  : 4,
+                    "title"  : "mycommands",
+                    "path"   :  "\\profile\\mycommands",
+                    "script" : "mycommands-discovery.ps1",
+                    "desc"   :  "Positional Arugment based Scripts that takes inputs and do some task based on the inputs received."
+                },
+                {
+                    "index"  : 5,
+                    "title"  : "python",
+                    "path"   :  "\\profile\\python",
+                    "script" : "python-discovery.ps1",
+                    "desc"   :  "Directory contains the python scripts to be called by powershell terminal"
+                }
 
-                {   "path" : "PowerShell\\profile\\autodiscovery.ps1" },
-                {   "path": "PowerShell\\profile\\prompt\\Superuser-Prompt.ps1" },
-                {   "path": "PowerShell\\profile\\prompt\\Superuser-Prompt.ps1" }
+            ]
+        },
+        "json" :
+        {
 
-            ],
-            "note": "put your file-paths above in the autodiscvery to load the scritps automatically when the terminal loads",
-            "desc": "Contains Scripts that will load or include the powershell scripts from the directory as specified"
-            
+            "ascii"    :   "\\data\\ascii.json",
+            "cmdlets"   :   "\\data\\cmdlets.json",
+            "config"   :   "\\data\\config.json",
+            "python"   :   "\\data\\python.json"
+
+        },
+        "initialize":
+        {
+            "title" :   "Initial Run",
+            "script":
+            [
+                {   "path"  :   "\\profile\\dependency\\Autodiscovery.ps1"},
+                {   "path"  :   "\\profile\\dependency\\The-prompt.ps1"},
+                {   "path"  :   "\\profile\\dependency\\SuperUser-Ascii.ps1"}
+            ]
         }
     }
+
 }
