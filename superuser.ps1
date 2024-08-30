@@ -31,7 +31,6 @@ $MAIN_JSON_Data = ReadJsonFileAtHome("superuser.json")
 $Total_Scripts_to_Execute = $MAIN_JSON_Data.dependency.initialize.script.Length 
 
 
-
 Write-Host "|          " -ForegroundColor Cyan
 Write-Host "|────SuperUser.ps1"
 Write-Host "|    |     └────├ Initializing ] $su_name" -ForegroundColor Cyan
