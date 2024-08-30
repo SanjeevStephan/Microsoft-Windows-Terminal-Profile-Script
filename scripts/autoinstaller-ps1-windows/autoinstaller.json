@@ -1,0 +1,298 @@
+{
+    "info":
+    {
+        "author":"Sanjeev Stephan Murmu",
+        "script": "autoinstaller.ps1",
+        "json": "autoinstaller.json",
+        "os" : "Window",
+        "desc":"AutoInstaller using the winget tool"
+
+    },
+    "settings":
+    {
+        "search" : "YES",
+        "install" : "YES"
+    },
+    "packages":
+    [
+        {
+            "install"   : "NO",
+            "name"    : "Authy Desktop",
+            "pkg_id"  : "Twilio.Authy",
+            "pkg_name" : "",
+            "version" : "2.3.0",
+            "source"  : "winget",
+            "desc"    : "2FA Authentication App"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "Brave",
+            "pkg_id"  : "Brave.Brave",
+            "pkg_name" : "",
+            "version" : "114.1.52.122",
+            "source"  : "winget",
+            "desc"    : "Browser for privacy"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "calibre",
+            "pkg_id"  : "calibre.calibre",
+            "pkg_name" : "calibre",
+            "version" : "8.0.1",
+            "source"  : "winget",
+            "desc"    : "Open Source E-pub ebook manager & reader"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "cURL",
+            "pkg_id"  : "cURL.cURL",
+            "pkg_name" : "",
+            "version" : "8.0.1",
+            "source"  : "winget",
+            "desc"    : "Browser for privacy"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "DirectX",
+            "pkg_id"  : "Microsoft.DirectX",
+            "pkg_name" : "",
+            "version" : "9.29.1974.1",
+            "source"  : "winget",
+            "desc"    : "DirectX Runtime Environment"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "Docker Desktop",
+            "pkg_id"  : "Docker.DockerDesktop",
+            "pkg_name" : "",
+            "version" : "4.20.1",
+            "source"  : "winget",
+            "desc"    : "Dockerized Container Engine"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "Enpass",
+            "pkg_id"  : "Sinew.Enpass",
+            "pkg_name" : "",
+            "version" : "6.8.6.1365",
+            "source"  : "winget",
+            "desc"    : "Dockerized Container Engine"
+        },
+        {
+            "install"   : "YES",
+            "name"    : "Git",
+            "pkg_id"  : "Git.Git",
+            "pkg_name" : "",
+            "version" : "2.46.0",
+            "source"  : "winget",
+            "desc"    : "Git CLI"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "GitHub Desktop",
+            "pkg_id"  : "GitHub.GitHubDesktop",
+            "pkg_name" : "",
+            "version" : "3.2.3",
+            "source"  : "winget",
+            "desc"    : "Git CLI"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "GNU Privacy Guard",
+            "pkg_id"  : "GnuPG.GnuPG",
+            "pkg_name" : "",
+            "version" : "2.4.2",
+            "source"  : "winget",
+            "desc"    : "Open-Source Encryption Tool CLI"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "Gpg4win",
+            "pkg_id"  : "GnuPG.Gpg4win",
+            "pkg_name" : "",
+            "version" : "4.1.0",
+            "source"  : "winget",
+            "desc"    : "Open-Source Encryption Tool GUI"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "KeePass Desktop",
+            "pkg_id"  : "DominikReichl.KeePass",
+            "pkg_name" : "",
+            "version" : "2.54.0",
+            "source"  : "winget",
+            "desc"    : "Open-Source Offline Password Manager"
+        },
+        {
+            "install"   :"NO",
+            "name"    : "Microsoft Edge",
+            "pkg_id"  : "Microsoft.Edge",
+            "pkg_name" : "",
+            "version" : "113.0.1774.57",
+            "source"  : "winget",
+            "desc"    : "Windows Default Browser wit Bing AI"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "Microsoft Visual Studio Code",
+            "pkg_id"  : "Microsoft.VisualStudioCode",
+            "pkg_name" : "",
+            "version" : "1.78.2",
+            "source"  : "winget",
+            "desc"    : "Browser for privacy"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "Microsoft Visual C++ 2015-2022 Redistributable",
+            "pkg_id"  : "Microsoft.VCRedist.2015+.x64",
+            "pkg_name" : "",
+            "version" : "14.36.32532.0",
+            "source"  : "winget",
+            "desc"    : ""
+        },
+        {
+            "install"   : "NO",
+            "name"    : "Nmap",
+            "pkg_id"  : "Insecure.Nmap",
+            "pkg_name" : "",
+            "version" : "7.80",
+            "source"  : "winget",
+            "desc"    : "Terminal Text Editor"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "Nano",
+            "pkg_id"  : "GNU.Nano",
+            "pkg_name" : "",
+            "version" : "2.7.5",
+            "source"  : "winget",
+            "desc"    : "Terminal Text Editor"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "Node.js LTS",
+            "pkg_id"  : "OpenJS.NodeJS.LTS",
+            "pkg_name" : "",
+            "version" : "18.16.0",
+            "source"  : "winget",
+            "desc"    : "JavaScript Development Framework"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "Notion",
+            "pkg_id"  : "Notion.Notion",
+            "pkg_name" : "",
+            "version" : "2.0.41",
+            "source"  : "winget",
+            "desc"    : "YEStepad for Productivity"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "OpenSSH Beta",
+            "pkg_id"  : "Microsoft.OpenSSH.Beta",
+            "pkg_name" : "",
+            "version" : "9.2.2.0",
+            "source"  : "winget",
+            "desc"    : "Secure Shell Protocol"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "OpenShot Beta",
+            "pkg_id"  : "OpenShot.OpenShot",
+            "pkg_name" : "",
+            "version" : "3.1.1",
+            "source"  : "winget",
+            "desc"    : "OpenSource Video Editor"
+        },
+        {
+            "install"   :"NO",
+            "name"    : "Oracle VM VirtualBox",
+            "pkg_id"  : "Oracle.VirtualBox",
+            "pkg_name" : "",
+            "version" : "7.0.8",
+            "source"  : "winget",
+            "desc"    : "Run OSes in Virtual Machines"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "OBS Studio",
+            "pkg_id"  : "OBSProject.OBSStudio",
+            "pkg_name" : "",
+            "version" : "29.1.2",
+            "source"  : "winget",
+            "desc"    : "OpenSource Desktop Screen Recorder"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "Python 3.12",
+            "pkg_id"  : "Python.Python.3.12",
+            "pkg_name" : "",
+            "version" : "3.12",
+            "source"  : "winget",
+            "desc"    : "Python Scripting Language"
+        },
+        {
+            "install"   :"NO",
+            "name"    : "Power Automate for desktop",
+            "pkg_id"  : "Microsoft.PowerAutomateDesktop",
+            "pkg_name" : "",
+            "version" : "2.32.111.23124",
+            "source"  : "winget",
+            "desc"    : "Automate Anything GUI"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "PowerToys (Preview)",
+            "pkg_id"  : "Microsoft.PowerToys",
+            "pkg_name" : "",
+            "version" : "0.70.1",
+            "source"  : "winget",
+            "desc"    : "Windows Default Toys for Productivity"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "PowerISO",
+            "pkg_id"  : "PowerSoftware.PowerISO",
+            "pkg_name" : "",
+            "version" : "8.5",
+            "source"  : "winget",
+            "desc"    : "Open Source ISO Creator"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "PowerShell",
+            "pkg_id"  : "Microsoft.PowerShell",
+            "pkg_name" : "",
+            "version" : "7.4.5.0",
+            "source"  : "winget",
+            "desc"    : "Powershell Scripting Language"
+        },
+        {
+            "install"   : "YES",
+            "name"    : "Wget2",
+            "pkg_id"  : "GNU.Wget2",
+            "pkg_name" : "",
+            "version" : "2.1.0",
+            "source"  : "winget",
+            "desc"    : "Windows Default Command Line Shell Terminal"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "WinRAR",
+            "pkg_id"  : "RARLab.WinRAR",
+            "pkg_name" : "",
+            "version" : "6.22.0",
+            "source"  : "winget",
+            "desc"    : "WinRAR"
+        },
+        {
+            "install"   : "NO",
+            "name"    : "Windows Terminal",
+            "pkg_id"  : "Microsoft.WindowsTerminal",
+            "pkg_name" : "",
+            "version" : "1.16.10261.0",
+            "source"  : "winget",
+            "desc"    : "Windows Default Command Line Shell Terminal"
+        }
+    ]
+}
