@@ -1,0 +1,176 @@
+{
+  "main": {
+    "id": "c9b6b2a39171358c",
+    "type": "split",
+    "children": [
+      {
+        "id": "4727857efda70feb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4febf9a363fe2ec2",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bbb59a977c77d66a",
+    "type": "split",
+    "children": [
+      {
+        "id": "e160f8a96e698237",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a74ee0a74e281d1a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "959eae94d6366f94",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "094647",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "68aae1d429ed3b4e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "4b0b91507903403b",
+    "type": "split",
+    "children": [
+      {
+        "id": "c4343772a6e7e97b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "84ee8f502c504e79",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1555189d8e903492",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c117915e9b09f56c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "2da62abff4a981fe",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "a74ee0a74e281d1a",
+  "lastOpenFiles": [
+    "Superuser-ps1-mindmap.canvas",
+    "Getting-Started-with-SuperUser.canvas",
+    "assets/screenshots/Pasted image 20240406162039.png",
+    "assets/screenshots/Pasted image 20240409094221.png",
+    "How-Superuser-Script-Works.canvas",
+    "install-pyfiglet-mindmap.canvas",
+    "Superuser-json-mindmap.canvas",
+    "nano-text-editor-minmap.canvas",
+    "README.md",
+    "assets/backup/How-Superuser-Script-Works 1.canvas",
+    "assets/screenshots/Pasted image 20240408135519.png",
+    "assets/screenshots/Pasted image 20240408135308.png",
+    "assets/screenshots/Pasted image 20240408134532.png",
+    "assets/screenshots/Pasted image 20240408094647.png",
+    "assets/screenshots/Pasted image 20240407180849.png",
+    "assets/screenshots/Pasted image 20240406134258.png",
+    "daily-notes/Apr 06, 2024.md",
+    "daily-notes/Jun 14, 2024.md",
+    "daily-notes/Apr 09, 2024.md",
+    "daily-notes/Apr 08, 2024.md",
+    "daily-notes/Apr 07, 2024.md",
+    "docs/trim-file-name-from-path.md",
+    "docs/check-if-path-exists.md",
+    "docs/ip-address-trim.md",
+    "docs/check-if-the-variable-is-empty-or-null.md",
+    "docs/copy-text-to-clipboard.md",
+    "docs/execute a script from within another PowerShell script.md",
+    "docs/launch-environment-variable.md",
+    "docs/read-file-and-display-it-as-table.md",
+    "docs/terminal-settings-json.md",
+    "Welcome-SuperUser.md"
+  ]
+}
