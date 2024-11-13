@@ -5,7 +5,7 @@
 > To The Windows Terminal, Console and Command-Line repository
 ### Powerful Window Automations Script
 
-![Terminal Log](https://sanjeevstephan.github.io/superuser/assets/uploads/superuser-terminal-01.png)
+![Terminal Log](https://raw.githubusercontent.com/SanjeevStephan/Microsoft-Windows-Terminal-Profile-Script/refs/heads/window11-v4.0/assets/screenshots/superuser-terminal-01.png)
 
 ## Index
 * [Description](https://github.com/SanjeevStephan/superuser/blob/main/README.md#Description)
